@@ -1,0 +1,351 @@
+body
+{
+  background-image: url("../images/background.png");
+  background-color: white;
+  margin: 0;
+}
+footer
+{
+  position:fixed;
+  bottom:0px;
+  padding: 0px, 0px;
+  width: 100%;
+  background-color: lightgray;
+}
+
+a:link {
+  color: black;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: black;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: dimgray;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: dimgray;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.logo
+{
+  z-index: 100;
+  position: fixed;
+  top:10px;
+  left:10px;
+}
+.header
+{
+  background-color:red;
+  height:80px;
+  width: 100%;
+  font-family:verdana;
+  color:white;
+  font-size: 50px;
+  font-weight: bold;
+  text-align:center;
+  padding-top: 15px;
+  padding-bottom: 0px;
+  margin: auto;
+}
+.header a{
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.privacy_policy
+{
+  margin:20px;
+  font-family: sans-serif;
+}
+.privacy_policy h1
+{
+  margin-bottom:10px;
+  font-weight: bold;
+}
+.privacy_policy h2
+{
+  font-weight: bold;
+}
+.time-schedule
+{
+  margin-top: 0px;
+  position:relative;
+  text-align:center;
+  font-family: "anton", verdana;
+  letter-spacing: 5px;
+  height:220px;
+  width: 70%;
+  margin: auto;
+  border-radius: 20px;
+  background-color:lightgray;
+}
+.period-display
+{
+  font-size:30px;
+  margin-top: 50px;
+  margin-bottom: 0px;
+  padding: 10px 10px 0px;
+}
+.period-countdown
+{
+  letter-spacing: 5px;
+  font-family: "anton", verdana;
+  text-align:center;
+  font-size:40px;
+  margin-top: 40px;
+  margin-bottom: 0px;
+  padding: 10px;
+}
+.remaining-time
+{
+  letter-spacing: 5px;
+  font-family: "anton", verdana;
+  text-align:center;
+  font-size:70px;
+  margin-top: 0px;
+  margin-bottom: 60px;
+  padding: 10px;
+}
+.timer
+{
+  font-size:70px;
+  padding: 0px 10px 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.dot
+{
+  outline: none;
+  border: none;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  background-color: white;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0px 10px;
+}
+.dot-cur
+{
+  background-color: red;
+}
+.dot:hover
+{
+  background-color: gray;
+}
+.splash
+{
+  position: relative;
+  letter-spacing: 5px;
+  font-family:"anton";
+  text-align:center;
+  font-size: 45px;
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  width: 800px;
+  background-color: lightgray;
+  height: 140px;
+  border-radius: 20px;
+  margin: auto;
+  margin-bottom: 50px;
+}
+.splash2
+{
+  position: relative;
+  letter-spacing: 5px;
+  font-family:"anton";
+  text-align:center;
+  font-size: 100px;
+  margin-top: 0px;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  width: 650px;
+  background-color: yellow;
+  height: 600px;
+  border-radius: 20px;
+  margin: auto;
+}
+.btn
+{
+  outline: none;
+  height:220px;
+  border: none;
+  background-color: lightgray;
+  padding: 0px 35px 20px;
+  font-size: 100px;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 20px;
+  position: absolute;
+  top: 0px;
+}
+.btn-left
+{
+  left: -125px;
+}
+.btn-right
+{
+  right: -125px;
+}
+.btn:hover
+{
+  background:gray
+}
+.lunchBtnDiv
+{
+  display:block;
+  position: relative;
+  height: 270px;
+  letter-spacing: 5px;
+  font-family:"anton";
+  text-align:center;
+  margin:auto;
+}
+.lunchBtn
+{
+  font-family:"anton";
+  outline: none;
+  display: inline-block;
+  height:180px;
+  width: 180px;
+  border: none;
+  background-color: red;
+  padding: 10px;
+  font-size: 80px;
+  color: white;
+  cursor: pointer;
+  border-radius: 40px;
+  position: relative;
+  top: 0px;
+  margin: 0px 30px;
+}
+.lunchBtn:hover
+{
+  background:darkred;
+  color: gainsboro;
+}
+.lunchBtn p
+{
+  font-size: 30px;
+  margin:0;
+}
+.wrongLunchDiv
+{
+  display:none;
+  position: relative;
+  height: 100px;
+  letter-spacing: 5px;
+  font-family:"anton";
+  text-align:center;
+  margin:auto;
+}
+.wrongLunchBtn
+{
+  font-family:"anton";
+  outline: none;
+  display: inline-block;
+  height: 100px;
+  width: 350px;
+  border: none;
+  background-color: red;
+  padding: 10px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  border-radius: 20px;
+  position: relative;
+  top: 0px;
+  margin: 0px 30px;
+}
+.wrongLunchBtn:hover
+{
+  background:darkred;
+  color: gainsboro;
+}
+.foot
+{
+  font-family: sans-serif;
+  text-align:center;
+  font-size:20px;
+  margin: 8px;
+}
+.cookie-banner
+{
+  font-size: 22px;
+  font-family: sans-serif;
+  background-color:rgba(255,0,0,0.8);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display:none;
+}
+.cookie-banner a
+{
+  color: gray;
+  text-decoration: underline;
+}
+.cookie-banner .container
+{
+  margin: 0 auto;
+  width: 80%;
+  color: white;
+  padding: 15px;
+}
+.cookie-banner .container .button
+{
+  background: lightgray;
+  color: black;
+  padding: 15px 40px;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  border-bottom: 2px solid gray;
+}
+.cookie-banner .container .button:hover
+{
+  background:darkgray;
+  border-bottom: 2px solid dimgray;
+}
+footer ul
+{
+  font-size: 20px;
+  padding-left: 0px;
+  margin: 5px;
+}
+footer .red-footer
+{
+  background-color:lightgray;
+}
+footer ul li
+{
+  display: inline-block;
+  margin-right: 20px;
+  margin-left: 20px;
+  list-style: none;
+}
+footer p
+{
+  margin:0px;
+}
+@font-face
+{
+  font-family: "anton";
+  src: url(www.fhsched.com/fonts/Anton-Regular.ttf);
+  font-style: normal;
+  font-weight: 100;
+}
