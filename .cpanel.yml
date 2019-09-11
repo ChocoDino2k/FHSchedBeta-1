@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/fhschijn/public_html/FHSchedBeta
-    - /bin/cp -r * $DEPLOYPATH
+    - export DEPLOYPATH=/home/fhschijn/public_html
+    - /bin/cp -r FHSchedBeta $DEPLOYPATH
