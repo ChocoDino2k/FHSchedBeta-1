@@ -8,7 +8,7 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-icon-114x114.png">
     <link rel="apple-touch-icon" sizes="144x144" href="../images/apple-icon-144x144.png">
-    <link rel="stylesheet" href="../css/FHSched_V_1.9.css">
+    <link rel="stylesheet" href="../css/FHSched_V_1.11.css">
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
   </head>
   <body style = "margin: 0;" class = "dark">
@@ -83,7 +83,7 @@
         <p><a href="../privacy-policy/">Privacy Policy</a></p>
         <ul class="red-footer">
           <li class="red-footer">2019 CodingForFishers</li>
-          <li class="red-footer">Version 1.4.3</li>
+          <li class="red-footer">Version 1.4.4</li>
         </ul>
         <address style="all: unset">
           Contact: <a href="mailto:fhsched2019@gmail.com">fhsched2019@gmail.com</a>

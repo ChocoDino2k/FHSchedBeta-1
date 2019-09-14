@@ -4,6 +4,13 @@ body
   background-color: white;
   margin: 0;
 }
+body.dark
+{
+  background-image: url("../images/inverted_background.png");
+  background-color: black;
+  color: white;
+}
+
 footer
 {
   position:fixed;
@@ -12,11 +19,27 @@ footer
   width: 100%;
   background-color: lightgray;
 }
+@media screen and (orientation:landscape)
+{
+  footer
+  {
+    position:static;
+    margin: 0px;
+  }
+}
+body.dark footer
+{
+  background-color: rgb(30,34,39);
+}
 
 a:link {
   color: black;
   background-color: transparent;
   text-decoration: underline;
+}
+body.dark a:link
+{
+  color: white;
 }
 
 a:visited {
@@ -24,11 +47,19 @@ a:visited {
   background-color: transparent;
   text-decoration: underline;
 }
+body.dark a:visited
+{
+  color: white;
+}
 
 a:hover {
   color: dimgray;
   background-color: transparent;
   text-decoration: underline;
+}
+body.dark a:hover
+{
+  color: darkgray;
 }
 
 a:active {
@@ -36,14 +67,50 @@ a:active {
   background-color: transparent;
   text-decoration: underline;
 }
+body.dark a:active {
+  color: darkgray;
+}
+.nav-bar
+{
+  list-style-type: none;
+  overflow: hidden;
+  background-color: red;
+  position: sticky;
+  top: 0px;
+  z-index: 100;
+  font-family: verdana, sans-serif;
+  font-size: 30px;
+  margin: 0px;
+  padding: 0px;
+}
+body.dark .nav-bar
+{
+  background-color: firebrick;
+}
+.nav-bar li a{
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+.nav-bar #darkMode{
+  float: right;
+}
+.nav-bar li a:hover{
+  background: rgb(120,0,0);
+  color: darkgray;
+}
 
 .logo
 {
-  z-index: 100;
+  z-index: 50;
   position: fixed;
   top:10px;
   left:10px;
 }
+
 .header
 {
   background-color:red;
@@ -57,11 +124,22 @@ a:active {
   padding-top: 15px;
   padding-bottom: 0px;
   margin: auto;
+  border-bottom: 5px solid white;
 }
-.header a{
+body.dark .header
+{
+  background-color:firebrick;
+}
+
+.header a
+{
   color: white;
   background-color: transparent;
   text-decoration: none;
+}
+body.dark .header a
+{
+  color: white;
 }
 
 .privacy_policy
@@ -78,6 +156,7 @@ a:active {
 {
   font-weight: bold;
 }
+
 .time-schedule
 {
   margin-top: 0px;
@@ -91,6 +170,12 @@ a:active {
   border-radius: 20px;
   background-color:lightgray;
 }
+body.dark .time-schedule
+{
+  color: white;
+  background-color:rgb(30,34,39);
+}
+
 .period-display
 {
   font-size:30px;
@@ -98,6 +183,7 @@ a:active {
   margin-bottom: 0px;
   padding: 10px 10px 0px;
 }
+
 .period-countdown
 {
   letter-spacing: 5px;
@@ -108,6 +194,11 @@ a:active {
   margin-bottom: 0px;
   padding: 10px;
 }
+body.dark .period-countdown
+{
+  color: white;
+}
+
 .remaining-time
 {
   letter-spacing: 5px;
@@ -118,6 +209,7 @@ a:active {
   margin-bottom: 60px;
   padding: 10px;
 }
+
 .timer
 {
   font-size:70px;
@@ -125,6 +217,7 @@ a:active {
   margin-top: 0px;
   margin-bottom: 0px;
 }
+
 .dot
 {
   outline: none;
@@ -141,10 +234,18 @@ a:active {
 {
   background-color: red;
 }
+body.dark .dot-cur
+{
+  background-color:firebrick;
+}
 .dot:hover
 {
   background-color: gray;
 }
+body.dark .dot:hover {
+  background-color: darkgray;
+}
+
 .splash
 {
   position: relative;
@@ -157,11 +258,16 @@ a:active {
   padding-bottom: 0px;
   width: 800px;
   background-color: lightgray;
-  height: 140px;
+  height: 210px;
   border-radius: 20px;
   margin: auto;
   margin-bottom: 50px;
 }
+body.dark .splash {
+  color: white;
+  background-color:rgb(30,34,39);
+}
+
 .splash2
 {
   position: relative;
@@ -178,6 +284,11 @@ a:active {
   border-radius: 20px;
   margin: auto;
 }
+body.dark .splash2 {
+  color: white;
+  background-color:rgb(30,34,39);
+}
+
 .btn
 {
   outline: none;
@@ -192,6 +303,11 @@ a:active {
   position: absolute;
   top: 0px;
 }
+body.dark .btn {
+  color: white;
+  background-color:rgb(30,34,39);
+}
+
 .btn-left
 {
   left: -125px;
@@ -204,6 +320,11 @@ a:active {
 {
   background:gray
 }
+body.dark .btn:hover {
+  color: white;
+  background-color:rgb(40,44,49);
+}
+
 .lunchBtnDiv
 {
   display:block;
@@ -232,10 +353,20 @@ a:active {
   top: 0px;
   margin: 0px 30px;
 }
+body.dark .lunchBtn
+{
+  color:gainsboro;
+  background-color:firebrick;
+}
 .lunchBtn:hover
 {
-  background:darkred;
+  background:firebrick;
   color: gainsboro;
+}
+body.dark .lunchBtn:hover
+{
+  color:white;
+  background-color:red;
 }
 .lunchBtn p
 {
@@ -270,17 +401,28 @@ a:active {
   top: 0px;
   margin: 0px 30px;
 }
+body.dark .wrongLunchBtn
+{
+  background-color:firebrick;
+  color:gainsboro;
+}
 .wrongLunchBtn:hover
 {
-  background:darkred;
+  background:firebrick;
   color: gainsboro;
+}
+body.dark .wrongLunchBtn:hover
+{
+  background-color:red;
+  color:white;
 }
 .foot
 {
   font-family: sans-serif;
   text-align:center;
   font-size:20px;
-  margin: 8px;
+  margin: auto;
+  padding: 8px;
 }
 .cookie-banner
 {
@@ -331,6 +473,9 @@ footer .red-footer
 {
   background-color:lightgray;
 }
+body.dark footer .red-footer {
+  background-color:rgb(30,34,39);
+}
 footer ul li
 {
   display: inline-block;
@@ -342,6 +487,18 @@ footer p
 {
   margin:0px;
 }
+.bottom-space
+{
+  padding-bottom:130px;
+}
+@media screen and (orientation:landscape)
+{
+  .bottom-space
+  {
+    padding-bottom:80px;
+  }
+}
+
 @font-face
 {
   font-family: "anton";

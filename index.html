@@ -1,8 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145890894-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -14,7 +14,7 @@
 
 
     <meta charset="utf-8">
-    <title>FHSched []</title>
+    <title>FHSched</title>
     <link rel="shortcut icon" type="image/ico" href="images/icon.ico">
     <link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
@@ -23,7 +23,7 @@
 
     <script type="text/javascript" src="js/FHSched_Schedule_Data_V_1.7.js"> </script>
     <script type="text/javascript" src="js/FHSched_Calendar_Data_V_1.3.js"></script>
-    <link rel="stylesheet" href="css/FHSched_V_1.9.css">
+    <link rel="stylesheet" href="css/FHSched_V_1.11.css">
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
@@ -33,13 +33,14 @@
   -->
     <div>
       <p class="header">
-        <a href="/">FHSched [Beta]</a>
+        <a href="/">FHSched</a>
       </p>
     </div>
-    <div class="nav-bar">
-      <a href="/">Home</a>
-      <a href="#" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light"> Light | Dark Mode</a>
-    </div>
+      <ul class="nav-bar">
+        <li><a href="/">Home</a></li>
+        <li><a href="calendar/">Calendar</a></li>
+        <li style = "float: right;"><a role="button" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light" id="darkMode"> Light | Dark Mode</a></li>
+      </ul>
     <div id = "periodDiv" class="time-schedule">
       <p id = "period" class = "period-display">No Period</p>
       <p id = "timer" class = "timer">Not School Hours</p>
@@ -65,7 +66,7 @@
       </button>
     </div>
 
-    <p class = "splash">Pick your lunch!<br>Don't be left in the dark...<br>Calendar and break timer soon!</p>
+    <p class = "splash">Pick your lunch!<br>Mark your calendars for<br>September 16</p>
 
     <div id = "wrongLunchDiv" class="wrongLunchDiv">
       <button onclick = "resetLunch()" class = "wrongLunchBtn">
@@ -73,6 +74,19 @@
       </button>
     </div>
 
+    <p class="bottom-space"></p>
+    <footer>
+      <div class="foot">
+        <p><a href="privacy-policy/">Privacy Policy</a></p>
+        <ul class="red-footer">
+          <li class="red-footer">2019 CodingForFishers</li>
+          <li class="red-footer">Version 1.4.4</li>
+        </ul>
+        <address style="all: unset">
+          Contact: <a href="mailto:fhsched2019@gmail.com">fhsched2019@gmail.com</a>
+        </address>
+      </div>
+    </footer>
     <!--
     <?php
     if(!isset($_COOKIE["accept-cookies"])) {
