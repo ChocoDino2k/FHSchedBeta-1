@@ -1,0 +1,1462 @@
+ body{
+ 	margin:0px;
+ 	padding:0px;
+ 	background-color:white;
+ }
+
+ .relativeBreak {
+    font-family: cursive;
+    font-size: 15px;
+    position: absolute;
+    left: 950px;
+    width: 100px;
+    height:40px;
+    background-color: #aaa;
+    color :white;
+    top:17px;
+   }
+.relativeYear {
+    font-family: cursive;
+    font-size: 15px;
+    position: absolute;
+    left: 950px;
+    width: 100px;
+    max-width:100px;
+    background-color: #aaa;
+    color :white;
+    top:110px;
+   }
+
+
+  .boxForCountDown{
+  	position:absolute;
+  	left:940px;
+  	top:0px;
+  	background-color:#aaa;
+  	border:solid;
+  	width:177px;
+  	height:180px;
+  }
+
+
+footer ul
+{
+  font-size: 13px;
+  padding-left: 0px;
+  margin: 1px;
+}
+footer .red-footer
+{
+  background-color: lightgray;
+}
+footer ul li
+{
+  display: inline-block;
+  margin-right: 20px;
+  margin-left: 20px;
+  list-style: none;
+}
+footer p
+{
+  margin:0px;
+}
+footer
+{
+  color: black;
+  position:fixed;
+  bottom:0px;
+  padding: 0px, 0px;
+  width: 100%;
+  background-color: lightgray;
+  height:65px;
+}
+.foot
+{
+  font-family: sans-serif;
+  text-align:center;
+  font-size:15px;
+  margin: 2px;
+  padding-top: 1px;
+}
+
+a:link {
+  color: black;
+  background-color: transparent;
+  text-decoration: underline;
+}
+body.dark a:link
+{
+  color: white;
+}
+
+a:visited {
+  color: black;
+  background-color: transparent;
+  text-decoration: underline;
+}
+body.dark a:visited
+{
+  color: white;
+}
+
+a:hover {
+  color: dimgray;
+  background-color: transparent;
+  text-decoration: underline;
+}
+body.dark a:hover
+{
+  color: darkgray;
+}
+
+a:active {
+  color: dimgray;
+  background-color: transparent;
+  text-decoration: underline;
+}
+body.dark a:active {
+  color: darkgray;
+}
+
+
+.header a{
+	color:white;
+	text-decoration:none;
+}
+
+ .header{
+        background-color: red;
+        color: white;
+        height:100px;
+        font-family:verdana;
+        font-size:50px;
+        font-weight: bold;
+        text-align:center;
+        padding-top: 15px;
+        padding-bottom:0px;
+        margin:auto;
+      }
+
+
+
+ *{
+ 	margin:0;
+ 	padding:0;
+ }
+
+ #sec1{
+ 	width:100%;
+ 	height:500px;
+ 	background-color:white;
+ }
+ #btn1{
+ 	width:100px;
+ 	height:25px;
+ 	margin-top:35%;
+ 	margin-left:45%;
+ 	background-image: url(white.jpg);
+ }
+
+
+.box{
+	position: absolute;
+	top:20px;
+	left:1050px;
+	transform: translate(-50%, -50%);
+	background:grey;
+	width:90px;
+	height:40px;
+	text-align:center;
+}
+
+.check {
+	-webkit-appearance:none;
+	width:50px;
+	height:20px;
+	background:#ccc;
+	border-radius:30px;
+	transition: 0.3s;
+	cursor:pointer;
+	outline:none;
+}
+
+.check:hover{
+	background:#ddd;
+}
+
+.check:before{
+	content:"";
+	position:absolute;
+	top:0;
+	left:30;
+	width:25px;
+	height:25px;
+	background: #7777ff;
+	border-radius: 50%;
+	transition:0.3s;
+}
+
+.check:checked:before{
+	left: 45px;
+	background:#555588;
+}
+
+.parent{
+ position: relative;
+ margin:auto;
+}
+
+
+    /* Dropdown Button */
+.dropbtn {
+  background-color: #000000;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #999999;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #dddddd;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+     .picture{
+	position: absolute;
+   	top: -180px; left:-15px;
+   	opacity:.5;
+     }
+
+     .pictureOne{
+	position: absolute;
+   	top: -120px; left:-15px;
+   	opacity:.5;
+     }
+
+      .pictureTwo{
+	position: absolute;
+   	top: -55px; left:-15px;
+   	opacity:.5;
+     }
+
+       .pictureThree{
+	position: absolute;
+   	top: 12px; left:-15px;
+   	opacity:.5;
+     }
+
+        .pictureFour{
+	position: absolute;
+   	top: 80px; left:-15px;
+   	opacity:.5;
+     }
+
+         .pictureFive{
+	position: absolute;
+   	top: 145px; left:-15px;
+   	opacity:.5;
+     }
+
+         .pictureSix{
+	position: absolute;
+   	top: 205px; left:-15px;
+   	opacity:.5;
+     }
+
+     .pictureSeven{
+	position: absolute;
+   	top: 55px; left:-233px;
+   	opacity:.5;
+     }
+
+       .pictureEight{
+	position: absolute;
+   	top: 55px; left:-87px;
+   	opacity:.5;
+     }
+
+      .pictureNine{
+	position: absolute;
+   	top: 55px; left:40px;
+   	opacity:.5;
+     }
+
+    .pictureTen{
+	position: absolute;
+   	top: 55px; left:170px;
+   	opacity:.5;
+     }
+
+     .pictureEleven{
+	position: absolute;
+   	top: 55px; left:297px;
+   	opacity:.5;
+     }
+
+     .pictureTwelve{
+	position: absolute;
+   	top: 55px; left:425px;
+   	opacity:.5;
+     }
+
+     .pictureThirteen{
+	position: absolute;
+   	top: 55px; left:555px;
+   	opacity:.5;
+     }
+
+     .pictureFourteen{
+	position: absolute;
+   	top: 55px; left:690px;
+   	opacity:.5;
+     }
+
+   .eventContainerOne{
+   	height:70px;
+   	width:70px;
+   	color: black;
+    font-family:verdana;
+   	padding-top:50px;
+   	padding-left: 50px;
+   	position: absolute;
+   	top: 115px; left:50px;
+	  }
+
+.eventContainerOne .eventContainerOneText {
+	visibility: hidden;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1;
+	width: 600px;
+	top:-100px;
+}
+
+	.eventContainerOne:hover .eventContainerOneText{
+		visibility:visible;	
+		background-color: red;	
+	}
+
+	.eventContainerTwo{
+   	height:70px;
+   	width:70px;
+   	color: black;
+    font-family:verdana;
+   	padding-top:50px;
+   	padding-left: 50px;
+   	position: absolute;
+   	top: 115px; left:175px;
+	  }
+
+.eventContainerTwo .eventContainerTwoText {
+	visibility: hidden;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1;
+	width: 600px;
+	top:-100px;
+}
+
+	.eventContainerTwo:hover .eventContainerTwoText{
+		visibility:visible;	
+		background-color: red;	
+	}
+
+	.eventContainerThree{
+   	height:70px;
+   	width:70px;
+   	color: black;
+    font-family:verdana;
+   	padding-top:50px;
+   	padding-left: 50px;
+   	position: absolute;
+   	top: 115px; left:305px;
+	  }
+
+.eventContainerThree .eventContainerThreeText {
+	visibility: hidden;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1;
+	width: 600px;
+	top:-100px;
+}
+
+	.eventContainerThree:hover .eventContainerThreeText{
+		visibility:visible;	
+		background-color: red;	
+	}
+
+	.eventContainerFour{
+   	height:70px;
+   	width:70px;
+   	color: black;
+    font-family:verdana;
+   	padding-top:50px;
+   	padding-left: 50px;
+   	position: absolute;
+   	top: 115px; left:430px;
+	  }
+
+.eventContainerFour .eventContainerFourText {
+	visibility: hidden;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1;
+	width: 600px;
+	top:-100px;
+}
+
+	.eventContainerFour:hover .eventContainerFourText{
+		visibility:visible;	
+		background-color: red;	
+	}
+
+
+	.eventContainerFive{
+   	height:70px;
+   	width:70px;
+   	color: black;
+    font-family:verdana;
+   	padding-top:50px;
+   	padding-left: 50px;
+   	position: absolute;
+   	top: 115px; left:565px;
+	  }
+
+.eventContainerFive .eventContainerFiveText {
+	visibility: hidden;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1;
+	width: 600px;
+	top:-100px;
+}
+
+	.eventContainerFive:hover .eventContainerFiveText{
+		visibility:visible;	
+		background-color: red;	
+	}
+
+	.eventContainerSix{
+   	height:70px;
+   	width:70px;
+   	color: black;
+    font-family:verdana;
+   	padding-top:50px;
+   	padding-left: 50px;
+   	position: absolute;
+   	top: 115px; left:680px;
+	  }
+
+.eventContainerSix .eventContainerSixText {
+	visibility: hidden;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1;
+	width: 600px;
+	top:-100px;
+	right: 50px;
+}
+
+	.eventContainerSix:hover .eventContainerSixText{
+		visibility:visible;	
+		background-color: red;	
+	}
+
+	.eventContainerSeven{
+   	height:70px;
+   	width:70px;
+   	color: black;
+    font-family:verdana;
+   	padding-top:50px;
+   	padding-left: 50px;
+   	position: absolute;
+   	top: 115px; left:815px;
+	  }
+
+.eventContainerSeven .eventContainerSevenText {
+	visibility: hidden;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1;
+	width: 600px;
+	top:-100px;
+	right: 50px;
+}
+
+	.eventContainerSeven:hover .eventContainerSevenText{
+		visibility:visible;	
+		background-color: red;	
+	}
+
+		.eventContainerEight{
+   	height:70px;
+   	width:70px;
+   	color: black;
+    font-family:verdana;
+   	padding-top:50px;
+   	padding-left: 50px;
+   	position: absolute;
+   	top: 185px; left:50px;
+	  }
+
+.eventContainerEight .eventContainerEightText {
+	visibility: hidden;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1;
+	width: 600px;
+	top:-100px;
+}
+
+	.eventContainerEight:hover .eventContainerEightText{
+		visibility:visible;	
+		background-color: red;	
+	}
+
+	.eventContainerNine{
+   	height:70px;
+   	width:70px;
+   	color: black;
+    font-family:verdana;
+   	padding-top:50px;
+   	padding-left: 50px;
+   	position: absolute;
+   	top: 185px; left:180px;
+	  }
+
+.eventContainerNine .eventContainerNineText {
+	visibility: hidden;
+	width: 600px;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1;
+}
+
+	.eventContainerNine:hover .eventContainerNineText{
+		visibility:visible;	
+		background-color: red;	
+	}
+
+	.eventContainerTen{
+   	height:70px;
+   	width:70px;
+   	color: black;
+    font-family:verdana;
+   	padding-top:50px;
+   	padding-left: 50px;
+   	position: absolute;
+   	top: 185px; left:305px;
+	  }
+
+.eventContainerTen .eventContainerTenText {
+	visibility: hidden;
+	width: 600px;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	position: absolute;
+	top:-100px;
+	z-index: 0;
+}
+
+	.eventContainerTen:hover .eventContainerTenText{
+		visibility:visible;	
+		background-color: red;	
+	}
+
+	.eventContainerEleven{
+   	height:70px;
+   	width:70px;
+   	color: black;
+    font-family:verdana;
+   	padding-top:50px;
+   	padding-left: 50px;
+   	position: absolute;
+   	top: 185px; left:435px;
+	  }
+
+.eventContainerEleven .eventContainerElevenText {
+	visibility: hidden;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1;
+	width: 600px;
+	top:-100px;
+}
+
+	.eventContainerEleven:hover .eventContainerElevenText{
+		visibility:visible;	
+		background-color: red;	
+	}
+
+		.eventContainerTwelve{
+   	height:70px;
+   	width:70px;
+   	color: black;
+    font-family:verdana;
+   	padding-top:50px;
+   	padding-left: 50px;
+   	position: absolute;
+   	top: 185px; left:565px;
+	  }
+
+.eventContainerTwelve .eventContainerTwelveText {
+	visibility: hidden;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1;
+	width: 600px;
+	top:-100px;
+}
+
+	.eventContainerTwelve:hover .eventContainerTwelveText{
+		visibility:visible;	
+		background-color: red;	
+	}
+
+	.eventContainerThirteen{
+   	height:70px;
+   	width:70px;
+   	color: black;
+    font-family:verdana;
+   	padding-top:50px;
+   	padding-left: 50px;
+   	position: absolute;
+   	top: 185px; left:695px;
+	  }
+
+.eventContainerThirteen .eventContainerThirteenText {
+	visibility: hidden;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1;
+	width: 600px;
+	top:-100px;
+	right: 50px;
+}
+
+	.eventContainerThirteen:hover .eventContainerThirteenText{
+		visibility:visible;	
+		background-color: red;	
+	}
+
+	.eventContainerFourteen{
+   	height:70px;
+   	width:70px;
+   	color: black;
+    font-family:verdana;
+   	padding-top:50px;
+   	padding-left: 50px;
+   	position: absolute;
+   	top: 185px; left:825px;
+	  }
+
+.eventContainerFourteen .eventContainerFourteenText {
+	visibility: hidden;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1;
+	width: 600px;
+	top:-100px;
+	right: 50px;
+}
+
+	.eventContainerFourteen:hover .eventContainerFourteenText{
+		visibility:visible;	
+		background-color: red;	
+	}
+
+		.eventContainerFifteen{
+   	height:70px;
+   	width:70px;
+   	color: black;
+    font-family:verdana;
+   	padding-top:50px;
+   	padding-left: 50px;
+   	position: absolute;
+   	top: 252px; left:50px;
+	  }
+
+.eventContainerFifteen .eventContainerFifteenText {
+	visibility: hidden;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1;
+	width: 600px;
+	top:-100px;
+}
+
+	.eventContainerFifteen:hover .eventContainerFifteenText{
+		visibility:visible;	
+		background-color: red;	
+	}
+
+	.eventContainerSixteen{
+   	height:70px;
+   	width:70px;
+   	color: black;
+    font-family:verdana;
+   	padding-top:50px;
+   	padding-left: 50px;
+   	position: absolute;
+   	top: 252px; left:180px;
+	  }
+
+.eventContainerSixteen .eventContainerSixteenText {
+	visibility: hidden;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1;
+	width: 600px;
+	top:-100px;
+}
+
+	.eventContainerSixteen:hover .eventContainerSixteenText{
+		visibility:visible;	
+		background-color: red;	
+	}
+
+		.eventContainerSeventeen{
+   	height:70px;
+   	width:70px;
+   	color: black;
+    font-family:verdana;
+   	padding-top:50px;
+   	padding-left: 50px;
+   	position: absolute;
+   	top: 252px; left:305px;
+	  }
+
+.eventContainerSeventeen .eventContainerSeventeenText {
+	visibility: hidden;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1;
+	width: 600px;
+	top:-100px;
+}
+	.eventContainerSeventeen:hover .eventContainerSeventeenText{
+		visibility:visible;	
+		background-color: red;	
+	}
+
+		.eventContainerEighteen{
+   	height:70px;
+   	width:70px;
+   	color: black;
+    font-family:verdana;
+   	padding-top:50px;
+   	padding-left: 50px;
+   	position: absolute;
+   	top: 252px; left:435px;
+	  }
+
+.eventContainerEighteen .eventContainerEighteenText {
+	visibility: hidden;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1;
+	width: 600px;
+	top:-100px;
+}
+	.eventContainerEighteen:hover .eventContainerEighteenText{
+		visibility:visible;	
+		background-color: red;	
+	}
+	
+	.eventContainerNineteen{
+   	height:70px;
+   	width:70px;
+   	color: black;
+    font-family:verdana;
+   	padding-top:50px;
+   	padding-left: 50px;
+   	position: absolute;
+   	top: 252px; left:565px;
+	  }
+
+.eventContainerNineteen .eventContainerNineteenText {
+	visibility: hidden;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1;
+	width: 600px;
+	top:-100px;
+}
+.eventContainerNineteen:hover .eventContainerNineteenText{
+		visibility:visible;	
+		background-color: red;	
+	}
+	
+	.eventContainerTwenty{
+   	height:70px;
+   	width:70px;
+   	color: black;
+    font-family:verdana;
+   	padding-top:50px;
+   	padding-left: 50px;
+   	position: absolute;
+   	top: 252px; left:690px;
+	  }
+
+.eventContainerTwenty .eventContainerTwentyText {
+	visibility: hidden;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1;
+	width: 600px;
+	top:-100px;
+	right: 50px;
+}
+.eventContainerTwenty:hover .eventContainerTwentyText{
+		visibility:visible;	
+		background-color: red;	
+	}
+
+	.eventContainerTwentyOne{
+   	height:70px;
+   	width:70px;
+   	color: black;
+    font-family:verdana;
+   	padding-top:50px;
+   	padding-left: 50px;
+   	position: absolute;
+   	top: 252px; left:820px;
+	  }
+
+.eventContainerTwentyOne .eventContainerTwentyOneText {
+	visibility: hidden;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1;
+	width: 600px;
+	top:-100px;
+	right: 50px;
+}
+.eventContainerTwentyOne:hover .eventContainerTwentyOneText{
+		visibility:visible;	
+		background-color: red;	
+	}
+
+	.eventContainerTwentyTwo{
+   	height:70px;
+   	width:70px;
+   	color: black;
+    font-family:verdana;
+   	padding-top:50px;
+   	padding-left: 50px;
+   	position: absolute;
+   	top: 315px; left:50px;
+	  }
+
+.eventContainerTwentyTwo .eventContainerTwentyTwoText {
+	visibility: hidden;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1;
+	width: 600px;
+	top:-100px;
+}
+.eventContainerTwentyTwo:hover .eventContainerTwentyTwoText{
+		visibility:visible;	
+		background-color: red;	
+	}
+
+		.eventContainerTwentyThree{
+   	height:70px;
+   	width:70px;
+   	color: black;
+    font-family:verdana;
+   	padding-top:50px;
+   	padding-left: 50px;
+   	position: absolute;
+   	top: 315px; left:180px;
+	  }
+
+.eventContainerTwentyThree .eventContainerTwentyThreeText {
+	visibility: hidden;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1;
+	width: 600px;
+	top:-100px;
+}
+.eventContainerTwentyThree:hover .eventContainerTwentyThreeText{
+		visibility:visible;	
+		background-color: red;	
+	}
+
+	.eventContainerTwentyFour{
+   	height:70px;
+   	width:70px;
+   	color: black;
+    font-family:verdana;
+   	padding-top:50px;
+   	padding-left: 50px;
+   	position: absolute;
+   	top: 315px; left:305px;
+	  }
+
+.eventContainerTwentyFour .eventContainerTwentyFourText {
+	visibility: hidden;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1;
+	width: 600px;
+	top:-100px;
+}
+.eventContainerTwentyFour:hover .eventContainerTwentyFourText{
+		visibility:visible;	
+		background-color: red;	
+	}
+
+	.eventContainerTwentyFive{
+   	height:70px;
+   	width:70px;
+   	color: black;
+    font-family:verdana;
+   	padding-top:50px;
+   	padding-left: 50px;
+   	position: absolute;
+   	top: 315px; left:435px;
+	  }
+
+.eventContainerTwentyFive .eventContainerTwentyFiveText {
+	visibility: hidden;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1;
+	width: 600px;
+	top:-100px;
+}
+.eventContainerTwentyFive:hover .eventContainerTwentyFiveText{
+		visibility:visible;	
+		background-color: red;	
+	}
+
+	.eventContainerTwentySix{
+   	height:70px;
+   	width:70px;
+   	color: black;
+    font-family:verdana;
+   	padding-top:50px;
+   	padding-left: 50px;
+   	position: absolute;
+   	top: 315px; left:565px;
+	  }
+
+.eventContainerTwentySix .eventContainerTwentySixText {
+	visibility: hidden;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1;
+	width: 600px;
+	top:-100px;
+}
+.eventContainerTwentySix:hover .eventContainerTwentySixText{
+		visibility:visible;	
+		background-color: red;	
+	}
+
+	.eventContainerTwentySeven{
+   	height:70px;
+   	width:70px;
+   	color: black;
+    font-family:verdana;
+   	padding-top:50px;
+   	padding-left: 50px;
+   	position: absolute;
+   	top: 315px; left:695px;
+	  }
+
+.eventContainerTwentySeven .eventContainerTwentySevenText {
+	visibility: hidden;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1;
+	width: 600px;
+	top:-100px;
+	right: 50px;
+}
+.eventContainerTwentySeven:hover .eventContainerTwentySevenText{
+		visibility:visible;	
+		background-color: red;	
+	}
+
+.eventContainerTwentyEight{
+   	height:70px;
+   	width:70px;
+   	color: black;
+    font-family:verdana;
+   	padding-top:50px;
+   	padding-left: 50px;
+   	position: absolute;
+   	top: 315px; left:820px;
+	  }
+
+.eventContainerTwentyEight .eventContainerTwentyEightText {
+	visibility: hidden;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1;
+	width: 600px;
+	top:-100px;
+	right: 50px;
+}
+.eventContainerTwentyEight:hover .eventContainerTwentyEightText{
+		visibility:visible;	
+		background-color: red;	
+	}
+
+.eventContainerTwentyNine{
+   	height:70px;
+   	width:70px;
+   	color: black;
+    font-family:verdana;
+   	padding-top:50px;
+   	padding-left: 50px;
+   	position: absolute;
+   	top: 382px; left:50px;
+	  }
+
+.eventContainerTwentyNine .eventContainerTwentyNineText {
+	visibility: hidden;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1;
+	width: 600px;
+	top:-100px;
+}
+.eventContainerTwentyNine:hover .eventContainerTwentyNineText{
+		visibility:visible;	
+		background-color: red;	
+	}
+
+.eventContainerThirty{
+   	height:70px;
+   	width:70px;
+   	color: black;
+    font-family:verdana;
+   	padding-top:50px;
+   	padding-left: 50px;
+   	position: absolute;
+   	top: 382px; left:180px;
+	  }
+
+.eventContainerThirty .eventContainerThirtyText {
+	visibility: hidden;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1;
+	width: 600px;
+	top:-100px;
+}
+.eventContainerThirty:hover .eventContainerThirtyText{
+		visibility:visible;	
+		background-color: red;	
+	}
+
+	.eventContainerThirtyOne{
+   	height:70px;
+   	width:70px;
+   	color: black;
+    font-family:verdana;
+   	padding-top:50px;
+   	padding-left: 50px;
+   	position: absolute;
+   	top: 382px; left:305px;
+	  }
+
+.eventContainerThirtyOne .eventContainerThirtyOneText {
+	visibility: hidden;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1;
+	width: 600px;
+	top:-100px;
+}
+.eventContainerThirtyOne:hover .eventContainerThirtyOneText{
+		visibility:visible;	
+		background-color: red;	
+	}
+
+.eventContainerThirtyTwo{
+   	height:70px;
+   	width:70px;
+   	color: black;
+    font-family:verdana;
+   	padding-top:50px;
+   	padding-left: 50px;
+   	position: absolute;
+   	top: 382px; left:435px;
+	  }
+
+.eventContainerThirtyTwo .eventContainerThirtyTwoText {
+	visibility: hidden;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1;
+	width: 600px;
+	top:-100px;
+}
+.eventContainerThirtyTwo:hover .eventContainerThirtyTwoText{
+		visibility:visible;	
+		background-color: red;	
+	}
+
+.eventContainerThirtyThree{
+   	height:70px;
+   	width:70px;
+   	color: black;
+    font-family:verdana;
+   	padding-top:50px;
+   	padding-left: 50px;
+   	position: absolute;
+   	top: 382px; left:565px;
+	  }
+
+.eventContainerThirtyThree .eventContainerThirtyThreeText {
+	visibility: hidden;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1;
+	width: 600px;
+	top:-100px;
+}
+.eventContainerThirtyThree:hover .eventContainerThirtyThreeText{
+		visibility:visible;	
+		background-color: red;	
+	}
+
+.eventContainerThirtyFour{
+   	height:70px;
+   	width:70px;
+   	color: black;
+    font-family:verdana;
+   	padding-top:50px;
+   	padding-left: 50px;
+   	position: absolute;
+   	top: 382px; left:695px;
+	  }
+
+.eventContainerThirtyFour .eventContainerThirtyFourText {
+	visibility: hidden;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1;
+	width: 600px;
+	top:-100px;
+	right: 50px;
+}
+.eventContainerThirtyFour:hover .eventContainerThirtyFourText{
+		visibility:visible;	
+		background-color: red;	
+	}
+
+.eventContainerThirtyFive{
+   	height:70px;
+   	width:70px;
+   	color: black;
+    font-family:verdana;
+   	padding-top:50px;
+   	padding-left: 50px;
+   	position: absolute;
+   	top: 382px; left:825px;
+	  }
+
+.eventContainerThirtyFive .eventContainerThirtyFiveText {
+	visibility: hidden;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1;
+	width: 600px;
+	top:-100px;
+	right: 50px;
+}
+.eventContainerThirtyFive:hover .eventContainerThirtyFiveText{
+		visibility:visible;	
+		background-color: red;	
+	}
+
+
+ .dycalendar-container{
+ 	position: absolute;
+ 	padding-top: 0px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 925px;
+    height: 445px;
+    text-align: center;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    font-size: 25px;
+    font-family: Arial;
+    padding-right: 110px;
+ }
+ .dycalendar-container.round-edge{border-radius:5%;-o-border-radius:5%;-moz-border-radius:5%;-webkit-border-radius:5%}
+ .dycalendar-day-container{padding:10px;text-align:center;font-family:Arial}
+ .dycalendar-day-container div{padding:0;margin-bottom:10px}
+ .dycalendar-day-container .dycalendar-span-day{
+ 	font-size:110%
+ 	text-align:center;
+ }
+ .dycalendar-day-container .dycalendar-span-date{
+ 	font-size:250%
+ 	text-align:center;
+ }
+ .dycalendar-day-container .dycalendar-span-month-year{
+ 	font-size:90%
+ 	text-align:center;
+ }
+ .dycalendar-month-container{
+ 	padding:10px;
+ 	text-align:center;
+ 	font-family:Arial;
+ 	padding-right: 110px;
+ }
+ .dycalendar-month-container div{
+ 	padding:0;
+ 	margin-bottom:10px
+ 	text-align:center;
+ 	padding-right: 110px;
+ }
+ .dycalendar-month-container .dycalendar-header{
+ 	position:relative
+ 	text-align:center;
+ 	padding-left: 300px;
+ }
+
+
+
+ .dycalendar-month-container .dycalendar-header .dycalendar-prev-next-btn{
+ 	position:absolute;
+ 	top:100;
+ 	color:white;
+ 	cursor:pointer
+ }
+
+ .dycalendar-month-container .dycalendar-header .dycalendar-prev-next-btn.prev-btn{
+ 	left:475px
+ }
+
+ .dycalendar-month-container .dycalendar-header .dycalendar-prev-next-btn.next-btn{
+ 	right:475px
+ }
+
+
+
+ .dycalendar-month-container .dycalendar-span-month-year{
+ 	margin:5px;
+ 	cursor:pointer
+ 	text-align:center;
+ }
+ .dycalendar-month-container .dycalendar-body table tr td{
+ 	padding-right:50px;
+ 	padding-left:50px;
+ 	padding-top:15px;
+ 	padding-bottom: 15px;
+ 	text-align:center;
+ }
+ .dycalendar-month-container .dycalendar-target-date,.dycalendar-month-container .dycalendar-today-date{
+ 	background-color:#111;
+ 	color:#fff;
+ 	max-width:5px;
+ 	height: 5%;
+ 	border-radius:5px;
+ 	size:1px;
+ 	visibility:visible;
+ }
+ .dycalendar-container.gradient{background:#fff;background:linear-gradient(#fff,#d3d3d3);background:-o-linear-gradient(#fff,#d3d3d3);background:-moz-linear-gradient(#fff,#d3d3d3);background:-webkit-linear-gradient(#fff,#d3d3d3)}
+ .dycalendar-container.skin-black{color:#fff;background-color:#111;border:0}
+ .dycalendar-container.skin-black.gradient{background:#111;background:linear-gradient(#555,#111);background:-o-linear-gradient(#555,#111);background:-moz-linear-gradient(#555,#111);background:-webkit-linear-gradient(#555,#111)}
+ .dycalendar-container.skin-black .dycalendar-target-date,.dycalendar-container.skin-black .dycalendar-today-date{background-color:#fff;color:#111;border-radius:2px}
+ .dycalendar-container.skin-blue{color:#fff;background-color:#3c99d3;border:0}.dycalendar-container.skin-blue.gradient{background:#3c99d3;background:linear-gradient(#5ebbf5,#3c99d3);background:-o-linear-gradient(#5ebbf5,#3c99d3);background:-moz-linear-gradient(#5ebbf5,#3c99d3);background:-webkit-linear-gradient(#5ebbf5,#3c99d3)}
+ .dycalendar-container.skin-blue .dycalendar-target-date,.dycalendar-container.skin-blue .dycalendar-today-date{background-color:#fff;color:#3c99d3;border-radius:2px}
+ .dycalendar-container.skin-green{color:#fff;background-color:#2bb063;border:0}
+ .dycalendar-container.skin-green.gradient{background:#2bb063;background:linear-gradient(#3dd175,#2bb063);background:-o-linear-gradient(#3dd175,#2bb063);background:-moz-linear-gradient(#3dd175,#2bb063);background:-webkit-linear-gradient(#3dd175,#2bb063)}
+ .dycalendar-container.skin-green .dycalendar-target-date,.dycalendar-container.skin-green .dycalendar-today-date{background-color:#fff;color:#2bb063;border-radius:2px}
+ .dycalendar-container.skin-purple{color:#fff;background-color:#975ea4;border:0}
+ .dycalendar-container.skin-purple.gradient{background:#975ea4;background:linear-gradient(#ca82d7,#975ea4);background:-o-linear-gradient(#ca82d7,#975ea4);background:-moz-linear-gradient(#ca82d7,#975ea4);background:-webkit-linear-gradient(#ca82d7,#975ea4)}
+ .dycalendar-container.skin-purple .dycalendar-target-date,.dycalendar-container.skin-purple .dycalendar-today-date{background-color:#fff;color:#975ea4;border-radius:2px}
+ .dycalendar-container.skin-red{color:#fff;background-color:#e94d40;border:0}
+ .dycalendar-container.skin-red.gradient{background:#e94d40;background:linear-gradient(#fb6f62,#e94d40);background:-o-linear-gradient(#fb6f62,#e94d40);background:-moz-linear-gradient(#fb6f62,#e94d40);background:-webkit-linear-gradient(#fb6f62,#e94d40)}
+ .dycalendar-container.skin-red .dycalendar-target-date,.dycalendar-container.skin-red .dycalendar-today-date{background-color:#fff;color:#e94d40;border-radius:2px}
+ .dycalendar-container.skin-gray{color:#fff;background-color:#a2a4a7;border:0}
+ .dycalendar-container.skin-spacegray.gradient{background:#343d46;background:linear-gradient(#454e57,#343d46);background:-o-linear-gradient(#454e57,#343d46);background:-moz-linear-gradient(#454e57,#343d46);background:-webkit-linear-gradient(#454e57,#343d46)}
+ .dycalendar-container.skin-spacegray .dycalendar-target-date,.dycalendar-container.skin-spacegray .dycalendar-today-date{background-color:#fff;color:#343d46;border-radius:2px}
+ .dycalendar-container.shadow-default{-o-box-shadow:0 4px 4px 0 rgba(50,50,50,.4);-moz-box-shadow:0 4px 4px 0 rgba(50,50,50,.4);-webkit-box-shadow:0 4px 4px 0 rgba(50,50,50,.4);box-shadow:0 4px 4px 0 rgba(50,50,50,.4)}
+ .dycalendar-container.shadow-black{-o-box-shadow:0 4px 4px 0 rgba(0,0,0,.4);-moz-box-shadow:0 4px 4px 0 rgba(0,0,0,.4);-webkit-box-shadow:0 4px 4px 0 rgba(0,0,0,.4);box-shadow:0 4px 4px 0 rgba(0,0,0,.4)}
+ .dycalendar-container.shadow-blue{-o-box-shadow:0 4px 4px 0 rgba(60,153,211,.4);-moz-box-shadow:0 4px 4px 0 rgba(60,153,211,.4);-webkit-box-shadow:0 4px 4px 0 rgba(60,153,211,.4);box-shadow:0 4px 4px 0 rgba(60,153,211,.4)}
+ .dycalendar-container.shadow-green{-o-box-shadow:0 4px 4px 0 rgba(43,176,99,.4);-moz-box-shadow:0 4px 4px 0 rgba(43,176,99,.4);-webkit-box-shadow:0 4px 4px 0 rgba(43,176,99,.4);box-shadow:0 4px 4px 0 rgba(43,176,99,.4)}
+ .dycalendar-container.shadow-purple{-o-box-shadow:0 4px 4px 0 rgba(151,94,164,.4);-moz-box-shadow:0 4px 4px 0 rgba(151,94,164,.4);-webkit-box-shadow:0 4px 4px 0 rgba(151,94,164,.4);box-shadow:0 4px 4px 0 rgba(151,94,164,.4)}
+ .dycalendar-container.shadow-red{-o-box-shadow:0 4px 4px 0 rgba(233,77,64,.4);-moz-box-shadow:0 4px 4px 0 rgba(233,77,64,.4);-webkit-box-shadow:0 4px 4px 0 rgba(233,77,64,.4);box-shadow:0 4px 4px 0 rgba(233,77,64,.4)}
+ .dycalendar-container.shadow-spacegray{-o-box-shadow:0 4px 4px 0 rgba(52,61,70,1);-moz-box-shadow:0 4px 4px 0 rgba(52,61,70,1);-webkit-box-shadow:0 4px 4px 0 rgba(52,61,70,1);box-shadow:0 4px 4px 0 rgba(52,61,70,1)}
