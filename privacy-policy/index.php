@@ -18,10 +18,11 @@
     <p class="header">
       <a href="../">FHSched</a>
     </p>
-    <div class="nav-bar">
-      <a href="../">Home</a>
-      <a href="#" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light"> Light | Dark Mode</a>
-    </div>
+    <ul class="nav-bar">
+      <li><a href="../">Home</a></li>
+      <li><a href="../calendar/">Calendar</a></li>
+      <li style = "float: right;"><a role="button" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light" id="darkMode"> Light | Dark Mode</a></li>
+    </ul>
     <div class = "privacy_policy">
       <h1>Privacy Policy</h1>
       <p style="color:gray; margin-top:0px; font-style: italic;">Last updated August 23, 2019</p>
@@ -80,14 +81,20 @@
     </div>
     <footer>
       <div class="foot">
-        <p><a href="../privacy-policy/">Privacy Policy</a></p>
-        <ul class="red-footer">
-          <li class="red-footer">2019 CodingForFishers</li>
-          <li class="red-footer">Version 1.4.4</li>
+        <ul>
+          <li><a href="privacy-policy/">Privacy Policy</a></li>
         </ul>
-        <address style="all: unset">
-          Contact: <a href="mailto:fhsched2019@gmail.com">fhsched2019@gmail.com</a>
-        </address>
+        <ul>
+          <li>2019 CodingForFishers</li>
+          <li>Version 1.4.4</li>
+        </ul>
+        <ul>
+          <li>
+            <address style="all: unset">
+              Contact: <a href="mailto:fhsched2019@gmail.com">fhsched2019@gmail.com</a>
+            </address>
+          </li>
+        </ul>
       </div>
     </footer>
     <script type="text/javascript">

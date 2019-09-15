@@ -11,18 +11,20 @@
     <link rel="stylesheet" href="css/FHSched_V_1.11.css">
 </head>
 <body class="dark">
-   <p class="header">
-         <a href="../"> FHSched Calendar </a>
+  <div>
+    <p class="header">
+      <a href="../">FHSched</a>
     </p>
+  </div>
 
-        <ul class="nav-bar">
+      <ul class="nav-bar">
         <li><a href="../">Home</a></li>
-        <li><a href="../Calendar/">Calendar</a></li>
+        <li><a href="../calendar/">Calendar</a></li>
         <li style = "float: right;"><a role="button" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light" id="darkMode"> Light | Dark Mode</a></li>
       </ul>
 
-        <div class="parent">  
-        
+        <div class="parent">
+
         <div class="move">
           <div class="dropdown" style="float:right;">
             <button onclick="dropDown()" class="dropbtn">Change Month</button>
@@ -137,7 +139,7 @@
 </div>
 
 <div class="eventContainerNine">
-  <span class="eventContainerNineText"> 
+  <span class="eventContainerNineText">
     <p> Champions Together (Unified Kickball) at FHS Soccer Stadium 5:30PM-9:00PM </p>
     <p> Tennis Boys Varsity Match at FHS Tennis Courts 5:30 PM </p>
     <p> Youth Boys Basketball Travel Try Outs in FHS Gym at 6:00 PM-9:00PM </p>
@@ -145,7 +147,7 @@
 </div>
 
 <div class="eventContainerTen">
- <span class="eventContainerTenText"> 
+ <span class="eventContainerTenText">
     <p> Wrestling Callout Meeting in Cafe A at 7:15 AM-7:30AM </p>
     <p> College Visit: Indiana Tech in CCA at 8:30 AM </p>
     <p> College Visit: IVY Tech in CCA at 9:30 AM </p>
@@ -179,7 +181,7 @@
 </div>
 
 <div class="eventContainerTwelve">
- <span class="eventContainerTwelveText"> 
+ <span class="eventContainerTwelveText">
   <p> College Visit: Earlham College in CCA at 8:30 AM </p>
   <p> College Visit: Ball State University in CCA at 12:00 PM </p>
   <p> College Visit: Miami University, Oxford in CCA at 1:00 PM </p>
@@ -200,7 +202,7 @@
 </div>
 
 <div class="eventContainerThirteen">
- <span class="eventContainerThirteenText"> 
+ <span class="eventContainerThirteenText">
   <p> College Visit: Elon University in CCA at 8:30 AM </p>
   <p> College Visit: Brescia University in CCA at 12:00 PM </p>
   <p> College Visit: Mount St. Joseph University in CCA at 1:00 PM </p>
@@ -299,7 +301,7 @@
 <div class="eventContainerTwentyOne">
  <span class="eventContainerTwentyOneText">
    <p> Marching Band Invitational at Avon High School (Performance time TBD) </p>
-   <p> Cross Country: Varsity Riverview Health Invitational at Northview Christian Life Church at 9:00am </p> 
+   <p> Cross Country: Varsity Riverview Health Invitational at Northview Christian Life Church at 9:00am </p>
    <p> Tennis: Boys Varsity HCC Championships at  Zionsville Baseball, Softball and Tennis Complex at 9:00am </p>
    <p> Volleyball: Girls JV Invitational at Daleville HS at 9:00am </p>
    <p> Football: Freshman Game at Brownsburg High School at 10:00am </p>
@@ -396,30 +398,28 @@
 <div class="relativeYear" style="margin-top: 0px; width: 13%;" id="yearCountDown"></div>
 
 
-<p class="bottom-space"></p>
-    <footer>
-      <div class="foot">
-        <ul>
-          <li> <a href="../privacy-policy/">Privacy Policy</a> </li>
-        </ul>
-
-        <ul>
-          <li>2019 CodingForFishers</li>
-          <li>Version 1.4.4</li>
-        </ul>
-        <ul>
-          <li> 
-            <address style="all: unset">
-          Contact: <a href="mailto:fhsched2019@gmail.com">fhsched2019@gmail.com</a>
-        </address> 
-      </li>
-        </ul>
-        
-      </div>
-    </footer>
 
 </div>
 
+<p class="bottom-space"></p>
+<footer>
+  <div class="foot">
+    <ul>
+      <li><a href="../privacy-policy/">Privacy Policy</a></li>
+    </ul>
+    <ul>
+      <li>2019 CodingForFishers</li>
+      <li>Version 1.4.4</li>
+    </ul>
+    <ul>
+      <li>
+        <address style="all: unset">
+          Contact: <a href="mailto:fhsched2019@gmail.com">fhsched2019@gmail.com</a>
+        </address>
+      </li>
+    </ul>
+  </div>
+</footer>
 
 
 <!-- javascript -->
@@ -450,7 +450,7 @@ var time = setInterval(function(){
   if (days <= 0) {
  document.getElementById("yearCountDown").innerHTML = "Only " + hours + " hours until school's over!";
 
-  
+
   if (hours <= 0) {
  document.getElementById("yearCountDown").innerHTML = "Only " + minutes + " minutes until school's over!";
 
@@ -514,7 +514,7 @@ if((breakDates[6] - now2) >=0){
   breakName= "Summer";
 }
 //time between dates
-var t = countDownDate2 - now2; 
+var t = countDownDate2 - now2;
 
 
 //converting betweeen days, hours, minuetes, and seconds
