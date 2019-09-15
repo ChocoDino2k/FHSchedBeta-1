@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FHSched Calendar</title>
+
+    <!-- twitter bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- dycalendarjs stylesheet -->
+    <link href="css/dycalendar.min.css" rel="stylesheet"/>
+</head>
+<body>
+   <div class="header">
+         <h1> FHSched Calendar </h1>
+        </div>
+
+  <div class="parent">  
+        
+        <div class="move">
+          <div class="dropdown" style="float:right;">
+            <button onclick="dropDown()" class="dropbtn">Change Month</button>
+            <div id="myDropdown" class="dropdown-content">
+              <a href="index.html">September</a>
+              <a href="secondCalendar.html">October</a>
+              <a href="thirdCalendar.html">November</a>
+              <a href="FourthCalendar.html">December</a>
+           </div>
+         </div>
+        </div>
+
+
+        <!-- DEMO -->
+        <div class="some-class">
+          <!--  <div id="dycalendar-month-prev-next-button"
+                class="dycalendar-container shadow-default gradient"></div> -->
+                <div id="dycalendar-month" class="dycalendar-container skin-gray"></div>
+        </div>
+
+        <div class="picture">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="953" height="475">
+        </div>
+
+        <div class="pictureOne">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="953" height="475">
+        </div>
+
+         <div class="pictureTwo">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="953" height="475">
+        </div>
+
+          <div class="pictureThree">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="953" height="475">
+        </div>
+
+         <div class="pictureFour">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="953" height="475">
+        </div>
+
+         <div class="pictureFive">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="953" height="475">
+        </div>
+
+        <div class="pictureSix">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="953" height="475">
+        </div>
+
+        <div class="pictureSeven">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="395">
+        </div>
+
+        <div class="pictureEight">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="395">
+        </div>
+
+        <div class="pictureNine">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="395">
+        </div>
+
+         <div class="pictureTen">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="395">
+        </div>
+
+         <div class="pictureEleven">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="395">
+        </div>
+
+        <div class="pictureTwelve">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="395">
+        </div>
+
+        <div class="pictureThirteen">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="395">
+        </div>
+
+        <div class="pictureFourteen">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="395">
+        </div>
+
+
+
+<div class="eventContainerOne">
+ <span class="eventContainerOneText"> Event   </span>
+</div>
+
+<div class="eventContainerTwo">
+ <span class="eventContainerTwoText"> Event  </span>
+</div>
+
+<div class="eventContainerThree">
+ <span class="eventContainerThreeText"> Event </span>
+</div>
+
+<div class="eventContainerFour">
+ <span class="eventContainerFourText"> Event </span>
+</div>
+
+<div class="eventContainerFive">
+ <span class="eventContainerFiveText"> Event </span>
+</div>
+
+<div class="eventContainerSix">
+ <span class="eventContainerSixText"> Event </span>
+</div>
+
+<div class="eventContainerSeven">
+ <span class="eventContainerSevenText"> Event </span>
+</div>
+
+<div class="eventContainerEight">
+ <span class="eventContainerEightText">
+  Event
+ </span>
+</div>
+
+<div class="eventContainerNine">
+ <span class="eventContainerNineText"> Event </span>
+</div>
+
+<div class="eventContainerTen">
+ <span class="eventContainerTenText"> 
+  <p> College Visit: Michigan Technological University in CCA at 12:00 PM </p> 
+ </span>
+</div>
+
+<div class="eventContainerEleven">
+ <span class="eventContainerElevenText"> Event </span>
+</div>
+
+<div class="eventContainerTwelve">
+ <span class="eventContainerTwelveText"> Event </span>
+</div>
+
+<div class="eventContainerThirteen">
+ <span class="eventContainerThirteenText">
+  <p> College Visit: Drake University in CCA at 12:00 PM </p>
+ </span>
+</div>
+
+<div class="eventContainerFourteen">
+ <span class="eventContainerFourteenText"> Event </span>
+</div>
+
+<div class="eventContainerFifteen">
+ <span class="eventContainerFifteenText"> Event </span>
+</div>
+
+<div class="eventContainerSixteen">
+ <span class="eventContainerSixteenText"> Event </span>
+</div>
+
+<div class="eventContainerSeventeen">
+ <span class="eventContainerSeventeenText"> Event </span>
+</div>
+
+<div class="eventContainerEighteen">
+ <span class="eventContainerEighteenText"> Event </span>
+</div>
+
+<div class="eventContainerNineteen">
+ <span class="eventContainerNineteenText"> Event </span>
+</div>
+
+<div class="eventContainerTwenty">
+ <span class="eventContainerTwentyText"> Event </span>
+</div>
+
+<div class="eventContainerTwentyOne">
+ <span class="eventContainerTwentyOneText"> Event </span>
+</div>
+
+<div class="eventContainerTwentyTwo">
+ <span class="eventContainerTwentyTwoText"> Event </span>
+</div>
+
+<div class="eventContainerTwentyThree">
+ <span class="eventContainerTwentyThreeText"> Event </span>
+</div>
+
+<div class="eventContainerTwentyFour">
+ <span class="eventContainerTwentyFourText"> Event </span>
+</div>
+
+<div class="eventContainerTwentyFive">
+ <span class="eventContainerTwentyFiveText"> Event </span>
+</div>
+
+<div class="eventContainerTwentySix">
+ <span class="eventContainerTwentySixText"> Event </span>
+</div>
+
+<div class="eventContainerTwentySeven">
+ <span class="eventContainerTwentySevenText"> Event </span>
+</div>
+
+<div class="eventContainerTwentyEight">
+ <span class="eventContainerTwentyEightText"> Event </span>
+</div>
+
+<div class="eventContainerTwentyNine">
+ <span class="eventContainerTwentyNineText"> Event </span>
+</div>
+
+<div class="eventContainerThirty">
+ <span class="eventContainerThirtyText"> Event </span>
+</div>
+
+<div class="eventContainerThirtyOne">
+ <span class="eventContainerThirtyOneText"> Event </span>
+</div>
+
+<div class="eventContainerThirtyTwo">
+ <span class="eventContainerThirtyTwoText"> Event </span>
+</div>
+
+<div class="eventContainerThirtyThree">
+ <span class="eventContainerThirtyThreeText"> Event </span>
+</div>
+
+<div class="eventContainerThirtyFour">
+ <span class="eventContainerThirtyFourText"> Event </span>
+</div>
+
+<div class="eventContainerThirtyFive">
+ <span class="eventContainerThirtyFiveText"> Event </span>
+</div>
+
+
+<div class="boxForCountDown"></div>
+
+<div class="relativeBreak"  id="breakCountDown"></div>
+
+<div class="relativeYear" style="margin-top: 0px; width: 13%;" id="yearCountDown"></div>
+
+<footer>
+  <div class="foot">
+    <p><a href="privacy-policy/">Privacy Policy</a></p>
+    <ul class="red-footer">
+      <li class="red-footer">2019 CodingForFishers</li>
+      <li class="red-footer">Version 1.4.2</li>
+    </ul>
+    <address style="all: unset">
+      Contact: <a href="mailto:fhsched2019@gmail.com">fhsched2019@gmail.com</a>
+    </address>
+  </div>
+</footer>
+
+</div>
+
+       
+
+
+
+
+<!-- javascript -->
+<script >
+// setting the year at the start of school
+  var year= 2019;
+// Set the date we're counting down to
+var countDownDate = new Date("May 25, 2020 14:55:00").getTime();
+
+// have it refesh every second
+
+var time = setInterval(function(){
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days so we get rid of year, hour, minutes, seconds,
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  // Output the result in an element with id="yearCountDown"
+  document.getElementById("yearCountDown").innerHTML = "Only " + days + " days until school's over!";
+
+  //change to hours if less than a day is left
+  if (days <= 0) {
+ document.getElementById("yearCountDown").innerHTML = "Only " + hours + " hours until school's over!";
+
+  
+  if (hours <= 0) {
+ document.getElementById("yearCountDown").innerHTML = "Only " + minutes + " minutes until school's over!";
+
+  }
+  if (minutes <= 0) {
+ document.getElementById("yearCountDown").innerHTML = "Only " + seconds + " seconds until school's over!";
+
+  }
+}
+  // when the whole year count down is over
+  if (distance <= 0) {
+    clearInterval(time);
+    document.getElementById("yearCountDown").innerHTML = "Have a Great Summer!";
+  }
+}, 1000);
+
+
+
+
+
+//actual dates for breaks
+var breakName;
+
+
+var breakDates = ["Oct 11, 2019 14:55:00","Nov 26, 2019 14:55:00", "Dec 20, 2019 14:55:00", "Jan 10, 2020 14:55:00", "Feb 14, 2020 14:55:00", "Apr 2, 2020 14:55:00","Aug 30, 2019 14:55:00", "May 25, 2020 14:55:00"];
+// have it refesh every second
+var x = setInterval(function() {
+  //getting current time
+var now2 = new Date().getTime();
+
+//creating date objects of each break
+for (var i = 0; i<8; i++){
+  breakDates[i] = new Date(breakDates[i]).getTime();
+}
+
+  // Set the date of the next break
+var countDownDate2;
+if((breakDates[6] - now2) >=0){
+  countDownDate2 = breakDates[6];
+  breakName= "Labor Day (extended weekend)";
+}else if ((breakDates[0] - now2) >= 0){
+  countDownDate2 = breakDates[0];
+  breakName = "Fall Break";
+} else if ((breakDates[1] - now2) >= 0){
+  countDownDate2 = breakDates[1];
+  breakName = "Thanksgiving Break";
+} else if ((breakDates[2]-now2) >=0){
+  countDownDate2 = breakDates[2];
+  breakName= "Winter Break";
+} else if ((breakDates[3]-now2) >=0){
+  countDownDate2 = breakDates[3];
+  breakName= "MLK Jr. Day(extended weekend)";
+} else if ((breakDates[4]-now2) >=0){
+  countDownDate2 = breakDates[4];
+  breakName= "President's day(extended weekend)";
+} else if ((breakDates[5]-now2) >=0){
+  countDownDate2 = breakDates[5];
+  breakName= "Spring Break";
+} else if ((breakDates[7]-now2) >=0){
+  countDownDate2 = breakDates[7];
+  breakName= "Summer";
+}
+//time between dates
+var t = countDownDate2 - now2; 
+
+
+//converting betweeen days, hours, minuetes, and seconds
+var days2 = Math.floor(t / (1000 * 60 * 60 * 24));
+var hours2 = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
+var minutes2 = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+var seconds2 = Math.floor((t % (1000 * 60)) / 1000);
+  // Output the result in an element with id="breakCountDown"
+document.getElementById("breakCountDown").innerHTML = days2+ " days and " + hours2 + " hour(s)" + " until " + breakName;
+//singlular day
+ if (days2 < 2 ){
+  document.getElementById("breakCountDown").innerHTML =  days2 + " day and " + hours2 + " hour(s)" + " until " + breakName;
+ }
+ //change to hours if less than a day is left
+if (days2 <= 0) {
+ document.getElementById("breakCountDown").innerHTML =  hours2 + " hours until " + breakName;
+   //singular hour
+  if (hours2 <= 1){
+    document.getElementById("breakCountDown").innerHTML = hours2 + " hour until " + breakName
+   //change to minutes if less than an hour
+if (hours2 <= 0) {
+ document.getElementById("breakCountDown").innerHTML = minutes2 + " minutes and " +
+  seconds2 + " seconds until " + breakName;
+    //change to seconds if less than a minute
+if (minutes2 <= 0) {
+ document.getElementById("breakCountDown").innerHTML = seconds2 + " seconds until " + breakName;
+
+}
+}
+  }
+  }
+
+
+
+//during the break
+//sets have a nice break for the entirety of the break until the last day at 11:55pm
+if (((breakDates[6] - now2) <= 0) && ((breakDates[6]-now2) >= (-86400000* 3 - 32400000))) {
+document.getElementById("breakCountDown").innerHTML = "have a great Extended Weekend!";
+
+}
+if (((breakDates[0] - now2) <= 0) && ((breakDates[0]-now2) >= (-86400000* 9 - 32400000))) {
+document.getElementById("breakCountDown").innerHTML = "have a great Fall Break!";
+
+}
+if (((breakDates[1] - now2) <= 0) && ((breakDates[1]-now2) >= (-86400000* 3 - 32400000))) {
+document.getElementById("breakCountDown").innerHTML = "have a great Thanksgiving";
+
+}
+if (((breakDates[2] - now2) <= 0) && ((breakDates[2]-now2) >= (-86400000* 17 - 32400000) )) {
+document.getElementById("breakCountDown").innerHTML = "have a great Winter Break";
+
+}
+if (((breakDates[3] - now2) <= 0) && ((breakDates[3]-now2) >= (-86400000* 3 - 32400000) )) {
+document.getElementById("breakCountDown").innerHTML = "have a great Extended Weekend";
+
+}
+if (((breakDates[4] - now2) <= 0) && ((breakDates[4]-now2) >= (-86400000* 3 - 32400000) )) {
+document.getElementById("breakCountDown").innerHTML = "have a great Extended Weekend";
+
+}
+if (((breakDates[5] - now2) <= 0) && ((breakDates[5]-now2) >= (-86400000* 10- 32400000) )) {
+document.getElementById("breakCountDown").innerHTML = "have a great SPRING BREAK!!!";
+
+}
+if (((breakDates[7] - now2) <= 0) && ((breakDates[7]-now2) >= (-86400000 * 73 - 32400000) )) {
+document.getElementById("breakCountDown").innerHTML = "have a great Summer (HAGS LOL ;P)";
+
+}
+
+
+
+}, 1000);
+</script>
+
+<script src="js/dycalendar.min.js"></script>
+<script src="js/default.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+dycalendar.draw({
+target: "#dycalendar-month",
+type : 'month',
+month: 10,
+year: 2019,
+monthFormat:"full",
+})
+
+function dropDown() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+
+
+
+</script>
+</body>
+</html>
