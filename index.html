@@ -39,7 +39,7 @@
     <ul class="nav-bar">
       <li><a href="/">Home</a></li>
       <li><a href="calendar/">Calendar</a></li>
-      <li style = "float: right;"><a role="button" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light" id="darkMode"> Light | Dark Mode</a></li>
+      <li style = "float: right;"><a role="button" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light" id="darkMode"><img src = "images/sunmoon.png" width = "30" height = "30"></a></li>
     </ul>
     <div id = "periodDiv" class="time-schedule">
       <p id = "period" class = "period-display">No Period</p>
