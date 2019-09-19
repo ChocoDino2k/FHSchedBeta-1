@@ -111,6 +111,45 @@ body.dark .nav-bar
   left:10px;
 }
 
+.ng-logo-a
+{
+  z-index: 50;
+  position: fixed;
+  top: 8px;
+  right: 10px;
+}
+.ng-logo
+{
+  height: 81px;
+}
+
+
+.ham-a
+{
+  z-index: 50;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: red;
+  height: 95px;
+  width: 95px;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+}
+body.dark .ham-a
+{
+  background-color: firebrick;
+}
+.ham-a:hover
+{
+  background-color: darkred;
+}
+.ham
+{
+  margin: auto;
+  height: 95px;
+}
+
 .header
 {
   background-color:red;
@@ -256,7 +295,7 @@ body.dark .dot:hover {
   margin-top: 10px;
   padding-top: 10px;
   padding-bottom: 0px;
-  width: 800px;
+  width:950px;
   background-color: lightgray;
   height: 210px;
   border-radius: 20px;
@@ -478,13 +517,13 @@ footer ul li
 }
 .bottom-space
 {
-  padding-bottom:130px;
+  padding-bottom:100px;
 }
 @media screen and (orientation:landscape)
 {
   .bottom-space
   {
-    padding-bottom:80px;
+    padding-bottom:30px;
   }
 }
 
