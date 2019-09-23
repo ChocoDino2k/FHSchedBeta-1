@@ -8,7 +8,7 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-icon-114x114.png">
     <link rel="apple-touch-icon" sizes="144x144" href="../images/apple-icon-144x144.png">
-    <link rel="stylesheet" href="../css/FHSched_V_1.11.css">
+    <link rel="stylesheet" href="../css/FHSched_V_1.13.css">
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
   </head>
   <body style = "margin: 0;" class = "dark">
@@ -20,7 +20,9 @@
     </p>
     <ul class="nav-bar">
       <li><a href="../">Home</a></li>
+      <!--
       <li><a href="../calendar/">Calendar</a></li>
+    -->
       <li style = "float: right;"><a role="button" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light" id="darkMode"> Light | Dark Mode</a></li>
     </ul>
     <div class = "privacy_policy">
@@ -82,7 +84,7 @@
     <footer>
       <div class="foot">
         <ul>
-          <li><a href="privacy-policy/">Privacy Policy</a></li>
+          <li><a href="../privacy-policy/">Privacy Policy</a></li>
         </ul>
         <ul>
           <li>2019 CodingForFishers</li>

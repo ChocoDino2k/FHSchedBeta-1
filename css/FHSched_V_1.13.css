@@ -132,7 +132,7 @@ body.dark .nav-bar
   left: 0px;
   background-color: red;
   height: 95px;
-  width: 95px;
+  width: 105px;
   border-bottom-right-radius: 15px;
   border-top-right-radius: 15px;
 }
@@ -146,8 +146,11 @@ body.dark .ham-a
 }
 .ham
 {
+  position: absolute;
   margin: auto;
   height: 95px;
+  width: 85px;
+  left: 10px;
 }
 
 .header
@@ -291,13 +294,13 @@ body.dark .dot:hover {
   letter-spacing: 5px;
   font-family:"anton";
   text-align:center;
-  font-size: 45px;
+  font-size: 40px;
   margin-top: 10px;
   padding-top: 10px;
   padding-bottom: 0px;
-  width:950px;
+  width:900px;
   background-color: lightgray;
-  height: 210px;
+  height: 245px;
   border-radius: 20px;
   margin: auto;
   margin-bottom: 50px;
@@ -326,6 +329,16 @@ body.dark .splash {
 body.dark .splash2 {
   color: white;
   background-color:rgb(30,34,39);
+}
+
+.splash-box
+{
+  background-color: gray;
+  border-radius: 50px;
+}
+body.dark .splash-box
+{
+  background-color: RGB(70, 70, 70);
 }
 
 .btn

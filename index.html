@@ -14,7 +14,7 @@
 
 
     <meta charset="utf-8">
-    <title>FHSched [Beta]</title>
+    <title>FHSched</title>
     <link rel="shortcut icon" type="image/ico" href="images/icon.ico">
     <link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
@@ -23,7 +23,7 @@
 
     <script type="text/javascript" src="js/FHSched_Schedule_Data_V_1.7.js"> </script>
     <script type="text/javascript" src="js/FHSched_Calendar_Data_V_1.3.js"></script>
-    <link rel="stylesheet" href="css/FHSched_V_1.11.css">
+    <link rel="stylesheet" href="css/FHSched_V_1.13.css">
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
@@ -31,16 +31,21 @@
     <!--
     <img class="logo" src="images/weblogo.png" width="80" height="74">
   -->
+    <a class = "ham-a"><img src="images/Hamburger_icon.png" class="ham"></a>
+    <a href = "https://www.in.ng.mil/" class="ng-logo-a"><img src="images/National_Guard_Logo.png" class = "ng-logo"></a>
     <div>
       <p class="header">
         <a href="/">FHSched</a>
       </p>
     </div>
+
+    <!--
     <ul class="nav-bar">
       <li><a href="/">Home</a></li>
-      <li><a href="Calendar/">Calendar</a></li>
-      <li style = "float: right;"><a role="button" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light" id="darkMode"><img src = "images/sunmoon.png" width = "30" height = "30"></a></li>
+      <li style = "float: right;"><a role="button" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light" id="darkMode"> Light | Dark Mode</a></li>
     </ul>
+    -->
+
     <div id = "periodDiv" class="time-schedule">
       <p id = "period" class = "period-display">No Period</p>
       <p id = "timer" class = "timer">Not School Hours</p>
@@ -66,7 +71,7 @@
       </button>
     </div>
 
-    <p class = "splash">Pick your lunch!<br>Mark your calendars for<br>September 16</p>
+    <p class = "splash">Relive the Mudsock: <a href="https://youtu.be/DF6qBzZxx6E">Youtube</a><br>Spirit week! Bring your pajamas?<br>Tomorrow, represent in color wars!<br><span class = "splash-box"> &nbsp; <span style="color:white">Freshman</span> | <span style="color:silver">Sophomore</span> | <span style="color:black">Junior</span> | <span style="color:red">Senior</span> &nbsp; </span></p>
 
     <div id = "wrongLunchDiv" class="wrongLunchDiv">
       <button onclick = "resetLunch()" class = "wrongLunchBtn">
@@ -78,7 +83,7 @@
     <footer>
       <div class="foot">
         <ul>
-          <li><a href="privacy-policy/">Privacy Policy</a></li>
+          <li><a href="../privacy-policy/">Privacy Policy</a></li>
         </ul>
         <ul>
           <li>2019 CodingForFishers</li>
