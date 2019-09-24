@@ -5,15 +5,27 @@ body{
 
 }
 .container{
-  font-size: 30px;
+  color: #FFF;
+  font-family:cursive ;
+  font-size: 1.2em;
   position: relative;
-left: 500px;
- width: 400px;
- height: 100px;
- background: #FFF;
+left: 949px;
+top:20px;
+ width: 100px;
+ height: 75px;
+ background: #aaa;
+ text-align: center;
 }
 .container h1{
   position:absolute;
   text-align: center;
   word-wrap: break-word;
+}
+.containerRim{
+  position: absolute;
+  background: #FFF;
+  width:106px;
+  height:154px;
+  left:946px;
+  top:18px;
 }
