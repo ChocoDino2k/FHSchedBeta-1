@@ -3,33 +3,16 @@ body
   background-image: url("../images/background.png");
   background-color: white;
   margin: 0;
+  transition: background-color 0.3s;
+  transition: background-image 0.3s;
 }
 body.dark
 {
   background-image: url("../images/inverted_background.png");
   background-color: black;
   color: white;
-}
-
-footer
-{
-  position:fixed;
-  bottom:0px;
-  padding: 0px, 0px;
-  width: 100%;
-  background-color: lightgray;
-}
-@media screen and (orientation:landscape)
-{
-  footer
-  {
-    position:static;
-    margin: 0px;
-  }
-}
-body.dark footer
-{
-  background-color: rgb(30,34,39);
+  transition: background-color 0.3s;
+  transition: background-image 0.3s;
 }
 
 a:link {
@@ -70,88 +53,6 @@ a:active {
 body.dark a:active {
   color: darkgray;
 }
-.nav-bar
-{
-  list-style-type: none;
-  overflow: hidden;
-  background-color: red;
-  position: sticky;
-  top: 0px;
-  z-index: 100;
-  font-family: verdana, sans-serif;
-  font-size: 30px;
-  margin: 0px;
-  padding: 0px;
-}
-body.dark .nav-bar
-{
-  background-color: firebrick;
-}
-.nav-bar li a{
-  float: left;
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 20px;
-  text-decoration: none;
-}
-.nav-bar #darkMode{
-  float: right;
-}
-.nav-bar li a:hover{
-  background: rgb(120,0,0);
-  color: darkgray;
-}
-
-.logo
-{
-  z-index: 50;
-  position: fixed;
-  top:10px;
-  left:10px;
-}
-
-.ng-logo-a
-{
-  z-index: 50;
-  position: fixed;
-  top: 8px;
-  right: 10px;
-}
-.ng-logo
-{
-  height: 81px;
-}
-
-
-.ham-a
-{
-  z-index: 50;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  background-color: red;
-  height: 95px;
-  width: 105px;
-  border-bottom-right-radius: 15px;
-  border-top-right-radius: 15px;
-}
-body.dark .ham-a
-{
-  background-color: firebrick;
-}
-.ham-a:hover
-{
-  background-color: darkred;
-}
-.ham
-{
-  position: absolute;
-  margin: auto;
-  height: 95px;
-  width: 85px;
-  left: 10px;
-}
 
 .header
 {
@@ -166,11 +67,13 @@ body.dark .ham-a
   padding-top: 15px;
   padding-bottom: 0px;
   margin: auto;
-  border-bottom: 5px solid white;
+  border-bottom: white 5px solid;
+  transition: background-color 0.3s;
 }
 body.dark .header
 {
   background-color:firebrick;
+  transition: background-color 0.3s;
 }
 
 .header a
@@ -182,6 +85,186 @@ body.dark .header
 body.dark .header a
 {
   color: white;
+}
+
+.slider
+{
+  background-color: rgb(100,0,0,0.9);
+  position: fixed;
+  top: 0px;
+  left: -440px;
+  bottom: 0px;
+  right: 0px;
+  width: 400px;
+  z-index: 100;
+  font-family: verdana, sans-serif;
+  font-size: 30px;
+  margin: 0px;
+  padding: 15px;
+  transition: all 0.3s;
+}
+body.dark .slider
+{
+  background-color: rgb(100,0,0,0.9);
+  transition: all 0.3s;
+}
+.slider.active
+{
+  left: 0px;
+  transition: all 0.4s ease-in-out;
+}
+.slider ul
+{
+  padding: 0px;
+  margin: 0px;
+  list-style-type: none;
+  overflow: hidden;
+}
+.slider li a
+{
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 0px;
+  width: 400px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.slider li a:hover
+{
+  background: rgb(70,0,0,0.7);
+  color: darkgray;
+}
+.slider .close-sidebar
+{
+  position: absolute;
+  top: 17px;
+  left: 353px;
+  cursor: pointer;
+  border-radius: 30px;
+}
+.slider .close-sidebar:hover
+{
+  background: rgb(70,0,0,0.7);
+  height:60px;
+  width:60px;
+}
+
+.close-icon
+{
+  height: 60px;
+}
+
+.logo
+{
+  z-index: 50;
+  position: fixed;
+  top:10px;
+  left:10px;
+}
+
+.ng-logo-a
+{
+  z-index: 50;
+  position: fixed;
+  top: 4px;
+  right: 4px;
+}
+.ng-logo
+{
+  height: 87px;
+}
+
+.national-guard-banner
+{
+  font-size: 22px;
+  font-family: sans-serif;
+  background-color:rgba(255,0,0,0.8);
+  position: fixed;
+  bottom: -120px;
+  left: 0px;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s;
+}
+.national-guard-banner.active
+{
+  bottom: 0px;
+  transition: all 0.6s ease-in-out;
+}
+.national-guard-banner a
+{
+  color: white;
+  text-decoration: underline;
+}
+.national-guard-banner a:hover
+{
+  color: darkgray;
+}
+.national-guard-banner .container
+{
+  margin: 0 auto;
+  width: 80%;
+  color: white;
+  padding: 15px;
+}
+.national-guard-banner .container p
+{
+  margin: 5px 0px;
+}
+.national-guard-banner .container .close-sidebar
+{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  border-radius: 30px;
+}
+.national-guard-banner .container .close-sidebar:hover
+{
+  background: rgb(80,0,0,0.7);
+  height:60px;
+  width:60px;
+}
+
+.ham-a
+{
+  z-index: 50;
+  position: fixed;
+  top: 5px;
+  left: 5px;
+  background-color: red;
+  height: 85px;
+  width: 85px;
+  border-radius: 45px;
+  transition: background-color 0.3s;
+}
+body.dark .ham-a
+{
+  background-color: firebrick;
+  transition: background-color 0.3s;
+}
+.ham-a.active
+{
+  display: none;
+}
+.ham-a:hover
+{
+  background-color: darkred;
+}
+body.dark .ham-a:hover
+{
+  background-color: RGB(120,0,0);
+}
+.ham
+{
+  position: absolute;
+  margin: auto;
+  height: 75px;
+  width: 75px;
+  top: 5px;
+  left: 5px;
 }
 
 .privacy_policy
@@ -211,11 +294,13 @@ body.dark .header a
   margin: auto;
   border-radius: 20px;
   background-color:lightgray;
+  transition: background-color 0.3s;
 }
 body.dark .time-schedule
 {
   color: white;
   background-color:rgb(30,34,39);
+  transition: background-color 0.3s;
 }
 
 .period-display
@@ -235,10 +320,12 @@ body.dark .time-schedule
   margin-top: 40px;
   margin-bottom: 0px;
   padding: 10px;
+  transition: background-color 0.3s;
 }
 body.dark .period-countdown
 {
   color: white;
+  transition: background-color 0.3s;
 }
 
 .remaining-time
@@ -275,10 +362,12 @@ body.dark .period-countdown
 .dot-cur
 {
   background-color: red;
+  transition: background-color 0.3s;
 }
 body.dark .dot-cur
 {
   background-color:firebrick;
+  transition: background-color 0.3s;
 }
 .dot:hover
 {
@@ -304,10 +393,12 @@ body.dark .dot:hover {
   border-radius: 20px;
   margin: auto;
   margin-bottom: 50px;
+  transition: background-color 0.3s;
 }
 body.dark .splash {
   color: white;
   background-color:rgb(30,34,39);
+  transition: background-color 0.3s;
 }
 
 .splash2
@@ -316,29 +407,22 @@ body.dark .splash {
   letter-spacing: 5px;
   font-family:"anton";
   text-align:center;
-  font-size: 100px;
-  margin-top: 0px;
+  font-size: 40px;
+  margin-top: 10px;
   padding-top: 10px;
   padding-bottom: 0px;
-  width: 650px;
-  background-color: yellow;
-  height: 600px;
+  width:900px;
+  background-color: lightgray;
+  height: 245px;
   border-radius: 20px;
   margin: auto;
+  margin-bottom: 50px;
+  transition: background-color 0.3s;
 }
 body.dark .splash2 {
   color: white;
   background-color:rgb(30,34,39);
-}
-
-.splash-box
-{
-  background-color: gray;
-  border-radius: 50px;
-}
-body.dark .splash-box
-{
-  background-color: RGB(70, 70, 70);
+  transition: background-color 0.3s;
 }
 
 .btn
@@ -354,10 +438,12 @@ body.dark .splash-box
   border-radius: 20px;
   position: absolute;
   top: 0px;
+  transition: all 0.3s;
 }
 body.dark .btn {
   color: white;
   background-color:rgb(30,34,39);
+  transition: all 0.3s;
 }
 
 .btn-left
@@ -370,11 +456,13 @@ body.dark .btn {
 }
 .btn:hover
 {
-  background:gray
+  background:gray;
+  transition: all 0s;
 }
 body.dark .btn:hover {
   color: white;
   background-color:rgb(40,44,49);
+  transition: all 0s;
 }
 
 .lunchBtnDiv
@@ -404,21 +492,25 @@ body.dark .btn:hover {
   position: relative;
   top: 0px;
   margin: 0px 30px;
+  transition: all 0.3s;
 }
 body.dark .lunchBtn
 {
   color:gainsboro;
   background-color:firebrick;
+  transition: all 0.3s;
 }
 .lunchBtn:hover
 {
   background:firebrick;
   color: gainsboro;
+  transition: all 0s;
 }
 body.dark .lunchBtn:hover
 {
   color:white;
   background-color:red;
+  transition: all 0s;
 }
 .lunchBtn p
 {
@@ -452,30 +544,27 @@ body.dark .lunchBtn:hover
   position: relative;
   top: 0px;
   margin: 0px 30px;
+  transition: all 0.3s;
 }
 body.dark .wrongLunchBtn
 {
   background-color:firebrick;
   color:gainsboro;
+  transition: all 0.3s;
 }
 .wrongLunchBtn:hover
 {
   background:firebrick;
   color: gainsboro;
+  transition: all 0s;
 }
 body.dark .wrongLunchBtn:hover
 {
   background-color:red;
   color:white;
+  transition: all 0.0s;
 }
-.foot
-{
-  font-family: sans-serif;
-  text-align:center;
-  font-size:20px;
-  margin: auto;
-  padding: 8px;
-}
+
 .cookie-banner
 {
   font-size: 22px;
@@ -515,6 +604,41 @@ body.dark .wrongLunchBtn:hover
   background:darkgray;
   border-bottom: 2px solid dimgray;
 }
+
+.bottom-space
+{
+  padding-bottom:100px;
+}
+@media screen and (orientation:landscape)
+{
+  .bottom-space
+  {
+    padding-bottom:30px;
+  }
+}
+
+footer
+{
+  position:fixed;
+  bottom:0px;
+  padding: 0px, 0px;
+  width: 100%;
+  background-color: lightgray;
+  transition: background-color 0.3s;
+}
+@media screen and (orientation:landscape)
+{
+  footer
+  {
+    position:static;
+    margin: 0px;
+  }
+}
+body.dark footer
+{
+  background-color: rgb(30,34,39);
+  transition: background-color 0.3s;
+}
 footer ul
 {
   font-size: 20px;
@@ -528,16 +652,13 @@ footer ul li
   margin-left: 20px;
   list-style: none;
 }
-.bottom-space
+.foot
 {
-  padding-bottom:100px;
-}
-@media screen and (orientation:landscape)
-{
-  .bottom-space
-  {
-    padding-bottom:30px;
-  }
+  font-family: sans-serif;
+  text-align:center;
+  font-size:20px;
+  margin: auto;
+  padding: 8px;
 }
 
 @font-face

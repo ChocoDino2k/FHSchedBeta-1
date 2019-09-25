@@ -8,23 +8,39 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-icon-114x114.png">
     <link rel="apple-touch-icon" sizes="144x144" href="../images/apple-icon-144x144.png">
-    <link rel="stylesheet" href="../css/FHSched_V_1.13.css">
+    <link rel="stylesheet" href="../css/FHSched_V_1.14.css">
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
   </head>
   <body style = "margin: 0;" class = "dark">
     <!--
-    <img class="logo" src="../images/weblogo.png" width="80" height="74">
-  -->
-    <p class="header">
-      <a href="../">FHSched</a>
-    </p>
-    <ul class="nav-bar">
-      <li><a href="../">Home</a></li>
-      <!--
-      <li><a href="../calendar/">Calendar</a></li>
+    <img class="logo" src="images/weblogo.png" width="80" height="74">
     -->
-      <li style = "float: right;"><a role="button" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light" id="darkMode"> Light | Dark Mode</a></li>
-    </ul>
+    <a id = "ham-a" class = "ham-a" role="button" onclick="showSidebar()"><img src="images/Hamburger_icon.png" class="ham"></a>
+    <a class="ng-logo-a" role="button" onclick="showNGBanner()">
+      <img src="images/National_Guard_Logo.png" class = "ng-logo">
+    </a>
+
+    <div>
+      <p class="header">
+        <a href="/">FHSched</a>
+      </p>
+    </div>
+
+    <p class="nav-bar">
+
+    <div class="slider" id="sidebar">
+      <a class = "close-sidebar" role="button" onclick="showSidebar()">
+        <img src="images/close-icon.png" class="close-icon">
+      </a>
+      <ul>
+        <li><a href="../">Home</a></li>
+        <!--
+        <li><a href="../calendar/">Calendar</a></li>
+      -->
+        <li><a role="button" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light" id="darkMode"> Light | Dark Mode</a></li>
+      </ul>
+    </div>
+
     <div class = "privacy_policy">
       <h1>Privacy Policy</h1>
       <p style="color:gray; margin-top:0px; font-style: italic;">Last updated August 23, 2019</p>
@@ -81,6 +97,7 @@
 
       <p style="margin-bottom: 150px;">If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at <a href="mailto:fhsched2019@gmail.com">fhsched2019@gmail.com</a>.</p>
     </div>
+
     <footer>
       <div class="foot">
         <ul>
@@ -88,7 +105,7 @@
         </ul>
         <ul>
           <li>2019 CodingForFishers</li>
-          <li>Version 1.4.4</li>
+          <li>Version 1.4.5</li>
         </ul>
         <ul>
           <li>
@@ -99,10 +116,39 @@
         </ul>
       </div>
     </footer>
+
+    <div id="national-guard-banner" class="national-guard-banner">
+      <div class="container">
+        <p>
+          Get started here:
+          <a href="https://nationalguard.com/get-started" target="_blank">https://nationalguard.com/get-started</a>
+          <br>
+          Contact: SGT Abigail Bartholomew | (765) 265-2906
+          <br>
+          <a href="https://www.instagram.com/sgtabbibart/?hl=en" target="_blank">https://www.instagram.com/sgtabbibart/?hl=en</a>
+        </p>
+        <a class = "close-sidebar" role="button" onclick="showNGBanner()">
+          <img src="images/close-icon.png" class="close-icon">
+        </a>
+      </div>
+    </div>
     <script type="text/javascript">
       document.addEventListener('DOMContentLoaded', (event) => {
         ((localStorage.getItem('mode') || 'dark') === 'dark') ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')
       });
+
+      //Changes styles for the sidebar
+      function showSidebar()
+      {
+        document.querySelector("#sidebar").classList.toggle('active');
+        document.querySelector("#ham-a").classList.toggle('active');
+      }
+
+      //Changes styles for National Guard Banner
+      function showNGBanner()
+      {
+        document.querySelector("#national-guard-banner").classList.toggle('active');
+      }
     </script>
   </body>
 </html>
