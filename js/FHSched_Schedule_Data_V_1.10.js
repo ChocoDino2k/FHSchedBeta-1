@@ -119,10 +119,16 @@ var data = [{
     "passingPeriodTwo": {"SHours": 9, "SMin": 5, "EHours": 9, "EMin": 12},
     "periodThree": {"SHours": 9, "SMin": 12, "EHours": 9, "EMin": 53},
     "passingPeriodThree": {"SHours": 9, "SMin": 53, "EHours": 10, "EMin": 0},
-    "periodFour":
+    "lunch":
     {
-      "SHours": 10, "SMin": 0, "EHours": 11, "EMin": 23, "aLunch": {"aLSHours": 9, "aLSMin": 53, "aLEHours": 10, "aLEMin": 23, "ASHours": 10, "ASmin": 30}, "bLunch": {"BSHours": 10, "BSmin": 0, "bLSHours": 10, "bLSMin": 23, "bLEHours": 10, "bLEMin": 53}, "cLunch": {"cLSHours": 10, "cLSMin": 53, "cLEHours": 11, "cLEMin": 23}
+      "SHours": 10, "SMin": 0, "EHours": 11, "EMin": 23,
+      "aLunch": {"SHours": 10, "SMin": 0, "EHours": 10, "EMin": 23},
+      "passingALunch": {"SHours": 10, "SMin": 23, "EHours": 10, "EMin": 30},
+      "bLunch": {"SHours": 10, "SMin": 30, "EHours": 10, "EMin": 53},
+      "passingBLunch": {"SHours": 10, "SMin": 53, "EHours": 11, "EMin": 0},
+      "cLunch": {"SHours": 11, "SMin": 0, "EHours": 11, "EMin": 23},
     },
+    "passingCLunch": {"SHours": 11, "SMin": 23, "EHours": 11, "EMin": 30},
     "periodFive": {"SHours": 11, "SMin": 30, "EHours": 12, "EMin": 11},
     "passingPeriodFive": {"SHours": 12, "SMin": 11, "EHours": 12, "EMin": 18},
     "periodSix": {"SHours": 12, "SMin": 18, "EHours": 13, "EMin": 0},
@@ -142,11 +148,15 @@ var data = [{
     "passingPeriodThree": {"SHours": 10, "SMin": 0, "EHours": 10, "EMin": 7},
     "periodSmart": {"SHours": 10, "SMin": 7, "EHours": 10, "EMin": 55},
     "passingPeriodSmart": {"SHours": 10, "SMin": 55, "EHours": 11, "EMin": 2},
-    "aLunch": {"SHours": 11, "SMin": 2, "EHours": 11, "EMin": 25},
-    "passingALunch": {"SHours": 11, "SMin": 25, "EHours": 11, "EMin": 32},
-    "bLunch": {"SHours": 11, "SMin": 32, "EHours": 11, "EMin": 55},
-    "passingBLunch": {"SHours": 11, "SMin": 55, "EHours": 12, "EMin": 2},
-    "cLunch": {"SHours": 12, "SMin": 2, "EHours": 12, "EMin": 25},
+    "lunch":
+    {
+      "SHours": 11, "SMin": 2, "EHours": 12, "EMin": 25,
+      "aLunch": {"SHours": 11, "SMin": 2, "EHours": 11, "EMin": 25},
+      "passingALunch": {"SHours": 11, "SMin": 25, "EHours": 11, "EMin": 32},
+      "bLunch": {"SHours": 11, "SMin": 32, "EHours": 11, "EMin": 55},
+      "passingBLunch": {"SHours": 11, "SMin": 55, "EHours": 12, "EMin": 2},
+      "cLunch": {"SHours": 12, "SMin": 2, "EHours": 12, "EMin": 25},
+    },
     "passingCLunch": {"SHours": 12, "SMin": 25, "EHours": 12, "EMin": 32},
     "periodFive": {"SHours": 12, "SMin": 32, "EHours": 13, "EMin": 15},
     "passingPeriodFive": {"SHours": 13, "SMin": 15, "EHours": 13, "EMin": 22},

@@ -1,0 +1,186 @@
+body.aqua
+{
+  background-image: url("../images/background.png");
+  background: RGB(255,255,255));
+  color: RGB(0,0,0);
+  transition: background-color 0.3s;
+  transition: background-image 0.3s;
+}
+
+body.aqua a:link
+{
+  color: RGB(0,0,0);
+}
+
+body.aqua a:visited
+{
+  color: RGB(0,0,0);
+}
+
+body.aqua a:hover
+{
+  color: RGB(105,105,105);
+}
+
+body.aqua a:active {
+  color: RGB(105,105,105);
+}
+
+body.aqua .header
+{
+  background: RGB(0,50,150);
+  transition: background-color 0.3s;
+}
+body.aqua .header a
+{
+  color: RGB(255,255,255);
+}
+
+body.aqua .slider
+{
+  background: RGB(0,100,200,0.95);
+  transition: all 0.3s;
+}
+body.aqua .slider li a
+{
+  color: RGB(255,255,255);
+}
+body.aqua .slider li a:hover
+{
+  background: RGB(0,70,150,0.7);
+  color: RGB(160,160,160);
+}
+body.aqua .slider .close-sidebar:hover
+{
+  background: RGB(0,70,150,0.7);
+}
+
+body.aqua .national-guard-banner
+{
+  background: RGB(0,20,70,0.95);
+}
+body.aqua .national-guard-banner a
+{
+  color: RGB(255,255,255);
+}
+body.aqua .national-guard-banner a:hover
+{
+  color: RGB(160,160,160);
+}
+body.aqua .national-guard-banner .container .close-sidebar:hover
+{
+  background: RGB(0,5,30,0.7);
+}
+
+
+body.aqua .ham-a
+{
+  background: RGB(0,50,150);
+  transition: background-color 0.3s;
+}
+body.aqua .ham-a:hover
+{
+  background: RGB(0,20,100);
+}
+
+body.aqua .time-schedule
+{
+  color: RGB(0,50,150);
+  background: RGB(210,210,210);
+  transition: background-color 0.3s;
+}
+
+body.aqua .period-countdown
+{
+  color: RGB(0,15,90);
+  transition: background-color 0.3s;
+}
+
+body.aqua .remaining-time
+{
+  color: RGB(0,15,90);
+  transition: background-color 0.3s;
+}
+
+body.aqua .timer
+{
+  color: RGB(0,50,150);
+}
+
+body.aqua .dot
+{
+  background: RGB(255,255,255)
+  transition: background-color 0.3s;
+}
+body.aqua .dot-cur
+{
+  background: RGB(0,100,255);
+  transition: background-color 0.3s;
+}
+body.aqua .dot:hover {
+  background: RGB(130,130,130);
+}
+
+body.aqua .splash {
+  color: black;
+  background: RGB(210,210,210);
+  transition: background-color 0.3s;
+}
+body.aqua .splash a
+{
+  color: RGB(0,50,150);
+}
+body.aqua .splash a:hover
+{
+  color: RGB(0,30,120);;
+}
+
+body.aqua .btn
+{
+  color: RGB(0,0,0);
+  background: RGB(210,210,210);
+  transition: all 0.3s;
+}
+body.aqua .btn:hover
+{
+  color: RGB(0,0,0);
+  background: RGB(170,170,170);
+}
+
+body.aqua .lunchBtn
+{
+  color: RGB(255,255,255);
+  background: RGB(0,100,255);
+  transition: background-color 0.3s;
+}
+body.aqua .lunchBtn:hover
+{
+  color: RGB(200,200,200);
+  background: RGB(0,80,200);
+}
+
+body.aqua .wrongLunchBtn
+{
+  color: RGB(255,255,255);
+  background: RGB(0,100,255);
+  transition: background-color 0.3s;
+}
+body.aqua .wrongLunchBtn:hover
+{
+  color: RGB(200,200,200);
+  background: RGB(0,80,200);
+}
+
+body.aqua footer
+{
+  background-color: RGB(180,180,180);
+  transition: background-color 0.3s;
+}
+
+@font-face
+{
+  font-family: "anton";
+  src: url(www.fhsched.com/fonts/Anton-Regular.ttf);
+  font-style: normal;
+  font-weight: 100;
+}

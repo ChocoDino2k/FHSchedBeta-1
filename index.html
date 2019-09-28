@@ -21,9 +21,16 @@
     <link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
     <link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png">
 
-    <script type="text/javascript" src="js/FHSched_Schedule_Data_V_1.7.js"> </script>
+    <script type="text/javascript" src="js/FHSched_Schedule_Data_V_1.10.js"> </script>
     <script type="text/javascript" src="js/FHSched_Calendar_Data_V_1.3.js"></script>
+
     <link rel="stylesheet" href="css/FHSched_V_1.14.css">
+    <link rel="stylesheet" href="css/Home_1.0.css">
+    <link rel="stylesheet" href="css/Dark_Mode_1.0.css">
+    <link rel="stylesheet" href="css/Cherry_Mode_1.0.css">
+    <link rel="stylesheet" href="css/Aqua_Mode_1.0.css">
+    <link rel="stylesheet" href="css/Template_Mode_1.0.css">
+
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
@@ -42,8 +49,6 @@
       </p>
     </div>
 
-    <p class="nav-bar">
-
     <div class="slider" id="sidebar">
       <a class = "close-sidebar" role="button" onclick="showSidebar()">
         <img src="images/close-icon.png" class="close-icon">
@@ -53,9 +58,16 @@
         <!--
         <li><a href="../calendar/">Calendar</a></li>
       -->
-        <li><a role="button" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light" id="darkMode"> Light | Dark Mode</a></li>
+        <li><a role="button" onclick="localStorage.setItem('mode', 'classic'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('classic')" title="Dark/light">Classic Mode</a></li>
+        <li><a role="button" onclick="localStorage.setItem('mode', 'dark'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('dark')" title="Dark/light">Dark Mode</a></li>
+        <li><a role="button" onclick="localStorage.setItem('mode', 'cherry'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('cherry')" title="Dark/light">Cherry Mode</a></li>
+        <li><a role="button" onclick="localStorage.setItem('mode', 'aqua'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('aqua')" title="Dark/light">Aqua Mode</a></li>
       </ul>
     </div>
+
+    <!--
+    <p class="schedule-display">Normal Schedule</p>
+    -->
 
     <div id = "periodDiv" class="time-schedule">
       <p id = "period" class = "period-display">No Period</p>
@@ -83,13 +95,13 @@
     </div>
 
     <p class = "splash">
-      Proudly sponsored by <span style="color:red">National Guard</span>!
+      Proudly sponsored by <span style="color:RGB(180,140,40)">National Guard</span>!
       <br>
-      Please give us feedback: <a href="https://docs.google.com/forms/d/e/1FAIpQLSfSIelvKL5dPRamplLnBuKzmSBUiblDPu9efNOq0O1m1e_E1Q/viewform" target = "_blank">Google Forms</a>
+      Click to take this survey: <a href="https://docs.google.com/forms/d/e/1FAIpQLSfSIelvKL5dPRamplLnBuKzmSBUiblDPu9efNOq0O1m1e_E1Q/viewform" target = "_blank">Google Forms</a>
       <br>
-      Adding to the space day atmosphere?
+      Thank you for your input!
       <br>
-      Dress as a character tomorrow!
+      We hope to grant your wishes...
     </p>
 
     <div id = "wrongLunchDiv" class="wrongLunchDiv">
@@ -610,11 +622,23 @@
     }
 
     //Loads darkmode upon the website refresh
-    function loadDarkMode()
+    function loadModes()
     {
-      document.addEventListener('DOMContentLoaded', (event) => {
-        ((localStorage.getItem('mode') || 'dark') === 'dark') ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')
-        })
+      switch (localStorage.getItem('mode'))
+      {
+        case 'classic':
+          document.querySelector('body').classList.remove('dark');
+          break;
+        case 'dark':
+          document.querySelector('body').classList.add('dark');
+          break;
+        case 'cherry':
+          document.querySelector('body').classList.add('cherry');
+          break;
+        case 'aqua':
+          document.querySelector('body').classList.add('aqua');
+          break;
+      };
       editLunchPeriod(currentSchedule["lunch"]);
     }
 
@@ -631,7 +655,7 @@
       document.querySelector("#national-guard-banner").classList.toggle('active');
     }
 
-    loadDarkMode();
+    loadModes();
 
     </script>
   </body>

@@ -9,15 +9,17 @@
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-icon-114x114.png">
     <link rel="apple-touch-icon" sizes="144x144" href="../images/apple-icon-144x144.png">
     <link rel="stylesheet" href="../css/FHSched_V_1.14.css">
+    <link rel="stylesheet" href="../css/Privacy_Policy_1.0.css">
+    <link rel="stylesheet" href="../css/Dark_Mode_1.0.css">
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
   </head>
-  <body style = "margin: 0;" class = "dark">
+  <body class = "dark">
     <!--
     <img class="logo" src="images/weblogo.png" width="80" height="74">
     -->
-    <a id = "ham-a" class = "ham-a" role="button" onclick="showSidebar()"><img src="images/Hamburger_icon.png" class="ham"></a>
+    <a id = "ham-a" class = "ham-a" role="button" onclick="showSidebar()"><img src="../images/Hamburger_icon.png" class="ham"></a>
     <a class="ng-logo-a" role="button" onclick="showNGBanner()">
-      <img src="images/National_Guard_Logo.png" class = "ng-logo">
+      <img src="../images/National_Guard_Logo.png" class = "ng-logo">
     </a>
 
     <div>
@@ -30,7 +32,7 @@
 
     <div class="slider" id="sidebar">
       <a class = "close-sidebar" role="button" onclick="showSidebar()">
-        <img src="images/close-icon.png" class="close-icon">
+        <img src="../images/close-icon.png" class="close-icon">
       </a>
       <ul>
         <li><a href="../">Home</a></li>
@@ -128,7 +130,7 @@
           <a href="https://www.instagram.com/sgtabbibart/?hl=en" target="_blank">https://www.instagram.com/sgtabbibart/?hl=en</a>
         </p>
         <a class = "close-sidebar" role="button" onclick="showNGBanner()">
-          <img src="images/close-icon.png" class="close-icon">
+          <img src="../images/close-icon.png" class="close-icon">
         </a>
       </div>
     </div>
