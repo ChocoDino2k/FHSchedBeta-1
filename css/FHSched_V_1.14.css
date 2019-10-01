@@ -150,6 +150,7 @@ a:active {
   bottom: -120px;
   left: 0px;
   width: 100%;
+  max-height: 120px;
   z-index: 1000;
   transition: all 0.3s;
 }
@@ -322,7 +323,7 @@ footer ul li
   font-weight: 100;
 }
 
-@media screen and (orientation:portrait)
+@media screen and (orientation: portrait)
 {
   .header
   {
@@ -366,6 +367,7 @@ footer ul li
   {
     font-size: 30px;
     bottom: -240px;
+    max-height: 240px;
   }
   .national-guard-banner .container
   {

@@ -92,13 +92,13 @@ body.aqua .time-schedule
 
 body.aqua .period-countdown
 {
-  color: RGB(0,15,90);
+  color: RGB(0,30,100);
   transition: background-color 0.3s;
 }
 
 body.aqua .remaining-time
 {
-  color: RGB(0,15,90);
+  color: RGB(0,30,100);
   transition: background-color 0.3s;
 }
 
@@ -183,4 +183,9 @@ body.aqua footer
   src: url(www.fhsched.com/fonts/Anton-Regular.ttf);
   font-style: normal;
   font-weight: 100;
+}
+
+body.aqua .about-header
+{
+  color: RGB(0,50,150);
 }

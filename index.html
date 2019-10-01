@@ -21,14 +21,13 @@
     <link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
     <link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png">
 
-    <script type="text/javascript" src="js/FHSched_Schedule_Data_V_1.10.js"> </script>
-    <script type="text/javascript" src="js/FHSched_Calendar_Data_V_1.3.js"></script>
+    <script type="text/javascript" src="js/FHSched_Schedule_Data_V_1.11.js"> </script>
+    <script type="text/javascript" src="js/FHSched_Calendar_Data_V_1.4.js"></script>
 
     <link rel="stylesheet" href="css/FHSched_V_1.14.css">
     <link rel="stylesheet" href="css/Home_1.0.css">
     <link rel="stylesheet" href="css/Dark_Mode_1.0.css">
     <link rel="stylesheet" href="css/Cherry_Mode_1.0.css">
-    <link rel="stylesheet" href="css/Aqua_Mode_1.0.css">
     <link rel="stylesheet" href="css/Template_Mode_1.0.css">
 
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
@@ -56,12 +55,15 @@
       <ul>
         <li><a href="../">Home</a></li>
         <!--
+        <li><a href="about">About</a></li>
         <li><a href="../calendar/">Calendar</a></li>
-      -->
+        -->
         <li><a role="button" onclick="localStorage.setItem('mode', 'classic'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('classic')" title="Dark/light">Classic Mode</a></li>
         <li><a role="button" onclick="localStorage.setItem('mode', 'dark'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('dark')" title="Dark/light">Dark Mode</a></li>
         <li><a role="button" onclick="localStorage.setItem('mode', 'cherry'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('cherry')" title="Dark/light">Cherry Mode</a></li>
+        <!--
         <li><a role="button" onclick="localStorage.setItem('mode', 'aqua'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('aqua')" title="Dark/light">Aqua Mode</a></li>
+        -->
       </ul>
     </div>
 
@@ -69,7 +71,7 @@
     <p class="schedule-display">Normal Schedule</p>
     -->
 
-    <div id = "periodDiv" class="time-schedule">
+    <div id="periodDiv" class="time-schedule">
       <p id = "period" class = "period-display">No Period</p>
       <p id = "timer" class = "timer">Not School Hours</p>
       <button class = "btn btn-left" onclick = "changePeriod(-1)">
@@ -94,15 +96,21 @@
       </button>
     </div>
 
-    <p class = "splash">
-      Proudly sponsored by <span style="color:RGB(180,140,40)">National Guard</span>!
-      <br>
-      Click to take this survey: <a href="https://docs.google.com/forms/d/e/1FAIpQLSfSIelvKL5dPRamplLnBuKzmSBUiblDPu9efNOq0O1m1e_E1Q/viewform" target = "_blank">Google Forms</a>
-      <br>
-      Thank you for your input!
-      <br>
-      We hope to grant your wishes...
-    </p>
+    <div class="">
+      <p class = "splash">
+        Proudly sponsored by <span style="color:RGB(180,140,40)">National Guard</span>!
+        <br>
+        Welcome to October...
+        <br>
+        Thank you all for your survey input!
+        <br>
+        Big updates are arriving soon.
+        <!--
+        <br>
+        Meet our team: <a href="about">About</a>
+        -->
+      </p>
+    </div>
 
     <div id = "wrongLunchDiv" class="wrongLunchDiv">
       <button onclick = "resetLunch()" class = "wrongLunchBtn">
@@ -624,6 +632,7 @@
     //Loads darkmode upon the website refresh
     function loadModes()
     {
+      document.querySelector('body').classList.remove('dark');
       switch (localStorage.getItem('mode'))
       {
         case 'classic':
@@ -637,6 +646,9 @@
           break;
         case 'aqua':
           document.querySelector('body').classList.add('aqua');
+          break;
+        default:
+          document.querySelector('body').classList.add('dark');
           break;
       };
       editLunchPeriod(currentSchedule["lunch"]);

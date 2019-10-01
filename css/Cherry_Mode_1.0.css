@@ -181,3 +181,14 @@ body.cherry footer
   font-style: normal;
   font-weight: 100;
 }
+
+body.cherry .about-header
+{
+  background-color:rgb(255,255,255);
+  color: red;
+}
+body.cherry .team
+{
+  background-color:rgb(255,255,255);
+  color: red;
+}

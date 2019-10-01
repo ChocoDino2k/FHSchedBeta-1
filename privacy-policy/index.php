@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Privacy Policy of FHSched</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145890894-1"></script>
     <link rel="shortcut icon" type="image/ico" href="../images/icon.ico">
     <link rel="apple-touch-icon" sizes="57x57" href="../images/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-icon-72x72.png">
@@ -11,12 +12,13 @@
     <link rel="stylesheet" href="../css/FHSched_V_1.14.css">
     <link rel="stylesheet" href="../css/Privacy_Policy_1.0.css">
     <link rel="stylesheet" href="../css/Dark_Mode_1.0.css">
+    <link rel="stylesheet" href="../css/Template_Mode_1.0.css">
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
   </head>
   <body class = "dark">
     <!--
     <img class="logo" src="images/weblogo.png" width="80" height="74">
-    -->
+  -->
     <a id = "ham-a" class = "ham-a" role="button" onclick="showSidebar()"><img src="../images/Hamburger_icon.png" class="ham"></a>
     <a class="ng-logo-a" role="button" onclick="showNGBanner()">
       <img src="../images/National_Guard_Logo.png" class = "ng-logo">
@@ -28,8 +30,6 @@
       </p>
     </div>
 
-    <p class="nav-bar">
-
     <div class="slider" id="sidebar">
       <a class = "close-sidebar" role="button" onclick="showSidebar()">
         <img src="../images/close-icon.png" class="close-icon">
@@ -37,9 +37,15 @@
       <ul>
         <li><a href="../">Home</a></li>
         <!--
+        <li><a href="about">About</a></li>
         <li><a href="../calendar/">Calendar</a></li>
-      -->
-        <li><a role="button" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light" id="darkMode"> Light | Dark Mode</a></li>
+        -->
+        <li><a role="button" onclick="localStorage.setItem('mode', 'classic'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('classic')" title="Dark/light">Classic Mode</a></li>
+        <li><a role="button" onclick="localStorage.setItem('mode', 'dark'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('dark')" title="Dark/light">Dark Mode</a></li>
+        <!--
+        <li><a role="button" onclick="localStorage.setItem('mode', 'cherry'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('cherry')" title="Dark/light">Cherry Mode</a></li>
+        <li><a role="button" onclick="localStorage.setItem('mode', 'aqua'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('aqua')" title="Dark/light">Aqua Mode</a></li>
+        -->
       </ul>
     </div>
 
@@ -135,22 +141,44 @@
       </div>
     </div>
     <script type="text/javascript">
-      document.addEventListener('DOMContentLoaded', (event) => {
-        ((localStorage.getItem('mode') || 'dark') === 'dark') ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')
-      });
-
-      //Changes styles for the sidebar
-      function showSidebar()
+    //Loads darkmode upon the website refresh
+    function loadModes()
+    {
+      document.querySelector('body').classList.remove('dark');
+      switch (localStorage.getItem('mode'))
       {
-        document.querySelector("#sidebar").classList.toggle('active');
-        document.querySelector("#ham-a").classList.toggle('active');
-      }
+        case 'classic':
+          document.querySelector('body').classList.remove('dark');
+          break;
+        case 'dark':
+          document.querySelector('body').classList.add('dark');
+          break;
+        case 'cherry':
+          document.querySelector('body').classList.add('cherry');
+          break;
+        case 'aqua':
+          document.querySelector('body').classList.add('aqua');
+          break;
+        default:
+          document.querySelector('body').classList.add('dark');
+          break;
+      };
+    }
 
-      //Changes styles for National Guard Banner
-      function showNGBanner()
-      {
-        document.querySelector("#national-guard-banner").classList.toggle('active');
-      }
+    //Changes styles for the sidebar
+    function showSidebar()
+    {
+      document.querySelector("#sidebar").classList.toggle('active');
+      document.querySelector("#ham-a").classList.toggle('active');
+    }
+
+    //Changes styles for National Guard Banner
+    function showNGBanner()
+    {
+      document.querySelector("#national-guard-banner").classList.toggle('active');
+    }
+
+    loadModes();
     </script>
   </body>
 </html>
