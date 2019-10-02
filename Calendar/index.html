@@ -11,31 +11,33 @@
     <link rel="stylesheet" href="css/FHSched_V_1.11.css">
 </head>
 <body class="dark">
-  <div>
-    <p class="header">
-      <a href="../">FHSched</a>
+   <p class="header">
+         <a href="../"> FHSched Calendar </a>
     </p>
-  </div>
 
-      <ul class="nav-bar">
+        <ul class="nav-bar">
         <li><a href="../">Home</a></li>
-        <li><a href="../calendar/">Calendar</a></li>
+        <li><a href="../Calendar/">Calendar</a></li>
         <li style = "float: right;"><a role="button" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light" id="darkMode"> Light | Dark Mode</a></li>
       </ul>
 
-        <div class="parent">
-
+        <div class="parent">  
+        
         <div class="move">
           <div class="dropdown" style="float:right;">
             <button onclick="dropDown()" class="dropbtn">Change Month</button>
             <div id="myDropdown" class="dropdown-content">
-              <a href="index.html">September</a>
-              <a href="secondCalendar.html">October</a>
+              <a href="SeptemberCalendar.html">September</a>
+              <a href="OctoberCalendar.html">October</a>
               <a href="thirdCalendar.html">November</a>
               <a href="FourthCalendar.html">December</a>
            </div>
          </div>
         </div>
+
+        <div class="boxForCountDown"></div>
+        <div class="relativeBreak"  id="breakCountDown"></div>
+        <div class="relativeYear" style="margin-top: 0px; width: 13%;" id="yearCountDown"></div>
 
         <!-- DEMO -->
         <div class="some-class">
@@ -103,52 +105,79 @@
         <div class="pictureFourteen">
         <img src="calendar-line-vertical.png" alt="calendar" width="475" height="395">
         </div>
+        
 
 
-
-<div class="eventContainerOne">
- <span class="eventContainerOneText"> None   </span>
+<button class= "button button1" onclick="displayEvents()">
+h
+</button>
+<div id="eventContainerOne">
+None
 </div>
 
-<div class="eventContainerTwo">
- <span class="eventContainerTwoText"> None  </span>
+<button class= "button button2" onclick="displayEventsTwo()">
+h
+</button>
+<div id="eventContainerTwo">
+None
 </div>
 
-<div class="eventContainerThree">
- <span class="eventContainerThreeText"> None </span>
+<button class= "button button3" onclick="displayEventsThree()">
+h
+</button>
+<div id="eventContainerThree">
+None
 </div>
 
-<div class="eventContainerFour">
- <span class="eventContainerFourText"> None </span>
+<button class= "button button4" onclick="displayEventsFour()">
+h
+</button>
+<div id="eventContainerFour">
+None
 </div>
 
-<div class="eventContainerFive">
- <span class="eventContainerFiveText"> None </span>
+<button class= "button button5" onclick="displayEventsFive()">
+h
+</button>
+<div id="eventContainerFive">
+None
 </div>
 
-<div class="eventContainerSix">
- <span class="eventContainerSixText"> None </span>
+<button class= "button button6" onclick="displayEventsSix()">
+h
+</button>
+<div id="eventContainerSix">
+None
 </div>
 
-<div class="eventContainerSeven">
- <span class="eventContainerSevenText"> None </span>
+<button class= "button button7" onclick="displayEventsSeven()">
+h
+</button>
+<div id="eventContainerSeven">
+None
 </div>
 
-<div class="eventContainerEight">
- <span class="eventContainerEightText"> None </span>
+<button class= "button button8" onclick="displayEventsEight()">
+h
+</button>
+<div id="eventContainerEight">
+None
 </div>
 
-<div class="eventContainerNine">
-  <span class="eventContainerNineText">
+<button class= "button button9" onclick="displayEventsNine()">
+h
+</button>
+<div id="eventContainerNine">
     <p> Champions Together (Unified Kickball) at FHS Soccer Stadium 5:30PM-9:00PM </p>
     <p> Tennis Boys Varsity Match at FHS Tennis Courts 5:30 PM </p>
     <p> Youth Boys Basketball Travel Try Outs in FHS Gym at 6:00 PM-9:00PM </p>
-  </span>
 </div>
 
-<div class="eventContainerTen">
- <span class="eventContainerTenText">
-    <p> Wrestling Callout Meeting in Cafe A at 7:15 AM-7:30AM </p>
+<button class= "button button10" onclick="displayEventsTen()">
+h
+</button>
+<div id="eventContainerTen">
+     <p> Wrestling Callout Meeting in Cafe A at 7:15 AM-7:30AM </p>
     <p> College Visit: Indiana Tech in CCA at 8:30 AM </p>
     <p> College Visit: IVY Tech in CCA at 9:30 AM </p>
     <p> College Visit: University Of Georgia in CCA at 12:00 PM </p>
@@ -163,13 +192,12 @@
     <p> Girls Freshman Soccer Match at FHS Soccer Stadium at 6:30 PM </p>
     <p> Boys Varsity Soccer Match at HSE HS at 7:00 PM </p>
     <p> Girls Varsity Volleyball Match at FHS Gym at 7:00 PM </p>
-
-
- </span>
 </div>
 
-<div class="eventContainerEleven">
- <span class="eventContainerElevenText">
+<button class= "button button11" onclick="displayEventsEl()">
+h
+</button>
+<div id="eventContainerEl">
   <p> Blood Drive At FHS Gym (Auxilary) at 7:00 AM-3:30 PM</p>
   <p> College Visit: Indiana State University in CCA at 8:30 AM </p>
   <p> College Visit: Wittenberg University in CCA at 9:30 AM </p>
@@ -177,11 +205,12 @@
   <p> College Visit: Depauw in CCA at 1:00 PM </p>
   <p> Soccer: Girls JV Match at FHS SOCCER STADIUM at 5:00pm</p>
   <p> Soccer: Girls Varsity Match at FHS SOCCER STADIUM at 6:30pm </p>
- </span>
 </div>
 
-<div class="eventContainerTwelve">
- <span class="eventContainerTwelveText">
+<button class= "button button12" onclick="displayEventsTwelve()">
+h
+</button>
+<div id="eventContainerTwelve">
   <p> College Visit: Earlham College in CCA at 8:30 AM </p>
   <p> College Visit: Ball State University in CCA at 12:00 PM </p>
   <p> College Visit: Miami University, Oxford in CCA at 1:00 PM </p>
@@ -198,21 +227,23 @@
   <p> Soccer: Girls Freshman Match at FHS SOCCER STADIUM at 6:30pm </p>
   <p> Soccer: Boys Varsity Match at Pendleton Heights High School at 7:00pm </p>
   <p> Volleyball: Girls Varsity Match at Hamilton Southeastern High School at 7:00pm </p>
- </span>
 </div>
 
-<div class="eventContainerThirteen">
- <span class="eventContainerThirteenText">
+<button class= "button button13" onclick="displayEventsThirteen()">
+h
+</button>
+<div id="eventContainerThirteen">
   <p> College Visit: Elon University in CCA at 8:30 AM </p>
   <p> College Visit: Brescia University in CCA at 12:00 PM </p>
   <p> College Visit: Mount St. Joseph University in CCA at 1:00 PM </p>
   <p> College Visit: Monmouth College in CCA at 2:00 PM </p>
-  <p> <font color="silver"> FOOTBALL: VARSITY GAME at 7:00 PM </font> <font color="blue"> (Rumble In The Jungle) </font> </p>
- </span>
+  <p> <font color="silver"> FOOTBALL: VARSITY GAME at 7:00 PM </font> <font color="blue"> (Rumble In The Jungle) </font>
 </div>
 
-<div class="eventContainerFourteen">
- <span class="eventContainerFourteenText">
+<button class= "button button14" onclick="displayEventsFourteen()">
+h
+</button>
+<div id="eventContainerFourteen">
    <p> Cross Country: Girls Varsity Ben Davis Invitational at Ben Davis High School at 9:00 AM </p>
    <p> Cross Country: Varsity Peoria Woodruff Invitational at Detweiler Park, IL at 9:00am </p>
    <p> Tennis: Boys Varsity Fishers Invitational at FHS Tennis Courts 1-6 at 9:00am </p>
@@ -225,26 +256,31 @@
    <p> Soccer: Boys Varsity Match at FHS SOCCER STADIUM at 12:30pm </p>
    <p> Soccer: Girls Varsity Match at Warsaw Community High School at 12:45pm </p>
    <p> Golf: Girls Varsity Noblesville Invitational at Harbour Trees Golf & Beach Club at 1:00pm </p>
- </span>
 </div>
 
-<div class="eventContainerFifteen">
- <span class="eventContainerFifteenText"> None </span>
+<button class= "button button15" onclick="displayEventsFifteen()">
+h
+</button>
+<div id="eventContainerFifteen">
+None
 </div>
 
-<div class="eventContainerSixteen">
- <span class="eventContainerSixteenText">
-   <p> Freshman Class Ring Meeting at large auditorium at 10:00am- 10:45am </p>
+<button class= "button button16" onclick="displayEventsSixteen()">
+h
+</button>
+<div id="eventContainerSixteen">
+<p> Freshman Class Ring Meeting at large auditorium at 10:00am- 10:45am </p>
    <p> Soccer: Girls Freshman Match at Hamilton Southeastern High School at 5:00pm </p>
    <p> Soccer: Girls JV Match at FHS SOCCER STADIUM at 5:30pm </p>
    <p> Soccer: Boys Freshman Match at Hamilton Southeastern High School at 6:30pm </p>
    <p> Soccer: Girls Varsity Match at FHS SOCCER STADIUM at 7:00pm </p>
- </span>
 </div>
 
-<div class="eventContainerSeventeen">
- <span class="eventContainerSeventeenText">
-    <p> College Visit: Bradley University in CCA at 8:30 AM </p>
+<button class= "button button17" onclick="displayEventsSeventeen()">
+h
+</button>
+<div id="eventContainerSeventeen">
+ <p> College Visit: Bradley University in CCA at 8:30 AM </p>
     <p> College Visit: Oberlin College of Arts and Sciences in CCA at 9:30 AM </p>
     <p> College Visit: College of Wooster in CCA at 12:00 PM </p>
     <p> College Visit: Indiana University at Bloomigton in CCA at 1:00 PM </p>
@@ -253,13 +289,13 @@
     <p> Golf: Girls Varsity Match at  Gray Eagle Golf Course at 4:30pm </p>
     <p> Soccer: Boys JV Match at FHS SOCCER STADIUM at 6:00pm </p>
     <p> Soccer: Boys Varsity Match at FHS SOCCER STADIUM at 7:30pm </p>
-
- </span>
 </div>
 
-<div class="eventContainerEighteen">
- <span class="eventContainerEighteenText">
-   <p> College Visit: Washington University, St Louis in CCA at 8:30 AM </p>
+<button class= "button button18" onclick="displayEventsEighteen()">
+h
+</button>
+<div id="eventContainerEighteen">
+<p> College Visit: Washington University, St Louis in CCA at 8:30 AM </p>
    <p> College Visit: Carlton College in CCA at 9:30 AM </p>
    <p> College Visit: IE University Segovia in CCA at 12:00 PM </p>
    <p> College Visit: Valpraiso University in CCA at 1:00 PM </p>
@@ -268,12 +304,13 @@
    <p> Soccer: Girls JV Match at Brownsburg High School at 5:30pm </p>
    <p> Soccer: Boys Freshman Match at FHS SOCCER STADIUM at 5:30pm </p>
    <p> Soccer: Girls Varsity Match at Brownsburg High School at 7:00pm </p>
- </span>
 </div>
 
-<div class="eventContainerNineteen">
- <span class="eventContainerNineteenText">
-  <p> College Visit: Rose Hulman Institute of Tech. in CCA at 8:30 AM </p>
+<button class= "button button19" onclick="displayEventsNineteen()">
+h
+</button>
+<div id="eventContainerNineteen">
+<p> College Visit: Rose Hulman Institute of Tech. in CCA at 8:30 AM </p>
   <p> College Visit: Vanderbilt University in CCA at 9:30 AM </p>
   <p> College Visit: High Point University in CCA at 12:00 PM </p>
   <p> College Visit: Layola University, Chicago in CCA at 1:00 PM </p>
@@ -284,37 +321,270 @@
   <p> Volleyball: Girls JV Match at FHS GYM - VARSITY at 5:30pm </p>
   <p> Soccer: Boys Varsity Match at FHS SOCCER STADIUM at 7:00pm </p>
   <p> Volleyball: Girls Varsity Match at FHS GYM - VARSITY at 7:00pm </p>
- </span>
 </div>
 
-<div class="eventContainerTwenty">
- <span class="eventContainerTwentyText">
-   <p> College Visit: Kenyon College in CCA at 8:30 AM </p>
+<button class= "button button20" onclick="displayEventsTwenty()">
+h
+</button>
+<div id="eventContainerTwenty">
+<p> College Visit: Kenyon College in CCA at 8:30 AM </p>
    <p> College Visit: Case Western Reserve in CCA at 9:30 AM </p>
    <p> College Visit: Tulane University in CCA at 12:00 AM </p>
    <p> College Visit: university of Notre Dame in CCA at 1:00 PM </p>
    <p> College Visit: University of Evansville in CCA at 2:00 PM </p>
    <p> <font color="silver"> FOOTBALL: VARSITY GAME at 7:00 PM </font></p>
+</div>
+
+<button class= "button button21" onclick="displayEventsTwentyOne()">
+h
+</button>
+<div id="eventContainerTwentyOne">
+<p> Marching Band Invitational at Avon High School (Performance time TBD) </p>
+   <p> Cross Country: Varsity Riverview Health Invitational at Northview Christian Life Church at 9:00am </p> 
+   <p> Tennis: Boys Varsity HCC Championships at  Zionsville Baseball, Softball and Tennis Complex at 9:00am </p>
+   <p> Volleyball: Girls JV Invitational at Daleville HS at 9:00am </p>
+   <p> Football: Freshman Game at Brownsburg High School at 10:00am </p>
+   <p> Football: JV Game at FHS FOOTBALL STADIUM at 10:00am </p>
+   <p> Golf: Girls Varsity IHSAA Sectionals at Harbour Trees Golf & Beach Club at 11:00am</p>
+   <p> SPORTS Knight Football Games at FHS Football Stadium at 2:00pm- 6:00pm </p>
+   <p> Unified Football: Varsity Game at Zionsville High School at 3:00pm </p>
+   <p> <font color="green">Homecoming at FHS at 8:00pm- 11:00pm </font> </p>
+</div>
+
+<button class= "button button22" onclick="displayEventsTwentyTwo()">
+h
+</button>
+<div id="eventContainerTwentyTwo">
+Event
+</div>
+
+<button class= "button button23" onclick="displayEventsTwentyThree()">
+h
+</button>
+<div id="eventContainerTwentyThree">
+Event
+</div>
+
+<button class= "button button24" onclick="displayEventsTwentyFour()">
+h
+</button>
+<div id="eventContainerTwentyFour">
+Event
+</div>
+
+<button class= "button button25" onclick="displayEventsTwentyFive()">
+h
+</button>
+<div id="eventContainerTwentyFive">
+Event
+</div>
+
+<button class= "button button26" onclick="displayEventsTwentySix()">
+h
+</button>
+<div id="eventContainerTwentySix">
+Event
+</div>
+
+<button class= "button button27" onclick="displayEventsTwentySeven()">
+h
+</button>
+<div id="eventContainerTwentySeven">
+  <p> College Visit: Seton Hall University in CCA at 8:30 AM </p>
+  <p> College Visit: Kent State University in CCA at 9:30 AM </p>
+  <p> College Visit: Calvin University in CCA at 12:00 PM </p>
+  <p> College Visit: Taylor University in CCA at 1:00 PM </p>
+</div>
+
+<button class= "button button28" onclick="displayEventsTwentyEight()">
+h
+</button>
+<div id="eventContainerTwentyEight">
+Event
+</div>
+
+<button class= "button button29" onclick="displayEventsTwentyNine()">
+h
+</button>
+<div id="eventContainerTwentyNine">
+Event
+</div>
+
+<button class= "button button30" onclick="displayEventsThirty()">
+h
+</button>
+<div id="eventContainerThirty">
+Event
+</div>
+
+<button class= "button button31" onclick="displayEventsThirtyOne()">
+h
+</button>
+<div id="eventContainerThirtyTwo">
+Event
+</div>
+
+<button class= "button button32" onclick="displayEventsThirtyTwo()">
+h
+</button>
+<div id="eventContainerThirtyTwo">
+Event
+</div>
+
+<button class= "button button33" onclick="displayEventsThirtyThree()">
+h
+</button>
+<div id="eventContainerThirtyThree">
+Event
+</div>
+
+<button class= "button button34" onclick="displayEventsThirtyFour()">
+h
+</button>
+<div id="eventContainerThirtyFour">
+Event
+</div>
+
+<button class= "button button35" onclick="displayEventsThirtyFive()">
+h
+</button>
+<div id="eventContainerThirtyFive">
+Event
+</div>
+
+<!--
+
+
+<div class="eventContainerOne">
+ <span class="eventContainerOneText">
+  
+ </span>
+</div>
+
+<div class="eventContainerTwo">
+ <span class="eventContainerTwoText">
+  
+ </span>
+</div>
+
+<div class="eventContainerThree">
+ <span class="eventContainerThreeText">
+  
+ </span>
+</div>
+
+<div class="eventContainerFour">
+ <span class="eventContainerFourText">
+  
+ </span>
+</div>
+
+<div class="eventContainerFive">
+ <span class="eventContainerFiveText">
+  
+ </span>
+</div>
+
+<div class="eventContainerSix">
+ <span class="eventContainerSixText">
+  
+ </span>
+</div>
+
+<div class="eventContainerSeven">
+ <span class="eventContainerSevenText">
+  
+ </span>
+</div>
+
+<div class="eventContainerEight">
+ <span class="eventContainerEightText">
+  
+ </span>
+</div>
+
+<div class="eventContainerNine">
+ <span class="eventContainerNineText">
+  
+ </span>
+</div>
+
+<div class="eventContainerTen">
+ <span class="eventContainerTenText">
+  
+ </span>
+</div>
+
+<div class="eventContainerEleven">
+ <span class="eventContainerElevenText">
+  
+ </span>
+</div>
+
+<div class="eventContainerTwelve">
+ <span class="eventContainerTwelveText">
+  
+ </span>
+</div>
+
+<div class="eventContainerThirteen">
+ <span class="eventContainerThirteenText">
+  
+ </span>
+</div>
+
+<div class="eventContainerFourteen">
+ <span class="eventContainerFourteenText">
+  
+ </span>
+</div>
+
+<div class="eventContainerFifteen">
+ <span class="eventContainerFifteenText">
+  
+ </span>
+</div>
+
+<div class="eventContainerSixteen">
+ <span class="eventContainerSixteenText">
+  
+ </span>
+</div>
+
+<div class="eventContainerSeventeen">
+ <span class="eventContainerSeventeenText">
+  
+ </span>
+</div>
+
+<div class="eventContainerEighteen">
+ <span class="eventContainerEighteenText">
+
+ </span>
+</div>
+
+<div class="eventContainerNineteen">
+ <span class="eventContainerNineteenText">
+
+ </span>
+</div>
+
+<div class="eventContainerTwenty">
+ <span class="eventContainerTwentyText">
+  
  </span>
 </div>
 
 <div class="eventContainerTwentyOne">
  <span class="eventContainerTwentyOneText">
-   <p> Marching Band Invitational at Avon High School (Performance time TBD) </p>
-   <p> Cross Country: Varsity Riverview Health Invitational at Northview Christian Life Church at 9:00am </p>
-   <p> Tennis: Boys Varsity HCC Championships at  Zionsville Baseball, Softball and Tennis Complex at 9:00am </p>
-   <p> Volleyball: Girls JV Invitational at Daleville HS at 9:00am </p>
-   <p> Football: Freshman Game at Brownsburg High School at 10:00am </p>
-   <p> Football: JV Game at FHS FOOTBALL STADIUM at 10:00am </p>
-   <p> Golf: Girls Varsity IHSAA Sectionals at  Harbour Trees Golf & Beach Club at 11:00am</p>
-   <p> SPORTS Knight Football Games at FHS Football Stadium at 2:00pm- 6:00pm </p>
-   <p> Unified Football: Varsity Game at Zionsville High School at 3:00pm </p>
-   <p> <font color="green">Homecoming at FHS at 8:00pm- 11:00pm </font> </p>
+  
  </span>
 </div>
 
 <div class="eventContainerTwentyTwo">
- <span class="eventContainerTwentyTwoText"> Event </span>
+ <span class="eventContainerTwentyTwoText">
+
+ </span>
 </div>
 
 <div class="eventContainerTwentyThree">
@@ -352,11 +622,8 @@
 
 <div class="eventContainerTwentySeven">
  <span class="eventContainerTwentySevenText">
-  <p> College Visit: Seton Hall University in CCA at 8:30 AM </p>
-  <p> College Visit: Kent State University in CCA at 9:30 AM </p>
-  <p> College Visit: Calvin University in CCA at 12:00 PM </p>
-  <p> College Visit: Taylor University in CCA at 1:00 PM </p>
- </span>
+Event
+</span>
 </div>
 
 <div class="eventContainerTwentyEight">
@@ -391,35 +658,33 @@
  <span class="eventContainerThirtyFiveText"> None </span>
 </div>
 
-<div class="boxForCountDown"></div>
-
-<div class="relativeBreak"  id="breakCountDown"></div>
-
-<div class="relativeYear" style="margin-top: 0px; width: 13%;" id="yearCountDown"></div>
+-->
 
 
+<p class="bottom-space"></p>
+    <footer>
+      <div class="foot">
+        <ul>
+          <li> <a href="../privacy-policy/">Privacy Policy</a> </li>
+        </ul>
+
+        <ul>
+          <li>2019 CodingForFishers</li>
+          <li>Version 1.4.4</li>
+        </ul>
+        <ul>
+          <li> 
+            <address style="all: unset">
+          Contact: <a href="mailto:fhsched2019@gmail.com">fhsched2019@gmail.com</a>
+        </address> 
+      </li>
+        </ul>
+        
+      </div>
+    </footer>
 
 </div>
 
-<p class="bottom-space"></p>
-<footer>
-  <div class="foot">
-    <ul>
-      <li><a href="../privacy-policy/">Privacy Policy</a></li>
-    </ul>
-    <ul>
-      <li>2019 CodingForFishers</li>
-      <li>Version 1.4.4</li>
-    </ul>
-    <ul>
-      <li>
-        <address style="all: unset">
-          Contact: <a href="mailto:fhsched2019@gmail.com">fhsched2019@gmail.com</a>
-        </address>
-      </li>
-    </ul>
-  </div>
-</footer>
 
 
 <!-- javascript -->
@@ -450,7 +715,7 @@ var time = setInterval(function(){
   if (days <= 0) {
  document.getElementById("yearCountDown").innerHTML = "Only " + hours + " hours until school's over!";
 
-
+  
   if (hours <= 0) {
  document.getElementById("yearCountDown").innerHTML = "Only " + minutes + " minutes until school's over!";
 
@@ -514,7 +779,7 @@ if((breakDates[6] - now2) >=0){
   breakName= "Summer";
 }
 //time between dates
-var t = countDownDate2 - now2;
+var t = countDownDate2 - now2; 
 
 
 //converting betweeen days, hours, minuetes, and seconds
@@ -618,6 +883,320 @@ window.onclick = function(event) {
   }
 }
 
+function displayEvents() {
+  var x = document.getElementById("eventContainerOne");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsTwo() {
+  var x = document.getElementById("eventContainerTwo");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsThree() {
+  var x = document.getElementById("eventContainerThree");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsFour() {
+  var x = document.getElementById("eventContainerFour");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsFive() {
+  var x = document.getElementById("eventContainerFive");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsSix() {
+  var x = document.getElementById("eventContainerSix");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsSeven() {
+  var x = document.getElementById("eventContainerSeven");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsEight() {
+  var x = document.getElementById("eventContainerEight");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsNine() {
+  var x = document.getElementById("eventContainerNine");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsTen() {
+  var x = document.getElementById("eventContainerTen");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsEl() {
+  var x = document.getElementById("eventContainerEl");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsTwelve() {
+  var x = document.getElementById("eventContainerTwelve");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsThirteen() {
+  var x = document.getElementById("eventContainerThirteen");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsFourteen() {
+  var x = document.getElementById("eventContainerFourteen");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsFifteen() {
+  var x = document.getElementById("eventContainerFifteen");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsSixteen() {
+  var x = document.getElementById("eventContainerSixteen");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsSeventeen() {
+  var x = document.getElementById("eventContainerSeventeen");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsEighteen() {
+  var x = document.getElementById("eventContainerEighteen");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsNineteen() {
+  var x = document.getElementById("eventContainerNineteen");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsTwenty() {
+  var x = document.getElementById("eventContainerTwenty");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsTwentyOne() {
+  var x = document.getElementById("eventContainerTwentyOne");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsTwentyTwo() {
+  var x = document.getElementById("eventContainerTwentyTwo");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsTwentyThree() {
+  var x = document.getElementById("eventContainerTwentyThree");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsTwentyFour() {
+  var x = document.getElementById("eventContainerTwentyFour");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsTwentyFive() {
+  var x = document.getElementById("eventContainerTwentyFive");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsTwentySix() {
+  var x = document.getElementById("eventContainerTwentySix");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsTwentySeven() {
+  var x = document.getElementById("eventContainerTwentySeven");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsTwentyEight() {
+  var x = document.getElementById("eventContainerTwentyEight");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsTwentyNine() {
+  var x = document.getElementById("eventContainerTwentyNine");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsThirty() {
+  var x = document.getElementById("eventContainerThirty");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsThirtyOne() {
+  var x = document.getElementById("eventContainerThirtyOne");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsThirtyTwo() {
+  var x = document.getElementById("eventContainerThirtyTwo");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsThirtyThree() {
+  var x = document.getElementById("eventContainerThirtyThree");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsThirtyFour() {
+  var x = document.getElementById("eventContainerThirtyFour");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsThirtyFive() {
+  var x = document.getElementById("eventContainerThirtyFive");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
 
 </script>
 </body>
