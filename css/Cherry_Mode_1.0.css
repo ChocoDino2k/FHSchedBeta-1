@@ -1,3 +1,5 @@
+@import url("dycalendar.min.css");
+
 body.cherry
 {
   background-image: none;
@@ -13,20 +15,28 @@ background: black;
 }
 
 body.cherry .container1{
-color: rgb(200,0,0);
-background: #999;
+color: rgb(220,60,60);
+
   transition: background-color 0.3s;
 }
 body.cherry .container2{
-color: rgb(200,0,0);
-background: #999;
+color: rgb(220,60,60);
+
   transition: background-color 0.3s;
 }
 body.cherry .featuredSportSplash{
 background: #999;
-color: rgb(200,0,0);
+color: rgb(220,60,60);
 }
 
+body.cherry .dycalendar-month-container{
+color: rgb(220,60,60);
+}
+
+body.cherry .dycalendar-month-container .dycalendar-target-date,.dycalendar-month-container .dycalendar-today-date
+{
+color: rgb(220,60,60);
+}
 
 body.cherry a:link
 {

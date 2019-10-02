@@ -1,10 +1,41 @@
+@import url("dycalendar.min.css");
+
 body.aqua
 {
-  background-image: url("../images/background.png");
+  background-image: url("../images/aqua-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   background: RGB(255,255,255));
   color: RGB(0,0,0);
   transition: background-color 0.3s;
   transition: background-image 0.3s;
+}
+
+body.aqua .container1
+{
+  color:rgb(0,255,255);
+transition: background-color 0.3s;
+}
+
+body.aqua .container2
+{
+  color: rgb(0,255,255);
+  transition: background-color 0.3s;
+}
+
+body.aqua .featuredSportSplash
+{
+  color:rgb(0,255,255);
+  transition: background-color 0.3s;
+}
+
+body.aqua .dycalendar-month-container{
+color: rgb(0,255,255);
+}
+
+body.aqua .dycalendar-month-container .dycalendar-target-date,.dycalendar-month-container .dycalendar-today-date
+{
+color: rgb(0,255,255);
 }
 
 body.aqua a:link
