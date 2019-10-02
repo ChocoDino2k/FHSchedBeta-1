@@ -13,29 +13,30 @@ body.aqua
 
 body.aqua .container1
 {
-  color:rgb(0,255,255);
-transition: background-color 0.3s;
+  color: RGB(0,120,255);
+  transition: color 0.3s;
 }
 
 body.aqua .container2
 {
-  color: rgb(0,255,255);
-  transition: background-color 0.3s;
+  color: RGB(0,120,255);
+  transition: color 0.3s;
 }
 
 body.aqua .featuredSportSplash
 {
-  color:rgb(0,255,255);
-  transition: background-color 0.3s;
+  color: RGB(0,120,255);
+  transition:color 0.3s;
 }
 
-body.aqua .dycalendar-month-container{
-color: rgb(0,255,255);
+body.aqua .dycalendar-month-container
+{
+  color: RGB(0,120,255);
 }
 
 body.aqua .dycalendar-month-container .dycalendar-target-date,.dycalendar-month-container .dycalendar-today-date
 {
-color: rgb(0,255,255);
+color: RGB(0,120,255);
 }
 
 body.aqua a:link

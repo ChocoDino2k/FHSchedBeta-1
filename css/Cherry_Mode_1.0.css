@@ -9,10 +9,6 @@ body.cherry
   transition: background-image 0.3s;
 }
 
-body.cherry .containerRim{
-background: black;
-  transition: background-color 0.3s;
-}
 
 body.cherry .container1{
 color: rgb(220,60,60);
@@ -21,11 +17,9 @@ color: rgb(220,60,60);
 }
 body.cherry .container2{
 color: rgb(220,60,60);
-
   transition: background-color 0.3s;
 }
 body.cherry .featuredSportSplash{
-background: #999;
 color: rgb(220,60,60);
 }
 
