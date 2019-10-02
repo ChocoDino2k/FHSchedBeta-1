@@ -7,6 +7,27 @@ body.cherry
   transition: background-image 0.3s;
 }
 
+body.cherry .containerRim{
+background: black;
+  transition: background-color 0.3s;
+}
+
+body.cherry .container1{
+color: rgb(200,0,0);
+background: #999;
+  transition: background-color 0.3s;
+}
+body.cherry .container2{
+color: rgb(200,0,0);
+background: #999;
+  transition: background-color 0.3s;
+}
+body.cherry .featuredSportSplash{
+background: #999;
+color: rgb(200,0,0);
+}
+
+
 body.cherry a:link
 {
   color: white;

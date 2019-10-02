@@ -6,18 +6,75 @@
     <!-- twitter bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+
+
+
     <!-- dycalendarjs stylesheet -->
     <link href="css/dycalendar.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="css/FHSched_V_1.11.css">
+    <link rel="stylesheet" href="../css/FHSched_V_1.14.css">
+    <link rel="stylesheet" href="../css/Dark_Mode_1.0.css">
+    <link rel="stylesheet" href="../css/Cherry_Mode_1.0.css">
+    <link rel="stylesheet" href="../css/Template_Mode_1.0.css">
+
+
+
+
 </head>
 <body class="dark">
-   <p class="header">
+  <!--
+  <img class="logo" src="images/weblogo.png" width="80" height="74">
+-->
+  <a id = "ham-a" class = "ham-a" role="button" onclick="showSidebar()"><img src="../images/Hamburger_icon.png" class="ham"></a>
+  <a class="ng-logo-a" role="button" onclick="showNGBanner()">
+    <img src="../images/National_Guard_Logo.png" class = "ng-logo">
+  </a>
+
+
+
+  <div class="slider" id="sidebar">
+    <a class = "close-sidebar" role="button" onclick="showSidebar()">
+      <img src="../images/close-icon.png" class="close-icon">
+    </a>
+    <ul>
+      <li><a href="../">Home</a></li>
+      <li><a href="../about/">About</a></li>
+      <!--
+      <li><a href="../calendar/">Calendar</a></li>
+      -->
+      <li><a role="button" onclick="localStorage.setItem('mode', 'classic'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('classic')" title="Dark/light">Classic Mode</a></li>
+      <li><a role="button" onclick="localStorage.setItem('mode', 'dark'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('dark')" title="Dark/light">Dark Mode</a></li>
+      <li><a role="button" onclick="localStorage.setItem('mode', 'cherry'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('cherry')" title="Dark/light">Cherry Mode</a></li>
+      <!--
+      <li><a role="button" onclick="localStorage.setItem('mode', 'aqua'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('aqua')" title="Dark/light">Aqua Mode</a></li>
+      -->
+    </ul>
+  </div>
+
+
+  <div id="national-guard-banner" class="national-guard-banner">
+    <div class="container">
+      <p>
+        Get started here:
+        <a href="https://nationalguard.com/get-started" target="_blank">https://nationalguard.com/get-started</a>
+        <br>
+        Contact: SGT Abigail Bartholomew | (765) 265-2906
+        <br>
+        <a href="https://www.instagram.com/sgtabbibart/?hl=en" target="_blank">https://www.instagram.com/sgtabbibart/?hl=en</a>
+      </p>
+      <a class = "close-sidebar" role="button" onclick="showNGBanner()">
+        <img src="../images/close-icon.png" class="close-icon">
+      </a>
+    </div>
+  </div>
+
+
+   <p class="header" style = "height: 100px">
          <a href="../"> FHSched Calendar </a>
     </p>
 
 
-        <div class="parent">  
-        
+        <div class="parent">
+
         <div class="move">
           <div class="dropdown" style="float:right;">
             <button onclick="dropDown()" class="dropbtn">Change Month</button>
@@ -30,9 +87,9 @@
          </div>
         </div>
 
-       
+
         <div class = "containerRim"></div>
-        <div class = "containerGreyRim"></div> 
+        <div class = "containerGreyRim"></div>
         <div class="container1"  id="yearCountDown"></div>
         <div class="container2" id="breakCountDown"></div>
         <div class = "featuredSportSplash">
@@ -106,15 +163,15 @@
         <div class="pictureFourteen">
         <img src="calendar-line-vertical.png" alt="calendar" width="475" height="400">
         </div>
-        
+
 
 <button onclick="document.getElementById('id01').style.display='block'" class="button button1">
 h
 </button>
    <div id="id01" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-red"> 
-        <span onclick="document.getElementById('id01').style.display='none'" 
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id01').style.display='none'"
         class="w3-button w3-display-topright">&times;</span>
         <h2>Daily Events</h2>
       </header>
@@ -134,8 +191,8 @@ h
 </button>
    <div id="id02" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-red"> 
-        <span onclick="document.getElementById('id02').style.display='none'" 
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id02').style.display='none'"
         class="w3-button w3-display-topright">&times;</span>
         <h2>Daily Events</h2>
       </header>
@@ -155,8 +212,8 @@ h
 </button>
    <div id="id03" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-red"> 
-        <span onclick="document.getElementById('id03').style.display='none'" 
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id03').style.display='none'"
         class="w3-button w3-display-topright">&times;</span>
         <h2>Daily Events</h2>
       </header>
@@ -176,8 +233,8 @@ h
 </button>
    <div id="id04" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-red"> 
-        <span onclick="document.getElementById('id04').style.display='none'" 
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id04').style.display='none'"
         class="w3-button w3-display-topright">&times;</span>
         <h2>Daily Events</h2>
       </header>
@@ -197,8 +254,8 @@ h
 </button>
    <div id="id05" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-red"> 
-        <span onclick="document.getElementById('id05').style.display='none'" 
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id05').style.display='none'"
         class="w3-button w3-display-topright">&times;</span>
         <h2>Modal Header</h2>
       </header>
@@ -218,8 +275,8 @@ h
 </button>
    <div id="id06" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-red"> 
-        <span onclick="document.getElementById('id06').style.display='none'" 
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id06').style.display='none'"
         class="w3-button w3-display-topright">&times;</span>
         <h2>Daily Events</h2>
       </header>
@@ -239,8 +296,8 @@ h
 </button>
    <div id="id07" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-red"> 
-        <span onclick="document.getElementById('id07').style.display='none'" 
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id07').style.display='none'"
         class="w3-button w3-display-topright">&times;</span>
         <h2>Daily Events</h2>
       </header>
@@ -260,8 +317,8 @@ h
 </button>
    <div id="id08" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-red"> 
-        <span onclick="document.getElementById('id08').style.display='none'" 
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id08').style.display='none'"
         class="w3-button w3-display-topright">&times;</span>
         <h2>Daily Events</h2>
       </header>
@@ -281,8 +338,8 @@ h
 </button>
    <div id="id09" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-red"> 
-        <span onclick="document.getElementById('id09').style.display='none'" 
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id09').style.display='none'"
         class="w3-button w3-display-topright">&times;</span>
         <h2>Daily Events</h2>
       </header>
@@ -302,8 +359,8 @@ h
 </button>
    <div id="id10" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-red"> 
-        <span onclick="document.getElementById('id10').style.display='none'" 
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id10').style.display='none'"
         class="w3-button w3-display-topright">&times;</span>
         <h2>Daily Events</h2>
       </header>
@@ -323,8 +380,8 @@ h
 </button>
    <div id="id11" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-red"> 
-        <span onclick="document.getElementById('id11').style.display='none'" 
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id11').style.display='none'"
         class="w3-button w3-display-topright">&times;</span>
         <h2>Daily Events</h2>
       </header>
@@ -344,8 +401,8 @@ h
 </button>
    <div id="id12" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-red"> 
-        <span onclick="document.getElementById('id12').style.display='none'" 
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id12').style.display='none'"
         class="w3-button w3-display-topright">&times;</span>
         <h2>Daily Events</h2>
       </header>
@@ -365,8 +422,8 @@ h
 </button>
    <div id="id13" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-red"> 
-        <span onclick="document.getElementById('id13').style.display='none'" 
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id13').style.display='none'"
         class="w3-button w3-display-topright">&times;</span>
         <h2>Daily Events</h2>
       </header>
@@ -386,8 +443,8 @@ h
 </button>
    <div id="id14" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-red"> 
-        <span onclick="document.getElementById('id14').style.display='none'" 
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id14').style.display='none'"
         class="w3-button w3-display-topright">&times;</span>
         <h2>Daily Events</h2>
       </header>
@@ -407,8 +464,8 @@ h
 </button>
    <div id="id15" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-red"> 
-        <span onclick="document.getElementById('id15').style.display='none'" 
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id15').style.display='none'"
         class="w3-button w3-display-topright">&times;</span>
         <h2>Daily Events</h2>
       </header>
@@ -428,8 +485,8 @@ h
 </button>
    <div id="id16" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-red"> 
-        <span onclick="document.getElementById('id16').style.display='none'" 
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id16').style.display='none'"
         class="w3-button w3-display-topright">&times;</span>
         <h2>Daily Events</h2>
       </header>
@@ -449,8 +506,8 @@ h
 </button>
    <div id="id17" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-red"> 
-        <span onclick="document.getElementById('id17').style.display='none'" 
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id17').style.display='none'"
         class="w3-button w3-display-topright">&times;</span>
         <h2>Daily Events</h2>
       </header>
@@ -470,8 +527,8 @@ h
 </button>
    <div id="id18" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-red"> 
-        <span onclick="document.getElementById('id18').style.display='none'" 
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id18').style.display='none'"
         class="w3-button w3-display-topright">&times;</span>
         <h2>Daily Events</h2>
       </header>
@@ -491,8 +548,8 @@ h
 </button>
    <div id="id19" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-red"> 
-        <span onclick="document.getElementById('id19').style.display='none'" 
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id19').style.display='none'"
         class="w3-button w3-display-topright">&times;</span>
         <h2>Daily Events</h2>
       </header>
@@ -512,8 +569,8 @@ h
 </button>
    <div id="id20" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-red"> 
-        <span onclick="document.getElementById('id20').style.display='none'" 
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id20').style.display='none'"
         class="w3-button w3-display-topright">&times;</span>
         <h2>Daily Events</h2>
       </header>
@@ -533,8 +590,8 @@ h
 </button>
    <div id="id21" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-red"> 
-        <span onclick="document.getElementById('id21').style.display='none'" 
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id21').style.display='none'"
         class="w3-button w3-display-topright">&times;</span>
         <h2>Daily Events</h2>
       </header>
@@ -554,8 +611,8 @@ h
 </button>
    <div id="id22" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-red"> 
-        <span onclick="document.getElementById('id22').style.display='none'" 
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id22').style.display='none'"
         class="w3-button w3-display-topright">&times;</span>
         <h2>Daily Events</h2>
       </header>
@@ -575,8 +632,8 @@ h
 </button>
    <div id="id23" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-red"> 
-        <span onclick="document.getElementById('id23').style.display='none'" 
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id23').style.display='none'"
         class="w3-button w3-display-topright">&times;</span>
         <h2>Daily Events</h2>
       </header>
@@ -596,8 +653,8 @@ h
 </button>
    <div id="id24" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-red"> 
-        <span onclick="document.getElementById('id24').style.display='none'" 
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id24').style.display='none'"
         class="w3-button w3-display-topright">&times;</span>
         <h2>Daily Events</h2>
       </header>
@@ -617,8 +674,8 @@ h
 </button>
    <div id="id25" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-red"> 
-        <span onclick="document.getElementById('id25').style.display='none'" 
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id25').style.display='none'"
         class="w3-button w3-display-topright">&times;</span>
         <h2>Daily Events</h2>
       </header>
@@ -638,8 +695,8 @@ h
 </button>
    <div id="id26" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-red"> 
-        <span onclick="document.getElementById('id26').style.display='none'" 
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id26').style.display='none'"
         class="w3-button w3-display-topright">&times;</span>
         <h2>Daily Events</h2>
       </header>
@@ -659,8 +716,8 @@ h
 </button>
    <div id="id27" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-red"> 
-        <span onclick="document.getElementById('id27').style.display='none'" 
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id27').style.display='none'"
         class="w3-button w3-display-topright">&times;</span>
         <h2>Daily Events</h2>
       </header>
@@ -680,8 +737,8 @@ h
 </button>
    <div id="id28" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-red"> 
-        <span onclick="document.getElementById('id28').style.display='none'" 
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id28').style.display='none'"
         class="w3-button w3-display-topright">&times;</span>
         <h2>Daily Events</h2>
       </header>
@@ -701,8 +758,8 @@ h
 </button>
    <div id="id29" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-red"> 
-        <span onclick="document.getElementById('id29').style.display='none'" 
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id29').style.display='none'"
         class="w3-button w3-display-topright">&times;</span>
         <h2>Daily Events</h2>
       </header>
@@ -722,8 +779,8 @@ h
 </button>
    <div id="id30" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-red"> 
-        <span onclick="document.getElementById('id30').style.display='none'" 
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id30').style.display='none'"
         class="w3-button w3-display-topright">&times;</span>
         <h2>Daily Events</h2>
       </header>
@@ -743,8 +800,8 @@ h
 </button>
    <div id="id31" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-red"> 
-        <span onclick="document.getElementById('id30').style.display='none'" 
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id30').style.display='none'"
         class="w3-button w3-display-topright">&times;</span>
         <h2>Daily Events</h2>
       </header>
@@ -764,8 +821,8 @@ h
 </button>
    <div id="id32" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-red"> 
-        <span onclick="document.getElementById('id32').style.display='none'" 
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id32').style.display='none'"
         class="w3-button w3-display-topright">&times;</span>
         <h2>Daily Events</h2>
       </header>
@@ -785,8 +842,8 @@ h
 </button>
    <div id="id33" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-red"> 
-        <span onclick="document.getElementById('id33').style.display='none'" 
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id33').style.display='none'"
         class="w3-button w3-display-topright">&times;</span>
         <h2>Daily Events</h2>
       </header>
@@ -806,8 +863,8 @@ h
 </button>
    <div id="id34" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-red"> 
-        <span onclick="document.getElementById('id34').style.display='none'" 
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id34').style.display='none'"
         class="w3-button w3-display-topright">&times;</span>
         <h2>Daily Events</h2>
       </header>
@@ -827,8 +884,8 @@ h
 </button>
    <div id="id35" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-red"> 
-        <span onclick="document.getElementById('id35').style.display='none'" 
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id35').style.display='none'"
         class="w3-button w3-display-topright">&times;</span>
         <h2>Daily Events</h2>
       </header>
@@ -855,7 +912,7 @@ Event
 
 <div class="eventContainerOne">
  <span class="eventContainerOneText">
-  
+
  </span>
 </div>
 
@@ -863,7 +920,7 @@ Event
 -->
 
 
-<p class="bottom-space"></p>
+<p class="bottom-space"  style="height: 800px"></p>
     <footer>
       <div class="foot">
         <ul>
@@ -875,13 +932,13 @@ Event
           <li>Version 1.4.4</li>
         </ul>
         <ul>
-          <li> 
+          <li>
             <address style="all: unset">
           Contact: <a href="mailto:fhsched2019@gmail.com">fhsched2019@gmail.com</a>
-        </address> 
+        </address>
       </li>
         </ul>
-        
+
       </div>
     </footer>
 
@@ -917,7 +974,7 @@ var time = setInterval(function(){
   if (days <= 0) {
  document.getElementById("yearCountDown").innerHTML = "Only " + hours + " hours until school's over!";
 
-  
+
   if (hours <= 0) {
  document.getElementById("yearCountDown").innerHTML = "Only " + minutes + " minutes until school's over!";
 
@@ -981,7 +1038,7 @@ if((breakDates[6] - now2) >=0){
   breakName= "Summer";
 }
 //time between dates
-var t = countDownDate2 - now2; 
+var t = countDownDate2 - now2;
 
 
 //converting betweeen days, hours, minuetes, and seconds
@@ -1409,6 +1466,45 @@ function displayEventsThirtyFive() {
     x.style.display = "none";
   }
 } */
+//Loads darkmode upon the website refresh
+function loadModes()
+{
+  document.querySelector('body').classList.remove('dark');
+  switch (localStorage.getItem('mode'))
+  {
+    case 'classic':
+      document.querySelector('body').classList.remove('dark');
+      break;
+    case 'dark':
+      document.querySelector('body').classList.add('dark');
+      break;
+    case 'cherry':
+      document.querySelector('body').classList.add('cherry');
+      break;
+    case 'aqua':
+      document.querySelector('body').classList.add('aqua');
+      break;
+    default:
+      document.querySelector('body').classList.add('dark');
+      break;
+  };
+  editLunchPeriod(currentSchedule["lunch"]);
+}
+
+//Changes styles for the sidebar
+function showSidebar()
+{
+  document.querySelector("#sidebar").classList.toggle('active');
+  document.querySelector("#ham-a").classList.toggle('active');
+}
+
+//Changes styles for National Guard Banner
+function showNGBanner()
+{
+  document.querySelector("#national-guard-banner").classList.toggle('active');
+}
+
+loadModes();
 
 </script>
 </body>
