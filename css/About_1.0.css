@@ -3,7 +3,7 @@ html
   box-sizing: border-box;
 }
 
-.container
+.about-container
 {
   display: flex;
   position: relative;
@@ -149,7 +149,7 @@ html
   transform: translateY(15px);
   color: white;
   padding: 0 25px 25px;
-  font-size: 1.4em;
+  font-size: 1.2em;
 }
 .bio p
 {
@@ -178,16 +178,22 @@ html
   font-size: 13px;
   font-size: 13rem;
 }
-.bio-tw:before
+.bio-ig:before
 {
   content: ' ';
-  background: url(../images/twitter.png) no-repeat center center;
+  background: url(../images/instagram.png) no-repeat center center;
   background-size: 25px;
 }
 .bio-snap:before
 {
   content: ' ';
   background: url(../images/snapchat.png) no-repeat center center;
+  background-size: 25px;
+}
+.bio-yt:before
+{
+  content: ' ';
+  background: url(../images/youtube.png) no-repeat center center;
   background-size: 25px;
 }
 
@@ -241,11 +247,15 @@ html
     height: 50px;
     line-height: 50px;
   }
-  .bio-tw:before
+  .bio-ig:before
   {
     background-size: 50px;
   }
   .bio-snap:before
+  {
+    background-size: 50px;
+  }
+  .bio-yt:before
   {
     background-size: 50px;
   }

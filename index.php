@@ -1,3 +1,9 @@
+<?php
+if(isset($_GET["accept-cookies"])) {
+  setcookie("accept-cookies", "true", time() + 31536000);
+  header("Location: ./");
+}
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -27,7 +33,6 @@
     <link rel="stylesheet" href="css/FHSched_V_1.14.css">
     <link rel="stylesheet" href="css/Home_1.0.css">
     <link rel="stylesheet" href="css/Dark_Mode_1.0.css">
-    <link rel="stylesheet" href="css/Cherry_Mode_1.0.css">
     <link rel="stylesheet" href="css/Template_Mode_1.0.css">
 
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
@@ -60,8 +65,8 @@
         -->
         <li><a role="button" onclick="localStorage.setItem('mode', 'classic'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('classic')" title="Dark/light">Classic Mode</a></li>
         <li><a role="button" onclick="localStorage.setItem('mode', 'dark'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('dark')" title="Dark/light">Dark Mode</a></li>
-        <li><a role="button" onclick="localStorage.setItem('mode', 'cherry'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('cherry')" title="Dark/light">Cherry Mode</a></li>
         <!--
+        <li><a role="button" onclick="localStorage.setItem('mode', 'cherry'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('cherry')" title="Dark/light">Cherry Mode</a></li>
         <li><a role="button" onclick="localStorage.setItem('mode', 'aqua'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('aqua')" title="Dark/light">Aqua Mode</a></li>
         -->
       </ul>
@@ -100,7 +105,7 @@
       <p class = "splash">
         Proudly sponsored by <span style="color:RGB(180,140,40)">National Guard</span>!
         <br>
-        Meet our hardworking team: <a href="../about/" target = "_blank">About</a>
+        Meet our hard-working team: <a href="../about/">About</a>
         <br>
         Today is National Walk to School Day!
         <br>

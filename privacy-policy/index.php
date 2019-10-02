@@ -36,8 +36,8 @@
       </a>
       <ul>
         <li><a href="../">Home</a></li>
+        <li><a href="../about/">About</a></li>
         <!--
-        <li><a href="about">About</a></li>
         <li><a href="../calendar/">Calendar</a></li>
         -->
         <li><a role="button" onclick="localStorage.setItem('mode', 'classic'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('classic')" title="Dark/light">Classic Mode</a></li>
@@ -113,7 +113,7 @@
         </ul>
         <ul>
           <li>2019 CodingForFishers</li>
-          <li>Version 1.4.5</li>
+          <li>Version 1.4.6</li>
         </ul>
         <ul>
           <li>
