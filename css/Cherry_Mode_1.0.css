@@ -13,11 +13,11 @@ body.cherry
 body.cherry .container1{
 color: rgb(220,60,60);
 
-  transition: background-color 0.3s;
+  transition: color 0.3s;
 }
 body.cherry .container2{
 color: rgb(220,60,60);
-  transition: background-color 0.3s;
+  transition: color 0.3s;
 }
 body.cherry .featuredSportSplash{
 color: rgb(220,60,60);
@@ -25,6 +25,7 @@ color: rgb(220,60,60);
 
 body.cherry .dycalendar-month-container{
 color: rgb(220,60,60);
+transition: color 0.3s;
 }
 
 body.cherry .dycalendar-month-container .dycalendar-target-date,.dycalendar-month-container .dycalendar-today-date
