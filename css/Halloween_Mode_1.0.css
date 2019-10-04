@@ -124,14 +124,48 @@ body.halloween .ham-a:hover
 body.halloween .time-schedule
 {
   color: black;
-  background-color:white;
+  background-color: #191919;
   transition: background-color 0.3s;
+
+}
+body.halloween .period-display{
+
+  color: white;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px white, 0 0 40px white, 0 0 50px white, 0 0 60px white, 0 0 70px white;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px white, 0 0 40px white, 0 0 50px white, 0 0 60px white, 0 0 30px white, 0 0 30px white;
+  }
+}
+@-webkit-keyframes glow-o {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px orange, 0 0 40px orange, 0 0 50px orange, 0 0 60px orange, 0 0 70px orange;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px orange, 0 0 40px orange, 0 0 50px orange, 0 0 60px orange, 0 0 30px orange, 0 0 30px orange;
+  }
+}
+
+body.halloween .timer{
+  color: rgb(180,180,180);
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
 }
 
 body.halloween .period-countdown
 {
   color: white;
   transition: background-color 0.3s;
+
 }
 
 body.halloween .remaining-time
@@ -171,12 +205,15 @@ body.halloween .splash a:hover
 
 body.halloween .btn {
   color: darkorange;
-  background-color:white;
+  background-color:#191919;
   transition: all 0.3s;
+  -webkit-animation: glow-o 1s ease-in-out infinite alternate;
+  -moz-animation: glow-o 1s ease-in-out infinite alternate;
+  animation: glow-o 1s ease-in-out infinite alternate;
 }
 body.halloween .btn:hover {
   color: orange;
-  background-color:lightgray;
+  background-color:RGB(50,50,50);
   transition: all 0s;
 }
 
