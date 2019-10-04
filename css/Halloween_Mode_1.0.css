@@ -153,6 +153,23 @@ body.halloween .period-display{
     text-shadow: 0 0 20px #fff, 0 0 30px orange, 0 0 40px orange, 0 0 50px orange, 0 0 60px orange, 0 0 30px orange, 0 0 30px orange;
   }
 }
+@-webkit-keyframes glow-ele {
+  from {
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px white, 0 0 40px white, 0 0 50px white, 0 0 60px white, 0 0 70px white;
+  }
+  to {
+    box-shadow: 0 0 20px #fff, 0 0 30px white, 0 0 40px white, 0 0 50px white, 0 0 60px white, 0 0 30px white, 0 0 30px white;
+  }
+}
+@-webkit-keyframes glow-o-ele {
+  from {
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px orange, 0 0 40px orange, 0 0 50px orange, 0 0 60px orange, 0 0 70px orange;
+  }
+  to {
+    box-shadow: 0 0 20px #fff, 0 0 30px orange, 0 0 40px orange, 0 0 50px orange, 0 0 60px orange, 0 0 30px orange, 0 0 30px orange;
+  }
+}
+
 
 body.halloween .timer{
   color: rgb(180,180,180);
@@ -177,12 +194,17 @@ body.halloween .remaining-time
 body.halloween .dot
 {
   background-color:black;
-  src: url("css-dep/jack-o-lantern.png")
+  -webkit-animation: glow-ele 1s ease-in-out infinite alternate;
+  -moz-animation: glow-ele 1s ease-in-out infinite alternate;
+  animation: glow-ele 1s ease-in-out infinite alternate;
 }
 body.halloween .dot-cur
 {
-  background-color:firebrick;
+  background-color:darkorange;
   transition: background-color 0.3s;
+  -webkit-animation: glow-o-ele 1s ease-in-out infinite alternate;
+  -moz-animation: glow-o-ele 1s ease-in-out infinite alternate;
+  animation: glow-o-ele 1s ease-in-out infinite alternate;
 }
 body.halloween .dot:hover {
   background-color: darkgray;
