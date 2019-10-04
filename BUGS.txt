@@ -1,0 +1,1 @@
+-Duplicate modes in the sidebar (cherry and aqua)
