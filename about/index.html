@@ -11,6 +11,8 @@
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-icon-114x114.png">
     <link rel="apple-touch-icon" sizes="144x144" href="../images/apple-icon-144x144.png">
 
+    <script type="text/javascript" src="../js/FHSched_Base_V_1.0.js"></script>
+
     <link rel="stylesheet" href="../css/FHSched_V_1.14.css">
     <link rel="stylesheet" href="../css/About_1.0.css">
     <link rel="stylesheet" href="../css/Dark_Mode_1.0.css">
@@ -22,7 +24,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   </head>
-  <body class = "dark" ontouchstart="">
+  <body id = "body" onload = "createThemes()" class = "dark" ontouchstart="">
     <!--
     <img class="logo" src="images/weblogo.png" width="80" height="74">
   -->
@@ -41,18 +43,14 @@
       <a class = "close-sidebar" role="button" onclick="showSidebar()">
         <img src="../images/close-icon.png" class="close-icon">
       </a>
-      <ul>
+      <ul id = "sidebar-list">
         <li><a href="../">Home</a></li>
         <li><a href="../about/">About</a></li>
         <!--
         <li><a href="../calendar/">Calendar</a></li>
         -->
-        <li><a role="button" onclick="localStorage.setItem('mode', 'classic'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('classic')" title="Dark/light">Classic Mode</a></li>
-        <li><a role="button" onclick="localStorage.setItem('mode', 'dark'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('dark')" title="Dark/light">Dark Mode</a></li>
-        <!--
-        <li><a role="button" onclick="localStorage.setItem('mode', 'cherry'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('cherry')" title="Dark/light">Cherry Mode</a></li>
-        <li><a role="button" onclick="localStorage.setItem('mode', 'aqua'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('aqua')" title="Dark/light">Aqua Mode</a></li>
-        -->
+        <li><a role="button" onclick="localStorage.setItem('mode', 'classic'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('classic')">Classic Mode</a></li>
+        <li><a role="button" onclick="localStorage.setItem('mode', 'dark'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('dark')">Dark Mode</a></li>
       </ul>
     </div>
 
@@ -122,34 +120,6 @@
         </div>
       </div>
 
-      <!--
-      <div class="team-space">
-        <div class="team">
-          <div class="team-card">
-            <img src="../images/about_images/temp_profile.jpg" alt="">
-            <div class="bio">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-          </div>
-          <h2>Ben Lilley</h2>
-          <h3>Server Manager</h3>
-        </div>
-      </div>
-    -->
-
-      <div class="team-space">
-        <div class="team">
-          <div class="team-card">
-            <img src="../images/about_images/Logan_Cover.png" alt="">
-            <div class="bio">
-              <p>Logan is a hard-working individual who is very passionate about coding, especially software development. He ranked the best on curiosity for his character day evaluation, but judging by his photo, it should have been his stunning looks and lovable face. Logan hopes to extend his knowledge in web development, as to attain a career in creating and maintaining websites.</p>
-            </div>
-          </div>
-          <h2>Logan Cover</h2>
-          <h3>Front-End Developer</h3>
-        </div>
-      </div>
-
       <div class="team-space">
         <div class="team">
           <div class="team-card">
@@ -162,6 +132,32 @@
           </div>
           <h2>John Eberle</h2>
           <h3>Business Communications</h3>
+        </div>
+      </div>
+
+      <div class="team-space">
+        <div class="team">
+          <div class="team-card">
+            <img src="../images/about_images/Ben_Lilley.jpg" alt="">
+            <div class="bio">
+              <p>Ben is driven, hard-working, curious, and creative in his unique approaches to solving the problems that arise with back-end development of FHSched. The curiosity leads him down programming rabbit holes that sucks him in until he understands, or until SQL is involved. When he’s not spilling his third cup of coffee on his keyboard, Ben enjoys participating in Destination Imagination, listening to Vampire Weekend, watching The Simpsons, studying chemistry, and making his friends laugh.</p>
+            </div>
+          </div>
+          <h2>Ben Lilley</h2>
+          <h3>Server Manager</h3>
+        </div>
+      </div>
+
+      <div class="team-space">
+        <div class="team">
+          <div class="team-card">
+            <img src="../images/about_images/Logan_Cover.png" alt="">
+            <div class="bio">
+              <p>Logan is a hard-working individual who is very passionate about coding, especially software development. He ranked the best on curiosity for his character day evaluation, but judging by his photo, it should have been his stunning looks and lovable face. Logan hopes to extend his knowledge in web development, as to attain a career in creating and maintaining websites.</p>
+            </div>
+          </div>
+          <h2>Logan Cover</h2>
+          <h3>Front-End Developer</h3>
         </div>
       </div>
 
@@ -202,6 +198,19 @@
             </div>
           </div>
           <h2>Arjav Seshachalam</h2>
+          <h3>Front-End Developer</h3>
+        </div>
+      </div>
+
+      <div class="team-space">
+        <div class="team">
+          <div class="team-card">
+            <img src="../images/about_images/Vinay_Krishnan.jpg" alt="">
+            <div class="bio">
+              <p>Vinay is a hardworking individual that likes to get stuff done. He is a front-end web developer that is a part of the FHSched site. He likes to work on many projects that require both lower and higher level programming. His true passion is computer science and algorithm development. He would like to create a start up that develops cybersecurity technology that involves machine programming like facial recognition and Smart devices.</p>
+            </div>
+          </div>
+          <h2>Vinay Krishnan</h2>
           <h3>Front-End Developer</h3>
         </div>
       </div>
@@ -272,46 +281,5 @@
     }
     ?>
   -->
-    <script type="text/javascript">
-      //Loads darkmode upon the website refresh
-      function loadModes()
-      {
-        document.querySelector('body').classList.remove('dark');
-        switch (localStorage.getItem('mode'))
-        {
-          case 'classic':
-            document.querySelector('body').classList.remove('dark');
-            break;
-          case 'dark':
-            document.querySelector('body').classList.add('dark');
-            break;
-          case 'cherry':
-            document.querySelector('body').classList.add('cherry');
-            break;
-          case 'aqua':
-            document.querySelector('body').classList.add('aqua');
-            break;
-          default:
-            document.querySelector('body').classList.add('dark');
-            break;
-        };
-      }
-
-      //Changes styles for the sidebar
-      function showSidebar()
-      {
-        document.querySelector("#sidebar").classList.toggle('active');
-        document.querySelector("#ham-a").classList.toggle('active');
-      }
-
-      //Changes styles for National Guard Banner
-      function showNGBanner()
-      {
-        document.querySelector("#national-guard-banner").classList.toggle('active');
-      }
-
-      loadModes();
-
-    </script>
   </body>
 </html>

@@ -23,18 +23,19 @@
 
     <script type="text/javascript" src="js/FHSched_Schedule_Data_V_1.11.js"> </script>
     <script type="text/javascript" src="js/FHSched_Calendar_Data_V_1.4.js"></script>
+    <script type="text/javascript" src="js/FHSched_Base_V_1.0.js"></script>
 
     <link rel="stylesheet" href="css/FHSched_V_1.14.css">
     <link rel="stylesheet" href="css/Home_1.0.css">
     <link rel="stylesheet" href="css/Dark_Mode_1.0.css">
     <link rel="stylesheet" href="css/Cherry_Mode_1.0.css">
+    <link rel="stylesheet" href="css/Aqua_Mode_1.0.css">
     <link rel="stylesheet" href="css/Template_Mode_1.0.css">
-    <link rel ="stylesheet" href="css/Aqua_Mode_1.0.css">
 
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
-  <body class = "dark">
+  <body onload="createThemes()" id="body" class = "dark">
     <!--
     <img class="logo" src="images/weblogo.png" width="80" height="74">
   -->
@@ -53,19 +54,14 @@
       <a class = "close-sidebar" role="button" onclick="showSidebar()">
         <img src="images/close-icon.png" class="close-icon">
       </a>
-      <ul>
+      <ul id = "sidebar-list">
         <li><a href="../">Home</a></li>
         <li><a href="../about/">About</a></li>
         <!--
         <li><a href="../calendar/">Calendar</a></li>
         -->
-        <li><a role="button" onclick="localStorage.setItem('mode', 'classic'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('classic')" title="Dark/light">Classic Mode</a></li>
-        <li><a role="button" onclick="localStorage.setItem('mode', 'dark'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('dark')" title="Dark/light">Dark Mode</a></li>
-        <li><a role="button" onclick="localStorage.setItem('mode', 'cherry'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('cherry')" title="Dark/light">Cherry Mode</a></li>
-        <li><a role="button" onclick="localStorage.setItem('mode', 'aqua'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('aqua')" title="Dark/light">Aqua Mode</a></li>
-        <!--
-        <li><a role="button" onclick="localStorage.setItem('mode', 'aqua'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('aqua')" title="Dark/light">Aqua Mode</a></li>
-        -->
+        <li><a role="button" onclick="localStorage.setItem('mode', 'classic'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('classic')">Classic Mode</a></li>
+        <li><a role="button" onclick="localStorage.setItem('mode', 'dark'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('dark')">Dark Mode</a></li>
       </ul>
     </div>
 
@@ -104,7 +100,7 @@
         <br>
         Meet our hardworking team: <a href="../about/" target = "_blank">About</a>
         <br>
-        Today is National Walk to School Day!
+        Almost to Friday!
         <br>
         Big updates are arriving soon.
       </p>
@@ -627,45 +623,7 @@
       return "";
     }
 
-    //Loads darkmode upon the website refresh
-    function loadModes()
-    {
-      document.querySelector('body').classList.remove('dark');
-      switch (localStorage.getItem('mode'))
-      {
-        case 'classic':
-          document.querySelector('body').classList.remove('dark');
-          break;
-        case 'dark':
-          document.querySelector('body').classList.add('dark');
-          break;
-        case 'cherry':
-          document.querySelector('body').classList.add('cherry');
-          break;
-        case 'aqua':
-          document.querySelector('body').classList.add('aqua');
-          break;
-        default:
-          document.querySelector('body').classList.add('dark');
-          break;
-      };
-      editLunchPeriod(currentSchedule["lunch"]);
-    }
-
-    //Changes styles for the sidebar
-    function showSidebar()
-    {
-      document.querySelector("#sidebar").classList.toggle('active');
-      document.querySelector("#ham-a").classList.toggle('active');
-    }
-
-    //Changes styles for National Guard Banner
-    function showNGBanner()
-    {
-      document.querySelector("#national-guard-banner").classList.toggle('active');
-    }
-
-    loadModes();
+    editLunchPeriod(currentSchedule["lunch"]);
 
     </script>
   </body>
