@@ -28,7 +28,10 @@
     <link rel="stylesheet" href="css/Home_1.0.css">
     <link rel="stylesheet" href="css/Dark_Mode_1.0.css">
     <link rel="stylesheet" href="css/Cherry_Mode_1.0.css">
+    <link rel="stylesheet" href="css/Aqua_Mode_1.0.css">
     <link rel="stylesheet" href="css/Template_Mode_1.0.css">
+    <link rel="stylesheet" href="css/Halloween_Mode_1.0.css">
+
 
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -37,7 +40,7 @@
     <!--
     <img class="logo" src="images/weblogo.png" width="80" height="74">
   -->
-    <a id = "ham-a" class = "ham-a" role="button" onclick="showSidebar()"><img src="images/Hamburger_icon.png" class="ham"></a>
+    <a id = "ham-a" class = "ham-a" role="button" onclick="showSidebar()"><img src="images/Hamburger_icon.png" class="ham" id = "ham-switch"></a>
     <a class="ng-logo-a" role="button" onclick="showNGBanner()">
       <img src="images/National_Guard_Logo.png" class = "ng-logo">
     </a>
@@ -61,6 +64,9 @@
         <li><a role="button" onclick="localStorage.setItem('mode', 'classic'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('classic')" title="Dark/light">Classic Mode</a></li>
         <li><a role="button" onclick="localStorage.setItem('mode', 'dark'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('dark')" title="Dark/light">Dark Mode</a></li>
         <li><a role="button" onclick="localStorage.setItem('mode', 'cherry'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('cherry')" title="Dark/light">Cherry Mode</a></li>
+        <li><a role="button" onclick="localStorage.setItem('mode', 'aqua'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('aqua')" title="Dark/light">Aqua Mode</a></li>
+        <li><a role="button" onclick="localStorage.setItem('mode', 'halloween'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('halloween')" title="Dark/light">Halloween Mode</a></li>
+
         <!--
         <li><a role="button" onclick="localStorage.setItem('mode', 'aqua'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('aqua')" title="Dark/light">Aqua Mode</a></li>
         -->
@@ -110,6 +116,8 @@
         Meet our team: <a href="about">About</a>
         -->
       </p>
+    </div>
+    <div class = "mode-img">
     </div>
 
     <div id = "wrongLunchDiv" class="wrongLunchDiv">
@@ -194,6 +202,9 @@
     var curHour = today.getHours();
     var curMin = today.getMinutes();
     var curSec = today.getSeconds();
+
+    var standardHam = "images/Hamburger_icon.png";
+
 
     function updateClock()
     {
@@ -637,18 +648,26 @@
       {
         case 'classic':
           document.querySelector('body').classList.remove('dark');
+          document.querySelector('#ham-switch').src = standardHam;
           break;
         case 'dark':
           document.querySelector('body').classList.add('dark');
+          document.querySelector('#ham-switch').src = standardHam;
           break;
         case 'cherry':
           document.querySelector('body').classList.add('cherry');
+          document.querySelector('#ham-switch').src = standardHam;
           break;
         case 'aqua':
           document.querySelector('body').classList.add('aqua');
+          document.querySelector('#ham-switch').src = standardHam;
+          break;
+        case 'halloween':
+          document.querySelector('body').classList.add('halloween');
           break;
         default:
           document.querySelector('body').classList.add('dark');
+          document.querySelector('#ham-switch').src = standardHam;
           break;
       };
       editLunchPeriod(currentSchedule["lunch"]);
