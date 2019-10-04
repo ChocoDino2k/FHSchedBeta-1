@@ -7,6 +7,37 @@ body.dark
   transition: background-image 0.3s;
 }
 
+body.dark .container1
+{
+  color: RGB(255,255,255);
+  background: #aaa;
+  transition: color 0.3s;
+}
+
+body.dark .container2
+{
+  color: RGB(255,255,255);
+  background: #aaa;
+  transition: color 0.3s;
+}
+
+body.dark .containerGreyRim{
+  background: #aaa;
+  transition: background-color 0.3s;
+}
+
+body.dark .containerRim{
+  background: #FFF;
+  transition: background-color 0.3s;
+}
+
+body.dark .featuredSportSplash
+{
+  color: RGB(255,255,255);
+  background: #aaa;
+  transition:color 0.3s;
+}
+
 body.dark a:link
 {
   color: white;

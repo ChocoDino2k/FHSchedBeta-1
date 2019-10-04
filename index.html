@@ -30,6 +30,8 @@
     <link rel="stylesheet" href="css/Cherry_Mode_1.0.css">
     <link rel="stylesheet" href="css/Template_Mode_1.0.css">
     <link rel ="stylesheet" href="css/Aqua_Mode_1.0.css">
+    <link rel ="stylesheet" href="css/Halloween_Mode_1.0.css">
+
 
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -38,7 +40,7 @@
     <!--
     <img class="logo" src="images/weblogo.png" width="80" height="74">
   -->
-    <a id = "ham-a" class = "ham-a" role="button" onclick="showSidebar()"><img src="images/Hamburger_icon.png" class="ham"></a>
+    <a id = "ham-a" class = "ham-a" role="button" onclick="showSidebar()"><img src = "images/Hamburger_icon.png" class="ham" id = "ham-switch"></a>
     <a class="ng-logo-a" role="button" onclick="showNGBanner()">
       <img src="images/National_Guard_Logo.png" class = "ng-logo">
     </a>
@@ -63,6 +65,8 @@
         <li><a role="button" onclick="localStorage.setItem('mode', 'dark'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('dark')" title="Dark/light">Dark Mode</a></li>
         <li><a role="button" onclick="localStorage.setItem('mode', 'cherry'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('cherry')" title="Dark/light">Cherry Mode</a></li>
         <li><a role="button" onclick="localStorage.setItem('mode', 'aqua'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('aqua')" title="Dark/light">Aqua Mode</a></li>
+        <li><a role="button" onclick="localStorage.setItem('mode', 'halloween'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('halloween')" title="Dark/light">Halloween Mode</a></li>
+
         <!--
         <li><a role="button" onclick="localStorage.setItem('mode', 'aqua'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('aqua')" title="Dark/light">Aqua Mode</a></li>
         -->
@@ -76,10 +80,10 @@
     <div id="periodDiv" class="time-schedule">
       <p id = "period" class = "period-display">No Period</p>
       <p id = "timer" class = "timer">Not School Hours</p>
-      <button class = "btn btn-left" onclick = "changePeriod(-1)">
+      <button class = "btn btn-left" onclick = "changePeriod(-1)" id = "b">
         &#8249;
       </button>
-      <button class = "btn btn-right" onclick = "changePeriod(1)">
+      <button class = "btn btn-right" onclick = "changePeriod(1)" id = "b">
         &#8250;
       </button>
     </div>
@@ -110,6 +114,10 @@
       </p>
     </div>
 
+
+    <div class="mode-img">
+
+    </div>
     <div id = "wrongLunchDiv" class="wrongLunchDiv">
       <button onclick = "resetLunch()" class = "wrongLunchBtn">
         Wrong lunch?
@@ -117,7 +125,9 @@
     </div>
 
     <p class="bottom-space"></p>
+
     <footer>
+
       <div class="foot">
         <ul>
           <li><a href="../privacy-policy/">Privacy Policy</a></li>
@@ -192,6 +202,10 @@
     var curHour = today.getHours();
     var curMin = today.getMinutes();
     var curSec = today.getSeconds();
+
+    //Variables for hamburger Hamburger_icon
+    var standardHam = "images/Hamburger_icon.png"
+    var bJack = document.querySelector("#b");
 
     function updateClock()
     {
@@ -635,18 +649,26 @@
       {
         case 'classic':
           document.querySelector('body').classList.remove('dark');
+          document.querySelector('#ham-switch').src = standardHam;
           break;
         case 'dark':
           document.querySelector('body').classList.add('dark');
+          document.querySelector('#ham-switch').src = standardHam;
           break;
         case 'cherry':
           document.querySelector('body').classList.add('cherry');
+          document.querySelector('#ham-switch').src = standardHam;
           break;
         case 'aqua':
           document.querySelector('body').classList.add('aqua');
+          document.querySelector('#ham-switch').src = standardHam;
+          break;
+        case 'halloween':
+          document.querySelector('body').classList.add('halloween');
           break;
         default:
           document.querySelector('body').classList.add('dark');
+          document.querySelector('#ham-switch').src = standardHam;
           break;
       };
       editLunchPeriod(currentSchedule["lunch"]);
@@ -657,6 +679,7 @@
     {
       document.querySelector("#sidebar").classList.toggle('active');
       document.querySelector("#ham-a").classList.toggle('active');
+
     }
 
     //Changes styles for National Guard Banner
