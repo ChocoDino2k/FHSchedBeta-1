@@ -37,6 +37,8 @@ if(isset($_GET["accept-cookies"])) {
     <link rel="stylesheet" href="css/Cherry_Mode_1.0.css">
     <link rel="stylesheet" href="css/Aqua_Mode_1.0.css">
     <link rel="stylesheet" href="css/Template_Mode_1.0.css">
+    <link rel ="stylesheet" href="css/Halloween_Mode_1.0.css">
+
 
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -66,8 +68,12 @@ if(isset($_GET["accept-cookies"])) {
         <!--
         <li><a href="../calendar/">Calendar</a></li>
         -->
-        <li><a role="button" onclick="localStorage.setItem('mode', 'classic'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('classic')">Classic Mode</a></li>
-        <li><a role="button" onclick="localStorage.setItem('mode', 'dark'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('dark')">Dark Mode</a></li>
+
+                <li><a role="button" onclick="localStorage.setItem('mode', 'classic'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('classic')" title="Dark/light">Classic Mode</a></li>
+                <li><a role="button" onclick="localStorage.setItem('mode', 'dark'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('dark')" title="Dark/light">Dark Mode</a></li>
+                <li><a role="button" onclick="localStorage.setItem('mode', 'cherry'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('cherry')" title="Dark/light">Cherry Mode</a></li>
+                <li><a role="button" onclick="localStorage.setItem('mode', 'aqua'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('aqua')" title="Dark/light">Aqua Mode</a></li>
+                <li><a role="button" onclick="localStorage.setItem('mode', 'halloween'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('halloween')" title="Dark/light">Halloween Mode</a></li>
       </ul>
     </div>
 
