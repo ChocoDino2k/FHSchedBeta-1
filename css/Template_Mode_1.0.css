@@ -7,49 +7,6 @@ body.template
   transition: background-image 0.3s;
 }
 
-body.template .container1
-{
-  color: RGB(255,255,255);
-  background: #aaa;
-  transition: color 0.3s;
-}
-
-body.template .container2
-{
-  color: RGB(255,255,255);
-  background: #aaa;
-  transition: color 0.3s;
-}
-
-body.template .containerGreyRim{
-  background: #aaa;
-  transition: background-color 0.3s;
-}
-
-body.template .containerRim{
-  background: #000;
-  transition: background-color 0.3s;
-}
-
-body.template .featuredSportSplash
-{
-  color: RGB(255,255,255);
-  background: #aaa;
-  transition:color 0.3s;
-}
-
-body.template .dycalendar-month-container
-{
-  color: RGB(255,255,255);
-  transition: color 0.3s;
-}
-
-body.template .dycalendar-month-container .dycalendar-target-date,.dycalendar-month-container .dycalendar-today-date
-{
-  color: RGB(255,255,255);
-  transition: color 0.3s;
-}
-
 body.template a:link
 {
   color: RGB(0,0,0);

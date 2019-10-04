@@ -2,7 +2,9 @@
 
 body.aqua
 {
-  background-image: url("../images/background.png");
+  
+  background-repeat: no-repeat;
+  background-size: cover;
   background: RGB(255,255,255));
   color: RGB(0,0,0);
   transition: background-color 0.3s;
@@ -12,31 +14,18 @@ body.aqua
 body.aqua .container1
 {
   color: RGB(0,120,255);
-  background: #aaa;
   transition: color 0.3s;
 }
 
 body.aqua .container2
 {
   color: RGB(0,120,255);
-  background: #aaa;
   transition: color 0.3s;
-}
-
-body.aqua .containerGreyRim{
-  background: #aaa;
-  transition: background-color 0.3s;
-}
-
-body.aqua .containerRim{
-  background: RGB(0,50,150);
-  transition: background-color 0.3s;
 }
 
 body.aqua .featuredSportSplash
 {
   color: RGB(0,120,255);
-  background: #aaa;
   transition:color 0.3s;
 }
 
