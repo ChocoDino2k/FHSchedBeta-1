@@ -16,6 +16,8 @@ function createThemes()
   for (var i = 0; i < localThemes.length; i++)
   {
     themes[i] = createTheme(localThemes[i]);
+    var upTheme = localThemes[i].charAt(0).toUpperCase() + localThemes[i].substring(1);
+    addLink(upTheme);
   }
   loadThemes();
 }
@@ -24,24 +26,9 @@ function createThemes()
 function loadThemes()
 {
   document.querySelector("#body").classList = "";
-  switch (localStorage.getItem('mode'))
-  {
-    case 'classic':
-      document.querySelector("#body").classList.remove('dark');
-      break;
-    case 'dark':
-      document.querySelector("#body").classList.add('dark');
-      break;
-    case 'cherry':
-      document.querySelector("#body").classList.add('cherry');
-      break;
-    case 'aqua':
-      document.querySelector("#body").classList.add('aqua');
-      break;
-    default:
-      document.querySelector("#body").classList.add('dark');
-      break;
-  };
+
+  var theme = localStorage.getItem('mode');
+  document.querySelector("#body").classList.add(theme);
 }
 
 //Take input to add new mode
@@ -49,24 +36,32 @@ function addTheme()
 {
   var input = document.querySelector("#modeInput").value;
   input = input.toLowerCase();
+  var upInput = input.charAt(0).toUpperCase() + input.substring(1);
   if(localThemes.indexOf(input) == -1)
   {
-    switch (input)
-    {
-      case 'cherry':
-        localThemes.push('cherry');
-        themes.push(createTheme('Cherry'));
-        break;
-      case 'aqua':
-        localThemes.push('aqua');
-        themes.push(createTheme('Aqua'));
-        break;
-      default:
-        console.log("fail");
-        break;
-    };
+    $.ajax({
+      url:'http://fhsched.com/css/' + upInput + '_Mode_1.0.css',
+      error: function()
+      {
+        console.log("t");
+      },
+      success: function()
+      {
+        localThemes.push(input);
+        themes.push(createTheme(upInput));
+        addLink(upInput);
+      }
+    });
   }
   loadThemes();
+}
+
+function addLink(file)
+{
+  var link = document.createElement('link');
+  link.setAttribute('rel', 'stylesheet');
+  link.setAttribute('href', 'css/' + file + '_Mode_1.0.css');
+  document.getElementsByTagName('head')[0].appendChild(link);
 }
 
 function createTheme(modeName)
