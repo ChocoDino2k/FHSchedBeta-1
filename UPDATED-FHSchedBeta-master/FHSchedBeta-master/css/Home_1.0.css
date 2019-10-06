@@ -1,0 +1,223 @@
+.schedule-display
+{
+  background-color: RGB(210,210,210);
+  display: block;
+  letter-spacing: 5px;
+  font-family: "anton", verdana;
+  text-align:center;
+  font-size:40px;
+  width: fit-content;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  padding: 10px 30px;
+  border-radius: 15px;
+}
+
+.time-schedule
+{
+  margin-top: 0px;
+  position:relative;
+  text-align:center;
+  font-family: "anton", verdana;
+  letter-spacing: 5px;
+  height:220px;
+  width: 70%;
+  margin: auto;
+  border-radius: 20px;
+  background-color: RGB(210,210,210);
+  transition: background-color 0.3s;
+}
+
+.period-display
+{
+  font-size:30px;
+  margin-top: 50px;
+  margin-bottom: 0px;
+  padding: 10px 10px 0px;
+}
+
+.timer
+{
+  font-size:70px;
+  padding: 0px 10px 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.period-countdown
+{
+  letter-spacing: 5px;
+  font-family: "anton", verdana;
+  text-align:center;
+  font-size:40px;
+  margin-top: 40px;
+  margin-bottom: 0px;
+  padding: 10px;
+  transition: background-color 0.3s;
+}
+
+.remaining-time
+{
+  letter-spacing: 5px;
+  font-family: "anton", verdana;
+  text-align:center;
+  font-size:70px;
+  margin-top: 0px;
+  margin-bottom: 60px;
+  padding: 10px;
+}
+
+.dot
+{
+  outline: none;
+  border: none;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  background: white;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0px 10px;
+}
+.dot-cur
+{
+  background-color: red;
+  transition: background-color 0.3s;
+}
+.dot:hover
+{
+  background-color: RGB(130,130,130);
+}
+
+.btn
+{
+  outline: none;
+  height:220px;
+  border: none;
+  background-color: RGB(210,210,210);
+  padding: 0px 35px 20px;
+  font-size: 100px;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 20px;
+  position: absolute;
+  top: 0px;
+  transition: all 0.3s;
+}
+.btn-left
+{
+  left: -125px;
+}
+.btn-right
+{
+  right: -125px;
+}
+.btn:hover
+{
+  background: RGB(170,170,170);
+  transition: all 0s;
+}
+
+.splash
+{
+  position: relative;
+  letter-spacing: 5px;
+  font-family:"anton";
+  text-align:center;
+  font-size: 40px;
+  margin-top: 10px;
+  padding: 10px 30px 0;
+  width:fit-content;
+  background-color: RGB(210,210,210);
+  height: 245px;
+  border-radius: 20px;
+  margin: auto;
+  margin-bottom: 50px;
+  transition: background-color 0.3s;
+}
+.splash a
+{
+  color: red;
+}
+.splash a:hover
+{
+  color: darkred;
+}
+
+.lunchBtnDiv
+{
+  display:block;
+  position: relative;
+  height: 270px;
+  letter-spacing: 5px;
+  font-family:"anton";
+  text-align:center;
+  margin:auto;
+}
+.lunchBtn
+{
+  font-family:"anton";
+  outline: none;
+  display: inline-block;
+  height:180px;
+  width: 180px;
+  border: none;
+  background-color: red;
+  padding: 10px;
+  font-size: 80px;
+  color: white;
+  cursor: pointer;
+  border-radius: 40px;
+  position: relative;
+  top: 0px;
+  margin: 0px 30px;
+  transition: all 0.3s;
+}
+.lunchBtn:hover
+{
+  background:firebrick;
+  color: RGB(200,200,200);
+  transition: all 0s;
+}
+.lunchBtn p
+{
+  font-size: 30px;
+  margin:0;
+}
+
+.wrongLunchDiv
+{
+  display:none;
+  position: relative;
+  height: 100px;
+  letter-spacing: 5px;
+  font-family:"anton";
+  text-align:center;
+  margin:auto;
+}
+.wrongLunchBtn
+{
+  font-family:"anton";
+  outline: none;
+  display: inline-block;
+  height: 100px;
+  width: 350px;
+  border: none;
+  background-color: red;
+  padding: 10px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  border-radius: 20px;
+  position: relative;
+  top: 0px;
+  margin: 0px 30px;
+  transition: all 0.3s;
+}
+.wrongLunchBtn:hover
+{
+  background:firebrick;
+  color: RGB(200,200,200);
+  transition: all 0s;
+}

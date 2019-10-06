@@ -1,0 +1,262 @@
+html
+{
+  box-sizing: border-box;
+}
+
+.about-container
+{
+  display: flex;
+  position: relative;
+  margin: auto;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.about-header
+{
+  display: block;
+  position: relative;
+  margin: 50px auto;
+  font-family: "anton";
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center;
+  background-color: RGB(210,210,210);
+  width: fit-content;
+  padding: 5px 20px;
+  border-radius: 15px;
+}
+
+.team-grid
+{
+  display: flex;
+  position: relative;
+  padding: 0;
+  margin: 0px 30px;
+  flex-wrap: wrap;
+  text-align: center;
+  font-family: sans-serif;
+}
+.team-space
+{
+  margin: 0 auto 50px;
+  display: block;
+  width: fit-content;
+}
+@media (min-width: 600px)
+{
+  .about-header
+  {
+    font-size: 5em;
+    padding: 10px 40px;
+    border-radius: 20px;
+  }
+  .team-grid
+  {
+    margin: 0px 40px;
+  }
+  .team-space
+  {
+    width: 50%;
+  }
+}
+@media (min-width: 1100px)
+{
+  .about-header
+  {
+    font-size: 7em;
+    padding: 10px 50px;
+    border-radius: 30px;
+  }
+  .team-grid
+  {
+    margin: 0px 85px;
+  }
+  .team-space
+  {
+    width: 33.33%;
+  }
+}
+.team
+{
+  margin: 0 10px;
+  padding: 15px;
+  background-color: RGB(210,210,210);
+  border-radius: 20px;
+}
+.team-card
+{
+  position: relative;
+}
+.team-card:after
+{
+  display: block;
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 4px;
+  width: 100%;
+  background: black;
+  opacity: 0;
+  border-radius: 15px;
+  transition: opacity 0.4s linear;
+}
+.team-space:hover .team-card:after
+{
+  opacity: 0.8;
+}
+
+.team img
+{
+  width : 100%;
+  border-radius: 15px;
+  opacity: 1;
+}
+.team h2
+{
+  margin: 10px 0 5px;
+  font-family: "anton";
+  font-size: 2.5em;
+  font-weight: bold;
+  text-align: center;
+}
+.team h3
+{
+  text-align: center;
+  font-weight: normal;
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.team-space:hover .bio, .team-space:active .bio
+{
+  opacity: 1;
+  transition-delay: 0.15s;
+  transform: translateY(0px);
+}
+.bio
+{
+  box-sizing: border-box;
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.4s linear, transform 0.4s linear;
+  transform: translateY(15px);
+  color: white;
+  padding: 0 25px 25px;
+  font-size: 1.2em;
+}
+.bio p
+{
+  margin: 0;
+}
+.bio-social
+{
+  display: block;
+  float: left;
+  margin: 15px 10px 0 0;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  overflow: hidden;
+  background: white;
+  transition: transform 0.15s linear;
+}
+.bio-social:before
+{
+  display: block;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 25px;
+  color: #fff;
+  font-size: 13px;
+  font-size: 13rem;
+}
+.bio-ig:before
+{
+  content: ' ';
+  background: url(../images/instagram.png) no-repeat center center;
+  background-size: 25px;
+}
+.bio-snap:before
+{
+  content: ' ';
+  background: url(../images/snapchat.png) no-repeat center center;
+  background-size: 25px;
+}
+.bio-yt:before
+{
+  content: ' ';
+  background: url(../images/youtube.png) no-repeat center center;
+  background-size: 25px;
+}
+
+@media (orientation: portrait)
+{
+  .about-header
+  {
+    font-size: 7em;
+    padding: 10px 50px;
+    border-radius: 30px;
+  }
+  .team-grid
+  {
+    margin: 0px 85px;
+  }
+  .team-space
+  {
+    width: 100%;
+  }
+  .team
+  {
+    padding: 30px;
+    border-radius: 40px;
+  }
+  .team img
+  {
+    border-radius: 30px;
+  }
+  .team h2
+  {
+    font-size: 5em;
+  }
+  .team h3
+  {
+    font-size: 2.3em;
+  }
+  .bio
+  {
+    font-size: 2.5em;
+    padding: 0 40px 40px;
+  }
+  .bio-social
+  {
+    width: 50px;
+    height: 50px;
+    margin: 30px 20px 0 0;
+  }
+  .bio-social:before
+  {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+  }
+  .bio-ig:before
+  {
+    background-size: 50px;
+  }
+  .bio-snap:before
+  {
+    background-size: 50px;
+  }
+  .bio-yt:before
+  {
+    background-size: 50px;
+  }
+}

@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FHSched Calendar</title>
+
+    <!-- twitter bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- dycalendarjs stylesheet -->
+    <link href="css/dycalendar.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/FHSched_V_1.11.css">
+</head>
+<body class="dark">
+   <p class="header">
+         <a href="../"> FHSched Calendar </a>
+    </p>
+
+        <ul class="nav-bar">
+        <li><a href="../">Home</a></li>
+        <li><a href="../Calendar/">Calendar</a></li>
+        <li style = "float: right;"><a role="button" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light" id="darkMode"> Light | Dark Mode</a></li>
+      </ul>
+
+        <div class="parent">  
+        
+        <div class="move">
+          <div class="dropdown" style="float:right;">
+            <button onclick="dropDown()" class="dropbtn">Change Month</button>
+            <div id="myDropdown" class="dropdown-content">
+              <a href="SeptemberCalendar.html">September</a>
+              <a href="OctoberCalendar.html">October</a>
+              <a href="thirdCalendar.html">November</a>
+              <a href="FourthCalendar.html">December</a>
+           </div>
+         </div>
+        </div>
+
+        <div class="boxForCountDown"></div>
+        <div class="relativeBreak"  id="breakCountDown"></div>
+        <div class="relativeYear" style="margin-top: 0px; width: 13%;" id="yearCountDown"></div>
+
+        <!-- DEMO -->
+        <div class="some-class">
+          <!--  <div id="dycalendar-month-prev-next-button"
+                class="dycalendar-container shadow-default gradient"></div> -->
+                <div id="dycalendar-month" class="dycalendar-container skin-gray"></div>
+        </div>
+
+        <div class="picture">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="953" height="475">
+        </div>
+
+        <div class="pictureOne">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="953" height="475">
+        </div>
+
+         <div class="pictureTwo">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="953" height="475">
+        </div>
+
+          <div class="pictureThree">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="953" height="475">
+        </div>
+
+         <div class="pictureFour">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="953" height="475">
+        </div>
+
+         <div class="pictureFive">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="953" height="475">
+        </div>
+
+        <div class="pictureSix">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="953" height="475">
+        </div>
+
+        <div class="pictureSeven">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="395">
+        </div>
+
+        <div class="pictureEight">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="395">
+        </div>
+
+        <div class="pictureNine">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="395">
+        </div>
+
+         <div class="pictureTen">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="395">
+        </div>
+
+         <div class="pictureEleven">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="395">
+        </div>
+
+        <div class="pictureTwelve">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="395">
+        </div>
+
+        <div class="pictureThirteen">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="395">
+        </div>
+
+        <div class="pictureFourteen">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="395">
+        </div>
+        
+
+
+<button class= "button button1" onclick="displayEvents()">
+h
+</button>
+<div id="eventContainerOne">
+None
+</div>
+
+<button class= "button button2" onclick="displayEventsTwo()">
+h
+</button>
+<div id="eventContainerTwo">
+None
+</div>
+
+<button class= "button button3" onclick="displayEventsThree()">
+h
+</button>
+<div id="eventContainerThree">
+None
+</div>
+
+<button class= "button button4" onclick="displayEventsFour()">
+h
+</button>
+<div id="eventContainerFour">
+None
+</div>
+
+<button class= "button button5" onclick="displayEventsFive()">
+h
+</button>
+<div id="eventContainerFive">
+None
+</div>
+
+<button class= "button button6" onclick="displayEventsSix()">
+h
+</button>
+<div id="eventContainerSix">
+None
+</div>
+
+<button class= "button button7" onclick="displayEventsSeven()">
+h
+</button>
+<div id="eventContainerSeven">
+None
+</div>
+
+<button class= "button button8" onclick="displayEventsEight()">
+h
+</button>
+<div id="eventContainerEight">
+None
+</div>
+
+<button class= "button button9" onclick="displayEventsNine()">
+h
+</button>
+<div id="eventContainerNine">
+    <p> Champions Together (Unified Kickball) at FHS Soccer Stadium 5:30PM-9:00PM </p>
+    <p> Tennis Boys Varsity Match at FHS Tennis Courts 5:30 PM </p>
+    <p> Youth Boys Basketball Travel Try Outs in FHS Gym at 6:00 PM-9:00PM </p>
+</div>
+
+<button class= "button button10" onclick="displayEventsTen()">
+h
+</button>
+<div id="eventContainerTen">
+     <p> Wrestling Callout Meeting in Cafe A at 7:15 AM-7:30AM </p>
+    <p> College Visit: Indiana Tech in CCA at 8:30 AM </p>
+    <p> College Visit: IVY Tech in CCA at 9:30 AM </p>
+    <p> College Visit: University Of Georgia in CCA at 12:00 PM </p>
+    <p> College Visit: Purdue in CCA at 1:00PM </p>
+    <p> College Visit: Butler University in CCA at 2:00 PM </p>
+    <p> Girls Golf Varsity Match at Gray Eagle Golf Course at 4:00 PM </p>
+    <p> Boys Freshman Soccer Match at FHS Soccer Stadium at 5:00 PM </p>
+    <p> Boys JV Soccer Match at HSE HS at 5:30 PM </p>
+    <p> Boys JV Tennis Match at FHS Tennis Courts at 5:30 PM </p>
+    <p> Boys Varsity Tennis Match at FHS Tennis Courts at 5:30 PM </p>
+    <p> Girls JV Volleyball Match at FHS Gym 5:30 PM </p>
+    <p> Girls Freshman Soccer Match at FHS Soccer Stadium at 6:30 PM </p>
+    <p> Boys Varsity Soccer Match at HSE HS at 7:00 PM </p>
+    <p> Girls Varsity Volleyball Match at FHS Gym at 7:00 PM </p>
+</div>
+
+<button class= "button button11" onclick="displayEventsEl()">
+h
+</button>
+<div id="eventContainerEl">
+  <p> Blood Drive At FHS Gym (Auxilary) at 7:00 AM-3:30 PM</p>
+  <p> College Visit: Indiana State University in CCA at 8:30 AM </p>
+  <p> College Visit: Wittenberg University in CCA at 9:30 AM </p>
+  <p> College Visit: Colby College in CCA at 12:00 PM </p>
+  <p> College Visit: Depauw in CCA at 1:00 PM </p>
+  <p> Soccer: Girls JV Match at FHS SOCCER STADIUM at 5:00pm</p>
+  <p> Soccer: Girls Varsity Match at FHS SOCCER STADIUM at 6:30pm </p>
+</div>
+
+<button class= "button button12" onclick="displayEventsTwelve()">
+h
+</button>
+<div id="eventContainerTwelve">
+  <p> College Visit: Earlham College in CCA at 8:30 AM </p>
+  <p> College Visit: Ball State University in CCA at 12:00 PM </p>
+  <p> College Visit: Miami University, Oxford in CCA at 1:00 PM </p>
+  <p> College Visit: Brown University in CCA at 2:00 PM </p>
+  <hr>
+  <p> Golf: Girls JV Match at Wood Wind Golf Club at 4:30pm</p>
+  <p> Golf: Girls Varsity Match at Wood Wind Golf Club at 4:30pm </p>
+  <p> Soccer: Boys Freshman Match at FHS SOCCER STADIUM at 5:00pm </p>
+  <p> Soccer: Boys JV Match at Pendleton Heights High School at 5:30pm </p>
+  <p> Tennis: Boys JV Match at Zionsville High School at 5:30pm </p>
+  <p> Tennis: Boys Varsity Match at Zionsville High School at 5:30pm </p>
+  <p> Volleyball: Girls Freshman Match at Hamilton Southeastern High School at 5:30pm </p>
+  <p> Volleyball: Girls JV Match at Hamilton Southeastern High School at 5:30pm </p>
+  <p> Soccer: Girls Freshman Match at FHS SOCCER STADIUM at 6:30pm </p>
+  <p> Soccer: Boys Varsity Match at Pendleton Heights High School at 7:00pm </p>
+  <p> Volleyball: Girls Varsity Match at Hamilton Southeastern High School at 7:00pm </p>
+</div>
+
+<button class= "button button13" onclick="displayEventsThirteen()">
+h
+</button>
+<div id="eventContainerThirteen">
+  <p> College Visit: Elon University in CCA at 8:30 AM </p>
+  <p> College Visit: Brescia University in CCA at 12:00 PM </p>
+  <p> College Visit: Mount St. Joseph University in CCA at 1:00 PM </p>
+  <p> College Visit: Monmouth College in CCA at 2:00 PM </p>
+  <p> <font color="silver"> FOOTBALL: VARSITY GAME at 7:00 PM </font> <font color="blue"> (Rumble In The Jungle) </font>
+</div>
+
+<button class= "button button14" onclick="displayEventsFourteen()">
+h
+</button>
+<div id="eventContainerFourteen">
+   <p> Cross Country: Girls Varsity Ben Davis Invitational at Ben Davis High School at 9:00 AM </p>
+   <p> Cross Country: Varsity Peoria Woodruff Invitational at Detweiler Park, IL at 9:00am </p>
+   <p> Tennis: Boys Varsity Fishers Invitational at FHS Tennis Courts 1-6 at 9:00am </p>
+   <p> Volleyball: Girls JV Franklin Central Invitational at Franklin Central High School at 9:00am </p>
+   <p> Volleyball: Girls Varsity New Castle Invitational at New Castle Chrysler High School at 9:00am </p>
+   <p> Football: Freshman Game at FHS FOOTBALL STADIUM at 10:00am </p>
+   <p> Football: JV Game at Hamilton Southeastern Freshman Center at 10:00am </p>
+   <p> Soccer: Girls JV Match at Warsaw Community High School at 11:00am </p>
+   <p> Soccer: Boys JV Match at FHS SOCCER STADIUM at 11:00am </p>
+   <p> Soccer: Boys Varsity Match at FHS SOCCER STADIUM at 12:30pm </p>
+   <p> Soccer: Girls Varsity Match at Warsaw Community High School at 12:45pm </p>
+   <p> Golf: Girls Varsity Noblesville Invitational at Harbour Trees Golf & Beach Club at 1:00pm </p>
+</div>
+
+<button class= "button button15" onclick="displayEventsFifteen()">
+h
+</button>
+<div id="eventContainerFifteen">
+None
+</div>
+
+<button class= "button button16" onclick="displayEventsSixteen()">
+h
+</button>
+<div id="eventContainerSixteen">
+<p> Freshman Class Ring Meeting at large auditorium at 10:00am- 10:45am </p>
+   <p> Soccer: Girls Freshman Match at Hamilton Southeastern High School at 5:00pm </p>
+   <p> Soccer: Girls JV Match at FHS SOCCER STADIUM at 5:30pm </p>
+   <p> Soccer: Boys Freshman Match at Hamilton Southeastern High School at 6:30pm </p>
+   <p> Soccer: Girls Varsity Match at FHS SOCCER STADIUM at 7:00pm </p>
+</div>
+
+<button class= "button button17" onclick="displayEventsSeventeen()">
+h
+</button>
+<div id="eventContainerSeventeen">
+ <p> College Visit: Bradley University in CCA at 8:30 AM </p>
+    <p> College Visit: Oberlin College of Arts and Sciences in CCA at 9:30 AM </p>
+    <p> College Visit: College of Wooster in CCA at 12:00 PM </p>
+    <p> College Visit: Indiana University at Bloomigton in CCA at 1:00 PM </p>
+    <p> College Visit: Depaul University in CCA at 2:00 PM </p>
+    <p> Golf: Girls JV Match at Gray Eagle Golf Course at 4:30pm </p>
+    <p> Golf: Girls Varsity Match at  Gray Eagle Golf Course at 4:30pm </p>
+    <p> Soccer: Boys JV Match at FHS SOCCER STADIUM at 6:00pm </p>
+    <p> Soccer: Boys Varsity Match at FHS SOCCER STADIUM at 7:30pm </p>
+</div>
+
+<button class= "button button18" onclick="displayEventsEighteen()">
+h
+</button>
+<div id="eventContainerEighteen">
+<p> College Visit: Washington University, St Louis in CCA at 8:30 AM </p>
+   <p> College Visit: Carlton College in CCA at 9:30 AM </p>
+   <p> College Visit: IE University Segovia in CCA at 12:00 PM </p>
+   <p> College Visit: Valpraiso University in CCA at 1:00 PM </p>
+   <p> College Visit: University of Indianapolis in CCA at 2:00 PM </p>
+   <p> Student Picture Re-take Day in Auditorium Lobby at 7:00am- 3:00pm </p>
+   <p> Soccer: Girls JV Match at Brownsburg High School at 5:30pm </p>
+   <p> Soccer: Boys Freshman Match at FHS SOCCER STADIUM at 5:30pm </p>
+   <p> Soccer: Girls Varsity Match at Brownsburg High School at 7:00pm </p>
+</div>
+
+<button class= "button button19" onclick="displayEventsNineteen()">
+h
+</button>
+<div id="eventContainerNineteen">
+<p> College Visit: Rose Hulman Institute of Tech. in CCA at 8:30 AM </p>
+  <p> College Visit: Vanderbilt University in CCA at 9:30 AM </p>
+  <p> College Visit: High Point University in CCA at 12:00 PM </p>
+  <p> College Visit: Layola University, Chicago in CCA at 1:00 PM </p>
+  <p> College Visit: University of Miami in CCA at 2:00 PM </p>
+  <p> Tennis: Boys Varsity HCC Championships at  Zionsville Baseball, Softball and Tennis Complex at 4:30pm </p>
+  <p> Soccer: Boys JV Match at FHS SOCCER STADIUM at 5:30pm </p>
+  <p> Volleyball: Girls Freshman Match at FHS AUX COURT 1 at 5:30pm </p>
+  <p> Volleyball: Girls JV Match at FHS GYM - VARSITY at 5:30pm </p>
+  <p> Soccer: Boys Varsity Match at FHS SOCCER STADIUM at 7:00pm </p>
+  <p> Volleyball: Girls Varsity Match at FHS GYM - VARSITY at 7:00pm </p>
+</div>
+
+<button class= "button button20" onclick="displayEventsTwenty()">
+h
+</button>
+<div id="eventContainerTwenty">
+<p> College Visit: Kenyon College in CCA at 8:30 AM </p>
+   <p> College Visit: Case Western Reserve in CCA at 9:30 AM </p>
+   <p> College Visit: Tulane University in CCA at 12:00 AM </p>
+   <p> College Visit: university of Notre Dame in CCA at 1:00 PM </p>
+   <p> College Visit: University of Evansville in CCA at 2:00 PM </p>
+   <p> <font color="silver"> FOOTBALL: VARSITY GAME at 7:00 PM </font></p>
+</div>
+
+<button class= "button button21" onclick="displayEventsTwentyOne()">
+h
+</button>
+<div id="eventContainerTwentyOne">
+<p> Marching Band Invitational at Avon High School (Performance time TBD) </p>
+   <p> Cross Country: Varsity Riverview Health Invitational at Northview Christian Life Church at 9:00am </p> 
+   <p> Tennis: Boys Varsity HCC Championships at  Zionsville Baseball, Softball and Tennis Complex at 9:00am </p>
+   <p> Volleyball: Girls JV Invitational at Daleville HS at 9:00am </p>
+   <p> Football: Freshman Game at Brownsburg High School at 10:00am </p>
+   <p> Football: JV Game at FHS FOOTBALL STADIUM at 10:00am </p>
+   <p> Golf: Girls Varsity IHSAA Sectionals at Harbour Trees Golf & Beach Club at 11:00am</p>
+   <p> SPORTS Knight Football Games at FHS Football Stadium at 2:00pm- 6:00pm </p>
+   <p> Unified Football: Varsity Game at Zionsville High School at 3:00pm </p>
+   <p> <font color="green">Homecoming at FHS at 8:00pm- 11:00pm </font> </p>
+</div>
+
+<button class= "button button22" onclick="displayEventsTwentyTwo()">
+h
+</button>
+<div id="eventContainerTwentyTwo">
+Event
+</div>
+
+<button class= "button button23" onclick="displayEventsTwentyThree()">
+h
+</button>
+<div id="eventContainerTwentyThree">
+Event
+</div>
+
+<button class= "button button24" onclick="displayEventsTwentyFour()">
+h
+</button>
+<div id="eventContainerTwentyFour">
+Event
+</div>
+
+<button class= "button button25" onclick="displayEventsTwentyFive()">
+h
+</button>
+<div id="eventContainerTwentyFive">
+Event
+</div>
+
+<button class= "button button26" onclick="displayEventsTwentySix()">
+h
+</button>
+<div id="eventContainerTwentySix">
+Event
+</div>
+
+<button class= "button button27" onclick="displayEventsTwentySeven()">
+h
+</button>
+<div id="eventContainerTwentySeven">
+  <p> College Visit: Seton Hall University in CCA at 8:30 AM </p>
+  <p> College Visit: Kent State University in CCA at 9:30 AM </p>
+  <p> College Visit: Calvin University in CCA at 12:00 PM </p>
+  <p> College Visit: Taylor University in CCA at 1:00 PM </p>
+</div>
+
+<button class= "button button28" onclick="displayEventsTwentyEight()">
+h
+</button>
+<div id="eventContainerTwentyEight">
+Event
+</div>
+
+<button class= "button button29" onclick="displayEventsTwentyNine()">
+h
+</button>
+<div id="eventContainerTwentyNine">
+Event
+</div>
+
+<button class= "button button30" onclick="displayEventsThirty()">
+h
+</button>
+<div id="eventContainerThirty">
+Event
+</div>
+
+<button class= "button button31" onclick="displayEventsThirtyOne()">
+h
+</button>
+<div id="eventContainerThirtyTwo">
+Event
+</div>
+
+<button class= "button button32" onclick="displayEventsThirtyTwo()">
+h
+</button>
+<div id="eventContainerThirtyTwo">
+Event
+</div>
+
+<button class= "button button33" onclick="displayEventsThirtyThree()">
+h
+</button>
+<div id="eventContainerThirtyThree">
+Event
+</div>
+
+<button class= "button button34" onclick="displayEventsThirtyFour()">
+h
+</button>
+<div id="eventContainerThirtyFour">
+Event
+</div>
+
+<button class= "button button35" onclick="displayEventsThirtyFive()">
+h
+</button>
+<div id="eventContainerThirtyFive">
+Event
+</div>
+
+<!--
+
+
+<div class="eventContainerOne">
+ <span class="eventContainerOneText">
+  
+ </span>
+</div>
+
+<div class="eventContainerTwo">
+ <span class="eventContainerTwoText">
+  
+ </span>
+</div>
+
+<div class="eventContainerThree">
+ <span class="eventContainerThreeText">
+  
+ </span>
+</div>
+
+<div class="eventContainerFour">
+ <span class="eventContainerFourText">
+  
+ </span>
+</div>
+
+<div class="eventContainerFive">
+ <span class="eventContainerFiveText">
+  
+ </span>
+</div>
+
+<div class="eventContainerSix">
+ <span class="eventContainerSixText">
+  
+ </span>
+</div>
+
+<div class="eventContainerSeven">
+ <span class="eventContainerSevenText">
+  
+ </span>
+</div>
+
+<div class="eventContainerEight">
+ <span class="eventContainerEightText">
+  
+ </span>
+</div>
+
+<div class="eventContainerNine">
+ <span class="eventContainerNineText">
+  
+ </span>
+</div>
+
+<div class="eventContainerTen">
+ <span class="eventContainerTenText">
+  
+ </span>
+</div>
+
+<div class="eventContainerEleven">
+ <span class="eventContainerElevenText">
+  
+ </span>
+</div>
+
+<div class="eventContainerTwelve">
+ <span class="eventContainerTwelveText">
+  
+ </span>
+</div>
+
+<div class="eventContainerThirteen">
+ <span class="eventContainerThirteenText">
+  
+ </span>
+</div>
+
+<div class="eventContainerFourteen">
+ <span class="eventContainerFourteenText">
+  
+ </span>
+</div>
+
+<div class="eventContainerFifteen">
+ <span class="eventContainerFifteenText">
+  
+ </span>
+</div>
+
+<div class="eventContainerSixteen">
+ <span class="eventContainerSixteenText">
+  
+ </span>
+</div>
+
+<div class="eventContainerSeventeen">
+ <span class="eventContainerSeventeenText">
+  
+ </span>
+</div>
+
+<div class="eventContainerEighteen">
+ <span class="eventContainerEighteenText">
+
+ </span>
+</div>
+
+<div class="eventContainerNineteen">
+ <span class="eventContainerNineteenText">
+
+ </span>
+</div>
+
+<div class="eventContainerTwenty">
+ <span class="eventContainerTwentyText">
+  
+ </span>
+</div>
+
+<div class="eventContainerTwentyOne">
+ <span class="eventContainerTwentyOneText">
+  
+ </span>
+</div>
+
+<div class="eventContainerTwentyTwo">
+ <span class="eventContainerTwentyTwoText">
+
+ </span>
+</div>
+
+<div class="eventContainerTwentyThree">
+ <span class="eventContainerTwentyThreeText"> Event </span>
+</div>
+
+<div class="eventContainerTwentyFour">
+ <span class="eventContainerTwentyFourText">
+  <p> College Visit: Purdue Polytechnic, Anderson in CCA at 9:30 AM </p>
+  <p> College Visit: International Business College in CCA at 12:00 PM </p>
+  <p> College Visit: Samford University in CCA at 1:00 PM </p>
+  <p> College Visit: Illinois Institute of Technology in CCA at 2:00 PM </p>
+ </span>
+</div>
+
+<div class="eventContainerTwentyFive">
+ <span class="eventContainerTwentyFiveText">
+   <p> College Visit: North Central College in CCA at 8:30 AM </p>
+   <p> College Visit: University of Akron in CCA at 9:30 AM </p>
+   <p> College Visit: Millikin University in CCA at 12:00 PM </p>
+   <p> College Visit: Ohio Wesleyan University in CCA at 1:00 PM </p>
+   <p> College Visit: Hillsdale College in CCA at 2:00 PM </p>
+ </span>
+</div>
+
+<div class="eventContainerTwentySix">
+ <span class="eventContainerTwentySixText">
+   <p> College Visit: Bethel University, IN in CCA at 8:30 AM </p>
+   <p> College Visit: Cedarville University in CCA at 9:30 AM </p>
+   <p> College Visit: Baldwin Wallace University in CCA at 12:00 PM </p>
+   <p> College Visit: University of Chicago in CCA at 1:00 PM </p>
+   <p> College Visit: University of South Alabama in CCA at 2:00 PM </p>
+ </span>
+</div>
+
+<div class="eventContainerTwentySeven">
+ <span class="eventContainerTwentySevenText">
+Event
+</span>
+</div>
+
+<div class="eventContainerTwentyEight">
+ <span class="eventContainerTwentyEightText"> Event </span>
+</div>
+
+<div class="eventContainerTwentyNine">
+ <span class="eventContainerTwentyNineText"> Event </span>
+</div>
+
+<div class="eventContainerThirty">
+ <span class="eventContainerThirtyText"> Event </span>
+</div>
+
+<div class="eventContainerThirtyOne">
+ <span class="eventContainerThirtyOneText"> None </span>
+</div>
+
+<div class="eventContainerThirtyTwo">
+ <span class="eventContainerThirtyTwoText"> None </span>
+</div>
+
+<div class="eventContainerThirtyThree">
+ <span class="eventContainerThirtyThreeText"> None </span>
+</div>
+
+<div class="eventContainerThirtyFour">
+ <span class="eventContainerThirtyFourText"> None </span>
+</div>
+
+<div class="eventContainerThirtyFive">
+ <span class="eventContainerThirtyFiveText"> None </span>
+</div>
+
+-->
+
+
+<p class="bottom-space"></p>
+    <footer>
+      <div class="foot">
+        <ul>
+          <li> <a href="../privacy-policy/">Privacy Policy</a> </li>
+        </ul>
+
+        <ul>
+          <li>2019 CodingForFishers</li>
+          <li>Version 1.4.4</li>
+        </ul>
+        <ul>
+          <li> 
+            <address style="all: unset">
+          Contact: <a href="mailto:fhsched2019@gmail.com">fhsched2019@gmail.com</a>
+        </address> 
+      </li>
+        </ul>
+        
+      </div>
+    </footer>
+
+</div>
+
+
+
+<!-- javascript -->
+<script >
+// setting the year at the start of school
+  var year= 2019;
+// Set the date we're counting down to
+var countDownDate = new Date("May 25, 2020 14:55:00").getTime();
+
+// have it refesh every second
+
+var time = setInterval(function(){
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days so we get rid of year, hour, minutes, seconds,
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  // Output the result in an element with id="yearCountDown"
+  document.getElementById("yearCountDown").innerHTML = "Only " + days + " days until school's over!";
+
+  //change to hours if less than a day is left
+  if (days <= 0) {
+ document.getElementById("yearCountDown").innerHTML = "Only " + hours + " hours until school's over!";
+
+  
+  if (hours <= 0) {
+ document.getElementById("yearCountDown").innerHTML = "Only " + minutes + " minutes until school's over!";
+
+  }
+  if (minutes <= 0) {
+ document.getElementById("yearCountDown").innerHTML = "Only " + seconds + " seconds until school's over!";
+
+  }
+}
+  // when the whole year count down is over
+  if (distance <= 0) {
+    clearInterval(time);
+    document.getElementById("yearCountDown").innerHTML = "Have a Great Summer!";
+  }
+}, 1000);
+
+
+
+
+
+//actual dates for breaks
+var breakName;
+
+
+var breakDates = ["Oct 11, 2019 14:55:00","Nov 26, 2019 14:55:00", "Dec 20, 2019 14:55:00", "Jan 10, 2020 14:55:00", "Feb 14, 2020 14:55:00", "Apr 2, 2020 14:55:00","Aug 30, 2019 14:55:00", "May 25, 2020 14:55:00"];
+// have it refesh every second
+var x = setInterval(function() {
+  //getting current time
+var now2 = new Date().getTime();
+
+//creating date objects of each break
+for (var i = 0; i<8; i++){
+  breakDates[i] = new Date(breakDates[i]).getTime();
+}
+
+  // Set the date of the next break
+var countDownDate2;
+if((breakDates[6] - now2) >=0){
+  countDownDate2 = breakDates[6];
+  breakName= "Labor Day (extended weekend)";
+}else if ((breakDates[0] - now2) >= 0){
+  countDownDate2 = breakDates[0];
+  breakName = "Fall Break";
+} else if ((breakDates[1] - now2) >= 0){
+  countDownDate2 = breakDates[1];
+  breakName = "Thanksgiving Break";
+} else if ((breakDates[2]-now2) >=0){
+  countDownDate2 = breakDates[2];
+  breakName= "Winter Break";
+} else if ((breakDates[3]-now2) >=0){
+  countDownDate2 = breakDates[3];
+  breakName= "MLK Jr. Day(extended weekend)";
+} else if ((breakDates[4]-now2) >=0){
+  countDownDate2 = breakDates[4];
+  breakName= "President's day(extended weekend)";
+} else if ((breakDates[5]-now2) >=0){
+  countDownDate2 = breakDates[5];
+  breakName= "Spring Break";
+} else if ((breakDates[7]-now2) >=0){
+  countDownDate2 = breakDates[7];
+  breakName= "Summer";
+}
+//time between dates
+var t = countDownDate2 - now2; 
+
+
+//converting betweeen days, hours, minuetes, and seconds
+var days2 = Math.floor(t / (1000 * 60 * 60 * 24));
+var hours2 = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
+var minutes2 = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+var seconds2 = Math.floor((t % (1000 * 60)) / 1000);
+  // Output the result in an element with id="breakCountDown"
+document.getElementById("breakCountDown").innerHTML = days2+ " days and " + hours2 + " hour(s)" + " until " + breakName;
+//singlular day
+ if (days2 < 2 ){
+  document.getElementById("breakCountDown").innerHTML =  days2 + " day and " + hours2 + " hour(s)" + " until " + breakName;
+ }
+ //change to hours if less than a day is left
+if (days2 <= 0) {
+ document.getElementById("breakCountDown").innerHTML =  hours2 + " hours until " + breakName;
+   //singular hour
+  if (hours2 <= 1){
+    document.getElementById("breakCountDown").innerHTML = hours2 + " hour until " + breakName
+   //change to minutes if less than an hour
+if (hours2 <= 0) {
+ document.getElementById("breakCountDown").innerHTML = minutes2 + " minutes and " +
+  seconds2 + " seconds until " + breakName;
+    //change to seconds if less than a minute
+if (minutes2 <= 0) {
+ document.getElementById("breakCountDown").innerHTML = seconds2 + " seconds until " + breakName;
+
+}
+}
+  }
+  }
+
+
+
+//during the break
+//sets have a nice break for the entirety of the break until the last day at 11:55pm
+if (((breakDates[6] - now2) <= 0) && ((breakDates[6]-now2) >= (-86400000* 3 - 32400000))) {
+document.getElementById("breakCountDown").innerHTML = "have a great Extended Weekend!";
+
+}
+if (((breakDates[0] - now2) <= 0) && ((breakDates[0]-now2) >= (-86400000* 9 - 32400000))) {
+document.getElementById("breakCountDown").innerHTML = "have a great Fall Break!";
+
+}
+if (((breakDates[1] - now2) <= 0) && ((breakDates[1]-now2) >= (-86400000* 3 - 32400000))) {
+document.getElementById("breakCountDown").innerHTML = "have a great Thanksgiving";
+
+}
+if (((breakDates[2] - now2) <= 0) && ((breakDates[2]-now2) >= (-86400000* 17 - 32400000) )) {
+document.getElementById("breakCountDown").innerHTML = "have a great Winter Break";
+
+}
+if (((breakDates[3] - now2) <= 0) && ((breakDates[3]-now2) >= (-86400000* 3 - 32400000) )) {
+document.getElementById("breakCountDown").innerHTML = "have a great Extended Weekend";
+
+}
+if (((breakDates[4] - now2) <= 0) && ((breakDates[4]-now2) >= (-86400000* 3 - 32400000) )) {
+document.getElementById("breakCountDown").innerHTML = "have a great Extended Weekend";
+
+}
+if (((breakDates[5] - now2) <= 0) && ((breakDates[5]-now2) >= (-86400000* 10- 32400000) )) {
+document.getElementById("breakCountDown").innerHTML = "have a great SPRING BREAK!!!";
+
+}
+if (((breakDates[7] - now2) <= 0) && ((breakDates[7]-now2) >= (-86400000 * 73 - 32400000) )) {
+document.getElementById("breakCountDown").innerHTML = "have a great Summer (HAGS LOL ;P)";
+
+}
+
+
+
+}, 1000);
+</script>
+
+<script src="js/dycalendar.min.js"></script>
+<script src="js/default.js"></script>
+
+<script>
+dycalendar.draw({
+target: "#dycalendar-month",
+type : 'month',
+monthFormat:"full",
+highlighttargetdate : true,
+})
+
+function dropDown() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+function displayEvents() {
+  var x = document.getElementById("eventContainerOne");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsTwo() {
+  var x = document.getElementById("eventContainerTwo");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsThree() {
+  var x = document.getElementById("eventContainerThree");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsFour() {
+  var x = document.getElementById("eventContainerFour");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsFive() {
+  var x = document.getElementById("eventContainerFive");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsSix() {
+  var x = document.getElementById("eventContainerSix");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsSeven() {
+  var x = document.getElementById("eventContainerSeven");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsEight() {
+  var x = document.getElementById("eventContainerEight");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsNine() {
+  var x = document.getElementById("eventContainerNine");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsTen() {
+  var x = document.getElementById("eventContainerTen");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsEl() {
+  var x = document.getElementById("eventContainerEl");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsTwelve() {
+  var x = document.getElementById("eventContainerTwelve");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsThirteen() {
+  var x = document.getElementById("eventContainerThirteen");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsFourteen() {
+  var x = document.getElementById("eventContainerFourteen");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsFifteen() {
+  var x = document.getElementById("eventContainerFifteen");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsSixteen() {
+  var x = document.getElementById("eventContainerSixteen");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsSeventeen() {
+  var x = document.getElementById("eventContainerSeventeen");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsEighteen() {
+  var x = document.getElementById("eventContainerEighteen");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsNineteen() {
+  var x = document.getElementById("eventContainerNineteen");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsTwenty() {
+  var x = document.getElementById("eventContainerTwenty");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsTwentyOne() {
+  var x = document.getElementById("eventContainerTwentyOne");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsTwentyTwo() {
+  var x = document.getElementById("eventContainerTwentyTwo");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsTwentyThree() {
+  var x = document.getElementById("eventContainerTwentyThree");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsTwentyFour() {
+  var x = document.getElementById("eventContainerTwentyFour");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsTwentyFive() {
+  var x = document.getElementById("eventContainerTwentyFive");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsTwentySix() {
+  var x = document.getElementById("eventContainerTwentySix");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsTwentySeven() {
+  var x = document.getElementById("eventContainerTwentySeven");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsTwentyEight() {
+  var x = document.getElementById("eventContainerTwentyEight");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsTwentyNine() {
+  var x = document.getElementById("eventContainerTwentyNine");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsThirty() {
+  var x = document.getElementById("eventContainerThirty");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsThirtyOne() {
+  var x = document.getElementById("eventContainerThirtyOne");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsThirtyTwo() {
+  var x = document.getElementById("eventContainerThirtyTwo");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsThirtyThree() {
+  var x = document.getElementById("eventContainerThirtyThree");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsThirtyFour() {
+  var x = document.getElementById("eventContainerThirtyFour");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function displayEventsThirtyFive() {
+  var x = document.getElementById("eventContainerThirtyFive");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+</script>
+</body>
+</html>
