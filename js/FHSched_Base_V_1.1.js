@@ -40,7 +40,7 @@ function addTheme()
   if(localThemes.indexOf(input) == -1)
   {
     $.ajax({
-      url:'http://fhsched.com/css/' + upInput + '_Mode_1.0.css',
+      url:'http://fhsched.com/FHSchedBeta/css/' + upInput + '_Mode_1.0.css',
       error: function()
       {
         console.log("t");
