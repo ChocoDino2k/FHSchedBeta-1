@@ -40,10 +40,10 @@ function addTheme()
   if(localThemes.indexOf(input) == -1)
   {
     $.ajax({
-      url:'http://fhsched.com/FHSchedBeta/css/' + upInput + '_Mode_1.0.css',
+      url:'https://fhsched.com/FHSchedBeta/css/' + upInput + '_Mode_1.0.css',
       error: function()
       {
-        console.log("t");
+        console.log("Fail");
       },
       success: function()
       {
@@ -53,7 +53,6 @@ function addTheme()
       }
     });
   }
-  loadThemes();
 }
 
 function addLink(file)
@@ -81,6 +80,7 @@ function createTheme(modeName)
   themeLi.appendChild(newTheme);
 
   localStorage.setItem('mode', modeName.toLowerCase());
+  loadThemes();
   return newTheme;
 }
 
@@ -89,10 +89,17 @@ function showSidebar()
 {
   document.querySelector("#sidebar").classList.toggle('active');
   document.querySelector("#ham-a").classList.toggle('active');
+  document.querySelector("#add-theme").classList.remove('active');
 }
 
 //Changes styles for National Guard Banner
 function showNGBanner()
 {
   document.querySelector("#national-guard-banner").classList.toggle('active');
+}
+
+//Changes styles for + Theme
+function showAddTheme()
+{
+  document.querySelector("#add-theme").classList.toggle('active');
 }

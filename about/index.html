@@ -11,20 +11,17 @@
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-icon-114x114.png">
     <link rel="apple-touch-icon" sizes="144x144" href="../images/apple-icon-144x144.png">
 
-    <script type="text/javascript" src="../js/FHSched_Base_V_1.0.js"></script>
+    <script type="text/javascript" src="../js/FHSched_Base_V_1.2.js"></script>
 
-    <link rel="stylesheet" href="../css/FHSched_V_1.14.css">
+    <link rel="stylesheet" href="../css/FHSched_V_1.15.css">
     <link rel="stylesheet" href="../css/About_1.0.css">
     <link rel="stylesheet" href="../css/Dark_Mode_1.0.css">
-    <link rel="stylesheet" href="../css/Cherry_Mode_1.0.css">
-    <link rel="stylesheet" href="../css/Aqua_Mode_1.0.css">
-    <link rel="stylesheet" href="../css/Template_Mode_1.0.css">
 
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   </head>
-  <body id = "body" onload = "createThemes()" class = "dark" ontouchstart="">
+  <body onload="createThemes()" id="body" class = "dark">
     <!--
     <img class="logo" src="images/weblogo.png" width="80" height="74">
   -->
@@ -35,7 +32,7 @@
 
     <div>
       <p class="header">
-        <a href="/">FHSched</a>
+        <a href="../">FHSched</a>
       </p>
     </div>
 
@@ -49,8 +46,18 @@
         <!--
         <li><a href="../calendar/">Calendar</a></li>
         -->
-        <li><a role="button" onclick="localStorage.setItem('mode', 'classic'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('classic')">Classic Mode</a></li>
-        <li><a role="button" onclick="localStorage.setItem('mode', 'dark'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('dark')">Dark Mode</a></li>
+        <li id="add-theme">
+          <a role="button" onclick="showAddTheme()" id="a-add-theme">+ Theme</a>
+          <a role="button" id="input-theme">
+            <input type="text" id="modeInput" name="modeInput"><button id = "inputButton" type=button onclick="addTheme()">Add</button>
+          </a>
+        </li>
+        <li>
+          <a role="button" onclick="localStorage.setItem('mode', 'classic'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('classic')">Classic Theme</a>
+        </li>
+        <li>
+          <a role="button" onclick="localStorage.setItem('mode', 'dark'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('dark')">Dark Theme</a>
+        </li>
       </ul>
     </div>
 

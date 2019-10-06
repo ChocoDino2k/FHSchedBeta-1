@@ -29,17 +29,14 @@ if(isset($_GET["accept-cookies"])) {
 
     <script type="text/javascript" src="js/FHSched_Schedule_Data_V_1.11.js"> </script>
     <script type="text/javascript" src="js/FHSched_Calendar_Data_V_1.4.js"></script>
-    <script type="text/javascript" src="js/FHSched_Base_V_1.0.js"></script>
-
-    <link rel="stylesheet" href="css/FHSched_V_1.14.css">
-    <link rel="stylesheet" href="css/Home_1.0.css">
-    <link rel="stylesheet" href="css/Dark_Mode_1.0.css">
-    <link rel="stylesheet" href="css/Cherry_Mode_1.0.css">
-    <link rel="stylesheet" href="css/Aqua_Mode_1.0.css">
-    <link rel="stylesheet" href="css/Template_Mode_1.0.css">
+    <script type="text/javascript" src="js/FHSched_Base_V_1.2.js"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="css/FHSched_V_1.15.css">
+    <link rel="stylesheet" href="css/Home_1.0.css">
+    <link rel="stylesheet" href="css/Dark_Mode_1.0.css">
   </head>
   <body onload="createThemes()" id="body" class = "dark">
     <!--
@@ -66,8 +63,18 @@ if(isset($_GET["accept-cookies"])) {
         <!--
         <li><a href="../calendar/">Calendar</a></li>
         -->
-        <li><a role="button" onclick="localStorage.setItem('mode', 'classic'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('classic')">Classic Mode</a></li>
-        <li><a role="button" onclick="localStorage.setItem('mode', 'dark'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('dark')">Dark Mode</a></li>
+        <li id="add-theme">
+          <a role="button" onclick="showAddTheme()" id="a-add-theme">+ Theme</a>
+          <a role="button" id="input-theme">
+            <input type="text" id="modeInput" name="modeInput"><button id = "inputButton" type=button onclick="addTheme()">Add</button>
+          </a>
+        </li>
+        <li>
+          <a role="button" onclick="localStorage.setItem('mode', 'classic'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('classic')">Classic Theme</a>
+        </li>
+        <li>
+          <a role="button" onclick="localStorage.setItem('mode', 'dark'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('dark')">Dark Theme</a>
+        </li>
       </ul>
     </div>
 
@@ -178,6 +185,17 @@ if(isset($_GET["accept-cookies"])) {
     </script>
 
     <script type="text/javascript">     //Not FHSSched
+    var inputEl = document.querySelector("#modeInput");
+    var inputButton = document.querySelector("#inputButton");
+
+    inputEl.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        // Trigger the button element with a click
+        document.getElementById("inputButton").click();
+      }
+    });
+
     //Referencing HTML elements
     var timer = document.querySelector("#timer");
     var period = document.querySelector("#period");
@@ -191,7 +209,7 @@ if(isset($_GET["accept-cookies"])) {
     var today = new Date();
     var curMonth = today.getMonth();
     var curDate = today.getDate();
-    var curHour = today.getHours();
+    var curHour = today.getHours()-7;
     var curMin = today.getMinutes();
     var curSec = today.getSeconds();
 
@@ -200,7 +218,7 @@ if(isset($_GET["accept-cookies"])) {
       today = new Date();
       curMonth = today.getMonth();
       curDate = today.getDate();
-      curHour = today.getHours();
+      curHour = today.getHours()-7;
       curMin = today.getMinutes();
       curSec = (59 - today.getSeconds());
       curScheduleValue = calendar[curMonth][curDate - 1];

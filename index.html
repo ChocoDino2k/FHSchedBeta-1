@@ -23,15 +23,14 @@
 
     <script type="text/javascript" src="js/FHSched_Schedule_Data_V_1.11.js"> </script>
     <script type="text/javascript" src="js/FHSched_Calendar_Data_V_1.4.js"></script>
-    <script type="text/javascript" src="js/FHSched_Base_V_1.1.js"></script>
+    <script type="text/javascript" src="js/FHSched_Base_V_1.2.js"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="css/FHSched_V_1.14.css">
+    <link rel="stylesheet" href="css/FHSched_V_1.15.css">
     <link rel="stylesheet" href="css/Home_1.0.css">
     <link rel="stylesheet" href="css/Dark_Mode_1.0.css">
-    <link rel="stylesheet" href="css/Template_Mode_1.0.css">
   </head>
   <body onload="createThemes()" id="body" class = "dark">
     <!--
@@ -58,9 +57,18 @@
         <!--
         <li><a href="../calendar/">Calendar</a></li>
         -->
-        <li><a role="button" onclick="addTheme()">Theme +</a><input type="text" id="modeInput" name="modeInput"><button id = "inputButton" type=button onclick="addTheme()">Add</button></li>
-        <li><a role="button" onclick="localStorage.setItem('mode', 'classic'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('classic')">Classic Theme</a></li>
-        <li><a role="button" onclick="localStorage.setItem('mode', 'dark'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('dark')">Dark Theme</a></li>
+        <li id="add-theme">
+          <a role="button" onclick="showAddTheme()" id="a-add-theme">+ Theme</a>
+          <a role="button" id="input-theme">
+            <input type="text" id="modeInput" name="modeInput"><button id = "inputButton" type=button onclick="addTheme()">Add</button>
+          </a>
+        </li>
+        <li>
+          <a role="button" onclick="localStorage.setItem('mode', 'classic'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('classic')">Classic Theme</a>
+        </li>
+        <li>
+          <a role="button" onclick="localStorage.setItem('mode', 'dark'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('dark')">Dark Theme</a>
+        </li>
       </ul>
     </div>
 
