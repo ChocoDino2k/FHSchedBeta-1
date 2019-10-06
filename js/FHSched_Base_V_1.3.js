@@ -50,6 +50,8 @@ function addTheme()
         localThemes.push(input);
         themes.push(createTheme(upInput));
         addLink(upInput);
+        localStorage.setItem('mode', input);
+        loadThemes();
       }
     });
   }
@@ -59,7 +61,7 @@ function addLink(file)
 {
   var link = document.createElement('link');
   link.setAttribute('rel', 'stylesheet');
-  link.setAttribute('href', 'css/' + file + '_Mode_1.0.css');
+  link.setAttribute('href', isHomePage + 'css/' + file + '_Mode_1.0.css');
   document.getElementsByTagName('head')[0].appendChild(link);
 }
 
@@ -79,8 +81,6 @@ function createTheme(modeName)
   newTheme.innerHTML = upModeName + " Theme";
   themeLi.appendChild(newTheme);
 
-  localStorage.setItem('mode', modeName.toLowerCase());
-  loadThemes();
   return newTheme;
 }
 
