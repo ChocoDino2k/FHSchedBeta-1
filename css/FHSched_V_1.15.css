@@ -34,7 +34,7 @@ a:active {
 .header
 {
   background-color:red;
-  height:80px;
+  height:92px;
   width: 100%;
   font-family:verdana;
   color:white;
@@ -327,7 +327,7 @@ a:active {
 
 footer
 {
-  position:fixed;
+  position: fixed;
   bottom:0px;
   padding: 0px, 0px;
   width: 100%;
@@ -374,9 +374,11 @@ footer ul li
 
 @media screen and (orientation: portrait)
 {
+
   .header
   {
-    height:120px;
+    height:135px;
+    width: 1277px;
     padding-top: 20px;
     font-size: 75px;
   }

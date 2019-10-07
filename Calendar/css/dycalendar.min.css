@@ -7,6 +7,9 @@
  	background-color:white;
  }
 
+ footer{
+left: 0px;
+}
 
  .container1{
   color: #FFF;
@@ -95,6 +98,8 @@
 
 .parent{
  position: relative;
+ left: 30px;
+ top: 30px;
  margin:auto;
 }
 
@@ -102,6 +107,7 @@
     /* Dropdown Button */
 .dropbtn {
   background-color: #000000;
+  width: 200px;
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -119,9 +125,9 @@
   position: absolute;
   display: inline-block;
   top: 0px;
-  left:900px;
+  left:950px;
   width:240px;
-  height:150px;
+  height:180px;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -1466,7 +1472,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   font-family:cursive ;
   font-size: 1.1em;
   position: absolute;
-  left: 935px;
+  left: 943px;
   top:30px;
  width: 195px;
  height: 75px;
@@ -1479,7 +1485,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   font-family:cursive ;
   font-size: 1.1em;
   position: absolute;
-  left: 935px;
+  left: 943px;
   top:105px;
  width: 195px;
  height: 75px;
@@ -1505,12 +1511,12 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   background: #FFF;
   width:205px;
   height:160px;
-  left:930px;
+  left:938px;
   top:24.5px;
   border-radius:5px;
 }
 .containerGreyRim{
- left: 935px;
+ left: 943px;
  top:30px;
  width: 195px;
  height: 150px;
@@ -1533,7 +1539,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 	padding-right: 5px;
 	padding-bottom: 1px;
 	width:250px;
-	height: 245px;
+	height: 240px;
 	left: 938px;
 	top: 200px;
 	border-radius: 5px;
@@ -1604,7 +1610,9 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 }
 
 .parent{
- position: relative;
+ position: absolute;
+ top: 100px;
+ left: 50px;
  margin:auto;
 }
 
@@ -1617,7 +1625,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   font-size: 16px;
   border: none;
   cursor: pointer;
-  width:120px;
+  width:180px;
 }
 
 /* Dropdown button on hover & focus */
@@ -1630,7 +1638,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   position: absolute;
   display: inline-block;
   top: 0px;
-  left:1140px;
+  left:1200px;
   width:120px;
 }
 
