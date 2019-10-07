@@ -10,18 +10,17 @@
 
 
     <!-- dycalendarjs stylesheet -->
-    <link href="css/dycalendar.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="../css/FHSched_V_1.14.css">
+    <link rel="stylesheet" href="css/dycalendar.min.css">
+    <link rel ="stylesheet" href="css/dycalenar.css">
+    <link rel="stylesheet" href="../css/FHSched_V_1.15.css">
+    <link rel="stylesheet" href="../css/Home_1.0.css">
     <link rel="stylesheet" href="../css/Dark_Mode_1.0.css">
-    <link rel="stylesheet" href="../css/Cherry_Mode_1.0.css">
-    <link rel="stylesheet" href="../css/Aqua_Mode_1.0.css">
-    <link rel="stylesheet" href="../css/Template_Mode_1.0.css">
 
-
+<script type="text/javascript" src="js/FHSched_Base_V_1.2.js"></script>
 
 
 </head>
-<body class="dark">
+  <body onload="createThemes()" id="body" class = "dark">
   <!--
   <img class="logo" src="images/weblogo.png" width="80" height="74">
 -->
@@ -36,19 +35,24 @@
     <a class = "close-sidebar" role="button" onclick="showSidebar()">
       <img src="../images/close-icon.png" class="close-icon">
     </a>
-    <ul>
+    <ul id = "sidebar-list">
       <li><a href="../">Home</a></li>
       <li><a href="../about/">About</a></li>
       <!--
       <li><a href="../calendar/">Calendar</a></li>
       -->
-      <li><a role="button" onclick="localStorage.setItem('mode', 'classic'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('classic')" title="Dark/light">Classic Mode</a></li>
-      <li><a role="button" onclick="localStorage.setItem('mode', 'dark'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('dark')" title="Dark/light">Dark Mode</a></li>
-      <li><a role="button" onclick="localStorage.setItem('mode', 'cherry'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('cherry')" title="Dark/light">Cherry Mode</a></li>
-      <li><a role="button" onclick="localStorage.setItem('mode', 'aqua'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('aqua')" title="Dark/light">Aqua Mode</a></li>
-      <!--
-      <li><a role="button" onclick="localStorage.setItem('mode', 'aqua'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('aqua')" title="Dark/light">Aqua Mode</a></li>
-      -->
+      <li id="add-theme">
+        <a role="button" onclick="showAddTheme()" id="a-add-theme">+ Theme</a>
+        <a role="button" id="input-theme">
+          <input type="text" id="modeInput" name="modeInput"> <button id = "inputButton" type=button onclick="addTheme()">Add</button>
+        </a>
+      </li>
+      <li>
+        <a role="button" onclick="localStorage.setItem('mode', 'classic'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('classic')">Classic Theme</a>
+      </li>
+      <li>
+        <a role="button" onclick="localStorage.setItem('mode', 'dark'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('dark')">Dark Theme</a>
+      </li>
     </ul>
   </div>
 
@@ -70,7 +74,9 @@
   </div>
 
 
-   <p class="header" style = "height: 100px">
+</script>
+
+   <p class="header" style = "height: 150px;">
          <a href="../"> FHSched Calendar </a>
     </p>
 
@@ -166,7 +172,67 @@
         <img src="calendar-line-vertical.png" alt="calendar" width="475" height="400">
         </div>
 
+        <div class="picture0">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="925" height="500">
+        </div>
 
+        <div class="picture1">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="925" height="500">
+        </div>
+
+        <div class="picture2">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="925" height="500">
+        </div>
+
+         <div class="picture3">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="925" height="500">
+        </div>
+
+        <div class="picture4">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="925" height="500">
+        </div>
+
+        <div class="picture5">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="925" height="500">
+        </div>
+
+        <div class="picture6">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="925" height="500">
+        </div>
+
+        <div class="picture7">
+        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1195">
+        </div>
+
+        <div class="picture8">
+        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1195">
+        </div>
+
+        <div class="picture9">
+        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1195">
+        </div>
+
+        <div class="picture10">
+        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1195">
+        </div>
+
+        <div class="picture11">
+        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1195">
+        </div>
+
+        <div class="picture12">
+        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1195">
+        </div>
+
+        <div class="picture13">
+        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1195">
+        </div>
+
+        <div class="picture14">
+        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1195">
+        </div>
+
+<div class="fontSize">
 <button onclick="document.getElementById('id01').style.display='block'" class="button button1">
 h
 </button>
@@ -174,17 +240,14 @@ h
     <div class="w3-modal-content w3-card-4">
       <header class="w3-container w3-red">
         <span onclick="document.getElementById('id01').style.display='none'"
-        class="w3-button w3-display-topright">&times;</span>
+        class="w3-button w3-display-topright"> &times;</span>
         <h2>Daily Events</h2>
       </header>
       <div class="w3-container">
         <font color="black">
-          <p>Event</p>
+          <p>event</p>
         </font>
       </div>
-      <footer class="w3-container w3-red">
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-      </footer>
     </div>
   </div>
 
@@ -203,9 +266,6 @@ h
           <p>Event2</p>
         </font>
       </div>
-      <footer class="w3-container w3-red">
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-      </footer>
     </div>
   </div>
 
@@ -221,12 +281,15 @@ h
       </header>
       <div class="w3-container">
         <font color="black">
-          <p>Event3</p>
+          <p> Leadership Retreat at Connor Prairie at 8:00am- 2:00pm </p>
+          <p>  Soccer: Boys JV Match at  Greenfield-Central High School at 6:00pm </p>
+          <p> Volleyball: Girls Freshman Match at Mount Vernon High School at 6:00pm </p>
+          <p> Volleyball: Girls JV Match at Mount Vernon High School at 6:00pm </p>
+          <p> Unified Football: Varsity Game at FHS FOOTBALL STADIUM at 6:30pm </p>
+          <p> Soccer: Boys Varsity Match at Greenfield-Central High School at 7:30pm </p>
+          <p> Volleyball: Girls Varsity Match at Mount Vernon High School at 7:30pm </p>
         </font>
       </div>
-      <footer class="w3-container w3-red">
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-      </footer>
     </div>
   </div>
 
@@ -242,12 +305,15 @@ h
       </header>
       <div class="w3-container">
         <font color="black">
-          <p>Event4</p>
+          <p> 9 week exams </p>
+         <p> College Visit: Bellarmine University in CCA at 9:30 AM </p>
+   <p> College Visit: St. Johns College in CCA at 12:00 PM </p>
+   <p> College Visit: University of Southern Indiana in CCA at 1:00 PM </p>
+   <p> Tennis: Boys Varsity IHSAA Sectionals at HSE High School at 4:30pm </p>
+   <p> Soccer: Girls JV Match at Guerin Catholic High School at 5:30pm </p>
+   <p> Soccer: Girls Varsity Match at Guerin Catholic High School at 7:00pm </p>
         </font>
       </div>
-      <footer class="w3-container w3-red">
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-      </footer>
     </div>
   </div>
 
@@ -263,12 +329,16 @@ h
       </header>
       <div class="w3-container">
         <font color="black">
-          <p>Event 5</p>
+           <p> 9 Week Exams </p>
+          <p> College Visit: The Ohio State University in CCA at 9:30 AM </p>
+   <p> College Visit: Indiana Wesleyan University in CCA at 12:00 PM </p>
+   <p> College Visit: Amherst College in CCA at 1:00 PM </p>
+   <p> College Visit: University of Iowa in CCA at 2:00 PM </p>
+  <p> Tennis: Boys Varsity IHSAA Sectionals at HSE High School at 4:30pm </p>
+  <p> Unified Football: Varsity Game at HSE High School at 5:30pm </p>
+  <p> Soccer: Boys Freshman Match at Franklin Central High School at 6:00pm </p>
         </font>
       </div>
-      <footer class="w3-container w3-red">
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-      </footer>
     </div>
   </div>
 
@@ -284,12 +354,13 @@ h
       </header>
       <div class="w3-container">
         <font color="black">
-          <p>Event6</p>
+          <p> 9 week exams/First Grading Period Ends </p>
+          <p> College Visit: University of St. Francis in CCA at 8:30 AM </p>
+  <p> College Visit: Purdue Polytechnic Institute, West Lafayette in CCA at 2:00 PM </p>
+  <p> Football: Varsity Game in Fishers High School at 7:00pm</p>
+  <p> Football: Varsity Game at FHS FOOTBALL STADIUM at 7:00pm <font color= "red"> (Senior Night) </font> </p>
         </font>
       </div>
-      <footer class="w3-container w3-red">
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-      </footer>
     </div>
   </div>
 
@@ -305,12 +376,15 @@ h
       </header>
       <div class="w3-container">
         <font color="black">
-          <p>Event7</p>
+          <p> Football: JV Game at Franklin Central High School at 10:00am </p>
+          <p> Volleyball: Girls Freshman Invitational at Bishop Chatard High School at 10:00am </p>
+          <p> Volleyball: Girls Varsity Match at Guerin Catholic High School at 10:00am </p>
+          <p> Marching Band at Bands of America Invitational - Prelims, Finals (time TBD) </p>
+          <p> Volleyball: Girls Varsity Match at Guerin Catholic High School at 12:00pm </p>
+          <p> Unified Football: Varsity IHSAA Sectionals at Noblesville High School at 1:00pm </p>
+          <p> Cross Country: Girls Varsity Nike Valley Twilight at Laverne Gibson Championship Cross Country Course at 6:15pm </p>
         </font>
       </div>
-      <footer class="w3-container w3-red">
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-      </footer>
     </div>
   </div>
 
@@ -326,12 +400,9 @@ h
       </header>
       <div class="w3-container">
         <font color="black">
-          <p>Event8</p>
+          <p> none </p>
         </font>
       </div>
-      <footer class="w3-container w3-red">
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-      </footer>
     </div>
   </div>
 
@@ -347,12 +418,10 @@ h
       </header>
       <div class="w3-container">
         <font color="black">
-          <p>Event9</p>
+          <p> Football: Freshman Game at FHS FOOTBALL STADIUM at 6:00pm </p>
+          <p> Soccer: Boys Varsity IHSAA Sectionals at White River Elementary at 7:00pm </p>
         </font>
       </div>
-      <footer class="w3-container w3-red">
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-      </footer>
     </div>
   </div>
 
@@ -368,12 +437,12 @@ h
       </header>
       <div class="w3-container">
         <font color="black">
-          <p>Event10</p>
+          <p> Cheer Winter Call Out Metting in Cafe A at 3:00pm- 4:00pm </p>
+          <p> Volleyball: Girls Freshman and JV Match at Yorktown High School at 6:00pm </p>
+          <p> Soccer: Girls Varsity IHSAA Sectionals at HSE High School at 7:15pm </p>
+          <p> Volleyball: Girls Varsity Match at Yorktown High School at 7:30pm </p>
         </font>
       </div>
-      <footer class="w3-container w3-red">
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-      </footer>
     </div>
   </div>
 
@@ -389,12 +458,16 @@ h
       </header>
       <div class="w3-container">
         <font color="black">
-          <p>Event11</p>
+          <p>Soccer: Boys Varsity IHSAA Sectionals at  White River Elementary at 5:30pm</p>
+          <p> Lacrosse Girls Call Out Meeting at Cafe A at 6:00pm- 8:00pm</p>
+          <p> Rugby Girls Call Out Meeting at LGI Room at 6:00pm- 7:30pm </p>
+          <p> Band Concert in FHS Gym at 7:00pm- 9:00pm </p>
+          <p> Soccer: Girls Varsity IHSAA Sectionals at HSE High School at 5:30pm </p>
+          <p> Volleyball: Girls Freshman Match at FHS AUX COURT 1 at 5:30pm </p>
+          <p> Volleyball: Girls JV Match at FHS GYM - VARSITY at 5:30pm </p>
+          <p> Volleyball: Girls Varsity Match at FHS GYM - VARSITY at 7:00pm <font color= "red"> Senior Night </font> </p>
         </font>
       </div>
-      <footer class="w3-container w3-red">
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-      </footer>
     </div>
   </div>
 
@@ -413,9 +486,6 @@ h
           <p>Event12</p>
         </font>
       </div>
-      <footer class="w3-container w3-red">
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-      </footer>
     </div>
   </div>
 
@@ -431,12 +501,9 @@ h
       </header>
       <div class="w3-container">
         <font color="black">
-          <p>Event13</p>
+          <p>Football: Varsity Game at Westfield High School at 7:00pm</p>
         </font>
       </div>
-      <footer class="w3-container w3-red">
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-      </footer>
     </div>
   </div>
 
@@ -452,12 +519,15 @@ h
       </header>
       <div class="w3-container">
         <font color="black">
-          <p>Event14</p>
+          <p>Cross Country: Varsity IHSAA Sectionals at Pendleton Heights High School  (time: TBD)</p>
+          <p> Football: Freshman Game at Westfield High School at 10:00am </p>
+          <p> Football: JV Game at FHS FOOTBALL STADIUM at 10:00am </p>
+          <p> Volleyball: Girls JV Invitational HSE High School at 10:00am </p>
+          <p> SPORTS Knight Football Games at FHS Football Stadium at 1:00pm- 4:00pm </p>
+          <p> Soccer: Girls Varsity IHSAA Sectionals at HSE High School at 2:00pm </p>
+          <p> Soccer: Boys Varsity IHSAA Sectionals at White River Elementary at 7:00pm </p>
         </font>
       </div>
-      <footer class="w3-container w3-red">
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-      </footer>
     </div>
   </div>
 
@@ -476,9 +546,6 @@ h
           <p>Event15</p>
         </font>
       </div>
-      <footer class="w3-container w3-red">
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-      </footer>
     </div>
   </div>
 
@@ -497,9 +564,6 @@ h
           <p>Event16</p>
         </font>
       </div>
-      <footer class="w3-container w3-red">
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-      </footer>
     </div>
   </div>
 
@@ -518,9 +582,6 @@ h
           <p>Event17</p>
         </font>
       </div>
-      <footer class="w3-container w3-red">
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-      </footer>
     </div>
   </div>
 
@@ -539,9 +600,6 @@ h
           <p>Event18</p>
         </font>
       </div>
-      <footer class="w3-container w3-red">
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-      </footer>
     </div>
   </div>
 
@@ -560,9 +618,6 @@ h
           <p>Event19</p>
         </font>
       </div>
-      <footer class="w3-container w3-red">
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-      </footer>
     </div>
   </div>
 
@@ -581,9 +636,6 @@ h
           <p>Event20</p>
         </font>
       </div>
-      <footer class="w3-container w3-red">
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-      </footer>
     </div>
   </div>
 
@@ -602,9 +654,6 @@ h
           <p>Event21</p>
         </font>
       </div>
-      <footer class="w3-container w3-red">
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-      </footer>
     </div>
   </div>
 
@@ -623,9 +672,6 @@ h
           <p>Event22</p>
         </font>
       </div>
-      <footer class="w3-container w3-red">
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-      </footer>
     </div>
   </div>
 
@@ -644,9 +690,6 @@ h
           <p>Event23</p>
         </font>
       </div>
-      <footer class="w3-container w3-red">
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-      </footer>
     </div>
   </div>
 
@@ -665,9 +708,6 @@ h
           <p>Event24</p>
         </font>
       </div>
-      <footer class="w3-container w3-red">
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-      </footer>
     </div>
   </div>
 
@@ -686,9 +726,6 @@ h
           <p>Event25</p>
         </font>
       </div>
-      <footer class="w3-container w3-red">
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-      </footer>
     </div>
   </div>
 
@@ -707,9 +744,6 @@ h
           <p>Event26</p>
         </font>
       </div>
-      <footer class="w3-container w3-red">
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-      </footer>
     </div>
   </div>
 
@@ -728,9 +762,6 @@ h
           <p>Event27</p>
         </font>
       </div>
-      <footer class="w3-container w3-red">
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-      </footer>
     </div>
   </div>
 
@@ -749,9 +780,6 @@ h
           <p>Event28</p>
         </font>
       </div>
-      <footer class="w3-container w3-red">
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-      </footer>
     </div>
   </div>
 
@@ -770,9 +798,6 @@ h
           <p>Event29</p>
         </font>
       </div>
-      <footer class="w3-container w3-red">
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-      </footer>
     </div>
   </div>
 
@@ -791,9 +816,6 @@ h
           <p>Event30</p>
         </font>
       </div>
-      <footer class="w3-container w3-red">
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-      </footer>
     </div>
   </div>
 
@@ -803,7 +825,7 @@ h
    <div id="id31" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
       <header class="w3-container w3-red">
-        <span onclick="document.getElementById('id30').style.display='none'"
+        <span onclick="document.getElementById('id31').style.display='none'"
         class="w3-button w3-display-topright">&times;</span>
         <h2>Daily Events</h2>
       </header>
@@ -812,9 +834,6 @@ h
           <p>Event31</p>
         </font>
       </div>
-      <footer class="w3-container w3-red">
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-      </footer>
     </div>
   </div>
 
@@ -833,9 +852,6 @@ h
           <p>Event32</p>
         </font>
       </div>
-      <footer class="w3-container w3-red">
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-      </footer>
     </div>
   </div>
 
@@ -854,9 +870,6 @@ h
           <p>Event33</p>
         </font>
       </div>
-      <footer class="w3-container w3-red">
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-      </footer>
     </div>
   </div>
 
@@ -875,9 +888,6 @@ h
           <p>Event34</p>
         </font>
       </div>
-      <footer class="w3-container w3-red">
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-      </footer>
     </div>
   </div>
 
@@ -896,11 +906,9 @@ h
           <p>Event35</p>
         </font>
       </div>
-      <footer class="w3-container w3-red">
-        <p> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-      </footer>
     </div>
   </div>
+</div>
 
 <!--
 
