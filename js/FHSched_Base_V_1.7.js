@@ -40,22 +40,21 @@ function addTheme()
   var upInput = input.charAt(0).toUpperCase() + input.substring(1);
   if(localThemes.indexOf(input) == -1)
   {
-    $.ajax({
-      url:'https://fhsched.com/FHSchedBeta/css/' + upInput + '_Mode_1.0.css',
-      error: function()
-      {
-        document.querySelector("#modeInput").setAttribute('placeholder','Invalid');
-      },
-      success: function()
-      {
-        localThemes.push(input);
-        themes.push(createTheme(upInput));
-        addLink(upInput);
-        localStorage.setItem('mode', input);
-        document.querySelector("#modeInput").setAttribute('placeholder','Accepted');
-        loadThemes();
-      }
-    });
+    var cssLength = document.styleSheets.length;
+    testCss = addLink(upInput);
+    if (document.styleSheets[cssLength-1].cssRules.length == 0)
+    {
+      document.querySelector("#modeInput").setAttribute('placeholder','Invalid');
+      testCss.parentNode.removeChild(testCss);
+    }
+    else
+    {
+      localThemes.push(input);
+      themes.push(createTheme(upInput));
+      localStorage.setItem('mode', input);
+      document.querySelector("#modeInput").setAttribute('placeholder','Accepted');
+      loadThemes();
+    }
   }
 }
 
@@ -65,6 +64,7 @@ function addLink(file)
   link.setAttribute('rel', 'stylesheet');
   link.setAttribute('href', isHomePage + 'css/' + file + '_Mode_1.0.css');
   document.getElementsByTagName('head')[0].appendChild(link);
+  return link;
 }
 
 function createTheme(modeName)
