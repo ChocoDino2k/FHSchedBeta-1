@@ -1,3 +1,6 @@
+// Redirects people that use the www subdomain
+if (window.location.hostname.split('www').length > 1) window.location.hostname = 'fhsched.com';
+
 var localThemes = [];
 var themes = [];
 
