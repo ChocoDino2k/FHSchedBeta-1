@@ -1,12 +1,8 @@
-<?php
-if(isset($_GET["accept-cookies"])) {
-  setcookie("accept-cookies", "true", time() + 31536000);
-  header("Location: ./");
-}
-?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <meta http-equiv="pragma" content="no-cache"> <!--Temporary cache clear -->
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145890894-1"></script>
     <script>
@@ -29,16 +25,16 @@ if(isset($_GET["accept-cookies"])) {
 
     <script type="text/javascript" src="js/FHSched_Schedule_Data_V_1.11.js"> </script>
     <script type="text/javascript" src="js/FHSched_Calendar_Data_V_1.4.js"></script>
-
-    <link rel="stylesheet" href="css/FHSched_V_1.14.css">
-    <link rel="stylesheet" href="css/Home_1.0.css">
-    <link rel="stylesheet" href="css/Dark_Mode_1.0.css">
-    <link rel="stylesheet" href="css/Template_Mode_1.0.css">
+    <script type="text/javascript" src="js/FHSched_Base_V_1.3.js"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="css/FHSched_V_1.15.css">
+    <link rel="stylesheet" href="css/Home_1.0.css">
+    <link rel="stylesheet" href="css/Dark_Mode_1.0.css">
   </head>
-  <body class = "dark">
+  <body onload="createThemes()" id="body" class = "dark">
     <!--
     <img class="logo" src="images/weblogo.png" width="80" height="74">
   -->
@@ -57,18 +53,24 @@ if(isset($_GET["accept-cookies"])) {
       <a class = "close-sidebar" role="button" onclick="showSidebar()">
         <img src="images/close-icon.png" class="close-icon">
       </a>
-      <ul>
-        <li><a href="../">Home</a></li>
-        <li><a href="../about/">About</a></li>
+      <ul id = "sidebar-list">
+        <li><a href="">Home</a></li>
+        <li><a href="about/">About</a></li>
         <!--
         <li><a href="../calendar/">Calendar</a></li>
         -->
-        <li><a role="button" onclick="localStorage.setItem('mode', 'classic'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('classic')" title="Dark/light">Classic Mode</a></li>
-        <li><a role="button" onclick="localStorage.setItem('mode', 'dark'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('dark')" title="Dark/light">Dark Mode</a></li>
-        <!--
-        <li><a role="button" onclick="localStorage.setItem('mode', 'cherry'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('cherry')" title="Dark/light">Cherry Mode</a></li>
-        <li><a role="button" onclick="localStorage.setItem('mode', 'aqua'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('aqua')" title="Dark/light">Aqua Mode</a></li>
-        -->
+        <li id="add-theme">
+          <a role="button" onclick="showAddTheme()" id="a-add-theme">+ Theme</a>
+          <a role="button" id="input-theme">
+            <input type="text" id="modeInput" name="modeInput" placeholder="Eg: Dark"><button id = "inputButton" type=button onclick="addTheme()">Add</button>
+          </a>
+        </li>
+        <li>
+          <a role="button" onclick="localStorage.setItem('mode', 'classic'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('classic')">Classic Theme</a>
+        </li>
+        <li>
+          <a role="button" onclick="localStorage.setItem('mode', 'dark'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('dark')">Dark Theme</a>
+        </li>
       </ul>
     </div>
 
@@ -103,13 +105,15 @@ if(isset($_GET["accept-cookies"])) {
 
     <div class="">
       <p class = "splash">
-        Proudly sponsored by <span style="color:RGB(180,140,40)">National Guard</span>!
+        <span style="color:red">New unlockable themes</span> each week!
         <br>
-        Meet our hard-working team: <a href="../about/">About</a>
+        To unlock: Open the sidebar and click "+ Theme"
         <br>
-        Today is National Walk to School Day!
+        Then enter and guess the theme name by:
         <br>
-        Big updates are arriving soon.
+        Solving the puzzle or asking around school
+        <br>
+        Click to solve the puzzle: <a href="puzzle" target = "_blank">Puzzle</a>
       </p>
     </div>
 
@@ -123,7 +127,7 @@ if(isset($_GET["accept-cookies"])) {
     <footer>
       <div class="foot">
         <ul>
-          <li><a href="../privacy-policy/">Privacy Policy</a></li>
+          <li><a href="privacy-policy/">Privacy Policy</a></li>
         </ul>
         <ul>
           <li>2019 CodingForFishers</li>
@@ -179,6 +183,19 @@ if(isset($_GET["accept-cookies"])) {
     </script>
 
     <script type="text/javascript">     //Not FHSSched
+    var isHomePage = '';
+
+    var inputEl = document.querySelector("#modeInput");
+    var inputButton = document.querySelector("#inputButton");
+
+    inputEl.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        // Trigger the button element with a click
+        document.getElementById("inputButton").click();
+      }
+    });
+
     //Referencing HTML elements
     var timer = document.querySelector("#timer");
     var period = document.querySelector("#period");
@@ -192,7 +209,7 @@ if(isset($_GET["accept-cookies"])) {
     var today = new Date();
     var curMonth = today.getMonth();
     var curDate = today.getDate();
-    var curHour = today.getHours();
+    var curHour = today.getHours()-7;
     var curMin = today.getMinutes();
     var curSec = today.getSeconds();
 
@@ -201,7 +218,7 @@ if(isset($_GET["accept-cookies"])) {
       today = new Date();
       curMonth = today.getMonth();
       curDate = today.getDate();
-      curHour = today.getHours();
+      curHour = today.getHours()-7;
       curMin = today.getMinutes();
       curSec = (59 - today.getSeconds());
       curScheduleValue = calendar[curMonth][curDate - 1];
@@ -630,45 +647,7 @@ if(isset($_GET["accept-cookies"])) {
       return "";
     }
 
-    //Loads darkmode upon the website refresh
-    function loadModes()
-    {
-      document.querySelector('body').classList.remove('dark');
-      switch (localStorage.getItem('mode'))
-      {
-        case 'classic':
-          document.querySelector('body').classList.remove('dark');
-          break;
-        case 'dark':
-          document.querySelector('body').classList.add('dark');
-          break;
-        case 'cherry':
-          document.querySelector('body').classList.add('cherry');
-          break;
-        case 'aqua':
-          document.querySelector('body').classList.add('aqua');
-          break;
-        default:
-          document.querySelector('body').classList.add('dark');
-          break;
-      };
-      editLunchPeriod(currentSchedule["lunch"]);
-    }
-
-    //Changes styles for the sidebar
-    function showSidebar()
-    {
-      document.querySelector("#sidebar").classList.toggle('active');
-      document.querySelector("#ham-a").classList.toggle('active');
-    }
-
-    //Changes styles for National Guard Banner
-    function showNGBanner()
-    {
-      document.querySelector("#national-guard-banner").classList.toggle('active');
-    }
-
-    loadModes();
+    editLunchPeriod(currentSchedule["lunch"]);
 
     </script>
   </body>
