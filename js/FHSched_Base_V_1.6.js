@@ -41,7 +41,7 @@ function addTheme()
   if(localThemes.indexOf(input) == -1)
   {
     $.ajax({
-      url:'https://fhsched.com/css/' + upInput + '_Mode_1.0.css',
+      url:'https://fhsched.com/FHSchedBeta/css/' + upInput + '_Mode_1.0.css',
       error: function()
       {
         document.querySelector("#modeInput").setAttribute('placeholder','Invalid');
