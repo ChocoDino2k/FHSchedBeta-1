@@ -1,15 +1,12 @@
-// Redirects people that use the www subdomain
-if (window.location.hostname.split('www').length > 1) window.location.hostname = 'fhsched.com';
-
-var localThemes = [];
+var localThemes = ['dark'];
 var themes = [];
 
 //Adds the unlocked themes to sidebar
 function createThemes()
 {
-  if(localStorage.getItem('localThemes') == "" || localStorage.getItem('localThemes') == null)
+  if(localStorage.getItem('localThemes') == "" || localStorage.getItem('localThemes') == null || localStorage.getItem('localThemes') == "[]" )
   {
-    localThemes = [];
+    localThemes = ['dark'];
     localStorage.setItem('localThemes', JSON.stringify(localThemes));
   }
   localThemes = JSON.parse(localStorage.getItem('localThemes'));
@@ -38,15 +35,16 @@ function loadThemes()
 function addTheme()
 {
   var input = document.querySelector("#modeInput").value;
+  document.querySelector("#modeInput").value = '';
   input = input.toLowerCase();
   var upInput = input.charAt(0).toUpperCase() + input.substring(1);
   if(localThemes.indexOf(input) == -1)
   {
     $.ajax({
-      url:'https://fhsched.com/FHSchedBeta/css/' + upInput + '_Mode_1.0.css',
+      url:'https://fhsched.com/css/' + upInput + '_Mode_1.0.css',
       error: function()
       {
-        console.log("Fail");
+        document.querySelector("#modeInput").setAttribute('placeholder','Invalid');
       },
       success: function()
       {
@@ -54,6 +52,7 @@ function addTheme()
         themes.push(createTheme(upInput));
         addLink(upInput);
         localStorage.setItem('mode', input);
+        document.querySelector("#modeInput").setAttribute('placeholder','Accepted');
         loadThemes();
       }
     });

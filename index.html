@@ -22,23 +22,21 @@
     <link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png">
 
     <script type="text/javascript" src="js/FHSched_Schedule_Data_V_1.11.js"> </script>
-    <script type="text/javascript" src="js/FHSched_Calendar_Data_V_1.4.js"></script>
-    <script type="text/javascript" src="js/FHSched_Base_V_1.0.js"></script>
-
-    <link rel="stylesheet" href="css/FHSched_V_1.15.css">
-    <link rel="stylesheet" href="css/Home_1.0.css">
-    <link rel="stylesheet" href="css/Dark_Mode_1.0.css">
-    <link rel="stylesheet" href="css/Template_Mode_1.0.css">
-
+    <script type="text/javascript" src="js/FHSched_Calendar_Data_V_1.5.js"></script>
+    <script type="text/javascript" src="js/FHSched_Base_V_1.6.js"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="css/FHSched_V_1.15.css">
+    <link rel="stylesheet" href="css/Home_1.1.css">
+    <link rel="stylesheet" href="css/Dark_Mode_1.0.css">
   </head>
   <body onload="createThemes()" id="body" class = "dark">
     <!--
     <img class="logo" src="images/weblogo.png" width="80" height="74">
   -->
-    <a id = "ham-a" class = "ham-a" role="button" onclick="showSidebar()"><img src = "images/Hamburger_icon.png" class="ham" id = "ham-switch"></a>
+    <a id = "ham-a" class = "ham-a" role="button" onclick="showSidebar()"><img src="images/Hamburger_icon.png" class="ham"></a>
     <a class="ng-logo-a" role="button" onclick="showNGBanner()">
       <img src="images/National_Guard_Logo.png" class = "ng-logo">
     </a>
@@ -54,17 +52,20 @@
         <img src="images/close-icon.png" class="close-icon">
       </a>
       <ul id = "sidebar-list">
-        <li><a href="../">Home</a></li>
-        <li><a href="../about/">About</a></li>
+        <li><a href="">Home</a></li>
+        <li><a href="about/">About</a></li>
         <!--
         <li><a href="../calendar/">Calendar</a></li>
         -->
-        <li><a role="button" onclick="localStorage.setItem('mode', 'classic'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('classic')" title="Dark/light">Classic Mode</a></li>
-        <li><a role="button" onclick="localStorage.setItem('mode', 'dark'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('dark')" title="Dark/light">Dark Mode</a></li>
-
-        <!--
-        <li><a role="button" onclick="localStorage.setItem('mode', 'aqua'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('aqua')" title="Dark/light">Aqua Mode</a></li>
-        -->
+        <li id="add-theme">
+          <a role="button" onclick="showAddTheme()" id="a-add-theme">+ Theme</a>
+          <a role="button" id="input-theme">
+            <input type="text" id="modeInput" name="modeInput" placeholder="Eg: Dark"><button id = "inputButton" type=button onclick="addTheme()">Add</button>
+          </a>
+        </li>
+        <li>
+          <a role="button" onclick="localStorage.setItem('mode', 'classic'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('classic')">Classic Theme</a>
+        </li>
       </ul>
     </div>
 
@@ -75,10 +76,10 @@
     <div id="periodDiv" class="time-schedule">
       <p id = "period" class = "period-display">No Period</p>
       <p id = "timer" class = "timer">Not School Hours</p>
-      <button class = "btn btn-left" onclick = "changePeriod(-1)" id = "b">
+      <button class = "btn btn-left" onclick = "changePeriod(-1)">
         &#8249;
       </button>
-      <button class = "btn btn-right" onclick = "changePeriod(1)" id = "b">
+      <button class = "btn btn-right" onclick = "changePeriod(1)">
         &#8250;
       </button>
     </div>
@@ -99,20 +100,18 @@
 
     <div class="">
       <p class = "splash">
-        Proudly sponsored by <span style="color:RGB(180,140,40)">National Guard</span>!
+        <span style="color:red">New unlockable themes</span> each week!
         <br>
-        Meet our hardworking team: <a href="../about/" target = "_blank">About</a>
+        To unlock: Open the sidebar and click "+ Theme"
         <br>
-        Almost to Friday!
+        Then enter and guess the theme name by:
         <br>
-        Big updates are arriving soon.
+        Solving the puzzle or asking around school
+        <br>
+        Click to solve the puzzle: <a href="puzzle" target = "_blank">Puzzle</a>
       </p>
     </div>
 
-
-    <div class="mode-img">
-
-    </div>
     <div id = "wrongLunchDiv" class="wrongLunchDiv">
       <button onclick = "resetLunch()" class = "wrongLunchBtn">
         Wrong lunch?
@@ -120,16 +119,14 @@
     </div>
 
     <p class="bottom-space"></p>
-
     <footer>
-
       <div class="foot">
         <ul>
-          <li><a href="../privacy-policy/">Privacy Policy</a></li>
+          <li><a href="privacy-policy/">Privacy Policy</a></li>
         </ul>
         <ul>
           <li>2019 CodingForFishers</li>
-          <li>Version 1.4.6</li>
+          <li>Version 1.5.0</li>
         </ul>
         <ul>
           <li>
@@ -181,6 +178,19 @@
     </script>
 
     <script type="text/javascript">     //Not FHSSched
+    var isHomePage = '';
+
+    var inputEl = document.querySelector("#modeInput");
+    var inputButton = document.querySelector("#inputButton");
+
+    inputEl.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        // Trigger the button element with a click
+        document.getElementById("inputButton").click();
+      }
+    });
+
     //Referencing HTML elements
     var timer = document.querySelector("#timer");
     var period = document.querySelector("#period");
@@ -197,10 +207,6 @@
     var curHour = today.getHours();
     var curMin = today.getMinutes();
     var curSec = today.getSeconds();
-
-    //Variables for hamburger Hamburger_icon
-    var standardHam = "images/Hamburger_icon.png"
-    var bJack = document.querySelector("#b");
 
     function updateClock()
     {
@@ -636,43 +642,7 @@
       return "";
     }
 
-    //Loads darkmode upon the website refresh
-    function loadModes()
-    {
-      document.querySelector('body').classList.remove('dark');
-      switch (localStorage.getItem('mode'))
-      {
-        case 'classic':
-          document.querySelector('body').classList.remove('dark');
-          document.querySelector('#ham-switch').src = standardHam;
-          break;
-        case 'dark':
-          document.querySelector('body').classList.add('dark');
-          document.querySelector('#ham-switch').src = standardHam;
-          break;
-        default:
-          document.querySelector('body').classList.add('dark');
-          document.querySelector('#ham-switch').src = standardHam;
-          break;
-      };
-      editLunchPeriod(currentSchedule["lunch"]);
-    }
-
-    //Changes styles for the sidebar
-    function showSidebar()
-    {
-      document.querySelector("#sidebar").classList.toggle('active');
-      document.querySelector("#ham-a").classList.toggle('active');
-
-    }
-
-    //Changes styles for National Guard Banner
-    function showNGBanner()
-    {
-      document.querySelector("#national-guard-banner").classList.toggle('active');
-    }
-
-    loadModes();
+    editLunchPeriod(currentSchedule["lunch"]);
 
     </script>
   </body>

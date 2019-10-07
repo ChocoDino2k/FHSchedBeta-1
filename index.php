@@ -28,14 +28,14 @@ if(isset($_GET["accept-cookies"])) {
     <link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png">
 
     <script type="text/javascript" src="js/FHSched_Schedule_Data_V_1.11.js"> </script>
-    <script type="text/javascript" src="js/FHSched_Calendar_Data_V_1.4.js"></script>
-    <script type="text/javascript" src="js/FHSched_Base_V_1.2.js"></script>
+    <script type="text/javascript" src="js/FHSched_Calendar_Data_V_1.5.js"></script>
+    <script type="text/javascript" src="js/FHSched_Base_V_1.6.js"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <link rel="stylesheet" href="css/FHSched_V_1.15.css">
-    <link rel="stylesheet" href="css/Home_1.0.css">
+    <link rel="stylesheet" href="css/Home_1.1.css">
     <link rel="stylesheet" href="css/Dark_Mode_1.0.css">
   </head>
   <body onload="createThemes()" id="body" class = "dark">
@@ -58,22 +58,19 @@ if(isset($_GET["accept-cookies"])) {
         <img src="images/close-icon.png" class="close-icon">
       </a>
       <ul id = "sidebar-list">
-        <li><a href="../">Home</a></li>
-        <li><a href="../about/">About</a></li>
+        <li><a href="">Home</a></li>
+        <li><a href="about/">About</a></li>
         <!--
         <li><a href="../calendar/">Calendar</a></li>
         -->
         <li id="add-theme">
           <a role="button" onclick="showAddTheme()" id="a-add-theme">+ Theme</a>
           <a role="button" id="input-theme">
-            <input type="text" id="modeInput" name="modeInput"><button id = "inputButton" type=button onclick="addTheme()">Add</button>
+            <input type="text" id="modeInput" name="modeInput" placeholder="Eg: Dark"><button id = "inputButton" type=button onclick="addTheme()">Add</button>
           </a>
         </li>
         <li>
           <a role="button" onclick="localStorage.setItem('mode', 'classic'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('classic')">Classic Theme</a>
-        </li>
-        <li>
-          <a role="button" onclick="localStorage.setItem('mode', 'dark'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('dark')">Dark Theme</a>
         </li>
       </ul>
     </div>
@@ -109,13 +106,15 @@ if(isset($_GET["accept-cookies"])) {
 
     <div class="">
       <p class = "splash">
-        Proudly sponsored by <span style="color:RGB(180,140,40)">National Guard</span>!
+        <span style="color:red">New unlockable themes</span> each week!
         <br>
-        Meet our hardworking team: <a href="../about/" target = "_blank">About</a>
+        To unlock: Open the sidebar and click "+ Theme"
         <br>
-        Almost to Friday!
+        Then enter and guess the theme name by:
         <br>
-        Big updates are arriving soon.
+        Solving the puzzle or asking around school
+        <br>
+        Click to solve the puzzle: <a href="puzzle" target = "_blank">Puzzle</a>
       </p>
     </div>
 
@@ -129,11 +128,11 @@ if(isset($_GET["accept-cookies"])) {
     <footer>
       <div class="foot">
         <ul>
-          <li><a href="../privacy-policy/">Privacy Policy</a></li>
+          <li><a href="privacy-policy/">Privacy Policy</a></li>
         </ul>
         <ul>
           <li>2019 CodingForFishers</li>
-          <li>Version 1.4.6</li>
+          <li>Version 1.5.0</li>
         </ul>
         <ul>
           <li>
@@ -185,6 +184,8 @@ if(isset($_GET["accept-cookies"])) {
     </script>
 
     <script type="text/javascript">     //Not FHSSched
+    var isHomePage = '';
+
     var inputEl = document.querySelector("#modeInput");
     var inputButton = document.querySelector("#inputButton");
 
@@ -209,7 +210,7 @@ if(isset($_GET["accept-cookies"])) {
     var today = new Date();
     var curMonth = today.getMonth();
     var curDate = today.getDate();
-    var curHour = today.getHours()-7;
+    var curHour = today.getHours();
     var curMin = today.getMinutes();
     var curSec = today.getSeconds();
 
@@ -218,7 +219,7 @@ if(isset($_GET["accept-cookies"])) {
       today = new Date();
       curMonth = today.getMonth();
       curDate = today.getDate();
-      curHour = today.getHours()-7;
+      curHour = today.getHours();
       curMin = today.getMinutes();
       curSec = (59 - today.getSeconds());
       curScheduleValue = calendar[curMonth][curDate - 1];
