@@ -42,16 +42,13 @@ function addTheme()
   {
     var cssLength = document.styleSheets.length;
     testCss = addLink(upInput);
-    testCss.onload = function()
-    {
-      testThemes(cssLength,testCss,input,upInput);
-    }
+    setTimeout(testThemes, 500, cssLength,testCss,input,upInput);
   }
 }
 
 function testThemes(cssLength,testCss,input,upInput)
 {
-  if (document.styleSheets[cssLength-1].cssRules.length == 0)
+  if (document.styleSheets[cssLength].cssRules.length == 0)
   {
     document.querySelector("#modeInput").setAttribute('placeholder','Invalid');
     testCss.parentNode.removeChild(testCss);
