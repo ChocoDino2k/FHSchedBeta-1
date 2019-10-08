@@ -94,7 +94,7 @@
  
 
 .parent{
- position: relative;
+ position: absolute;
  margin:auto;
 }
 
@@ -118,7 +118,7 @@
 .dropdown {
   position: absolute;
   display: inline-block;
-  top: 0px;
+  top: 10px;
   left:900px;
   width:240px;
   height:150px;
@@ -170,7 +170,7 @@
 .dropdown2 {
   position: absolute;
   display: inline-block;
-  top: 75px;
+  top: 85px;
   left:900px;
   width:240px;
   height:300px;
@@ -1130,6 +1130,7 @@
     padding: 10px;
     margin-left: auto;
     margin-right: auto;
+
     width: 900px;
     height: 1300px;
     text-align: center;
@@ -1207,7 +1208,7 @@
   font-size:50px;
  }
  .dycalendar-month-container .dycalendar-target-date,.dycalendar-month-container .dycalendar-today-date{
- 	background-color:#111;
+	background-color:#111;
  	color:#fff;
  	max-width:5px;
  	height: 5%;
@@ -2733,7 +2734,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
  	padding-bottom: 15px;
  	text-align:center;
  }
- .dycalendar-month-container .dycalendar-target-date,.dycalendar-month-container .dycalendar-today-date{
+ .dycalendar-month-container .dycalendar-target-date, .dycalendar-today-date{
  	background-color:#111;
  	color:#fff;
  	max-width:5px;

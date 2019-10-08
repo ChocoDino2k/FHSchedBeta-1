@@ -14,15 +14,14 @@
     <link href="css/dycalendar.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../css/FHSched_V_1.15a.css">
     <link rel="stylesheet" href="../css/Dark_Mode_1.0.css">
-    <link rel="stylesheet" href="../css/Cherry_Mode_1.0.css">
-    <link rel="stylesheet" href="../css/Aqua_Mode_1.0.css">
-    <link rel="stylesheet" href="../css/Template_Mode_1.0.css">
+    <link rel = "stylesheet" href = "css/FHSchedCalendar_V_1.11.css">
+    <script type="text/javascript" src="../js/FHSched_Base_V_1.7.js"></script>
 
 
 
 
 </head>
-<body class="dark">
+  <body onload="createThemes()" id="body" class = "dark">
   <!--
   <img class="logo" src="images/weblogo.png" width="80" height="74">
 -->
@@ -37,19 +36,19 @@
     <a class = "close-sidebar" role="button" onclick="showSidebar()">
       <img src="../images/close-icon.png" class="close-icon">
     </a>
-    <ul>
+    <ul id = "sidebar-list">
       <li><a href="../">Home</a></li>
       <li><a href="../about/">About</a></li>
-      <!--
-      <li><a href="../calendar/">Calendar</a></li>
-      -->
-      <li><a role="button" onclick="localStorage.setItem('mode', 'classic'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('classic')" title="Dark/light">Classic Mode</a></li>
-      <li><a role="button" onclick="localStorage.setItem('mode', 'dark'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('dark')" title="Dark/light">Dark Mode</a></li>
-      <li><a role="button" onclick="localStorage.setItem('mode', 'cherry'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('cherry')" title="Dark/light">Cherry Mode</a></li>
-      <li><a role="button" onclick="localStorage.setItem('mode', 'aqua'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('aqua')" title="Dark/light">Aqua Mode</a></li>
-      <!--
-      <li><a role="button" onclick="localStorage.setItem('mode', 'aqua'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('aqua')" title="Dark/light">Aqua Mode</a></li>
-      -->
+
+      <li id="add-theme">
+        <a role="button" onclick="showAddTheme()" id="a-add-theme">+ Theme</a>
+        <a role="button" id="input-theme">
+          <input type="text" id="modeInput" name="modeInput" placeholder="Eg: Dark"><button id = "inputButton" type=button onclick="addTheme()">Add</button>
+        </a>
+      </li>
+      <li>
+        <a role="button" onclick="localStorage.setItem('mode', 'classic'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('classic')">Classic Theme</a>
+      </li>
     </ul>
   </div>
 
@@ -71,7 +70,7 @@
   </div>
 
 
-   <p class="header" style = "height: 100px">
+   <p class="header">
          <a href="../"> FHSched Calendar </a>
     </p>
 
@@ -923,7 +922,28 @@ Event
 
 </div>
 
+<script type="text/javascript">
+  //Used for cookie banner
+  if($('.cookie-banner').length)
+  {
+    $('.cookie-banner').slideDown(800);
+  }
+</script>
 
+<script type="text/javascript">     //Not FHSSched
+var isHomePage = '../';
+
+var inputEl = document.querySelector("#modeInput");
+var inputButton = document.querySelector("#inputButton");
+
+inputEl.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("inputButton").click();
+  }
+});
+</script>
 
 <!-- javascript -->
 <script >
