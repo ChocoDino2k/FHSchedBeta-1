@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<meta charset="UTF-8">
 <html>
 <head>
     <title>FHSched Calendar</title>
@@ -6,38 +7,106 @@
     <!-- twitter bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+
+
+
     <!-- dycalendarjs stylesheet -->
     <link href="css/dycalendar.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="css/FHSched_V_1.11.css">
+    <link rel="stylesheet" href="../css/FHSched_V_1.14.css">
+    <link rel="stylesheet" href="../css/Dark_Mode_1.0.css">
+    <link rel="stylesheet" href="../css/Cherry_Mode_1.0.css">
+    <link rel="stylesheet" href="../css/Aqua_Mode_1.0.css">
+    <link rel="stylesheet" href="../css/Template_Mode_1.0.css">
+
+
+
+
 </head>
 <body class="dark">
-   <p class="header">
+  <!--
+  <img class="logo" src="images/weblogo.png" width="80" height="74">
+-->
+  <a id = "ham-a" class = "ham-a" role="button" onclick="showSidebar()"><img src="../images/Hamburger_icon.png" class="ham"></a>
+  <a class="ng-logo-a" role="button" onclick="showNGBanner()">
+    <img src="../images/National_Guard_Logo.png" class = "ng-logo">
+  </a>
+
+
+
+  <div class="slider" id="sidebar">
+    <a class = "close-sidebar" role="button" onclick="showSidebar()">
+      <img src="../images/close-icon.png" class="close-icon">
+    </a>
+    <ul>
+      <li><a href="../">Home</a></li>
+      <li><a href="../about/">About</a></li>
+      <!--
+      <li><a href="../calendar/">Calendar</a></li>
+      -->
+      <li><a role="button" onclick="localStorage.setItem('mode', 'classic'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('classic')" title="Dark/light">Classic Mode</a></li>
+      <li><a role="button" onclick="localStorage.setItem('mode', 'dark'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('dark')" title="Dark/light">Dark Mode</a></li>
+      <li><a role="button" onclick="localStorage.setItem('mode', 'cherry'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('cherry')" title="Dark/light">Cherry Mode</a></li>
+      <li><a role="button" onclick="localStorage.setItem('mode', 'aqua'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('aqua')" title="Dark/light">Aqua Mode</a></li>
+      <!--
+      <li><a role="button" onclick="localStorage.setItem('mode', 'aqua'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('aqua')" title="Dark/light">Aqua Mode</a></li>
+      -->
+    </ul>
+  </div>
+
+
+  <div id="national-guard-banner" class="national-guard-banner">
+    <div class="container">
+      <p>
+        Get started here:
+        <a href="https://nationalguard.com/get-started" target="_blank">https://nationalguard.com/get-started</a>
+        <br>
+        Contact: SGT Abigail Bartholomew | (765) 265-2906
+        <br>
+        <a href="https://www.instagram.com/sgtabbibart/?hl=en" target="_blank">https://www.instagram.com/sgtabbibart/?hl=en</a>
+      </p>
+      <a class = "close-sidebar" role="button" onclick="showNGBanner()">
+        <img src="../images/close-icon.png" class="close-icon">
+      </a>
+    </div>
+  </div>
+
+
+   <p class="header" style = "height: 100px">
          <a href="../"> FHSched Calendar </a>
     </p>
 
-        <ul class="nav-bar">
-        <li><a href>Home</a></li>
-        <li><a href>Calendar</a></li>
-        <li style = "float: right;"><a role="button" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light" id="darkMode"> Light | Dark Mode</a></li>
-      </ul>
 
-        <div class="parent">  
-        
+        <div class="parent">
+
         <div class="move">
           <div class="dropdown" style="float:right;">
             <button onclick="dropDown()" class="dropbtn">Change Month</button>
             <div id="myDropdown" class="dropdown-content">
-              <a href="SeptemberCalendar.html">September</a>
-              <a href="OctoberCalendar.html">October</a>
+              <a href="CurrentCalendar.html">October</a>
               <a href="NovemberCalendar.html">November</a>
               <a href="DecemberCalendar.html">December</a>
            </div>
          </div>
         </div>
 
-        <div class="boxForCountDown"></div>
-        <div class="relativeBreak"  id="breakCountDown"></div>
-        <div class="relativeYear" style="margin-top: 0px; width: 13%;" id="yearCountDown"></div>
+        <div class="dropdown2" style="float:right;">
+            <button onclick="dropDown2()" class="dropbtn2">Club Meetings</button>
+            <div id="myDropdown2" class="dropdown2-content">
+              <a href="CurrentCalendar.html">October</a>
+              <a href="ClubNovemberCalendar.html">November</a>
+              <a href="ClubDecemberCalendar.html">December</a>
+           </div>
+         </div>
+
+
+        <div class = "containerRim"></div>
+        <div class = "containerGreyRim"></div>
+        <div class="container1"  id="yearCountDown"></div>
+        <div class="container2" id="breakCountDown"></div>
+        <div class = "featuredSportSplash">
+          <p> example text</p>
+        </div>
+
 
         <!-- DEMO -->
         <div class="some-class">
@@ -46,7 +115,7 @@
                 <div id="dycalendar-month" class="dycalendar-container skin-gray"></div>
         </div>
 
-                <div class="picture">
+        <div class="picture">
         <img src="calendar-line-horizontal.png" alt="calendar" width="953" height="475">
         </div>
 
@@ -75,279 +144,774 @@
         </div>
 
         <div class="pictureSeven">
-        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="500">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="400">
         </div>
 
         <div class="pictureEight">
-        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="500">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="400">
         </div>
 
         <div class="pictureNine">
-        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="500">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="400">
         </div>
 
          <div class="pictureTen">
-        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="500">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="400">
         </div>
 
          <div class="pictureEleven">
-        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="500">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="400">
         </div>
 
         <div class="pictureTwelve">
-        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="500">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="400">
         </div>
 
         <div class="pictureThirteen">
-        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="500">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="400">
         </div>
 
         <div class="pictureFourteen">
-        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="500">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="400">
         </div>
-        
- 
 
-<button class= "button button1" onclick="displayEvents()">
+        <div class="picture0">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="925" height="500">
+        </div>
+
+        <div class="picture1">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="925" height="500">
+        </div>
+
+        <div class="picture2">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="925" height="500">
+        </div>
+
+         <div class="picture3">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="925" height="500">
+        </div>
+
+        <div class="picture4">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="925" height="500">
+        </div>
+
+        <div class="picture5">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="925" height="500">
+        </div>
+
+        <div class="picture6">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="925" height="500">
+        </div>
+
+        <div class="picture7">
+        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1195">
+        </div>
+
+        <div class="picture8">
+        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1195">
+        </div>
+
+        <div class="picture9">
+        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1195">
+        </div>
+
+        <div class="picture10">
+        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1195">
+        </div>
+
+        <div class="picture11">
+        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1195">
+        </div>
+
+        <div class="picture12">
+        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1195">
+        </div>
+
+        <div class="picture13">
+        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1195">
+        </div>
+
+        <div class="picture14">
+        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1195">
+        </div>
+
+        <div class="eventContainerThirtyTwo"> </div>
+        <div class="eventContainerThirtyThree"> </div>
+        <div class="eventContainerThirtyFour"> </div>
+
+
+<div class="fontSize">
+<button onclick="document.getElementById('id01').style.display='block'" class="button button1">
 h
 </button>
-<div id="eventContainerOne">
-None
-</div>
+   <div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id01').style.display='none'"
+        class="w3-button w3-display-topright"> &times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p>None</p>
+        </font>
+      </div>
+    </div>
+  </div>
 
-<button class= "button button2" onclick="displayEventsTwo()">
+  <button onclick="document.getElementById('id02').style.display='block'" class="button button2">
 h
 </button>
-<div id="eventContainerTwo">
-None
-</div>
+   <div id="id02" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id02').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p>None</p>
+        </font>
+      </div>
+    </div>
+  </div>
 
-<button class= "button button3" onclick="displayEventsThree()">
+  <button onclick="document.getElementById('id03').style.display='block'" class="button button3">
 h
 </button>
-<div id="eventContainerThree">
-   
-</div>
+   <div id="id03" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id03').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p> None</p>
+        </font>
+      </div>
+    </div>
+  </div>
 
-<button class= "button button4" onclick="displayEventsFour()">
+  <button onclick="document.getElementById('id04').style.display='block'" class="button button4">
 h
 </button>
-<div id="eventContainerFour">
-  
-</div>
+   <div id="id04" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id04').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p>None</p>
+        </font>
+      </div>
+    </div>
+  </div>
 
-<button class= "button button5" onclick="displayEventsFive()">
+  <button onclick="document.getElementById('id05').style.display='block'" class="button button5">
 h
 </button>
-<div id="eventContainerFive">
-   
-</div>
+   <div id="id05" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id05').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+           <p> None</p>
+        </font>
+      </div>
+    </div>
+  </div>
 
-<button class= "button button6" onclick="displayEventsSix()">
+  <button onclick="document.getElementById('id06').style.display='block'" class="button button6">
 h
 </button>
-<div id="eventContainerSix">
-  
-</div>
+   <div id="id06" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id06').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p> College Visit: Indiana University - Purdue University Indianapolis in the CCA at 1:00 PM </p>
+          <p> College Visit: Mount St. Joseph University in the CCA at 2:00 PM </p>
+          <p> RJH Camp Tecumseh</p>
+          <hr>
+          <p> Indiana ASTA High School Orchestra Invitational - Symphony & Chamber Orchestras at Ball State University (Time: TBD) </p>
+          <p> Football: Varsity IHSAA Sectionals (Location: TBD) at 7:00pm </p>
+        </font>
+      </div>
+    </div>
+  </div>
 
-<button class= "button button7" onclick="displayEventsSeven()">
+  <button onclick="document.getElementById('id07').style.display='block'" class="button button7">
 h
 </button>
-<div id="eventContainerSeven">
+   <div id="id07" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id07').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p> Cross Country: Varsity IHSAA State at Laverne Gibson Championship Cross Country Course (Time: TBD) </p>
+          <p>Marching Band ISSMA Semi-State at Ben Davis High School (Time:TBD)</p>
+          <p> Speech Meet at FHS at 6:00am- 11:00pm </p>
+          <p> State Soccer Finals at FHS at 7:00am- 10:00pm </p>
+        </font>
+      </div>
+    </div>
+  </div>
 
-</div>
-
-<button class= "button button8" onclick="displayEventsEight()">
+  <button onclick="document.getElementById('id08').style.display='block'" class="button button8">
 h
 </button>
-<div id="eventContainerEight">
+   <div id="id08" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id08').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p>None</p>
+        </font>
+      </div>
+    </div>
+  </div>
 
-</div>
-
-<button class= "button button9" onclick="displayEventsNine()">
+   <button onclick="document.getElementById('id09').style.display='block'" class="button button9">
 h
 </button>
-<div id="eventContainerNine">
-    
-</div>
+   <div id="id09" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id09').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p> None</p>
+        </font>
+      </div>
+    </div>
+  </div>
 
-<button class= "button button10" onclick="displayEventsTen()">
+ <button onclick="document.getElementById('id10').style.display='block'" class="button button10">
 h
 </button>
-<div id="eventContainerTen">
-  
-</div>
+   <div id="id10" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id10').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p> College Visit: Michigan Technological University in the CCA at 12:00 PM </p>
+          <p> College Visit: St. Louis College of Pharmacy in the CCA at 1:00 PM </p>
+          <hr>
+          <p> Sideline Cheer: Varsity Game (Time/Location:TBD) </p>
+          <p> Basketball: Girls JV Game at Warren Central High School at 6:00pm </p>
+          <p> Basketball: Girls Varsity Game at Warren Central High School at 7:30pm </p>
+        </font>
+      </div>
+    </div>
+  </div>
 
-<button class= "button button11" onclick="displayEventsEl()">
+ <button onclick="document.getElementById('id11').style.display='block'" class="button button11">
 h
 </button>
-<div id="eventContainerEl">
- 
-</div>
+   <div id="id11" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id11').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p>None</p>
+        </font>
+      </div>
+    </div>
+  </div>
 
-<button class= "button button12" onclick="displayEventsTwelve()">
+ <button onclick="document.getElementById('id12').style.display='block'" class="button button12">
 h
 </button>
-<div id="eventContainerTwelve">
-  
-</div>
+   <div id="id12" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id12').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p> None</p>
+        </font>
+      </div>
+    </div>
+  </div>
 
-<button class= "button button13" onclick="displayEventsThirteen()">
+ <button onclick="document.getElementById('id13').style.display='block'" class="button button13">
 h
 </button>
-<div id="eventContainerThirteen">
-  
-</div>
+   <div id="id13" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id13').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p> College Visit: Drake University in the CCA at 12:00 PM </p>
+        </font>
+      </div>
+    </div>
+  </div>
 
-<button class= "button button14" onclick="displayEventsFourteen()">
+ <button onclick="document.getElementById('id14').style.display='block'" class="button button14">
 h
 </button>
-<div id="eventContainerFourteen">
-   
-</div>
+   <div id="id14" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id14').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p>Marching Band ISSMA State Finals at Lucas Oil Stadium (Time:TBD)</p>
+          <p> Basketball: Girls Freshman, JV, and Varsity Shootout at HSE High School at 10:00am </p>
+          <p> Fall Play: FHS Theatre Presents, Our Town, by Thornton Wilder at Little Theater-Black Box at 2:00pm and 7:00pm </p>
+        </font>
+      </div>
+    </div>
+  </div>
 
-<button class= "button button15" onclick="displayEventsFifteen()">
+ <button onclick="document.getElementById('id15').style.display='block'" class="button button15">
 h
 </button>
-<div id="eventContainerFifteen">
+   <div id="id15" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id15').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p>Fishers Diving Club Diving Invitational at FHS Natatorium</p>
+        </font>
+      </div>
+    </div>
+  </div>
 
-</div>
-
-<button class= "button button16" onclick="displayEventsSixteen()">
+  <button onclick="document.getElementById('id16').style.display='block'" class="button button16">
 h
 </button>
-<div id="eventContainerSixteen">
+   <div id="id16" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id16').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p> None</p>
+        </font>
+      </div>
+    </div>
+  </div>
 
-</div>
-
-<button class= "button button17" onclick="displayEventsSeventeen()">
+  <button onclick="document.getElementById('id17').style.display='block'" class="button button17">
 h
 </button>
-<div id="eventContainerSeventeen">
- 
-</div>
+   <div id="id17" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id17').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p>None</p>
+        </font>
+      </div>
+    </div>
+  </div>
 
-<button class= "button button18" onclick="displayEventsEighteen()">
+  <button onclick="document.getElementById('id18').style.display='block'" class="button button18">
 h
 </button>
-<div id="eventContainerEighteen">
+   <div id="id18" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id18').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p>Basketball: Girls JV Game at FHS at 6:00pm</p>
+          <p>Basketball: Girls Varsity Game at FHS at 7:30pm </p>
+        </font>
+      </div>
+    </div>
+  </div>
 
-</div>
-
-<button class= "button button19" onclick="displayEventsNineteen()">
+ <button onclick="document.getElementById('id19').style.display='block'" class="button button19">
 h
 </button>
-<div id="eventContainerNineteen">
+   <div id="id19" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id19').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p>None</p>
+        </font>
+      </div>
+    </div>
+  </div>
 
-</div>
-
-<button class= "button button20" onclick="displayEventsTwenty()">
+ <button onclick="document.getElementById('id20').style.display='block'" class="button button20">
 h
 </button>
-<div id="eventContainerTwenty">
+   <div id="id20" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id20').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+            <p>Mid-Term 2nd Grading Period</p> 
+        </font>
+      </div>
+    </div>
+  </div>
 
-</div>
-
-<button class= "button button21" onclick="displayEventsTwentyOne()">
+  <button onclick="document.getElementById('id21').style.display='block'" class="button button21">
 h
 </button>
-<div id="eventContainerTwentyOne">
+   <div id="id21" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id21').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p>Marching Band Bands of America Grand National Championships - SEMIS & FINALS at Lucas Oil Stadium (Time:TBD) </p>
+          <p> Basketball: Girls Varsity Shootout at Lake Central High School at 10:00am </p>
+          <p> Basketball: Girls Varsity Shootout at Lake Central High School at 4:00pm </p>
+        </font>
+      </div>
+    </div>
+  </div>
 
-</div>
-
-<button class= "button button22" onclick="displayEventsTwentyTwo()">
+  <button onclick="document.getElementById('id22').style.display='block'" class="button button22">
 h
 </button>
-<div id="eventContainerTwentyTwo">
+   <div id="id22" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id22').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p>None</p>
+        </font>
+      </div>
+    </div>
+  </div>
 
-</div>
-
-<button class= "button button23" onclick="displayEventsTwentyThree()">
+  <button onclick="document.getElementById('id23').style.display='block'" class="button button23">
 h
 </button>
-<div id="eventContainerTwentyThree">
-Event
-</div>
+   <div id="id23" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id23').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p>ISTEP Testing Window 7:30am- 3:00pm</p>
+        </font>
+      </div>
+    </div>
+  </div>
 
-<button class= "button button24" onclick="displayEventsTwentyFour()">
+<button onclick="document.getElementById('id24').style.display='block'" class="button button24">
 h
 </button>
-<div id="eventContainerTwentyFour">
-Event
-</div>
+   <div id="id24" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id24').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p>Cap and Gown, Announcement and Ring Orders at CCA Commons at 7:30am- 3:00pm</p>
+          <p> ISTEP Testing Window 7:30am- 3:00pm </p>
+          <hr>
+          <p> Wrestling: JV/Varsity Meet at FHS at 6:30pm </p>
+        </font>
+      </div>
+    </div>
+  </div>
 
-<button class= "button button25" onclick="displayEventsTwentyFive()">
+<button onclick="document.getElementById('id25').style.display='block'" class="button button25">
 h
 </button>
-<div id="eventContainerTwentyFive">
-Event
-</div>
+   <div id="id25" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id25').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p> ISTEP Testing Window 7:30am- 3:00pm </p>
+          <p> Cap and Gown, Announcement and Ring Orders at Cafe A Commons at 10:25am- 12:00pm </p>
+          <p> Track Girls Winter Conditioning Call Out Meeting at Cafe A at 3:00pm- 4:00pm </p>
+          <p> One Acts auditions at Little Theater-Black Box at 3:15pm- 6:15pm </p>
+        </font>
+      </div>
+    </div>
+  </div>
 
-<button class= "button button26" onclick="displayEventsTwentySix()">
+<button onclick="document.getElementById('id26').style.display='block'" class="button button26">
 h
 </button>
-<div id="eventContainerTwentySix">
-Event
-</div>
+   <div id="id26" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id26').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p>ISTEP Testing Window 7:30am- 3:00pm</p>
+          <p>Basketball: Boys Varsity Scrimmage at FHS at 6:00pm </p>
+        </font>
+      </div>
+    </div>
+  </div>
 
-<button class= "button button27" onclick="displayEventsTwentySeven()">
+  <button onclick="document.getElementById('id27').style.display='block'" class="button button27">
 h
 </button>
-<div id="eventContainerTwentySeven">
-  <p> College Visit: Seton Hall University in CCA at 8:30 AM </p>
-  <p> College Visit: Kent State University in CCA at 9:30 AM </p>
-  <p> College Visit: Calvin University in CCA at 12:00 PM </p>
-  <p> College Visit: Taylor University in CCA at 1:00 PM </p>
-</div>
+   <div id="id27" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id27').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p>Essay Exam Deadline</p>
+          <p> ISTEP Testing Window 7:30am- 3:00pm </p>
+          <p> Basketball: Girls Freshman/JV Game at Westfield High School at 6:00pm </p>
+          <p> Fall Coffeehouse Performance at Little Theater-Black Box at 7:00pm </p>
+          <p> Basketball: Girls Varsity Game at Westfield High School at 7:30pm </p>
+        </font>
+      </div>
+    </div>
+  </div>
 
-<button class= "button button28" onclick="displayEventsTwentyEight()">
+  <button onclick="document.getElementById('id28').style.display='block'" class="button button28">
 h
 </button>
-<div id="eventContainerTwentyEight">
-Event
-</div>
+   <div id="id28" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id28').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p> Wrestling: JV/Varsity Yorktown Invitational at Yorktown High School at 9:00am </p>
+        </font>
+      </div>
+    </div>
+  </div>
 
-<button class= "button button29" onclick="displayEventsTwentyNine()">
+<button onclick="document.getElementById('id29').style.display='block'" class="button button29">
 h
 </button>
-<div id="eventContainerTwentyNine">
-Event
-</div>
+   <div id="id29" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id29').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p>None</p>
+        </font>
+      </div>
+    </div>
+  </div>
 
-<button class= "button button30" onclick="displayEventsThirty()">
+<button onclick="document.getElementById('id30').style.display='block'" class="button button30">
 h
 </button>
-<div id="eventContainerThirty">
-Event
-</div>
+   <div id="id30" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id30').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p>Basketball: Girls Freshman Game at HSE High School at 6:00pm</p>
+          <p> Basketball: Boys Freshman Game at FHS Gym - Aux at 6:00pm </p>
+          <p> Jazz Concert at CCA Commons
+ at 7:00pm- 9:00pm </p>
+        </font>
+      </div>
+    </div>
+  </div>
 
-<button class= "button button31" onclick="displayEventsThirtyOne()">
+  <button onclick="document.getElementById('id31').style.display='block'" class="button button31">
 h
 </button>
-<div id="eventContainerThirtyTwo">
-Event
-</div>
+   <div id="id31" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id31').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p>Basketball: Girls Freshman/Girls JV Game at FHS Gym - Aux at 6:00pm</p>
+          <p> Basketball: Boys Freshman/ Boys JV Game at Ben Davis High School at 6:00pm </p>
+          <p> Wrestling: Varsity Meet at Noblesville High School at 6:30pm </p>
+          <p> Percussion Ensemble Fall Concert at Large Auditorium at 7:00pm- 9:00pm </p>
+          <p> Basketball: Boys/Girls Varsity Game at FHS GYM at 7:30pm </p>
+        </font>
+      </div>
+    </div>
+  </div>
 
-<button class= "button button32" onclick="displayEventsThirtyTwo()">
+  <button onclick="document.getElementById('id32').style.display='block'" class="button button32">
 h
 </button>
-<div id="eventContainerThirtyTwo">
-Event
-</div>
+   <div id="id32" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id32').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p><font color="brown"> Thanksgiving Break </font></p>
+        </font>
+      </div>
+    </div>
+  </div>
 
-<button class= "button button33" onclick="displayEventsThirtyThree()">
+<button onclick="document.getElementById('id33').style.display='block'" class="button button33">
 h
 </button>
-<div id="eventContainerThirtyThree">
-Event
-</div>
+   <div id="id33" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id33').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p> <font color="brown"> T </font> <font color="orange"> H </font> <font color="brown"> A </font> <font color="orange"> N </font> <font color="brown"> K </font> <font color="orange"> S </font> <font color="brown"> G </font> <font color="orange"> I </font> <font color="brown"> V </font> <font color="orange"> I </font> <font color="brown"> N </font> <font color="orange"> G </font> 🦃 </p>
+          <p><font color="brown"> Thanksgiving Break </font></p>
+        </font>
+      </div>
+    </div>
+  </div>
 
-<button class= "button button34" onclick="displayEventsThirtyFour()">
+<button onclick="document.getElementById('id34').style.display='block'" class="button button34">
 h
 </button>
-<div id="eventContainerThirtyFour">
-Event
+   <div id="id34" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id34').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p><font color="brown"> Thanksgiving Break </font></p>
+        </font>
+      </div>
+    </div>
+  </div>
+
+  <button onclick="document.getElementById('id35').style.display='block'" class="button button35">
+h
+</button>
+   <div id="id35" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id35').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p>Swimming: Girls/Boys Varsity Meet Brownsburg Community School Corporation at 9:00am</p>
+          <p> Basketball: Girls Freshman/JV Game at Warsaw Community High School at 1:00pm </p>
+          <p> Basketball: Girls Varsity Game at Warsaw Community High School at 2:30pm </p>
+        </font>
+      </div>
+    </div>
+  </div>
 </div>
+
+<!--
 
 <button class= "button button35" onclick="displayEventsThirtyFive()">
 h
@@ -357,7 +921,17 @@ Event
 </div>
 
 
-<p class="bottom-space"></p>
+<div class="eventContainerOne">
+ <span class="eventContainerOneText">
+
+ </span>
+</div>
+
+
+-->
+
+
+<p class="bottom-space"  style="height: 800px"></p>
     <footer>
       <div class="foot">
         <ul>
@@ -369,13 +943,13 @@ Event
           <li>Version 1.4.4</li>
         </ul>
         <ul>
-          <li> 
+          <li>
             <address style="all: unset">
           Contact: <a href="mailto:fhsched2019@gmail.com">fhsched2019@gmail.com</a>
-        </address> 
+        </address>
       </li>
         </ul>
-        
+
       </div>
     </footer>
 
@@ -411,7 +985,7 @@ var time = setInterval(function(){
   if (days <= 0) {
  document.getElementById("yearCountDown").innerHTML = "Only " + hours + " hours until school's over!";
 
-  
+
   if (hours <= 0) {
  document.getElementById("yearCountDown").innerHTML = "Only " + minutes + " minutes until school's over!";
 
@@ -475,7 +1049,7 @@ if((breakDates[6] - now2) >=0){
   breakName= "Summer";
 }
 //time between dates
-var t = countDownDate2 - now2; 
+var t = countDownDate2 - now2;
 
 
 //converting betweeen days, hours, minuetes, and seconds
@@ -554,6 +1128,7 @@ document.getElementById("breakCountDown").innerHTML = "have a great Summer (HAGS
 <script src="js/default.js"></script>
 
 <script>
+
 dycalendar.draw({
 target: "#dycalendar-month",
 type : 'month',
@@ -580,311 +1155,340 @@ window.onclick = function(event) {
   }
 }
 
-function displayEvents() {
-  var x = document.getElementById("eventContainerOne");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+function dropDown2() {
+  document.getElementById("myDropdown2").classList.toggle("show2");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn2')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content2");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show2')) {
+        openDropdown.classList.remove('show2');
+      }
+    }
   }
 }
 
-function displayEventsTwo() {
-  var x = document.getElementById("eventContainerTwo");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+
+// Get the modal
+var modal = document.getElementById('id01');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }
 
-function displayEventsThree() {
-  var x = document.getElementById("eventContainerThree");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+// Get the modal
+var modal = document.getElementById('id02');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }
 
-function displayEventsFour() {
-  var x = document.getElementById("eventContainerFour");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+// Get the modal
+var modal = document.getElementById('id03');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }
 
-function displayEventsFive() {
-  var x = document.getElementById("eventContainerFive");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+// Get the modal
+var modal = document.getElementById('id04');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }
 
-function displayEventsSix() {
-  var x = document.getElementById("eventContainerSix");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+// Get the modal
+var modal = document.getElementById('id05');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }
 
-function displayEventsSeven() {
-  var x = document.getElementById("eventContainerSeven");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+// Get the modal
+var modal = document.getElementById('id06');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }
 
-function displayEventsEight() {
-  var x = document.getElementById("eventContainerEight");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+// Get the modal
+var modal = document.getElementById('id07');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }
 
-function displayEventsNine() {
-  var x = document.getElementById("eventContainerNine");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+// Get the modal
+var modal = document.getElementById('id08');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }
 
-function displayEventsTen() {
-  var x = document.getElementById("eventContainerTen");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+// Get the modal
+var modal = document.getElementById('id09');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }
 
-function displayEventsEl() {
-  var x = document.getElementById("eventContainerEl");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+// Get the modal
+var modal = document.getElementById('id10');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }
 
-function displayEventsTwelve() {
-  var x = document.getElementById("eventContainerTwelve");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+// Get the modal
+var modal = document.getElementById('id11');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }
 
-function displayEventsThirteen() {
-  var x = document.getElementById("eventContainerThirteen");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+// Get the modal
+var modal = document.getElementById('id12');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }
 
-function displayEventsFourteen() {
-  var x = document.getElementById("eventContainerFourteen");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+// Get the modal
+var modal = document.getElementById('id13');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }
 
-function displayEventsFifteen() {
-  var x = document.getElementById("eventContainerFifteen");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+// Get the modal
+var modal = document.getElementById('id14');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }
 
-function displayEventsSixteen() {
-  var x = document.getElementById("eventContainerSixteen");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+// Get the modal
+var modal = document.getElementById('id15');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }
 
-function displayEventsSeventeen() {
-  var x = document.getElementById("eventContainerSeventeen");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+// Get the modal
+var modal = document.getElementById('id16');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }
 
-function displayEventsEighteen() {
-  var x = document.getElementById("eventContainerEighteen");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+// Get the modal
+var modal = document.getElementById('id17');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }
 
-function displayEventsNineteen() {
-  var x = document.getElementById("eventContainerNineteen");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+// Get the modal
+var modal = document.getElementById('id18');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }
 
-function displayEventsTwenty() {
-  var x = document.getElementById("eventContainerTwenty");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+// Get the modal
+var modal = document.getElementById('id19');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }
 
-function displayEventsTwentyOne() {
-  var x = document.getElementById("eventContainerTwentyOne");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+// Get the modal
+var modal = document.getElementById('id20');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }
 
-function displayEventsTwentyTwo() {
-  var x = document.getElementById("eventContainerTwentyTwo");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+// Get the modal
+var modal = document.getElementById('id21');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }
 
-function displayEventsTwentyThree() {
-  var x = document.getElementById("eventContainerTwentyThree");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+// Get the modal
+var modal = document.getElementById('id22');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }
 
-function displayEventsTwentyFour() {
-  var x = document.getElementById("eventContainerTwentyFour");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+// Get the modal
+var modal = document.getElementById('id23');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }
 
-function displayEventsTwentyFive() {
-  var x = document.getElementById("eventContainerTwentyFive");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+// Get the modal
+var modal = document.getElementById('id24');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }
 
-function displayEventsTwentySix() {
-  var x = document.getElementById("eventContainerTwentySix");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+// Get the modal
+var modal = document.getElementById('id25');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }
 
-function displayEventsTwentySeven() {
-  var x = document.getElementById("eventContainerTwentySeven");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+// Get the modal
+var modal = document.getElementById('id26');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }
 
-function displayEventsTwentyEight() {
-  var x = document.getElementById("eventContainerTwentyEight");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+// Get the modal
+var modal = document.getElementById('id27');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }
 
-function displayEventsTwentyNine() {
-  var x = document.getElementById("eventContainerTwentyNine");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+// Get the modal
+var modal = document.getElementById('id28');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }
 
-function displayEventsThirty() {
-  var x = document.getElementById("eventContainerThirty");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+// Get the modal
+var modal = document.getElementById('id29');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }
 
-function displayEventsThirtyOne() {
-  var x = document.getElementById("eventContainerThirtyOne");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+// Get the modal
+var modal = document.getElementById('id30');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }
 
-function displayEventsThirtyTwo() {
-  var x = document.getElementById("eventContainerThirtyTwo");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+// Get the modal
+var modal = document.getElementById('id31');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }
 
-function displayEventsThirtyThree() {
-  var x = document.getElementById("eventContainerThirtyThree");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+// Get the modal
+var modal = document.getElementById('id32');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }
 
-function displayEventsThirtyFour() {
-  var x = document.getElementById("eventContainerThirtyFour");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+// Get the modal
+var modal = document.getElementById('id33');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }
+
+// Get the modal
+var modal = document.getElementById('id34');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Get the modal
+var modal = document.getElementById('id35');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+/*
 
 function displayEventsThirtyFive() {
   var x = document.getElementById("eventContainerThirtyFive");
@@ -893,158 +1497,47 @@ function displayEventsThirtyFive() {
   } else {
     x.style.display = "none";
   }
+} */
+//Loads darkmode upon the website refresh
+function loadModes()
+{
+  document.querySelector('body').classList.remove('dark');
+  switch (localStorage.getItem('mode'))
+  {
+    case 'classic':
+      document.querySelector('body').classList.remove('dark');
+      break;
+    case 'dark':
+      document.querySelector('body').classList.add('dark');
+      break;
+    case 'cherry':
+      document.querySelector('body').classList.add('cherry');
+      break;
+    case 'aqua':
+      document.querySelector('body').classList.add('aqua');
+      break;
+    default:
+      document.querySelector('body').classList.add('dark');
+      break;
+  };
+  editLunchPeriod(currentSchedule["lunch"]);
 }
+
+//Changes styles for the sidebar
+function showSidebar()
+{
+  document.querySelector("#sidebar").classList.toggle('active');
+  document.querySelector("#ham-a").classList.toggle('active');
+}
+
+//Changes styles for National Guard Banner
+function showNGBanner()
+{
+  document.querySelector("#national-guard-banner").classList.toggle('active');
+}
+
+loadModes();
 
 </script>
 </body>
 </html>
-
-
-
-<!--
-<div class="eventContainerOne">
- <span class="eventContainerOneText"> Event   </span>
-</div>
-
-<div class="eventContainerTwo">
- <span class="eventContainerTwoText"> Event  </span>
-</div>
-
-<div class="eventContainerThree">
- <span class="eventContainerThreeText"> Event </span>
-</div>
-
-<div class="eventContainerFour">
- <span class="eventContainerFourText"> Event </span>
-</div>
-
-<div class="eventContainerFive">
- <span class="eventContainerFiveText"> Event </span>
-</div>
-
-<div class="eventContainerSix">
- <span class="eventContainerSixText"> Event </span>
-</div>
-
-<div class="eventContainerSeven">
- <span class="eventContainerSevenText"> Event </span>
-</div>
-
-<div class="eventContainerEight">
- <span class="eventContainerEightText">
-  Event
- </span>
-</div>
-
-<div class="eventContainerNine">
- <span class="eventContainerNineText"> Event </span>
-</div>
-
-<div class="eventContainerTen">
- <span class="eventContainerTenText"> 
-  <p> College Visit: Michigan Technological University in CCA at 12:00 PM </p> 
- </span>
-</div>
-
-<div class="eventContainerEleven">
- <span class="eventContainerElevenText"> Event </span>
-</div>
-
-<div class="eventContainerTwelve">
- <span class="eventContainerTwelveText"> Event </span>
-</div>
-
-<div class="eventContainerThirteen">
- <span class="eventContainerThirteenText">
-  <p> College Visit: Drake University in CCA at 12:00 PM </p>
- </span>
-</div>
-
-<div class="eventContainerFourteen">
- <span class="eventContainerFourteenText"> Event </span>
-</div>
-
-<div class="eventContainerFifteen">
- <span class="eventContainerFifteenText"> Event </span>
-</div>
-
-<div class="eventContainerSixteen">
- <span class="eventContainerSixteenText"> Event </span>
-</div>
-
-<div class="eventContainerSeventeen">
- <span class="eventContainerSeventeenText"> Event </span>
-</div>
-
-<div class="eventContainerEighteen">
- <span class="eventContainerEighteenText"> Event </span>
-</div>
-
-<div class="eventContainerNineteen">
- <span class="eventContainerNineteenText"> Event </span>
-</div>
-
-<div class="eventContainerTwenty">
- <span class="eventContainerTwentyText"> Event </span>
-</div>
-
-<div class="eventContainerTwentyOne">
- <span class="eventContainerTwentyOneText"> Event </span>
-</div>
-
-<div class="eventContainerTwentyTwo">
- <span class="eventContainerTwentyTwoText"> Event </span>
-</div>
-
-<div class="eventContainerTwentyThree">
- <span class="eventContainerTwentyThreeText"> Event </span>
-</div>
-
-<div class="eventContainerTwentyFour">
- <span class="eventContainerTwentyFourText"> Event </span>
-</div>
-
-<div class="eventContainerTwentyFive">
- <span class="eventContainerTwentyFiveText"> Event </span>
-</div>
-
-<div class="eventContainerTwentySix">
- <span class="eventContainerTwentySixText"> Event </span>
-</div>
-
-<div class="eventContainerTwentySeven">
- <span class="eventContainerTwentySevenText"> Event </span>
-</div>
-
-<div class="eventContainerTwentyEight">
- <span class="eventContainerTwentyEightText"> Event </span>
-</div>
-
-<div class="eventContainerTwentyNine">
- <span class="eventContainerTwentyNineText"> Event </span>
-</div>
-
-<div class="eventContainerThirty">
- <span class="eventContainerThirtyText"> Event </span>
-</div>
-
-<div class="eventContainerThirtyOne">
- <span class="eventContainerThirtyOneText"> Event </span>
-</div>
-
-<div class="eventContainerThirtyTwo">
- <span class="eventContainerThirtyTwoText"> Event </span>
-</div>
-
-<div class="eventContainerThirtyThree">
- <span class="eventContainerThirtyThreeText"> Event </span>
-</div>
-
-<div class="eventContainerThirtyFour">
- <span class="eventContainerThirtyFourText"> Event </span>
-</div>
-
-<div class="eventContainerThirtyFive">
- <span class="eventContainerThirtyFiveText"> Event </span>
-</div>
--->
