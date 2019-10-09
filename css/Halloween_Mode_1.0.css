@@ -11,8 +11,6 @@ body.halloween
 
 /*This is unique to this theme*/
 body.halloween .sched-img{
-  content: url("css-dep/jack-o-lantern.gif");
- padding-left: 50px;
  position: fixed;
  margin-bottom: -3px;
 }
@@ -31,14 +29,6 @@ body.halloween .period-display{
   }
   to {
     text-shadow: 0 0 20px #fff, 0 0 30px white, 0 0 40px white, 0 0 50px white, 0 0 60px white, 0 0 30px white, 0 0 30px white;
-  }
-}
-@-webkit-keyframes glow-o {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px orange, 0 0 40px orange, 0 0 50px orange, 0 0 60px orange, 0 0 70px orange;
-  }
-  to {
-    text-shadow: 0 0 20px #fff, 0 0 30px orange, 0 0 40px orange, 0 0 50px orange, 0 0 60px orange, 0 0 30px orange, 0 0 30px orange;
   }
 }
 
@@ -143,7 +133,7 @@ body.halloween .ham-a
   transition: background-color 0.3s;
 }
 body.halloween #ham-switch{
-  content: url("css-dep/full-moon.png") !important;
+  content: url("../images/full-moon.png") !important;
 }
 body.halloween .ham-a:hover
 {
@@ -154,7 +144,7 @@ body.halloween .ham-a:hover
 body.halloween .time-schedule
 {
   color: black;
-  background-color:white;
+  background-color:#191919;
   transition: background-color 0.3s;
 }
 
@@ -174,15 +164,38 @@ body.halloween .dot
 {
   background-color:black;
   src: url("css-dep/jack-o-lantern.png")
+  -webkit-animation: glow-b 1s ease-in-out infinite alternate;
+  -moz-animation: glow-b 1s ease-in-out infinite alternate;
+  animation: glow-b 1s ease-in-out infinite alternate;
+}
+@-webkit-keyframes glow-b {
+  from {
+    box-shadow: 0 0 10px #fff, 0 0 20px #000000, 0 0 30px black, 0 0 40px black, 0 0 50px black, 0 0 60px black, 0 0 70px black;
+  }
+  to {
+    box-shadow: 0 0 20px #fff, 0 0 30px black, 0 0 40px black, 0 0 50px black, 0 0 60px black, 0 0 30px black, 0 0 30px black;
+  }
 }
 body.halloween .dot-cur
 {
-  background-color:firebrick;
+  background-color:orange;
   transition: background-color 0.3s;
+  -webkit-animation: glow-o 1s ease-in-out infinite alternate;
+  -moz-animation: glow-o 1s ease-in-out infinite alternate;
+  animation: glow-o 1s ease-in-out infinite alternate;
+}
+@-webkit-keyframes glow-o {
+  from {
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px orange, 0 0 40px orange, 0 0 50px orange, 0 0 60px orange, 0 0 70px orange;
+  }
+  to {
+    box-shadow: 0 0 20px #fff, 0 0 30px orange, 0 0 40px orange, 0 0 50px orange, 0 0 60px orange, 0 0 30px orange, 0 0 30px orange;
+  }
 }
 body.halloween .dot:hover {
   background-color: darkgray;
 }
+
 
 body.halloween .splash {
   color: black;
@@ -201,13 +214,19 @@ body.halloween .splash a:hover
 
 body.halloween .btn {
   color: darkorange;
+  background-color:white;
   background-color:#191919;
   transition: all 0.3s;
 }
 body.halloween .btn:hover {
   color: orange;
+  background-color:lightgray;
   background-color:RGB(50,50,50);
   transition: all 0s;
+transition: all 0s;
+-webkit-animation: glow-o 1s ease-in-out infinite alternate;
+-moz-animation: glow-o 1s ease-in-out infinite alternate;
+animation: glow-o 1s ease-in-out infinite alternate;
 }
 
 body.halloween .lunchBtn
@@ -221,6 +240,9 @@ body.halloween .lunchBtn:hover
   color:gainsboro;
   background-color:RGB(50,50,50);
   transition: all 0s;
+  -webkit-animation: glow-o 1s ease-in-out infinite alternate;
+  -moz-animation: glow-o 1s ease-in-out infinite alternate;
+  animation: glow-o 1s ease-in-out infinite alternate;
 }
 
 body.halloween .wrongLunchBtn
@@ -239,7 +261,7 @@ body.halloween .wrongLunchBtn:hover
 body.halloween footer
 {
   color: RGB(255,255,255);
-  background-color: dimgray;
+  background-color: #191919;
   transition: background-color 0.3s;
   position: static;
   z-index: -1;
