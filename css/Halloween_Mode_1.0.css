@@ -248,14 +248,17 @@ body.halloween .lunchBtn:hover
 body.halloween .wrongLunchBtn
 {
   color:white;
-  background-color:darkred;
+  background-color:black;
   transition: all 0.3s;
 }
 body.halloween .wrongLunchBtn:hover
 {
   color:gainsboro;
-  background-color:RGB(120,0,0);
+  background-color:RGB(50,50,50);
   transition: all 0s;
+  -webkit-animation: glow-o 1s ease-in-out infinite alternate;
+  -moz-animation: glow-o 1s ease-in-out infinite alternate;
+  animation: glow-o 1s ease-in-out infinite alternate;
 }
 
 body.halloween footer
@@ -279,19 +282,19 @@ body.halloween footer
 
 body.halloween .about-header
 {
-  background-color:rgb(255,255,255);
-  color: red;
+  background-color:white;
+  color: black;
 }
 body.halloween .team
 {
   background-color:rgb(255,255,255);
   color: red;
 }
-body.halloween .mode-img{
+/* body.halloween .mode-img{
   content: url("css-dep/great-pumpkin.png");
   width:250px;
   height:250px;
   margin-bottom: 50px;
   position: absolute;
   z-index: 1;
-}
+} */
