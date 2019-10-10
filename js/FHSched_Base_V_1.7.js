@@ -10,6 +10,7 @@ function createThemes()
     localStorage.setItem('localThemes', JSON.stringify(localThemes));
   }
   localThemes = JSON.parse(localStorage.getItem('localThemes'));
+  //localStorage.setItem('localThemes', JSON.stringify(['dark','example']));
 
   var sidebarList = document.querySelector("#sidebar-list");
 

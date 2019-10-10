@@ -1,0 +1,76 @@
+body
+{
+  background: red;
+  color: white;
+  text-align: center;
+}
+div
+{
+  position: relative;
+  display: block;
+  text-align:center;
+  margin: auto;
+}
+p
+{
+  letter-spacing: 5px;
+  font-family:"anton";
+  text-align:center;
+  color: white;
+}
+.instructions
+{
+  position: relative;
+  letter-spacing: 5px;
+  font-family:"anton";
+  text-align:center;
+  font-size: 34px;
+  margin-top: 10px;
+  padding: 10px 30px 0;
+}
+.puzzle
+{
+  background: white;
+  margin: 100px;
+  margin-top: 0;
+  width:80%;
+  padding-top: 80%;
+  border-radius: 10%;
+}
+.p-puzzle
+{
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  color: RGB(0,50,150);
+  font-size: 100px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+img
+{
+  width: 100%
+}
+a
+{
+  position: relative;
+  display: block;
+  font-family: "anton";
+  font-size: 50px;
+  text-decoration: none;
+  letter-spacing: 5px;
+  margin: 10px auto;
+  color: black;
+  background: RGB(210,210,210);
+  border-radius: 15px;
+  padding: 10px 50px;
+  width: fit-content;
+}
+a:hover
+{
+  background: RGB(170,170,170);
+}
