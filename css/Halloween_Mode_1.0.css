@@ -163,7 +163,6 @@ body.halloween .remaining-time
 body.halloween .dot
 {
   background-color:black;
-  src: url("css-dep/jack-o-lantern.png")
   -webkit-animation: glow-b 1s ease-in-out infinite alternate;
   -moz-animation: glow-b 1s ease-in-out infinite alternate;
   animation: glow-b 1s ease-in-out infinite alternate;
@@ -266,10 +265,6 @@ body.halloween footer
   color: RGB(255,255,255);
   background-color: #191919;
   transition: background-color 0.3s;
-  position: static;
-  z-index: -1;
-  margin-top: 11.3%;
-  height : 100%;
 }
 
 @font-face
@@ -290,11 +285,3 @@ body.halloween .team
   background-color:rgb(255,255,255);
   color: black;
 }
-/* body.halloween .mode-img{
-  content: url("css-dep/great-pumpkin.png");
-  width:250px;
-  height:250px;
-  margin-bottom: 50px;
-  position: absolute;
-  z-index: 1;
-} */
