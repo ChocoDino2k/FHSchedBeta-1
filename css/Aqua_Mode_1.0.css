@@ -176,7 +176,49 @@ body.aqua footer
   background-color: RGB(180,180,180);
   transition: background-color 0.3s;
 }
+body.aqua .container1
+{
+  color: RGB(255,255,255);
+  background: RGB(0,100,255);
+  transition: color 0.3s;
+}
 
+body.aqua .container2
+{
+  color: RGB(255,255,255);
+  background: RGB(0,100,255);
+  transition: color 0.3s;
+}
+
+body.aqua .containerGreyRim{
+  background: RGB(0,100,255);
+  transition: background-color 0.3s;
+}
+
+body.aqua .containerRim{
+  background: #FFF;
+  transition: background-color 0.3s;
+}
+
+body.aqua .featuredSportSplash
+{
+  color: RGB(255,255,255);
+  background: RGB(0,100,255);
+  transition:color 0.3s;
+}
+
+body.aqua .dycalendar-month-container
+{
+  color: RGB(255,255,255);
+  transition: color 0.3s;
+}
+
+body.aqua .dycalendar-month-container .dycalendar-target-date,.dycalendar-month-container .dycalendar-today-date
+{
+  color: RGB(255,255,255);
+  background: RGB(0,100,255);
+  transition: color 0.3s;
+}
 @font-face
 {
   font-family: "anton";

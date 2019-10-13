@@ -182,6 +182,51 @@ body.emerald footer
   transition: background-color 0.3s;
 }
 
+body.emerald .container1
+{
+  color: RGB(255,255,255);
+  background: RGB(0,170,40);
+  transition: color 0.3s;
+}
+
+body.emerald .container2
+{
+  color: RGB(255,255,255);
+  background: RGB(0,170,40);
+  transition: color 0.3s;
+}
+
+body.emerald .containerGreyRim{
+  background: RGB(0,170,40);
+  transition: background-color 0.3s;
+}
+
+body.emerald .containerRim{
+  background: #FFF;
+  transition: background-color 0.3s;
+}
+
+body.emerald .featuredSportSplash
+{
+  color: RGB(255,255,255);
+  background: RGB(0,170,40);
+  transition:color 0.3s;
+}
+
+body.emerald .dycalendar-month-container
+{
+  color: RGB(255,255,255);
+  transition: color 0.3s;
+}
+
+body.emerald .dycalendar-month-container .dycalendar-target-date,.dycalendar-month-container .dycalendar-today-date
+{
+  color: RGB(255,255,255);
+  background: RGB(0,80,5);
+  transition: color 0.3s;
+}
+
+
 @font-face
 {
   font-family: "anton";

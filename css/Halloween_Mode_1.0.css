@@ -267,6 +267,66 @@ body.halloween footer
   transition: background-color 0.3s;
 }
 
+body.halloween .container1
+{
+  background: RGB(10,10,10);
+  color: rgb(180,180,180);
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+  transition: color 0.3s;
+}
+
+body.halloween .container2
+{
+  color: rgb(180,180,180);
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+  background: RGB(10,10,10);
+  transition: color 0.3s;
+}
+
+body.halloween .containerGreyRim{
+  background: RGB(10,10,10);
+  transition: background-color 0.3s;
+}
+
+body.halloween .containerRim{
+  background: #FFF;
+  transition: background-color 0.3s;
+}
+
+body.halloween .featuredSportSplash
+{
+  color: rgb(180,180,180);
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+  background: RGB(10,10,10);
+  transition:color 0.3s;
+}
+
+body.halloween .dycalendar-month-container
+{
+  color: rgb(250,250,250);
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+  transition: color 0.3s;
+}
+
+body.halloween .dycalendar-month-container .dycalendar-target-date,.dycalendar-month-container .dycalendar-today-date
+{
+  color: rgb(250,250,250);
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+  background: RGB(0,0,0);
+  transition: color 0.3s;
+}
+
+
 @font-face
 {
   font-family: "anton";
