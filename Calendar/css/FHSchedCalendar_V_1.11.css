@@ -94,7 +94,6 @@ body.dark .nav-bar
 
 .header{
 margin-bottom: 10px;
-height:92px;
 }
 
 body.dark .header
@@ -325,9 +324,6 @@ footer p
 {
   padding-bottom:520px;
 }
-.dycalendar-month-container .dycalendar-target-date, .dycalendar-today-date{
-  bottom:100px;
-}
 @media screen and (orientation:landscape)
 {
   .bottom-space
@@ -335,12 +331,7 @@ footer p
     padding-bottom:550px;
   }
 }
-@media screen and (orientation: portrait){
-  .header{
-    width:148vw;
-    height: 7.7vh;
-  }
-}
+
 @font-face
 {
   font-family: "anton";
