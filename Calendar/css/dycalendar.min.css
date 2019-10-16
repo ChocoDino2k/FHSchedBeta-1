@@ -14,8 +14,8 @@
   font-size: 1.5em;
   position: absolute;
   left: 5px;
-  top:1314px;
- width: 870px;
+  top:1614px;
+ width: 1100px;
  height: 55px;
  background: #aaa;
  text-align: center;
@@ -27,8 +27,8 @@
   font-size: 1.5em;
   position: absolute;
   left: 5px;
-  top:1360px;
- width: 870px;
+  top:1660px;
+ width: 1100px;
  height: 55px;
  background: #aaa;
  text-align: center;
@@ -50,16 +50,16 @@
 .containerRim{
   position: absolute;
   background: #FFF;
-  width:880px;
+  width:1110px;
   height:118px;
   left:0px;
-  top:1310px;
+  top:1610px;
   border-radius: 5px;
 }
 .containerGreyRim{
 	  left: 5px;
-  top:1314px;
- width: 870px;
+  top:1614px;
+ width: 1100px;
  height: 110px;
  background: #aaa;
  border-radius:5px;
@@ -79,10 +79,10 @@
 	padding-left: 5px;
 	padding-right: 5px;
 	padding-bottom: 1px;
-	width:870px;
+	width:1100px;
 	height: 110px;
 	left: 5px;
-	top: 1450px;
+	top: 1750px;
 	border-radius: 5px;
 	background-color: #aaa;
 }
@@ -107,6 +107,7 @@
   font-size: 16px;
   border: none;
   cursor: pointer;
+  width:250px;
 }
 
 /* Dropdown button on hover & focus */
@@ -119,8 +120,8 @@
   position: absolute;
   display: inline-block;
   top: 10px;
-  left:900px;
-  width:240px;
+  left:1150px;
+  width:300px;
   height:150px;
 }
 
@@ -132,6 +133,8 @@
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  width:250px;
+  text-align:center;
 }
 
 /* Links inside the dropdown */
@@ -159,6 +162,7 @@
   border: none;
   cursor: pointer;
  top:50px;
+ width:250px;
 }
 
 /* Dropdown button on hover & focus */
@@ -171,7 +175,7 @@
   position: absolute;
   display: inline-block;
   top: 85px;
-  left:900px;
+  left:1150px;
   width:240px;
   height:300px;
 }
@@ -184,7 +188,8 @@
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
-  width:100px;
+  width:250px;
+  text-align:center;
 }
 
 /* Links inside the dropdown */
@@ -193,7 +198,7 @@
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-  width:100px;
+  width:250px;
 }
 
 /* Change color of dropdown links on hover */
@@ -202,7 +207,7 @@
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show2 {
   display:block;
-  width:100px;
+  width:250px;
 }
 
      .picture0{
@@ -213,37 +218,37 @@
 
      .picture1{
   position: absolute;
-    top: 55px; left:-15px;
+    top: 100px; left:-15px;
     opacity:.5;
      }
 
      .picture2{
   position: absolute;
-    top: 257px; left:-15px;
+    top: 350px; left:-15px;
     opacity:.5;
      }
 
      .picture3{
   position: absolute;
-    top: 450px; left:-15px;
+    top: 600px; left:-15px;
     opacity:.5;
      }
 
      .picture4{
   position: absolute;
-    top: 650px; left:-15px;
+    top: 843px; left:-15px;
     opacity:.5;
      }
 
      .picture5{
   position: absolute;
-    top: 850px; left:-15px;
+    top: 1095px; left:-15px;
     opacity:.5;
      }
 
      .picture6{
   position: absolute;
-    top: 1050px; left:-15px;
+    top: 1347px; left:-15px;
     opacity:.9;
      }
 
@@ -255,43 +260,43 @@
 
     .picture8{
   position: absolute;
-    top: 125px; left:-213px;
+    top: 125px; left:-180px;
     opacity:.5;
      }
 
     .picture9{
   position: absolute;
-    top: 125px; left:-90px;
+    top: 125px; left:-30px;
     opacity:.5;
      }
 
      .picture10{
   position: absolute;
-    top: 125px; left:35px;
+    top: 125px; left:125px;
     opacity:.5;
      }
 
      .picture11{
   position: absolute;
-    top: 125px; left:162px;
+    top: 125px; left:285px;
     opacity:.5;
      }
 
       .picture12{
   position: absolute;
-    top: 125px; left:292px;
+    top: 125px; left:440px;
     opacity:.5;
      }
 
      .picture13{
   position: absolute;
-    top: 125px; left:415px;
+    top: 125px; left:593px;
     opacity:.5;
      }
 
      .picture14{
   position: absolute;
-    top: 125px; left:545px;
+    top: 125px; left:745px;
     opacity:.5;
      }
 
@@ -405,10 +410,10 @@
 
   .button1{
   	font-size:20px;
-  	width:135px;
-  	height:200px;
+  	width:163px;
+  	height:245px;
    	position: absolute;
-   	top: 310px; left:4px;
+   	top: 355px; left:4px;
    	opacity:0;
   }
 
@@ -425,10 +430,10 @@
 
   .button2{
   	font-size:20px;
-    width:115px;
-    height:199px;
+    width:145px;
+    height:245px;
     position: absolute;
-    top: 310px; left:142px;
+    top: 355px; left:173px;
     opacity:0;
   }
 
@@ -445,10 +450,10 @@
 
   .button3{
   	font-size:20px;
-    width:115px;
-    height:199px;
+    width:147px;
+    height:245px;
     position: absolute;
-    top: 310px; left:267px;
+    top: 355px; left:325px;
     opacity:0;
   }
 
@@ -465,10 +470,10 @@
 
   .button4{
   	font-size:20px;
-    width:115px;
-    height:199px;
+    width:152px;
+    height:245px;
     position: absolute;
-    top: 310px; left:390px;
+    top: 355px; left:480px;
     opacity:0;
   }
 
@@ -485,10 +490,10 @@
 
   .button5{
   	font-size:20px;
-    width:125px;
-    height:199px;
+    width:148px;
+    height:245px;
     position: absolute;
-    top: 310px; left:515px;
+    top: 355px; left:640px;
     opacity:0;
   }
 
@@ -505,10 +510,10 @@
 
   .button6{
   	font-size:20px;
-    width:125px;
-    height:199px;
+    width:147px;
+    height:245px;
     position: absolute;
-    top: 310px; left:650px;
+    top: 355px; left:794px;
     opacity:0;
   }
 
@@ -525,10 +530,10 @@
 
   .button7{
   	font-size:20px;
-    width:110px;
-    height:199px;
+    width:145px;
+    height:245px;
     position: absolute;
-    top: 310px; left:780px;
+    top: 355px; left:948px;
     opacity:0;
   }
 
@@ -545,10 +550,10 @@
 
   .button8{
   	font-size:20px;
-    width:135px;
-    height:190px;
+    width:163px;
+    height:245px;
     position: absolute;
-    top: 510px; left:4px;
+    top: 605px; left:4px;
     opacity:0;
   }
 
@@ -565,10 +570,10 @@
 
   .button9{
   	font-size:20px;
-    width:115px;
-    height:190px;
+    width:145px;
+    height:245px;
     position: absolute;
-    top: 510px; left:142px;
+    top: 605px; left:173px;
     opacity:0;
   }
 
@@ -585,10 +590,10 @@
 
   .button10{
   	font-size:20px;
-    width:115px;
-    height:190px;
+    width:147px;
+    height:245px;
     position: absolute;
-    top: 510px; left:267px;
+    top: 605px; left:325px;
     opacity:0;
   }
 
@@ -605,10 +610,10 @@
 
   .button11{
   	font-size:20px;
-    width:115px;
-    height:190px;
+    width:152px;
+    height:245px;
     position: absolute;
-    top: 510px; left:390px;
+    top: 605px; left:480px;
     opacity:0;
   }
 
@@ -625,10 +630,10 @@
 
   .button12{
   	font-size:20px;
-    width:125px;
-    height:190px;
+    width:148px;
+    height:245px;
     position: absolute;
-    top: 510px; left:515px;
+    top: 605px; left:640px;
     opacity:0;
   }
 
@@ -646,10 +651,10 @@
 
   .button13{
   	font-size:20px;
-    width:125px;
-    height:190px;
+    width:147px;
+    height:245px;
     position: absolute;
-    top: 510px; left:650px;
+    top: 605px; left:794px;
     opacity:0;
   }
 
@@ -665,11 +670,11 @@
 }
 
   .button14{
-  	font-size:20px;
-    width:110px;
-    height:190px;
+  font-size:20px;
+    width:145px;
+    height:245px;
     position: absolute;
-    top: 510px; left:780px;
+    top: 605px; left:948px;
     opacity:0;
   }
 
@@ -686,105 +691,105 @@
 
   .button15{
   	font-size:20px;
-    width:135px;
-    height:190px;
+    width:163px;
+    height:237px;
     position: absolute;
-    top: 705px; left:4px;
+    top: 855px; left:4px;
     opacity:0;
   }
 
   .eventContainerSixteen {
-  width:115px;
-  height:196px;
+  width:145px;
+  height:240px;
   text-align: center;
    background-color: rgb(215,115,17);
   position: absolute;
-  top: 703px; left:143px;
+  top: 853px; left:173px;
   opacity:.6;
 }
 
   .button16{
   	font-size:20px;
-    width:115px;
-    height:190px;
+    width:145px;
+    height:237px;
     position: absolute;
-    top: 705px; left:142px;
+    top: 855px; left:173px;
     opacity:0;
   }
 
   .eventContainerSeventeen {
-  width:119px;
-  height:196px;
+  width:150px;
+  height:240px;
   text-align: center;
    background-color: rgb(215,115,17);
   position: absolute;
-  top: 703px; left:264px;
+  top: 853px; left:324px;
   opacity:.6;
 }
 
   .button17{
   	font-size:20px;
-    width:115px;
-    height:190px;
+    width:147px;
+    height:237px;
     position: absolute;
-    top: 705px; left:267px;
+    top: 855px; left:325px;
     opacity:0;
   }
 
   .eventContainerEighteen {
-  width:120px;
-  height:196px;
+  width:153px;
+  height:240px;
   text-align: center;
    background-color: rgb(215,115,17);
   position: absolute;
-  top: 703px; left:389px;
+  top: 853px; left:480px;
   opacity:.6;
 }
 
   .button18{
   	font-size:20px;
-    width:115px;
-    height:190px;
+    width:152px;
+    height:237px;
     position: absolute;
-    top: 705px; left:390px;
+    top: 855px; left:480px;
     opacity:0;
   }
 
   .eventContainerNineteen {
-   width:125px;
-  height:196px;
+   width:149px;
+  height:240px;
   text-align: center;
    background-color: rgb(215,115,17);
   position: absolute;
-  top: 703px; left:515px;
+  top: 853px; left:640px;
   opacity:.6;
 }
 
   .button19{
   	font-size:20px;
-    width:125px;
-    height:190px;
+    width:150px;
+    height:237px;
     position: absolute;
-    top: 705px; left:515px;
+    top: 855px; left:640px;
     opacity:0;
   }
 
 .eventContainerTwenty {
-  width:117px;
-  height:196px;
+  width:148px;
+  height:240px;
   text-align: center;
    background-color: rgb(215,115,17);
   position: absolute;
-  top: 703px; left:646px;
+  top: 853px; left:793px;
   opacity:.6;
 }
 
   .button20{
   	font-size:20px;
-    width:125px;
-    height:190px;
+    width:147px;
+    height:237px;
     position: absolute;
-    top: 705px; left:650px;
+    top: 855px; left:794px;
     opacity:0;
   }
 
@@ -800,11 +805,11 @@
 }
 
   .button21{
-  	font-size:20px;
-    width:110px;
-    height:190px;
+   font-size:20px;
+    width:145px;
+    height:237px;
     position: absolute;
-    top: 705px; left:780px;
+    top: 855px; left:948px;
     opacity:0;
   }
 
@@ -821,10 +826,10 @@
 
   .button22{
   	font-size:20px;
-    width:135px;
-    height:190px;
+    width:163px;
+    height:245px;
     position: absolute;
-    top: 905px; left:4px;
+    top: 1097px; left:4px;
     opacity:0;
   }
 
@@ -841,10 +846,10 @@
 
   .button23{
   	font-size:20px;
-    width:115px;
-    height:190px;
+    width:145px;
+    height:245px;
     position: absolute;
-    top: 905px; left:142px;
+    top: 1097px; left:173px;
     opacity:0;
   }
 
@@ -861,10 +866,10 @@
 
   .button24{
   	font-size:20px;
-    width:115px;
-    height:190px;
+    width:147px;
+    height:245px;
     position: absolute;
-    top: 905px; left:267px;
+    top: 1097px; left:325px;
     opacity:0;
   }
 
@@ -881,10 +886,10 @@
 
   .button25{
   	font-size:20px;
-    width:115px;
-    height:190px;
+    width:152px;
+    height:245px;
     position: absolute;
-    top: 905px; left:390px;
+    top: 1097px; left:480px;
     opacity:0;
   }
 
@@ -901,10 +906,10 @@
 
   .button26{
   	font-size:20px;
-    width:125px;
-    height:190px;
+    width:150px;
+    height:245px;
     position: absolute;
-    top: 905px; left:515px;
+    top: 1097px; left:640px;
     opacity:0;
   }
 
@@ -920,11 +925,11 @@
 }
 
   .button27{
-  	font-size:20px;
-    width:125px;
-    height:190px;
+  	 font-size:20px;
+    width:147px;
+    height:245px;
     position: absolute;
-    top: 905px; left:650px;
+    top: 1097px; left:794px;
     opacity:0;
   }
 
@@ -941,10 +946,10 @@
 
   .button28{
   	font-size:20px;
-    width:110px;
-    height:190px;
+    width:145px;
+    height:245px;
     position: absolute;
-    top: 905px; left:780px;
+    top: 1097px; left:948px;
     opacity:0;
   }
   
@@ -962,10 +967,10 @@
 
   .button29{
   	font-size:20px;
-    width:135px;
-    height:190px;
+    width:163px;
+    height:245px;
     position: absolute;
-    top: 1105px; left:4px;
+    top: 1350px; left:4px;
     opacity:0;
   }
 
@@ -983,10 +988,10 @@
 
   .button30{
   	font-size:20px;
-    width:115px;
-    height:190px;
+    width:145px;
+    height:245px;
     position: absolute;
-    top: 1105px; left:142px;
+    top: 1350px; left:173px;
     opacity:0;
   }
 
@@ -1003,10 +1008,10 @@
 
   .button31{
   	font-size:20px;
-    width:115px;
-    height:190px;
+    width:147px;
+    height:245px;
     position: absolute;
-    top: 1105px; left:267px;
+    top: 1350px; left:325px;
     opacity:0;
   }
 
@@ -1022,10 +1027,10 @@
 
   .button32{
   	font-size:20px;
-    width:115px;
-    height:190px;
+    width:152px;
+    height:245px;
     position: absolute;
-    top: 1105px; left:390px;
+    top: 1350px; left:480px;
     opacity:0;
   }
 
@@ -1041,10 +1046,10 @@
 
   .button33{
   	font-size:20px;
-    width:125px;
-    height:190px;
+    width:150px;
+    height:245px;
     position: absolute;
-    top: 1105px; left:515px;
+    top: 1350px; left:640px;
     opacity:0;
   }
 
@@ -1059,11 +1064,11 @@
 }
 
   .button34{
-  	font-size:20px;
-    width:125px;
-    height:190px;
+  	 font-size:20px;
+    width:147px;
+    height:245px;
     position: absolute;
-    top: 1105px; left:650px;
+    top: 1350px; left:794px;
     opacity:0;
   }
 
@@ -1079,11 +1084,11 @@
 }
 
   .button35{
-  	font-size:20px;
-    width:110px;
-    height:190px;
+  font-size:20px;
+    width:145px;
+    height:245px;
     position: absolute;
-    top: 1105px; left:780px;
+    top: 1350px; left:948px;
     opacity:0;
   }
 
@@ -1131,8 +1136,8 @@
     margin-left: auto;
     margin-right: auto;
 
-    width: 900px;
-    height: 1300px;
+    width: 1100px;
+    height: 1600px;
     text-align: center;
     border: 1px solid #eee;
     border-radius: 10px;
@@ -1200,10 +1205,10 @@
  	text-align:center;
  }
  .dycalendar-month-container .dycalendar-body table tr td{
- 	padding-right:35px;
- 	padding-left:35px;
- 	padding-top:62px;
- 	padding-bottom: 62px;
+ 	padding-right:50px;
+ 	padding-left:50px;
+ 	padding-top:86px;
+ 	padding-bottom: 86px;
  	text-align:center;
   font-size:50px;
  }
@@ -1872,7 +1877,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 
         .pictureFour{
 	position: absolute;
-   	top: 80px; left:-15px;
+   	top: 84px; left:-15px;
    	opacity:.5;
      }
 
@@ -2228,7 +2233,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 
   .eventContainerSixteen {
   width:123px;
-  height:59px;
+  height:63px;
   text-align: center;
    background-color: rgb(215,115,17);
   position: absolute;
@@ -2239,7 +2244,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   .button16{
   	font-size:20px;
   	width:123px;
-  	height:62px;
+  	height:63px;
    	position: absolute;
    	top: 257px; left:150px;
    	opacity:0;
@@ -2247,7 +2252,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 
   .eventContainerSeventeen {
    width:126px;
-  height:59px;
+  height:63px;
   text-align: center;
    background-color: rgb(215,115,17);
   position: absolute;
@@ -2258,7 +2263,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   .button17{
   	font-size:20px;
   	width:124px;
-  	height:60px;
+  	height:63px;
    	position: absolute;
    	top: 257px; left:275px;
    	opacity:0;
@@ -2266,7 +2271,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 
   .eventContainerEighteen {
    width:123px;
-  height:59px;
+  height:63px;
   text-align: center;
    background-color: rgb(215,115,17);
   position: absolute;
@@ -2277,7 +2282,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   .button18{
   	font-size:20px;
   	width:123px;
-  	height:62px;
+  	height:63px;
    	position: absolute;
    	top: 257px; left:405px;
    	opacity:0;
@@ -2285,7 +2290,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 
   .eventContainerNineteen {
    width:123px;
-  height:59px;
+  height:63px;
   text-align: center;
    background-color: rgb(215,115,17);
   position: absolute;
@@ -2296,7 +2301,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   .button19{
   	font-size:20px;
   	width:123px;
-  	height:62px;
+  	height:63px;
    	position: absolute;
    	top: 257px; left:535px;
    	opacity:0;
@@ -2304,7 +2309,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 
 .eventContainerTwenty {
    width:125px;
-  height:59px;
+  height:63px;
   text-align: center;
   background-color: rgb(215,115,17);
   position: absolute;
@@ -2315,7 +2320,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   .button20{
   	font-size:20px;
   	width:123px;
-  	height:62px;
+  	height:63px;
    	position: absolute;
    	top: 257px; left:660px;
    	opacity:0;
