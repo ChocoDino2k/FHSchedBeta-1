@@ -1,1 +1,3 @@
 PLEASE LIST BUGS THAT YOU NEED HELP SOLVING BELOW:
+
+- About page is all messed up, the sidebar doesnt work and modes are updating properly 

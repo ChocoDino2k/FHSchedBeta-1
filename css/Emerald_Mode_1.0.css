@@ -1,0 +1,236 @@
+body.emerald
+{
+  background-image: url("../images/background.png");
+  background-color: RGB(255,255,255);
+  color: RGB(0,0,0);
+  transition: background-color 0.3s;
+  transition: background-image 0.3s;
+}
+
+body.emerald a:link
+{
+  color: RGB(255,255,255);
+}
+
+body.emerald a:visited
+{
+  color: RGB(255,255,255);
+}
+
+body.emerald a:hover
+{
+  color: darkgray;
+}
+
+body.emerald a:active {
+  color: darkgray;
+}
+
+body.emerald .header
+{
+  background: RGB(0,80,5);
+  transition: background-color 0.3s;
+}
+body.emerald .header a
+{
+  color: RGB(255,255,255);
+}
+
+body.emerald .slider
+{
+  background: RGB(20,230,100,0.90);
+  transition: all 0.3s;
+}
+body.emerald .slider li a
+{
+  color: RGB(255,255,255);
+}
+body.emerald .slider li a:hover
+{
+  background: RGB(10,150,60,0.7);
+  color: RGB(230,230,230);
+}
+body.emerald .slider .close-sidebar:hover
+{
+  background: RGB(10,150,60,0.7);
+}
+
+body.emerald .national-guard-banner
+{
+  background: RGB(50,150,20,0.9);
+}
+body.emerald .national-guard-banner a
+{
+  color: RGB(255,255,255);
+}
+body.emerald .national-guard-banner a:hover
+{
+  color: RGB(160,160,160);
+}
+body.emerald .national-guard-banner .container .close-sidebar:hover
+{
+  background: RGB(15,15,15,0.7);
+}
+
+
+body.emerald .ham-a
+{
+  background: RGB(0,80,5);
+  transition: background-color 0.3s;
+}
+body.emerald .ham-a:hover
+{
+  background: RGB(0,60,0);
+}
+
+body.emerald .time-schedule
+{
+  color: RGB(255,255,255);
+  background: RGB(0,170,40);
+  transition: background-color 0.3s;
+}
+body.emerald .period-display
+{
+  color: RGB(255,255,255);
+}
+body.emerald .timer
+{
+  color: RGB(255,255,255);
+}
+
+body.emerald .period-countdown
+{
+  color: RGB(0,50,0);
+  transition: background-color 0.3s;
+}
+
+body.emerald .remaining-time
+{
+  color: RGB(0,50,0);
+  transition: background-color 0.3s;
+}
+
+body.emerald .dot
+{
+  background: RGB(255,255,255)
+  transition: background-color 0.3s;
+}
+body.emerald .dot-cur
+{
+  background: RGB(10,120,20);
+  transition: background-color 0.3s;
+}
+body.emerald .dot:hover {
+  background: RGB(180,250,200);
+}
+
+body.emerald .splash {
+  color: white;
+  background: RGB(0,170,40);
+  transition: background-color 0.3s;
+}
+
+body.emerald .splash a
+{
+  color: RGB(0,80,5);
+}
+body.emerald .splash a:hover
+{
+  color: RGB(0,60,0);
+}
+
+body.emerald .btn
+{
+  color: RGB(255,255,255);
+  background: RGB(0,170,40);
+  transition: all 0.3s;
+}
+body.emerald .btn:hover
+{
+  color: RGB(230,230,230);
+  background: RGB(0,130,20);
+}
+
+body.emerald .lunchBtn
+{
+  color: RGB(255,255,255);
+  background: RGB(0,120,20);
+  transition: background-color 0.3s;
+}
+body.emerald .lunchBtn:hover
+{
+  color: RGB(230,230,230);
+  background: RGB(0,80,10);
+}
+
+body.emerald .wrongLunchBtn
+{
+  color: RGB(255,255,255);
+  background: RGB(0,120,20);
+  transition: background-color 0.3s;
+}
+body.emerald .wrongLunchBtn:hover
+{
+  color: RGB(230,230,230);
+  background: RGB(0,80,10);
+}
+
+body.emerald footer
+{
+  background-color: RGB(0,30,0);
+  color: white;
+  transition: background-color 0.3s;
+}
+
+body.emerald .container1
+{
+  color: RGB(255,255,255);
+  background: RGB(0,170,40);
+  transition: color 0.3s;
+}
+
+body.emerald .container2
+{
+  color: RGB(255,255,255);
+  background: RGB(0,170,40);
+  transition: color 0.3s;
+}
+
+body.emerald .containerGreyRim{
+  background: RGB(0,170,40);
+  transition: background-color 0.3s;
+}
+
+body.emerald .containerRim{
+  background: #FFF;
+  transition: background-color 0.3s;
+}
+
+body.emerald .featuredSportSplash
+{
+  color: RGB(255,255,255);
+  background: RGB(0,170,40);
+  transition:color 0.3s;
+}
+
+body.emerald .dycalendar-month-container
+{
+  color: RGB(255,255,255);
+  transition: color 0.3s;
+}
+
+body.emerald .dycalendar-month-container .dycalendar-target-date,.dycalendar-month-container .dycalendar-today-date
+{
+  color: RGB(255,255,255);
+  background: RGB(0,80,5);
+  transition: color 0.3s;
+}
+
+
+@font-face
+{
+  font-family: "anton";
+  src: url(www.fhsched.com/fonts/Anton-Regular.ttf);
+  font-style: normal;
+  font-weight: 100;
+}
