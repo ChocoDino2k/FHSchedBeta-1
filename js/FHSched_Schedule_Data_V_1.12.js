@@ -22,7 +22,11 @@ var data = [{
     "passingPeriodFive": {"SHours": 12, "SMin": 57, "EHours": 13, "EMin": 4},
     "periodSix": {"SHours": 13, "SMin": 4, "EHours": 13, "EMin": 56},
     "passingPeriodSix": {"SHours": 13, "SMin": 56, "EHours": 14, "EMin": 3},
-    "periodSeven": {"SHours": 14, "SMin": 3, "EHours": 14, "EMin": 55}
+    "periodSeven": 
+    {
+      "SHours": 14, "SMin": 3, "EHours": 14, "EMin": 55,
+      "shuttleBus": {"SHours": 14, "SMin": 3, "EHours": 14, "EMin": 40}
+    }
   },
   "releaseAndSmartSchedule":
   {
@@ -49,7 +53,13 @@ var data = [{
     "passingPeriodFive": {"SHours": 13, "SMin": 1, "EHours": 13, "EMin": 8},
     "periodSix": {"SHours": 13, "SMin": 8, "EHours": 13, "EMin": 48},
     "passingPeriodSix": {"SHours": 13, "SMin": 48, "EHours": 13, "EMin": 55},
-    "periodSeven": {"SHours": 13, "SMin": 55, "EHours": 14, "EMin": 35}
+    "periodSeven": 
+    {
+      "SHours": 13, "SMin": 55, "EHours": 14, "EMin": 35,
+      "shuttleBus": {"SHours": 13, "SMin": 55, "EHours": 14, "EMin": ?}
+    },
+    "passingPeriodSeven": {"SHours": 14, "SMin": 35, "EHours": 14, "EMin": 40},
+    "PLC": {"SHours": 14, "SMin": 40, "EHours": 15, "EMin": 25}
   },
   "twoHrSchedule":
   {
@@ -99,7 +109,9 @@ var data = [{
     "passingPeriodFive": {"SHours": 12, "SMin": 42, "EHours": 12, "EMin": 49},
     "periodSix": {"SHours": 12, "SMin": 49, "EHours": 13, "EMin": 38},
     "passingPeriodSix": {"SHours": 13, "SMin": 38, "EHours": 13, "EMin": 45},
-    "periodSeven": {"SHours": 13, "SMin": 45, "EHours": 14, "EMin": 35}
+    "periodSeven": {"SHours": 13, "SMin": 45, "EHours": 14, "EMin": 35},
+    "passingPeriodSeven": {"SHours": 14, "SMin": 35, "EHours": 14, "EMin": 40},
+    "PLC": {"SHours": 14, "SMin": 40, "EHours": 15, "EMin": 25}
   },
   "twoHrErSchedule":
   {
@@ -194,6 +206,35 @@ var data = [{
     "periodSix": {"SHours": 13, "SMin": 42, "EHours": 14, "EMin": 15},
     "passingPeriodSix": {"SHours": 14, "SMin": 15, "EHours": 14, "EMin": 22},
     "periodSeven": {"SHours": 14, "SMin": 22, "EHours": 14, "EMin": 55}
+  },
+  "55minSmartPLC":
+  {
+    "passingPeriodZero": {"SHours": 7, "SMin": 28, "EHours": 7, "EMin": 35},
+    "periodOne": {"SHours": 7, "SMin": 35, "EHours": 8, "EMin": 13},
+    "passingPeriodOne": {"SHours": 8, "SMin": 13, "EHours": 8, "EMin": 20},
+    "periodTwo": {"SHours": 8, "SMin": 20, "EHours": 8, "EMin": 59},
+    "passingPeriodTwo": {"SHours": 8, "SMin": 59, "EHours": 9, "EMin": 6},
+    "periodThree": {"SHours": 9, "SMin": 6, "EHours": 9, "EMin": 45},
+    "passingPeriodThree": {"SHours": 9, "SMin": 45, "EHours": 9, "EMin": 52},
+    "periodSmart": {"SHours": 9, "SMin": 52, "EHours": 10, "EMin": 47},
+    "passingPeriodSmart": {"SHours": 10, "SMin": 47, "EHours": 10, "EMin": 54},
+    "lunch":
+    {
+      "SHours": 10, "SMin": 54, "EHours": 12, "EMin": 17,
+      "aLunch": {"SHours": 10, "SMin": 54, "EHours": 11, "EMin": 17},
+      "passingALunch": {"SHours": 11, "SMin": 17, "EHours": 11, "EMin": 24},
+      "bLunch": {"SHours": 11, "SMin": 24, "EHours": 11, "EMin": 47},
+      "passingBLunch": {"SHours": 11, "SMin": 47, "EHours": 11, "EMin": 54},
+      "cLunch": {"SHours": 11, "SMin": 54, "EHours": 12, "EMin": 17},
+    },
+    "passingCLunch": {"SHours": 12, "SMin": 17, "EHours": 12, "EMin": 24},
+    "periodFive": {"SHours": 12, "SMin": 24, "EHours": 13, "EMin": 3},
+    "passingPeriodFive": {"SHours": 13, "SMin": 3, "EHours": 13, "EMin": 10},
+    "periodSix": {"SHours": 13, "SMin": 10, "EHours": 13, "EMin": 49},
+    "passingPeriodSix": {"SHours": 13, "SMin": 49, "EHours": 13, "EMin": 56},
+    "periodSeven": {"SHours": 13, "SMin": 56, "EHours": 14, "EMin": 35},
+    "passingPeriodSeven": {"SHours": 14, "SMin": 35, "EHours": 14, "EMin": 40},
+    "PLC": {"SHours": 14, "SMin": 40, "EHours": 15, "EMin": 25}
   },
   "seventhPeriodFinal":
   {
