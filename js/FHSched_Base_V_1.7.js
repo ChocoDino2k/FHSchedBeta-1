@@ -111,3 +111,23 @@ function showAddTheme()
 {
   document.querySelector("#add-theme").classList.toggle('active');
 }
+
+function shuttleBus()
+{
+  console.log("test");
+  if(localStorage.getItem('shuttleBus') == "true")
+  {
+    localStorage.setItem('shuttleBus', "false");
+    document.querySelector("#shuttle-bus-toggle").textContent = "Shuttle Bus Off";
+    console.log("f");
+  }
+  else
+  {
+    localStorage.setItem('shuttleBus', "true");
+    document.querySelector("#shuttle-bus-toggle").textContent = "Shuttle Bus On";
+    console.log("t");
+  }
+  takeShuttleBus = JSON.parse(localStorage.getItem('shuttleBus'));
+  checkCurPeriod();
+  updateClock();
+}

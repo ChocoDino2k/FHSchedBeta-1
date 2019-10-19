@@ -22,10 +22,11 @@ var data = [{
     "passingPeriodFive": {"SHours": 12, "SMin": 57, "EHours": 13, "EMin": 4},
     "periodSix": {"SHours": 13, "SMin": 4, "EHours": 13, "EMin": 56},
     "passingPeriodSix": {"SHours": 13, "SMin": 56, "EHours": 14, "EMin": 3},
-    "periodSeven": 
+    "periodSeven":
     {
       "SHours": 14, "SMin": 3, "EHours": 14, "EMin": 55,
-      "shuttleBus": {"SHours": 14, "SMin": 3, "EHours": 14, "EMin": 40}
+      "shuttleBus": {"SHours": 14, "SMin": 3, "EHours": 14, "EMin": 43},
+      "afterShuttle": {"SHours": 14, "SMin": 43, "EHours": 14, "EMin": 55}
     }
   },
   "releaseAndSmartSchedule":
@@ -53,10 +54,10 @@ var data = [{
     "passingPeriodFive": {"SHours": 13, "SMin": 1, "EHours": 13, "EMin": 8},
     "periodSix": {"SHours": 13, "SMin": 8, "EHours": 13, "EMin": 48},
     "passingPeriodSix": {"SHours": 13, "SMin": 48, "EHours": 13, "EMin": 55},
-    "periodSeven": 
+    "periodSeven":
     {
       "SHours": 13, "SMin": 55, "EHours": 14, "EMin": 35,
-      "shuttleBus": {"SHours": 13, "SMin": 55, "EHours": 14, "EMin": ?}
+      "shuttleBus": {"SHours": 13, "SMin": 55, "EHours": 14, "EMin": 20}
     },
     "passingPeriodSeven": {"SHours": 14, "SMin": 35, "EHours": 14, "EMin": 40},
     "PLC": {"SHours": 14, "SMin": 40, "EHours": 15, "EMin": 25}
