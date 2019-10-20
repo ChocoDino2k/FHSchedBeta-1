@@ -2236,12 +2236,12 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   }
 
   .eventContainerSixteen {
-  width:123px;
-  height:63px;
+  width:129px;
+  height:69px;
   text-align: center;
    background-color: rgb(215,115,17);
   position: absolute;
-  top: 258px; left:150px;
+  top: 264px; left:151px;
   opacity:.6;
 }
 
@@ -2255,12 +2255,12 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   }
 
   .eventContainerSeventeen {
-   width:126px;
-  height:63px;
+   width:125px;
+  height:69px;
   text-align: center;
    background-color: rgb(215,115,17);
   position: absolute;
-  top: 258px; left:277px;
+  top: 264px; left:283px;
   opacity:.6;
 }
 
@@ -2274,12 +2274,12 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   }
 
   .eventContainerEighteen {
-   width:123px;
-  height:63px;
+   width:128px;
+  height:69px;
   text-align: center;
    background-color: rgb(215,115,17);
   position: absolute;
-  top: 258px; left:407px;
+  top: 264px; left:412px;
   opacity:.6;
 }
 
@@ -2293,12 +2293,12 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   }
 
   .eventContainerNineteen {
-   width:123px;
-  height:63px;
+   width:125px;
+  height:69px;
   text-align: center;
    background-color: rgb(215,115,17);
   position: absolute;
-  top: 258px; left:534px;
+  top: 264px; left:543px;
   opacity:.6;
 }
 
@@ -2312,12 +2312,12 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   }
 
 .eventContainerTwenty {
-   width:125px;
-  height:63px;
+   width:127px;
+  height:69px;
   text-align: center;
   background-color: rgb(215,115,17);
   position: absolute;
-  top: 258px; left:662px;
+  top: 264px; left:671px;
   opacity:.6;
 }
 
