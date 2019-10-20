@@ -206,8 +206,8 @@
     //Gets current time
     var today = new Date();
     var curMonth = today.getMonth();
-    var curDate = today.getDate()+8;
-    var curHour = today.getHours()-9;
+    var curDate = today.getDate();
+    var curHour = today.getHours();
     var curMin = today.getMinutes();
     var curSec = today.getSeconds();
 
@@ -215,8 +215,8 @@
     {
       today = new Date();
       curMonth = today.getMonth();
-      curDate = today.getDate()+8;
-      curHour = today.getHours()-9;
+      curDate = today.getDate();
+      curHour = today.getHours();
       curMin = today.getMinutes();
       curSec = (59 - today.getSeconds());
       curScheduleValue = calendar[curMonth][curDate - 1];
@@ -380,40 +380,23 @@
     }
 
     //Displays the time left in the period
-    function displayTimeLeft(minsLeft)
-    {
-      if (minsLeft == 1)
-      {
-        if (curSec == 1)
-        {
-          remainingTime.textContent = "" + minsLeft + " minute " + curSec + " second";
-        }
-        else
-        {
-          remainingTime.textContent = "" + minsLeft + " minute " + curSec + " seconds";
-        }
-        periodCountdown.textContent = "Period Countdown:";
-      }
-      else
-      {
-        if (curSec == 1)
-        {
-          remainingTime.textContent = "" + minsLeft + " minutes " + curSec + " second";
-        }
-        else
-        {
-          remainingTime.textContent = "" + minsLeft + " minutes " + curSec + " seconds";
-        }
-        periodCountdown.textContent = "Period Countdown:";
-      }
-      if (minsLeft < 0)
-      {
-        checkCurPeriod();
-      }
-      if (curPeriodKey == null)
-      {
+    function displayTimeLeft(minsLeft) {
+      if (curPeriodKey == null) {
         remainingTime.textContent = "School begins at 7:35";
         periodCountdown.textContent = "";
+      } else if (minsLeft < 0) {
+        checkCurPeriod();
+      } else {
+        var hours = Math.floor(minsLeft / 60);
+        var minutes = minsLeft % 60;
+        var seconds = curSec;
+        hours = hours == 0 ? "" : hours == 1 ? "1 hour " : hours + " hours ";
+        minutes = minutes == 0 && hours == "" ? "" : minutes == 1 ? "1 minute " : minutes + " minutes ";
+        seconds = seconds == 1 ? "1 second" : seconds + " seconds";
+        if (remainingTime.textContent != hours + minutes + seconds) {
+          remainingTime.textContent = hours + minutes + seconds;
+        }
+        periodCountdown.textContent = "Period Countdown:";
       }
       requestAnimationFrame(updateClock);
     }
