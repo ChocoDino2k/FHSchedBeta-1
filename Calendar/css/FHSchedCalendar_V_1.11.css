@@ -332,12 +332,13 @@ footer p
 {
   .bottom-space
   {
+    height:250vh;
     padding-bottom:550px;
   }
 }
 @media screen and (orientation: portrait){
   .header{
-    width:148vw;
+    width:149vw;
     height: 7.7vh;
   }
 }
