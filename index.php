@@ -27,14 +27,14 @@ if(isset($_GET["accept-cookies"])) {
     <link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
     <link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png">
 
-    <script type="text/javascript" src="js/FHSched_Schedule_Data_V_1.11.js"> </script>
-    <script type="text/javascript" src="js/FHSched_Calendar_Data_V_1.5.js"></script>
-    <script type="text/javascript" src="js/FHSched_Base_V_1.7.js"></script>
+    <script type="text/javascript" src="js/FHSched_Schedule_Data_V_1.13.js"> </script>
+    <script type="text/javascript" src="js/FHSched_Calendar_Data_V_1.7.js"></script>
+    <script type="text/javascript" src="js/FHSched_Base_V_1.8.js"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="css/FHSched_V_1.15.css">
+    <link rel="stylesheet" href="css/FHSched_V_1.16.css">
     <link rel="stylesheet" href="css/Home_1.1.css">
     <link rel="stylesheet" href="css/Dark_Mode_1.0.css">
   </head>
@@ -63,6 +63,9 @@ if(isset($_GET["accept-cookies"])) {
         <!--
         <li><a href="../calendar/">Calendar</a></li>
         -->
+        <li>
+          <a role="button" onclick="shuttleBus()" id = "shuttle-bus-toggle">Shuttle Bus Off</a>
+        </li>
         <li id="add-theme">
           <a role="button" onclick="showAddTheme()" id="a-add-theme">+ Theme</a>
           <a role="button" id="input-theme">
@@ -106,15 +109,15 @@ if(isset($_GET["accept-cookies"])) {
 
     <div class="">
       <p class = "splash">
-        <span style="color:red">New unlockable themes</span> each week!
+        One more new <a role="button" onclick="showSidebar()" style = "text-decoration:none;">theme</a> this week!
         <br>
-        To unlock: Open the sidebar and click "+ Theme"
+        Have all three new themes?
         <br>
-        Then enter and guess the theme name by:
+        Ask around for previous themes!
         <br>
-        Solving the puzzle or asking around school
+        Click to solve Friday's puzzle: <a href="puzzle">Puzzle</a>
         <br>
-        Click to solve Monday's puzzle: <a href="puzzle" target = "_blank">Puzzle</a>
+        One more day till Fall Break!
       </p>
     </div>
 
@@ -209,8 +212,8 @@ if(isset($_GET["accept-cookies"])) {
     //Gets current time
     var today = new Date();
     var curMonth = today.getMonth();
-    var curDate = today.getDate();
-    var curHour = today.getHours();
+    var curDate = today.getDate()+8;
+    var curHour = today.getHours()-9;
     var curMin = today.getMinutes();
     var curSec = today.getSeconds();
 
@@ -218,16 +221,16 @@ if(isset($_GET["accept-cookies"])) {
     {
       today = new Date();
       curMonth = today.getMonth();
-      curDate = today.getDate();
-      curHour = today.getHours();
+      curDate = today.getDate()+8;
+      curHour = today.getHours()-9;
       curMin = today.getMinutes();
       curSec = (59 - today.getSeconds());
       curScheduleValue = calendar[curMonth][curDate - 1];
       curTotalMin = (curHour * 60) + curMin;
       currentSchedule = JSON_schedule[0][curScheduleValue];
-      if(curPeriodKey == "lunch")
+      if(curPeriodKey == "lunch" || (takeShuttleBus && periodKey == "periodSeven"))
       {
-        displayTimeLeft((currentSchedule[curPeriodKey][curLunchKey].EHours * 60) + currentSchedule[curPeriodKey][curLunchKey].EMin - curTotalMin - 1);
+        displayTimeLeft((currentSchedule[curPeriodKey][curMultiKey].EHours * 60) + currentSchedule[curPeriodKey][curMultiKey].EMin - curTotalMin - 1);
       }
       else if(curPeriodKey != null)
       {
@@ -243,7 +246,8 @@ if(isset($_GET["accept-cookies"])) {
 
     var periodDisplayKey = null;
     var curPeriodKey = null;
-    var curLunchKey = null;
+    var curMultiKey = null;
+    var takeShuttleBus = JSON.parse(localStorage.getItem('shuttleBus'));
 
     var curScheduleValue = calendar[curMonth][curDate - 1];
 
@@ -278,10 +282,16 @@ if(isset($_GET["accept-cookies"])) {
         return;
       }
 
+      if(takeShuttleBus && periodKey == "periodSeven")
+      {
+        curMultiKey = checkTimeFrame(currentSchedule["periodSeven"]);
+      }
+
       if(periodKey == "lunch")
       {
-        curLunchKey = checkTimeFrame(currentSchedule["lunch"]);
+        curMultiKey = checkTimeFrame(currentSchedule["lunch"]);
       }
+
       periodDisplayKey = periodKey;
       curPeriodKey = periodKey;
       if (Object.keys(currentSchedule).indexOf(periodKey) % 2 == 0)
@@ -334,6 +344,16 @@ if(isset($_GET["accept-cookies"])) {
         lunchDiv.setAttribute("style", "display:block");
         wrongLunchDiv.setAttribute("style", "display:none");
       }
+
+      if(localStorage.getItem('shuttleBus') == "false")
+      {
+        document.querySelector("#shuttle-bus-toggle").textContent = "Shuttle Bus Off";
+      }
+      else
+      {
+        document.querySelector("#shuttle-bus-toggle").textContent = "Shuttle Bus On";
+      }
+
       switch (lunchType)
       {
         case "a":
@@ -407,10 +427,10 @@ if(isset($_GET["accept-cookies"])) {
     //Displays the input time on the timer element
     function displayPeriod()
     {
-      if(curPeriodKey == "lunch" && periodDisplayKey == "lunch")
+      if((curPeriodKey == "lunch" && periodDisplayKey == "lunch") || (takeShuttleBus && periodDisplayKey == "periodSeven"))
       {
-        var periodDisplay = currentSchedule[periodDisplayKey][curLunchKey];
-        periodDisplayName = curLunchKey;
+        var periodDisplay = currentSchedule[periodDisplayKey][curMultiKey];
+        periodDisplayName = curMultiKey;
       }
       else
       {
@@ -509,8 +529,20 @@ if(isset($_GET["accept-cookies"])) {
         case "periodSeven":
           period.textContent = "Period 7"
           break;
+        case "passingPeriodSeven":
+          period.textContent = "Passing Period"
+          break;
+        case "shuttleBus":
+          period.textContent = "Period 7 (Shuttle Bus)"
+          break;
+        case "afterShuttle":
+          period.textContent = "Period 7 (After Shuttle)"
+          break;
         case "periodSevenExam":
           period.textContent = "Period 7 Exam"
+          break;
+        case "PLC":
+          period.textContent = "PLC"
           break;
         case "periodLunch":
           period.textContent = "Closed for Lunch"
