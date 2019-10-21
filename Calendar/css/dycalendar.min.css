@@ -2553,12 +2553,12 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   }
 
     .eventContainerThirtyTwo {
-  width:124px;
-  height:58px;
+  width:128px;
+  height:60px;
   text-align: center;
   background-color: rgb(170,70,30);
   position: absolute;
-  top: 389px; left:406px;
+  top: 402px; left:412px;
   opacity:.6;
 }
 
@@ -2573,11 +2573,11 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 
     .eventContainerThirtyThree {
   width:124px;
-  height:58px;
+  height:60px;
   text-align: center;
   background-color: rgb(170,70,30);
   position: absolute;
-  top: 389px; left:534px;
+  top: 402px; left:544px;
   opacity:.6;
 }
 
@@ -2591,12 +2591,12 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   }
 
     .eventContainerThirtyFour {
-  width:126px;
-  height:58px;
+  width:127px;
+  height:60px;
   text-align: center;
   background-color: rgb(170,70,30);
   position: absolute;
-  top: 389px; left:662px;
+  top: 402px; left:671px;
   opacity:.6;
 }
 
