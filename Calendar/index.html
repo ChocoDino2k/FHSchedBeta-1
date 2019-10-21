@@ -1,41 +1,107 @@
 <!DOCTYPE html>
+<meta charset="UTF-8">
 <html>
 <head>
     <title>FHSched Calendar</title>
 
-    <!-- twitter bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+
 
     <!-- dycalendarjs stylesheet -->
     <link href="css/dycalendar.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="css/FHSched_V_1.11.css">
+    <link rel="stylesheet" href="../css/FHSched_V_1.15.css">
+    <link rel="stylesheet" href="../css/Dark_Mode_1.0.css">
+    <link rel = "stylesheet" href = "css/FHSchedCalendar_V_1.11.css">
+    <script type="text/javascript" src="../js/FHSched_Base_V_1.7.js"></script>
+
+
 </head>
-<body class="dark">
-  <div>
-    <p class="header">
-      <a href="../">FHSched</a>
-    </p>
+  <body onload="createThemes()" id="body" class = "dark">
+  <!--
+  <img class="logo" src="images/weblogo.png" width="80" height="74">
+-->
+  <a id = "ham-a" class = "ham-a" role="button" onclick="showSidebar()"><img src="../images/Hamburger_icon.png" class="ham"></a>
+  <a class="ng-logo-a" role="button" onclick="showNGBanner()">
+    <img src="../images/National_Guard_Logo.png" class = "ng-logo">
+  </a>
+
+
+
+  <div class="slider" id="sidebar">
+    <a class = "close-sidebar" role="button" onclick="showSidebar()">
+      <img src="../images/close-icon.png" class="close-icon">
+    </a>
+    <ul id = "sidebar-list">
+      <li><a href="../">Home</a></li>
+      <li><a href="../about/">About</a></li>
+
+      <li id="add-theme">
+        <a role="button" onclick="showAddTheme()" id="a-add-theme">+ Theme</a>
+        <a role="button" id="input-theme">
+          <input type="text" id="modeInput" name="modeInput" placeholder="Eg: Dark"><button id = "inputButton" type=button onclick="addTheme()">Add</button>
+        </a>
+      </li>
+      <li>
+        <a role="button" onclick="localStorage.setItem('mode', 'classic'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('classic')">Classic Theme</a>
+      </li>
+    </ul>
   </div>
 
-      <ul class="nav-bar">
-        <li><a href="../">Home</a></li>
-        <li><a href="../calendar/">Calendar</a></li>
-        <li style = "float: right;"><a role="button" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light" id="darkMode"> Light | Dark Mode</a></li>
-      </ul>
+
+  <div id="national-guard-banner" class="national-guard-banner">
+    <div class="container">
+      <p>
+        Get started here:
+        <a href="https://nationalguard.com/get-started" target="_blank">https://nationalguard.com/get-started</a>
+        <br>
+        Contact: SGT Abigail Bartholomew | (765) 265-2906
+        <br>
+        <a href="https://www.instagram.com/sgtabbibart/?hl=en" target="_blank">https://www.instagram.com/sgtabbibart/?hl=en</a>
+      </p>
+      <a class = "close-sidebar" role="button" onclick="showNGBanner()">
+        <img src="../images/close-icon.png" class="close-icon">
+      </a>
+    </div>
+  </div>
+
+
+   <p class="header">
+         <a href="../"> FHSched Calendar </a>
+    </p>
+
 
         <div class="parent">
 
-        <div class="move">
           <div class="dropdown" style="float:right;">
-            <button onclick="dropDown()" class="dropbtn">Change Month</button>
+            <button onclick="dropDown()" class="dropbtn">Major Events</button>
             <div id="myDropdown" class="dropdown-content">
-              <a href="index.html">September</a>
-              <a href="secondCalendar.html">October</a>
-              <a href="thirdCalendar.html">November</a>
-              <a href="FourthCalendar.html">December</a>
+              <a href="index.html">October</a>
+              <a href="NovemberCalendar.html">November</a>
+              <a href="DecemberCalendar.html">December</a>
            </div>
          </div>
+
+          <div class="dropdown2" style="float:right;">
+            <button onclick="dropDown2()" class="dropbtn2">Club Meetings</button>
+            <div id="myDropdown2" class="dropdown2-content">
+              <a href="ClubCurrentCalendar.html">October</a>
+              <a href="ClubNovemberCalendar.html">November</a>
+              <a href="ClubDecemberCalendar.html">December</a>
+           </div>
+         </div>
+
+
+
+
+        <div class = "containerRim"></div>
+        <div class = "containerGreyRim"></div>
+        <div class="container1"  id="yearCountDown"></div>
+        <div class="container2" id="breakCountDown"></div>
+        <div class = "featuredSportSplash">
+          <p> If there are any events that you think should be added, contact us!</p>
         </div>
+
 
         <!-- DEMO -->
         <div class="some-class">
@@ -44,7 +110,7 @@
                 <div id="dycalendar-month" class="dycalendar-container skin-gray"></div>
         </div>
 
-        <div class="picture">
+               <div class="picture">
         <img src="calendar-line-horizontal.png" alt="calendar" width="953" height="475">
         </div>
 
@@ -73,354 +139,899 @@
         </div>
 
         <div class="pictureSeven">
-        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="395">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="413">
         </div>
 
         <div class="pictureEight">
-        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="395">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="413">
         </div>
 
         <div class="pictureNine">
-        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="395">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="413">
         </div>
 
          <div class="pictureTen">
-        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="395">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="413">
         </div>
 
          <div class="pictureEleven">
-        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="395">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="413">
         </div>
 
         <div class="pictureTwelve">
-        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="395">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="413">
         </div>
 
         <div class="pictureThirteen">
-        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="395">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="413">
         </div>
 
         <div class="pictureFourteen">
-        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="395">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="413">
         </div>
 
+        <div class="picture0">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="1130" height="500">
+        </div>
+
+        <div class="picture1">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="1130" height="500">
+        </div>
+
+        <div class="picture2">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="1130" height="500">
+        </div>
+
+         <div class="picture3">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="1130" height="500">
+        </div>
+
+        <div class="picture4">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="1130" height="500">
+        </div>
+
+        <div class="picture5">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="1130" height="500">
+        </div>
+
+        <div class="picture6">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="1130" height="500">
+        </div>
+
+        <div class="picture7">
+        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1495">
+        </div>
+
+        <div class="picture8">
+        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1495">
+        </div>
+
+        <div class="picture9">
+        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1495">
+        </div>
+
+        <div class="picture10">
+        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1495">
+        </div>
+
+        <div class="picture11">
+        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1495">
+        </div>
+
+        <div class="picture12">
+        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1495">
+        </div>
+
+        <div class="picture13">
+        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1495">
+        </div>
+
+        <div class="picture14">
+        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1495">
+        </div>
+
+        <div class="eventContainerSixteen"> </div>
+        <div class="eventContainerSeventeen"> </div>
+        <div class="eventContainerEighteen"> </div>
+        <div class="eventContainerNineteen"> </div>
+        <div class="eventContainerTwenty"> </div>
+
+<div class="fontSize">
+<button onclick="document.getElementById('id01').style.display='block'" class="button button1">
+h
+</button>
+   <div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id01').style.display='none'"
+        class="w3-button w3-display-topright"> &times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p>None</p>
+        </font>
+      </div>
+    </div>
+  </div>
+
+  <button onclick="document.getElementById('id02').style.display='block'" class="button button2">
+h
+</button>
+   <div id="id02" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id02').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p>None</p>
+        </font>
+      </div>
+    </div>
+  </div>
+
+  <button onclick="document.getElementById('id03').style.display='block'" class="button button3">
+h
+</button>
+   <div id="id03" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id03').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p> Leadership Retreat at Connor Prairie at 8:00am- 2:00pm </p>
+          <hr>
+          <p> Soccer: Boys JV Match at  Greenfield-Central High School at 6:00pm </p>
+          <p> Volleyball: Girls Freshman Match at Mount Vernon High School at 6:00pm </p>
+          <p> Volleyball: Girls JV Match at Mount Vernon High School at 6:00pm </p>
+          <p> Unified Football: Varsity Game at FHS FOOTBALL STADIUM at 6:30pm </p>
+          <p> Soccer: Boys Varsity Match at Greenfield-Central High School at 7:30pm </p>
+          <p> Volleyball: Girls Varsity Match at Mount Vernon High School at 7:30pm </p>
+        </font>
+      </div>
+    </div>
+  </div>
+
+  <button onclick="document.getElementById('id04').style.display='block'" class="button button4">
+h
+</button>
+   <div id="id04" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id04').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p> 9 week exams </p>
+         <p> College Visit: Bellarmine University in CCA at 9:30 AM </p>
+   <p> College Visit: St. Johns College in CCA at 12:00 PM </p>
+   <p> College Visit: University of Southern Indiana in CCA at 1:00 PM </p>
+   <hr>
+   <p> Tennis: Boys Varsity IHSAA Sectionals at HSE High School at 4:30pm </p>
+   <p> Soccer: Girls JV Match at Guerin Catholic High School at 5:30pm </p>
+   <p> Soccer: Girls Varsity Match at Guerin Catholic High School at 7:00pm </p>
+        </font>
+      </div>
+    </div>
+  </div>
+
+  <button onclick="document.getElementById('id05').style.display='block'" class="button button5">
+h
+</button>
+   <div id="id05" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id05').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+           <p> 9 Week Exams </p>
+          <p> College Visit: The Ohio State University in CCA at 9:30 AM </p>
+   <p> College Visit: Indiana Wesleyan University in CCA at 12:00 PM </p>
+   <p> College Visit: Amherst College in CCA at 1:00 PM </p>
+   <p> College Visit: University of Iowa in CCA at 2:00 PM </p>
+   <hr>
+  <p> Tennis: Boys Varsity IHSAA Sectionals at HSE High School at 4:30pm </p>
+  <p> Unified Football: Varsity Game at HSE High School at 5:30pm </p>
+  <p> Soccer: Boys Freshman Match at Franklin Central High School at 6:00pm </p>
+        </font>
+      </div>
+    </div>
+  </div>
+
+  <button onclick="document.getElementById('id06').style.display='block'" class="button button6">
+h
+</button>
+   <div id="id06" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id06').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p> 9 week exams/First Grading Period Ends </p>
+          <p> College Visit: University of St. Francis in CCA at 8:30 AM </p>
+  <p> College Visit: Purdue Polytechnic Institute, West Lafayette in CCA at 2:00 PM </p>
+  <hr>
+  <p> Football: Varsity Game in Fishers High School at 7:00pm</p>
+  <p> Football: Varsity Game at FHS FOOTBALL STADIUM at 7:00pm <font color= "red"> (Senior Night) </font> </p>
+        </font>
+      </div>
+    </div>
+  </div>
+
+  <button onclick="document.getElementById('id07').style.display='block'" class="button button7">
+h
+</button>
+   <div id="id07" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id07').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p> Football: JV Game at Franklin Central High School at 10:00am </p>
+          <p> Volleyball: Girls Freshman Invitational at Bishop Chatard High School at 10:00am </p>
+          <p> Volleyball: Girls Varsity Match at Guerin Catholic High School at 10:00am </p>
+          <p> Marching Band at Bands of America Invitational - Prelims, Finals (time TBD) </p>
+          <p> Volleyball: Girls Varsity Match at Guerin Catholic High School at 12:00pm </p>
+          <p> Unified Football: Varsity IHSAA Sectionals at Noblesville High School at 1:00pm </p>
+          <p> Cross Country: Girls Varsity Nike Valley Twilight at Laverne Gibson Championship Cross Country Course at 6:15pm </p>
+        </font>
+      </div>
+    </div>
+  </div>
+
+  <button onclick="document.getElementById('id08').style.display='block'" class="button button8">
+h
+</button>
+   <div id="id08" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id08').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p> None </p>
+        </font>
+      </div>
+    </div>
+  </div>
+
+   <button onclick="document.getElementById('id09').style.display='block'" class="button button9">
+h
+</button>
+   <div id="id09" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id09').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p> Football: Freshman Game at FHS FOOTBALL STADIUM at 6:00pm </p>
+          <p> Soccer: Boys Varsity IHSAA Sectionals at White River Elementary at 7:00pm </p>
+        </font>
+      </div>
+    </div>
+  </div>
+
+ <button onclick="document.getElementById('id10').style.display='block'" class="button button10">
+h
+</button>
+   <div id="id10" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id10').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p> College Visit: University of Toledo in the CCA at 8:30 AM </p>
+          <p> College Visit: University of Cincinnati in the CCA at 12:00 PM </p>
+          <hr>
+          <p> Cheer Winter Call Out Metting in Cafe A at 3:00pm- 4:00pm </p>
+          <p> Volleyball: Girls Freshman and JV Match at Yorktown High School at 6:00pm </p>
+          <p> Soccer: Girls Varsity IHSAA Sectionals at HSE High School at 7:15pm </p>
+          <p> Volleyball: Girls Varsity Match at Yorktown High School at 7:30pm </p>
+        </font>
+      </div>
+    </div>
+  </div>
+
+ <button onclick="document.getElementById('id11').style.display='block'" class="button button11">
+h
+</button>
+   <div id="id11" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id11').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p> College Visit: Tufts University in the CCA at 8:30 AM </p>
+          <p> College Visit: John Hopkins University in the CCA at 12:00 PM </p>
+          <p> College Visit: Belmont University in the CCA at 1:00 PM </p>
+          <p> College Visit: Marian University in the CCA at 2:00 PM </p>
+          <hr>
+          <p>Soccer: Boys Varsity IHSAA Sectionals at  White River Elementary at 5:30pm</p>
+          <p> Lacrosse Girls Call Out Meeting at Cafe A at 6:00pm- 8:00pm</p>
+          <p> Rugby Girls Call Out Meeting at LGI Room at 6:00pm- 7:30pm </p>
+          <p> Band Concert in FHS Gym at 7:00pm- 9:00pm </p>
+          <p> Soccer: Girls Varsity IHSAA Sectionals at HSE High School at 5:30pm </p>
+        </font>
+      </div>
+    </div>
+  </div>
+
+ <button onclick="document.getElementById('id12').style.display='block'" class="button button12">
+h
+</button>
+   <div id="id12" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id12').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p> College Visit: University of Alabama in the CCA at 12:00 PM </p>
+          <p> College Visit: Grace College in the CCA at 1:00 PM </p>
+          <hr>
+          <p> Volleyball: Girls Freshman Match at FHS AUX COURT 1 at 5:30pm </p>
+          <p> Volleyball: Girls JV Match at FHS GYM - VARSITY at 5:30pm </p>
+          <p> Volleyball: Girls Varsity Match at FHS GYM - VARSITY at 7:00pm <font color= "red"> Senior Night </font> </p>
+        </font>
+      </div>
+    </div>
+  </div>
+
+ <button onclick="document.getElementById('id13').style.display='block'" class="button button13">
+h
+</button>
+   <div id="id13" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id13').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p> College Visit: University of Saint Francis in the CCA at 9:30 AM </p>
+          <hr>
+          <p>Football: Varsity Game at Westfield High School at 7:00pm</p>
+        </font>
+      </div>
+    </div>
+  </div>
+
+ <button onclick="document.getElementById('id14').style.display='block'" class="button button14">
+h
+</button>
+   <div id="id14" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id14').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p>Cross Country: Varsity IHSAA Sectionals at Pendleton Heights High School  (time: TBD)</p>
+          <p> Football: Freshman Game at Westfield High School at 10:00am </p>
+          <p> Football: JV Game at FHS FOOTBALL STADIUM at 10:00am </p>
+          <p> Volleyball: Girls JV Invitational HSE High School at 10:00am </p>
+          <p> Knight Football Games at FHS Football Stadium at 1:00pm- 4:00pm </p>
+          <p> Soccer: Girls Varsity IHSAA Sectionals at HSE High School at 2:00pm </p>
+          <p> Soccer: Boys Varsity IHSAA Sectionals at White River Elementary at 7:00pm </p>
+        </font>
+      </div>
+    </div>
+  </div>
+
+ <button onclick="document.getElementById('id15').style.display='block'" class="button button15">
+h
+</button>
+   <div id="id15" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id15').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p>None</p>
+        </font>
+      </div>
+    </div>
+  </div>
+
+  <button onclick="document.getElementById('id16').style.display='block'" class="button button16">
+h
+</button>
+   <div id="id16" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id16').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p><font color="orange"> Fall Break </font></p>
+        </font>
+      </div>
+    </div>
+  </div>
+
+  <button onclick="document.getElementById('id17').style.display='block'" class="button button17">
+h
+</button>
+   <div id="id17" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id17').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p><font color="orange"> Fall Break </font></p>
+          <hr>
+          <p>Volleyball: Girls Varsity IHSAA Sectionals at Noblesville High School (time: TBD)</p>
+        </font>
+      </div>
+    </div>
+  </div>
+
+  <button onclick="document.getElementById('id18').style.display='block'" class="button button18">
+h
+</button>
+   <div id="id18" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id18').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p><font color="orange"> Fall Break </font></p>
+        </font>
+      </div>
+    </div>
+  </div>
+
+ <button onclick="document.getElementById('id19').style.display='block'" class="button button19">
+h
+</button>
+   <div id="id19" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id19').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p><font color="orange"> Fall Break </font></p>
+          <hr>
+          <p> Volleyball: Girls Varsity IHSAA Sectionals at Noblesville High School (time:TBD)</p>
+        </font>
+      </div>
+    </div>
+  </div>
+
+ <button onclick="document.getElementById('id20').style.display='block'" class="button button20">
+h
+</button>
+   <div id="id20" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id20').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+            <p><font color="orange"> Fall Break </font></p>
+            <hr>
+            <p> Football: Varsity Game at FHS FOOTBALL STADIUM at 7:00pm </p>
+        </font>
+      </div>
+    </div>
+  </div>
+
+  <button onclick="document.getElementById('id21').style.display='block'" class="button button21">
+h
+</button>
+   <div id="id21" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id21').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p> Cross Country: Varsity IHSAA Regionals at Delta High School (Time: TBD)
+          <p> Marching Band at Center Grove High School
+ISSMA Regional Contest (Time: TBD)
+          <p> Volleyball: Girls Varsity IHSAA Sectionals at Noblesville High School (Time: TBD) </p>
+          <p> Football: Freshman Game at FHS FOOTBALL STADIUM at 10:00am </p>
+          <p> Football: JV Game at Zionsville High School at 10:00am </p>
+        </font>
+      </div>
+    </div>
+  </div>
+
+  <button onclick="document.getElementById('id22').style.display='block'" class="button button22">
+h
+</button>
+   <div id="id22" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id22').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p>None</p>
+        </font>
+      </div>
+    </div>
+  </div>
+
+  <button onclick="document.getElementById('id23').style.display='block'" class="button button23">
+h
+</button>
+   <div id="id23" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id23').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p>None</p>
+        </font>
+      </div>
+    </div>
+  </div>
+
+<button onclick="document.getElementById('id24').style.display='block'" class="button button24">
+h
+</button>
+   <div id="id24" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id24').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p> College Visit: University of Louisville in the CCA at 8:30 AM </p>
+          <p> College Visit: Spalding University in the CCA at 12:00 PM </p>
+        </font>
+      </div>
+    </div>
+  </div>
+
+<button onclick="document.getElementById('id25').style.display='block'" class="button button25">
+h
+</button>
+   <div id="id25" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id25').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p> College Visit: Johnson & Wales University in the CCA at 8:30 AM </p>
+          <p> College Visit: Saint Mary's College in the CCA at 12:00 PM </p>
+          <p> College Visit: Muskingum University in the CCA at 2:00 PM </p>
+          <hr>
+          <p>Rugby Boys Call Out Meeting in Cafe A at 6:00pm- 8:00pm</p>
+          <p> IB Night in Cafe B, Cafe C - CCA Commons at 7:00pm- 9:00pm </p>
+        </font>
+      </div>
+    </div>
+  </div>
+
+<button onclick="document.getElementById('id26').style.display='block'" class="button button26">
+h
+</button>
+   <div id="id26" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id26').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p> College Visit: Indiana Tech in the CCA at 8:30 AM </p>
+          <p> College Visit: Calvin University in the CCA at 9:30 AM </p>
+          <p> College Visit: University of Illinois at Chicago in the CCA at 12:00 PM </p>
+          <p> College Visit: Williams College in the CCA at 1:00 PM </p>
+        </font>
+      </div>
+    </div>
+  </div>
+
+  <button onclick="document.getElementById('id27').style.display='block'" class="button button27">
+h
+</button>
+   <div id="id27" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id27').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p> College Visit: Syracruse University in the CCA at 1:00 PM </p>
+          <hr>
+          <p>Marching Band at Lucas Oil Stadium
+Bands of America Indy Super Regional Championship - PRELIMS (Time:TBD)</p>
+        </font>
+      </div>
+    </div>
+  </div>
+
+  <button onclick="document.getElementById('id28').style.display='block'" class="button button28">
+h
+</button>
+   <div id="id28" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id28').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p>Cross Country: Varsity IHSAA Semi-State at New Haven High School (Time:TBD)</p>
+          <p> Marching Band at Lucas Oil Stadium
+Bands of America Indy Super Regional Championship - FINALS (Time: TBD) </p>
+           <p> Picture Day at D Hallway at 10:00am- 5:00pm </p>
+          <p> Knight Football Games at FHS Football Stadium at 1:00pm- 6:00pm </p>
+        </font>
+      </div>
+    </div>
+  </div>
+
+<button onclick="document.getElementById('id29').style.display='block'" class="button button29">
+h
+</button>
+   <div id="id29" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id29').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p>None</p>
+        </font>
+      </div>
+    </div>
+  </div>
+
+<button onclick="document.getElementById('id30').style.display='block'" class="button button30">
+h
+</button>
+   <div id="id30" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id30').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p>RJH Camp Tecumseh</p>
+        </font>
+      </div>
+    </div>
+  </div>
+
+  <button onclick="document.getElementById('id31').style.display='block'" class="button button31">
+h
+</button>
+   <div id="id31" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id31').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p>RJH Camp Tecumseh</p>
+          <p> College Visit: Saint Louis University in the CCA at 12:00 PM </p>
+          <p>All Treats No Tricks in CCA Commons at CCA Commons </p>
+        </font>
+      </div>
+    </div>
+  </div>
+
+  <button onclick="document.getElementById('id32').style.display='block'" class="button button32">
+h
+</button>
+   <div id="id32" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id32').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p>RJH Camp Tecumseh</p>
+          <p> PSAT </p>
+          <p> College Visit: Hope College in the CCA at 2:00 PM </p>
+          <hr>
+          <p> Silver Shadows - Show Choir Season Tech Crew Callout Meeting at F132 at 3:30pm- 4:30pm </p>
+          <p> Basketball: Girls Varsity Scrimmage at FHS GYM - VARSITY at 6:00pm </p>
+        </font>
+      </div>
+    </div>
+  </div>
+
+<button onclick="document.getElementById('id33').style.display='block'" class="button button33">
+h
+</button>
+   <div id="id33" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id33').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p> <font color ="orange"> H </font> <font color ="black"> A </font> <font color ="orange"> L </font> <font color ="black"> L </font> <font color ="orange"> O </font> <font color ="black"> W </font> <font color ="orange"> E </font> <font color ="black"> E </font> <font color ="orange"> N  🎃 </font> </p>
+          <p> RJH Camp Tecumseh </p>
+          <p> PSAT </p>
+        </font>
+      </div>
+    </div>
+  </div>
+
+<button onclick="document.getElementById('id34').style.display='block'" class="button button34">
+h
+</button>
+   <div id="id34" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id34').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p>None</p>
+        </font>
+      </div>
+    </div>
+  </div>
+
+  <button onclick="document.getElementById('id35').style.display='block'" class="button button35">
+h
+</button>
+   <div id="id35" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id35').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Daily Events</h2>
+      </header>
+      <div class="w3-container">
+        <font color="black">
+          <p>None</p>
+        </font>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--
+
+<button class= "button button35" onclick="displayEventsThirtyFive()">
+h
+</button>
+<div id="eventContainerThirtyFive">
+Event
+</div>
 
 
 <div class="eventContainerOne">
- <span class="eventContainerOneText"> None   </span>
-</div>
-
-<div class="eventContainerTwo">
- <span class="eventContainerTwoText"> None  </span>
-</div>
-
-<div class="eventContainerThree">
- <span class="eventContainerThreeText"> None </span>
-</div>
-
-<div class="eventContainerFour">
- <span class="eventContainerFourText"> None </span>
-</div>
-
-<div class="eventContainerFive">
- <span class="eventContainerFiveText"> None </span>
-</div>
-
-<div class="eventContainerSix">
- <span class="eventContainerSixText"> None </span>
-</div>
-
-<div class="eventContainerSeven">
- <span class="eventContainerSevenText"> None </span>
-</div>
-
-<div class="eventContainerEight">
- <span class="eventContainerEightText"> None </span>
-</div>
-
-<div class="eventContainerNine">
-  <span class="eventContainerNineText">
-    <p> Champions Together (Unified Kickball) at FHS Soccer Stadium 5:30PM-9:00PM </p>
-    <p> Tennis Boys Varsity Match at FHS Tennis Courts 5:30 PM </p>
-    <p> Youth Boys Basketball Travel Try Outs in FHS Gym at 6:00 PM-9:00PM </p>
-  </span>
-</div>
-
-<div class="eventContainerTen">
- <span class="eventContainerTenText">
-    <p> Wrestling Callout Meeting in Cafe A at 7:15 AM-7:30AM </p>
-    <p> College Visit: Indiana Tech in CCA at 8:30 AM </p>
-    <p> College Visit: IVY Tech in CCA at 9:30 AM </p>
-    <p> College Visit: University Of Georgia in CCA at 12:00 PM </p>
-    <p> College Visit: Purdue in CCA at 1:00PM </p>
-    <p> College Visit: Butler University in CCA at 2:00 PM </p>
-    <p> Girls Golf Varsity Match at Gray Eagle Golf Course at 4:00 PM </p>
-    <p> Boys Freshman Soccer Match at FHS Soccer Stadium at 5:00 PM </p>
-    <p> Boys JV Soccer Match at HSE HS at 5:30 PM </p>
-    <p> Boys JV Tennis Match at FHS Tennis Courts at 5:30 PM </p>
-    <p> Boys Varsity Tennis Match at FHS Tennis Courts at 5:30 PM </p>
-    <p> Girls JV Volleyball Match at FHS Gym 5:30 PM </p>
-    <p> Girls Freshman Soccer Match at FHS Soccer Stadium at 6:30 PM </p>
-    <p> Boys Varsity Soccer Match at HSE HS at 7:00 PM </p>
-    <p> Girls Varsity Volleyball Match at FHS Gym at 7:00 PM </p>
-
+ <span class="eventContainerOneText">
 
  </span>
 </div>
 
-<div class="eventContainerEleven">
- <span class="eventContainerElevenText">
-  <p> Blood Drive At FHS Gym (Auxilary) at 7:00 AM-3:30 PM</p>
-  <p> College Visit: Indiana State University in CCA at 8:30 AM </p>
-  <p> College Visit: Wittenberg University in CCA at 9:30 AM </p>
-  <p> College Visit: Colby College in CCA at 12:00 PM </p>
-  <p> College Visit: Depauw in CCA at 1:00 PM </p>
-  <p> Soccer: Girls JV Match at FHS SOCCER STADIUM at 5:00pm</p>
-  <p> Soccer: Girls Varsity Match at FHS SOCCER STADIUM at 6:30pm </p>
- </span>
-</div>
 
-<div class="eventContainerTwelve">
- <span class="eventContainerTwelveText">
-  <p> College Visit: Earlham College in CCA at 8:30 AM </p>
-  <p> College Visit: Ball State University in CCA at 12:00 PM </p>
-  <p> College Visit: Miami University, Oxford in CCA at 1:00 PM </p>
-  <p> College Visit: Brown University in CCA at 2:00 PM </p>
-  <hr>
-  <p> Golf: Girls JV Match at Wood Wind Golf Club at 4:30pm</p>
-  <p> Golf: Girls Varsity Match at Wood Wind Golf Club at 4:30pm </p>
-  <p> Soccer: Boys Freshman Match at FHS SOCCER STADIUM at 5:00pm </p>
-  <p> Soccer: Boys JV Match at Pendleton Heights High School at 5:30pm </p>
-  <p> Tennis: Boys JV Match at Zionsville High School at 5:30pm </p>
-  <p> Tennis: Boys Varsity Match at Zionsville High School at 5:30pm </p>
-  <p> Volleyball: Girls Freshman Match at Hamilton Southeastern High School at 5:30pm </p>
-  <p> Volleyball: Girls JV Match at Hamilton Southeastern High School at 5:30pm </p>
-  <p> Soccer: Girls Freshman Match at FHS SOCCER STADIUM at 6:30pm </p>
-  <p> Soccer: Boys Varsity Match at Pendleton Heights High School at 7:00pm </p>
-  <p> Volleyball: Girls Varsity Match at Hamilton Southeastern High School at 7:00pm </p>
- </span>
-</div>
-
-<div class="eventContainerThirteen">
- <span class="eventContainerThirteenText">
-  <p> College Visit: Elon University in CCA at 8:30 AM </p>
-  <p> College Visit: Brescia University in CCA at 12:00 PM </p>
-  <p> College Visit: Mount St. Joseph University in CCA at 1:00 PM </p>
-  <p> College Visit: Monmouth College in CCA at 2:00 PM </p>
-  <p> <font color="silver"> FOOTBALL: VARSITY GAME at 7:00 PM </font> <font color="blue"> (Rumble In The Jungle) </font> </p>
- </span>
-</div>
-
-<div class="eventContainerFourteen">
- <span class="eventContainerFourteenText">
-   <p> Cross Country: Girls Varsity Ben Davis Invitational at Ben Davis High School at 9:00 AM </p>
-   <p> Cross Country: Varsity Peoria Woodruff Invitational at Detweiler Park, IL at 9:00am </p>
-   <p> Tennis: Boys Varsity Fishers Invitational at FHS Tennis Courts 1-6 at 9:00am </p>
-   <p> Volleyball: Girls JV Franklin Central Invitational at Franklin Central High School at 9:00am </p>
-   <p> Volleyball: Girls Varsity New Castle Invitational at New Castle Chrysler High School at 9:00am </p>
-   <p> Football: Freshman Game at FHS FOOTBALL STADIUM at 10:00am </p>
-   <p> Football: JV Game at Hamilton Southeastern Freshman Center at 10:00am </p>
-   <p> Soccer: Girls JV Match at Warsaw Community High School at 11:00am </p>
-   <p> Soccer: Boys JV Match at FHS SOCCER STADIUM at 11:00am </p>
-   <p> Soccer: Boys Varsity Match at FHS SOCCER STADIUM at 12:30pm </p>
-   <p> Soccer: Girls Varsity Match at Warsaw Community High School at 12:45pm </p>
-   <p> Golf: Girls Varsity Noblesville Invitational at Harbour Trees Golf & Beach Club at 1:00pm </p>
- </span>
-</div>
-
-<div class="eventContainerFifteen">
- <span class="eventContainerFifteenText"> None </span>
-</div>
-
-<div class="eventContainerSixteen">
- <span class="eventContainerSixteenText">
-   <p> Freshman Class Ring Meeting at large auditorium at 10:00am- 10:45am </p>
-   <p> Soccer: Girls Freshman Match at Hamilton Southeastern High School at 5:00pm </p>
-   <p> Soccer: Girls JV Match at FHS SOCCER STADIUM at 5:30pm </p>
-   <p> Soccer: Boys Freshman Match at Hamilton Southeastern High School at 6:30pm </p>
-   <p> Soccer: Girls Varsity Match at FHS SOCCER STADIUM at 7:00pm </p>
- </span>
-</div>
-
-<div class="eventContainerSeventeen">
- <span class="eventContainerSeventeenText">
-    <p> College Visit: Bradley University in CCA at 8:30 AM </p>
-    <p> College Visit: Oberlin College of Arts and Sciences in CCA at 9:30 AM </p>
-    <p> College Visit: College of Wooster in CCA at 12:00 PM </p>
-    <p> College Visit: Indiana University at Bloomigton in CCA at 1:00 PM </p>
-    <p> College Visit: Depaul University in CCA at 2:00 PM </p>
-    <p> Golf: Girls JV Match at Gray Eagle Golf Course at 4:30pm </p>
-    <p> Golf: Girls Varsity Match at  Gray Eagle Golf Course at 4:30pm </p>
-    <p> Soccer: Boys JV Match at FHS SOCCER STADIUM at 6:00pm </p>
-    <p> Soccer: Boys Varsity Match at FHS SOCCER STADIUM at 7:30pm </p>
-
- </span>
-</div>
-
-<div class="eventContainerEighteen">
- <span class="eventContainerEighteenText">
-   <p> College Visit: Washington University, St Louis in CCA at 8:30 AM </p>
-   <p> College Visit: Carlton College in CCA at 9:30 AM </p>
-   <p> College Visit: IE University Segovia in CCA at 12:00 PM </p>
-   <p> College Visit: Valpraiso University in CCA at 1:00 PM </p>
-   <p> College Visit: University of Indianapolis in CCA at 2:00 PM </p>
-   <p> Student Picture Re-take Day in Auditorium Lobby at 7:00am- 3:00pm </p>
-   <p> Soccer: Girls JV Match at Brownsburg High School at 5:30pm </p>
-   <p> Soccer: Boys Freshman Match at FHS SOCCER STADIUM at 5:30pm </p>
-   <p> Soccer: Girls Varsity Match at Brownsburg High School at 7:00pm </p>
- </span>
-</div>
-
-<div class="eventContainerNineteen">
- <span class="eventContainerNineteenText">
-  <p> College Visit: Rose Hulman Institute of Tech. in CCA at 8:30 AM </p>
-  <p> College Visit: Vanderbilt University in CCA at 9:30 AM </p>
-  <p> College Visit: High Point University in CCA at 12:00 PM </p>
-  <p> College Visit: Layola University, Chicago in CCA at 1:00 PM </p>
-  <p> College Visit: University of Miami in CCA at 2:00 PM </p>
-  <p> Tennis: Boys Varsity HCC Championships at  Zionsville Baseball, Softball and Tennis Complex at 4:30pm </p>
-  <p> Soccer: Boys JV Match at FHS SOCCER STADIUM at 5:30pm </p>
-  <p> Volleyball: Girls Freshman Match at FHS AUX COURT 1 at 5:30pm </p>
-  <p> Volleyball: Girls JV Match at FHS GYM - VARSITY at 5:30pm </p>
-  <p> Soccer: Boys Varsity Match at FHS SOCCER STADIUM at 7:00pm </p>
-  <p> Volleyball: Girls Varsity Match at FHS GYM - VARSITY at 7:00pm </p>
- </span>
-</div>
-
-<div class="eventContainerTwenty">
- <span class="eventContainerTwentyText">
-   <p> College Visit: Kenyon College in CCA at 8:30 AM </p>
-   <p> College Visit: Case Western Reserve in CCA at 9:30 AM </p>
-   <p> College Visit: Tulane University in CCA at 12:00 AM </p>
-   <p> College Visit: university of Notre Dame in CCA at 1:00 PM </p>
-   <p> College Visit: University of Evansville in CCA at 2:00 PM </p>
-   <p> <font color="silver"> FOOTBALL: VARSITY GAME at 7:00 PM </font></p>
- </span>
-</div>
-
-<div class="eventContainerTwentyOne">
- <span class="eventContainerTwentyOneText">
-   <p> Marching Band Invitational at Avon High School (Performance time TBD) </p>
-   <p> Cross Country: Varsity Riverview Health Invitational at Northview Christian Life Church at 9:00am </p>
-   <p> Tennis: Boys Varsity HCC Championships at  Zionsville Baseball, Softball and Tennis Complex at 9:00am </p>
-   <p> Volleyball: Girls JV Invitational at Daleville HS at 9:00am </p>
-   <p> Football: Freshman Game at Brownsburg High School at 10:00am </p>
-   <p> Football: JV Game at FHS FOOTBALL STADIUM at 10:00am </p>
-   <p> Golf: Girls Varsity IHSAA Sectionals at  Harbour Trees Golf & Beach Club at 11:00am</p>
-   <p> SPORTS Knight Football Games at FHS Football Stadium at 2:00pm- 6:00pm </p>
-   <p> Unified Football: Varsity Game at Zionsville High School at 3:00pm </p>
-   <p> <font color="green">Homecoming at FHS at 8:00pm- 11:00pm </font> </p>
- </span>
-</div>
-
-<div class="eventContainerTwentyTwo">
- <span class="eventContainerTwentyTwoText"> Event </span>
-</div>
-
-<div class="eventContainerTwentyThree">
- <span class="eventContainerTwentyThreeText"> Event </span>
-</div>
-
-<div class="eventContainerTwentyFour">
- <span class="eventContainerTwentyFourText">
-  <p> College Visit: Purdue Polytechnic, Anderson in CCA at 9:30 AM </p>
-  <p> College Visit: International Business College in CCA at 12:00 PM </p>
-  <p> College Visit: Samford University in CCA at 1:00 PM </p>
-  <p> College Visit: Illinois Institute of Technology in CCA at 2:00 PM </p>
- </span>
-</div>
-
-<div class="eventContainerTwentyFive">
- <span class="eventContainerTwentyFiveText">
-   <p> College Visit: North Central College in CCA at 8:30 AM </p>
-   <p> College Visit: University of Akron in CCA at 9:30 AM </p>
-   <p> College Visit: Millikin University in CCA at 12:00 PM </p>
-   <p> College Visit: Ohio Wesleyan University in CCA at 1:00 PM </p>
-   <p> College Visit: Hillsdale College in CCA at 2:00 PM </p>
- </span>
-</div>
-
-<div class="eventContainerTwentySix">
- <span class="eventContainerTwentySixText">
-   <p> College Visit: Bethel University, IN in CCA at 8:30 AM </p>
-   <p> College Visit: Cedarville University in CCA at 9:30 AM </p>
-   <p> College Visit: Baldwin Wallace University in CCA at 12:00 PM </p>
-   <p> College Visit: University of Chicago in CCA at 1:00 PM </p>
-   <p> College Visit: University of South Alabama in CCA at 2:00 PM </p>
- </span>
-</div>
-
-<div class="eventContainerTwentySeven">
- <span class="eventContainerTwentySevenText">
-  <p> College Visit: Seton Hall University in CCA at 8:30 AM </p>
-  <p> College Visit: Kent State University in CCA at 9:30 AM </p>
-  <p> College Visit: Calvin University in CCA at 12:00 PM </p>
-  <p> College Visit: Taylor University in CCA at 1:00 PM </p>
- </span>
-</div>
-
-<div class="eventContainerTwentyEight">
- <span class="eventContainerTwentyEightText"> Event </span>
-</div>
-
-<div class="eventContainerTwentyNine">
- <span class="eventContainerTwentyNineText"> Event </span>
-</div>
-
-<div class="eventContainerThirty">
- <span class="eventContainerThirtyText"> Event </span>
-</div>
-
-<div class="eventContainerThirtyOne">
- <span class="eventContainerThirtyOneText"> None </span>
-</div>
-
-<div class="eventContainerThirtyTwo">
- <span class="eventContainerThirtyTwoText"> None </span>
-</div>
-
-<div class="eventContainerThirtyThree">
- <span class="eventContainerThirtyThreeText"> None </span>
-</div>
-
-<div class="eventContainerThirtyFour">
- <span class="eventContainerThirtyFourText"> None </span>
-</div>
-
-<div class="eventContainerThirtyFive">
- <span class="eventContainerThirtyFiveText"> None </span>
-</div>
-
-<div class="boxForCountDown"></div>
-
-<div class="relativeBreak"  id="breakCountDown"></div>
-
-<div class="relativeYear" style="margin-top: 0px; width: 13%;" id="yearCountDown"></div>
+-->
 
 
+<p class="bottom-space"  style="height: 800px"></p>
+    <footer>
+      <div class="foot">
+        <ul>
+          <li> <a href="../privacy-policy/">Privacy Policy</a> </li>
+        </ul>
 
-</div>
-
-<p class="bottom-space"></p>
-<footer>
-  <div class="foot">
-    <ul>
-      <li><a href="../privacy-policy/">Privacy Policy</a></li>
-    </ul>
-    <ul>
-      <li>2019 CodingForFishers</li>
-      <li>Version 1.4.4</li>
-    </ul>
-    <ul>
-      <li>
-        <address style="all: unset">
+        <ul>
+          <li>2019 CodingForFishers</li>
+          <li>Version 1.4.4</li>
+        </ul>
+        <ul>
+          <li>
+            <address style="all: unset">
           Contact: <a href="mailto:fhsched2019@gmail.com">fhsched2019@gmail.com</a>
         </address>
       </li>
-    </ul>
-  </div>
-</footer>
+        </ul>
 
+      </div>
+    </footer>
+
+</div>
+
+<script type="text/javascript">
+  //Used for cookie banner
+  if($('.cookie-banner').length)
+  {
+    $('.cookie-banner').slideDown(800);
+  }
+</script>
+
+<script type="text/javascript">     //Not FHSSched
+var isHomePage = '../';
+
+var inputEl = document.querySelector("#modeInput");
+var inputButton = document.querySelector("#inputButton");
+
+inputEl.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("inputButton").click();
+  }
+});
+</script>
 
 <!-- javascript -->
 <script >
@@ -618,6 +1229,389 @@ window.onclick = function(event) {
   }
 }
 
+
+function dropDown2() {
+  document.getElementById("myDropdown2").classList.toggle("show2");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn2')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content2");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show2')) {
+        openDropdown.classList.remove('show2');
+      }
+    }
+  }
+}
+
+
+// Get the modal
+var modal = document.getElementById('id01');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Get the modal
+var modal = document.getElementById('id02');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Get the modal
+var modal = document.getElementById('id03');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Get the modal
+var modal = document.getElementById('id04');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Get the modal
+var modal = document.getElementById('id05');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Get the modal
+var modal = document.getElementById('id06');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Get the modal
+var modal = document.getElementById('id07');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Get the modal
+var modal = document.getElementById('id08');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Get the modal
+var modal = document.getElementById('id09');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Get the modal
+var modal = document.getElementById('id10');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Get the modal
+var modal = document.getElementById('id11');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Get the modal
+var modal = document.getElementById('id12');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Get the modal
+var modal = document.getElementById('id13');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Get the modal
+var modal = document.getElementById('id14');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Get the modal
+var modal = document.getElementById('id15');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Get the modal
+var modal = document.getElementById('id16');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Get the modal
+var modal = document.getElementById('id17');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Get the modal
+var modal = document.getElementById('id18');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Get the modal
+var modal = document.getElementById('id19');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Get the modal
+var modal = document.getElementById('id20');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Get the modal
+var modal = document.getElementById('id21');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Get the modal
+var modal = document.getElementById('id22');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Get the modal
+var modal = document.getElementById('id23');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Get the modal
+var modal = document.getElementById('id24');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Get the modal
+var modal = document.getElementById('id25');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Get the modal
+var modal = document.getElementById('id26');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Get the modal
+var modal = document.getElementById('id27');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Get the modal
+var modal = document.getElementById('id28');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Get the modal
+var modal = document.getElementById('id29');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Get the modal
+var modal = document.getElementById('id30');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Get the modal
+var modal = document.getElementById('id31');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Get the modal
+var modal = document.getElementById('id32');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Get the modal
+var modal = document.getElementById('id33');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Get the modal
+var modal = document.getElementById('id34');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Get the modal
+var modal = document.getElementById('id35');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+/*
+
+function displayEventsThirtyFive() {
+  var x = document.getElementById("eventContainerThirtyFive");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+} */
+//Loads darkmode upon the website refresh
+function loadModes()
+{
+  document.querySelector('body').classList.remove('dark');
+  switch (localStorage.getItem('mode'))
+  {
+    case 'classic':
+      document.querySelector('body').classList.remove('dark');
+      break;
+    case 'dark':
+      document.querySelector('body').classList.add('dark');
+      break;
+    case 'cherry':
+      document.querySelector('body').classList.add('cherry');
+      break;
+    case 'aqua':
+      document.querySelector('body').classList.add('aqua');
+      break;
+    default:
+      document.querySelector('body').classList.add('dark');
+      break;
+  };
+  editLunchPeriod(currentSchedule["lunch"]);
+}
+
+//Changes styles for the sidebar
+function showSidebar()
+{
+  document.querySelector("#sidebar").classList.toggle('active');
+  document.querySelector("#ham-a").classList.toggle('active');
+}
+
+//Changes styles for National Guard Banner
+function showNGBanner()
+{
+  document.querySelector("#national-guard-banner").classList.toggle('active');
+}
+
+loadModes();
 
 </script>
 </body>

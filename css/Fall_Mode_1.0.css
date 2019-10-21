@@ -1,0 +1,215 @@
+body.fall
+{
+  background-image: url("../images/fall_gif.gif");
+  background-size:100% 100%;
+  background-repeat: no-repeat;
+  color: white;
+  transition: background-color 0.3s;
+  transition: background-image 0.3s;
+}
+
+
+body. a:link
+{
+  color: white;
+}
+
+body.fall a:visited
+{
+  color: white;
+}
+
+body.fall a:hover
+{
+  color: darkgray;
+}
+
+body.fall a:active {
+  color:white;
+}
+
+body.fall .header
+{
+  background-color: rgb(255,216,110);
+  transition: background-color 0.3s;
+}
+
+body.fall .header a
+{
+
+  color: brown;
+}
+
+
+body.fall .slider
+{
+  background: RGB(40,40,40,0.95);
+  transition: all 0.3s;
+}
+body.fall .slider li a
+{
+  color: RGB(255,255,255);
+}
+body.fall .slider li a:hover
+{
+  background: RGB(20,20,20,0.7);
+  color: darkgray;
+}
+body.fall .slider .close-sidebar:hover
+{
+  background: RGB(20,20,20,0.7);
+}
+
+body.fall .national-guard-banner
+{
+  background: RGB(30,30,30,0.98);
+}
+body.fall .national-guard-banner a
+{
+  color: RGB(255,255,255);
+}
+body.fall .national-guard-banner a:hover
+{
+  color: RGB(160,160,160);
+}
+body.fall .national-guard-banner .container .close-sidebar:hover
+{
+  background: RGB(15,15,15,0.7);
+}
+
+
+
+body.fall .ham-a
+{
+  background-color: yellow;
+  background-size: contain;
+}
+
+
+
+body.fall .ham-a:hover
+{
+  background-color: orange;
+}
+
+body.fall .time-schedule
+{
+
+  color: darkorange;
+  background-color:rgb(255,235,156);
+  transition: background-color 0.3s;
+}
+
+body.fall .period-countdown
+{
+  color: yellow;
+  transition: background-color 0.3s;
+}
+
+body.fall .remaining-time
+{
+  color:white;
+  transition: background-color 0.3s;
+}
+
+body.fall .dot
+{
+  background-color:gray;
+}
+body.fall .dot-cur
+{
+  background-color:firebrick;
+  transition: background-color 0.3s;
+}
+body.fall .dot:hover {
+  background-color: darkgray;
+}
+
+body.fall .splash {
+  color: orange;
+  background-color:rgb(247,255,209);
+  transition: background-color 0.3s;
+}
+
+body.fall .splash a
+{
+  color: gray;
+}
+body.fall .splash a:hover
+{
+  color: dimgray;
+}
+
+body.fall .btn-left{
+  color: white;
+  background-image:url("https://lh3.googleusercontent.com/VsPFfKgVM4LeZ3Kln9oAZl8mLX_FDFpvU2RRajdfW_NPyVYC8wwnaKfWqRNHg25j7BbLX18ZPdfXLnKCFyaVeHLXpsfgyKG2CblI1VGX5EpMM5Jqfvjm9zMdNw_uft-MO1KCclw5v2_Fc2EK9-leZ3Mdn5mRpGFaksVnICQQ71A27Zxo3NlVR-06CYnmbxTSSBiRIGV76OaGJ4L9f1p6rdsD-ysN55m5gQObzYoBIxvz2WUbYSA4nepf0g89Fa7UoB5-rSxiXD2d0VGaUNzATXvTvRbcwcAtJladOhr-8EPV5qNCrElhHFA-1FtDtJjk1NIwBjMpYWOp0HU4BK_7brUiRD0sypiBkNGEbhZ9LvkMswT02rVrJ2ouD0V4wSjQy-MheXLjCOWDN-zueUfxeffqrNA6BfjrLjqwSmLe_MUBTG2dCUYCBDJCbsyXX1QWbocSCIQ6HBItrCHIX84LSZ_GCQojX8evPbAHQGgI65RHuqTifJID0lbJyqDx5DRxeb5B0iKmDk9soDCHVAhpZCdtL5uNxidwcOEkDRZTLqCAl1EL4fnBTtqiKtOIEU-xwLuRIVeEcMb1Z80oDgsBByjDyByJN3Ban_RXhOBAOwP9QsmSVAyl1lvMI_P8C4_Qsc9-k92KWMrHJZAFhdZogQLRlOjZL3icY9xNXntaZKRdbAzemK91Eg=w620-h625-no");
+  background-size: 100% 100%;
+  transition: all 0.2s;
+}
+
+body.fall .btn-right
+{
+  color: white;
+  background-image:url("https://lh3.googleusercontent.com/yXrEKj7LbAx42VR2NxAcVjwLAUO_yWEqJrO_QOVO7d6INMBMIcsMUYwrZGQpzqNUCCLZp3bMbU0LYYAr9xdFpxRrf7afEGP8T800KjOIQcX8NG8GmglnxclTGiVVxxpD7EZKfU4qbDJC7HirNq7et_ReYowGjxC_zwC6vJRVgn_abzKInDyptnik9sLM5QDlUh41rk0XPYEIPrhtvOLA56jU6HOUjtGVGmfpaSuehL_QUL7PpsIvBsZ5BS-4uyirfLF8ZVH832waFMz_wJWCF2IZNbq3q7v2QbT0lmL0iObp5hfseF6qUmRuN8hCPbjeZTagd9vconr1JWdajn_ZOVWXnEtwOOdioaPkMb6rwXqfk8C1faM-F5AMT5AM3O1hHFpLAW2O_FCJhQrOpupnNQWxr_RkEwjWuTMCGLj914kitTMugGeIQlEBCAIfzRmiwCYnaHgbeazRnNs6x8fYc7q9jJiajmDFUxlmc73_VzPXRWd8HGeS3CNj2ZhliQPhcjPHzCMTeQTBx4k3ZGmVhJSeyDTlwGEucw_Hzm-ttcro6sw9hRaWXOaNaka3GUFFYwMx9kk0f9MuwAM3my0eZKFlBwWIqlq1JHR7LyhTA9zLRnGUpc5UL8e0cwTusKeKqpm2WE51iWgNEl7B5LjitHemidmgYnQDiGgt-AOazPfVHIBBsNwjIA=w631-h625-no");
+  background-size: 100% 100%;
+  transition: all 0.2s;
+}
+
+
+body.fall .btn:hover {
+  color: black;
+  background-color:lightgray;
+  transition: all 0s;
+}
+
+body.fall .lunchBtn
+{
+  color:orange;
+  background-color:darkred;
+  transition: all 0.3s;
+}
+body.fall .lunchBtn:hover
+{
+  color:yellow;
+  background-color:RGB(120,0,0);
+  transition: all 0s;
+}
+
+body.fall .wrongLunchBtn
+{
+  color:orange;
+  background-color:darkred;
+  transition: all 0.3s;
+}
+body.fall .wrongLunchBtn:hover
+{
+  color:yellow;
+  background-color:RGB(120,0,0);
+  transition: all 0s;
+}
+
+body.fall footer
+{
+  color: RGB(255,255,255);
+  background-color: dimgray;
+  transition: background-color 0.3s;
+}
+
+@font-face
+{
+  font-family: "anton";
+  src: url(www.fhsched.com/fonts/Anton-Regular.ttf);
+  font-style: normal;
+  font-weight: 100;
+}
+
+body.fall .about-header
+{
+  background-color:rgb(255,255,20);
+  color: red;
+}
+body.fall .team
+{
+  background-color:rgb(255,255,255);
+  color: red;
+}
