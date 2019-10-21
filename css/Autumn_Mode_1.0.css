@@ -1,0 +1,204 @@
+body.autumn
+{
+  background: url("../images/fall_background.jpg") repeat-y center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height:100vh;
+  color: RGB(0,0,0);
+  background-color: RGB(250,200,40);
+  transition: background-color 0.3s;
+  transition: background-image 0.3s;
+}
+
+body.autumn a:link
+{
+  color: white;
+}
+
+body.autumn a:visited
+{
+  color: white;
+}
+
+body.autumn a:hover
+{
+  color: darkgray;
+}
+
+body.autumn a:active {
+  color: darkgray;
+}
+
+body.autumn .header
+{
+  background: RGB(240,140,60);
+  transition: background-color 0.3s;
+}
+body.autumn .header a
+{
+  color: RGB(255,255,255);
+}
+
+body.autumn .slider
+{
+  background: RGB(250,180,20,0.9);
+  transition: all 0.3s;
+}
+body.autumn .slider li a
+{
+  color: RGB(70,40,30);
+}
+body.autumn .slider li a:hover
+{
+  background: RGB(170,130,10,0.7);
+  color: RGB(40,20,10);
+}
+body.autumn .slider .close-sidebar:hover
+{
+  background: RGB(170,130,10,0.7);
+}
+
+body.autumn .national-guard-banner
+{
+  background: RGB(240,100,60,0.95);
+}
+body.autumn .national-guard-banner a
+{
+  color: RGB(255,255,255);
+}
+body.autumn .national-guard-banner a:hover
+{
+  color: RGB(160,160,160);
+}
+body.autumn .national-guard-banner .container .close-sidebar:hover
+{
+  background: RGB(160,60,30,0.7);
+}
+
+
+body.autumn .ham-a
+{
+  background: RGB(240,140,60);
+  transition: background-color 0.3s;
+}
+body.autumn .ham-a:hover
+{
+  background: RGB(180,90,30);
+}
+
+body.autumn .time-schedule
+{
+  color: RGB(0,0,0);
+  background: RGB(200,10,20);
+  transition: background-color 0.3s;
+}
+
+body.autumn .period-countdown
+{
+  color: RGB(0,0,0);
+  transition: background-color 0.3s;
+}
+
+body.autumn .remaining-time
+{
+  color: RGB(0,0,0);
+  transition: background-color 0.3s;
+}
+
+body.autumn .timer
+{
+  color: RGB(0,0,0);
+}
+
+body.autumn .dot
+{
+  background: RGB(255,255,255)
+  transition: background-color 0.3s;
+}
+body.autumn .dot-cur
+{
+  background: RGB(70,40,30);
+  transition: background-color 0.3s;
+}
+body.autumn .dot:hover {
+  background: RGB(130,130,130);
+}
+
+body.autumn .splash {
+  color: white;
+  background: RGB(80,5,10);
+  transition: background-color 0.3s;
+}
+
+body.autumn .splash a
+{
+  color: RGB(190,130,10);
+}
+body.autumn .splash a:hover
+{
+  color: RGB(130,90,5);
+}
+
+body.autumn .btn
+{
+  color: RGB(0,0,0);
+  background: RGB(200,10,20);
+  transition: all 0.3s;
+}
+body.autumn .btn:hover
+{
+  color: RGB(0,0,0);
+  background: RGB(130,5,10);
+}
+
+body.autumn .lunchBtn
+{
+  color: RGB(255,255,255);
+  background: RGB(240,120,70);
+  transition: background-color 0.3s;
+}
+body.autumn .lunchBtn:hover
+{
+  color: RGB(200,200,200);
+  background: RGB(180,80,40);
+}
+
+body.autumn .wrongLunchBtn
+{
+  color: RGB(255,255,255);
+  background: RGB(240,120,70);
+  transition: background-color 0.3s;
+}
+body.autumn .wrongLunchBtn:hover
+{
+  color: RGB(200,200,200);
+  background: RGB(180,80,40);
+}
+
+body.autumn footer
+{
+  color: white;
+  background-color: RGB(70,40,30);
+  transition: background-color 0.3s;
+}
+
+@font-face
+{
+  font-family: "anton";
+  src: url(www.fhsched.com/fonts/Anton-Regular.ttf);
+  font-style: normal;
+  font-weight: 100;
+}
+
+body.autumn .about-header
+{
+  background-color:RGB(200,10,20);
+  color: RGB(255,255,255);
+}
+body.autumn .team
+{
+  background-color:RGB(80,5,10);
+  color: RGB(255,255,255);
+}

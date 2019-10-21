@@ -28,7 +28,7 @@ if(isset($_GET["accept-cookies"])) {
     <link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png">
 
     <script type="text/javascript" src="js/FHSched_Schedule_Data_V_1.13.js"> </script>
-    <script type="text/javascript" src="js/FHSched_Calendar_Data_V_1.7.js"></script>
+    <script type="text/javascript" src="js/FHSched_Calendar_Data_V_1.8.js"></script>
     <script type="text/javascript" src="js/FHSched_Base_V_1.8.js"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
@@ -62,10 +62,11 @@ if(isset($_GET["accept-cookies"])) {
         <li><a href="about/">About</a></li>
         <!--
         <li><a href="../calendar/">Calendar</a></li>
-        -->
+
         <li>
           <a role="button" onclick="shuttleBus()" id = "shuttle-bus-toggle">Shuttle Bus Off</a>
         </li>
+        -->
         <li id="add-theme">
           <a role="button" onclick="showAddTheme()" id="a-add-theme">+ Theme</a>
           <a role="button" id="input-theme">
@@ -109,15 +110,15 @@ if(isset($_GET["accept-cookies"])) {
 
     <div class="">
       <p class = "splash">
-        One more new <a role="button" onclick="showSidebar()" style = "text-decoration:none;">theme</a> this week!
+        Welcome back! New <a role="button" onclick="showSidebar()" style = "text-decoration:none;">theme</a> as promised.
         <br>
-        Have all three new themes?
+        Calendar coming very soon.
         <br>
-        Ask around for previous themes!
+        This time we mean it.
         <br>
-        Click to solve Friday's puzzle: <a href="puzzle">Puzzle</a>
+        Click to solve this week's puzzle: <a href="puzzle">Puzzle</a>
         <br>
-        One more day till Fall Break!
+        Hint: "osaurus" = "anography"
       </p>
     </div>
 
@@ -212,8 +213,8 @@ if(isset($_GET["accept-cookies"])) {
     //Gets current time
     var today = new Date();
     var curMonth = today.getMonth();
-    var curDate = today.getDate()+8;
-    var curHour = today.getHours()-9;
+    var curDate = today.getDate();
+    var curHour = today.getHours();
     var curMin = today.getMinutes();
     var curSec = today.getSeconds();
 
@@ -221,16 +222,20 @@ if(isset($_GET["accept-cookies"])) {
     {
       today = new Date();
       curMonth = today.getMonth();
-      curDate = today.getDate()+8;
-      curHour = today.getHours()-9;
+      curDate = today.getDate();
+      curHour = today.getHours();
       curMin = today.getMinutes();
       curSec = (59 - today.getSeconds());
       curScheduleValue = calendar[curMonth][curDate - 1];
       curTotalMin = (curHour * 60) + curMin;
       currentSchedule = JSON_schedule[0][curScheduleValue];
-      if(curPeriodKey == "lunch" || (takeShuttleBus && periodKey == "periodSeven"))
+      if(curPeriodKey == "lunch")
       {
         displayTimeLeft((currentSchedule[curPeriodKey][curMultiKey].EHours * 60) + currentSchedule[curPeriodKey][curMultiKey].EMin - curTotalMin - 1);
+      }
+      else if(takeShuttleBus && periodKey == "periodSeven")
+      {
+        displayTimeLeft((currentSchedule[curPeriodKey][shuttleKey].EHours * 60) + currentSchedule[curPeriodKey][shuttleKey].EMin - curTotalMin - 1);
       }
       else if(curPeriodKey != null)
       {
@@ -247,7 +252,8 @@ if(isset($_GET["accept-cookies"])) {
     var periodDisplayKey = null;
     var curPeriodKey = null;
     var curMultiKey = null;
-    var takeShuttleBus = JSON.parse(localStorage.getItem('shuttleBus'));
+    var shuttleKey = null;
+    var takeShuttleBus = false; //JSON.parse(localStorage.getItem('shuttleBus'));
 
     var curScheduleValue = calendar[curMonth][curDate - 1];
 
@@ -282,9 +288,9 @@ if(isset($_GET["accept-cookies"])) {
         return;
       }
 
-      if(takeShuttleBus && periodKey == "periodSeven")
+      if(takeShuttleBus)
       {
-        curMultiKey = checkTimeFrame(currentSchedule["periodSeven"]);
+        shuttleKey = "shuttleBus";
       }
 
       if(periodKey == "lunch")
@@ -344,7 +350,7 @@ if(isset($_GET["accept-cookies"])) {
         lunchDiv.setAttribute("style", "display:block");
         wrongLunchDiv.setAttribute("style", "display:none");
       }
-
+      /*
       if(localStorage.getItem('shuttleBus') == "false")
       {
         document.querySelector("#shuttle-bus-toggle").textContent = "Shuttle Bus Off";
@@ -353,7 +359,7 @@ if(isset($_GET["accept-cookies"])) {
       {
         document.querySelector("#shuttle-bus-toggle").textContent = "Shuttle Bus On";
       }
-
+      */
       switch (lunchType)
       {
         case "a":
@@ -427,10 +433,15 @@ if(isset($_GET["accept-cookies"])) {
     //Displays the input time on the timer element
     function displayPeriod()
     {
-      if((curPeriodKey == "lunch" && periodDisplayKey == "lunch") || (takeShuttleBus && periodDisplayKey == "periodSeven"))
+      if(curPeriodKey == "lunch" && periodDisplayKey == "lunch")
       {
         var periodDisplay = currentSchedule[periodDisplayKey][curMultiKey];
         periodDisplayName = curMultiKey;
+      }
+      else if(takeShuttleBus && periodDisplayKey == "periodSeven")
+      {
+        var periodDisplay = currentSchedule[periodDisplayKey][shuttleKey];
+        periodDisplayName = shuttleKey;
       }
       else
       {

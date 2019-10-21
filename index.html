@@ -104,15 +104,15 @@
 
     <div class="">
       <p class = "splash">
-        One more new <a role="button" onclick="showSidebar()" style = "text-decoration:none;">theme</a> this week!
+        Welcome back! New <a role="button" onclick="showSidebar()" style = "text-decoration:none;">theme</a> as promised.
         <br>
-        Have all three new themes?
+        Calendar coming very soon.
         <br>
-        Ask around for previous themes!
+        This time we mean it.
         <br>
-        Click to solve Friday's puzzle: <a href="puzzle">Puzzle</a>
+        Click to solve this week's puzzle: <a href="puzzle">Puzzle</a>
         <br>
-        One more day till Fall Break!
+        Hint: "osaurus" = "anography"
       </p>
     </div>
 
@@ -129,7 +129,7 @@
           <li><a href="privacy-policy/">Privacy Policy</a></li>
         </ul>
         <ul>
-          <li>&copy; 2019 CodingForFishers</li>
+          <li>2019 CodingForFishers</li>
           <li>Version 1.5.0</li>
         </ul>
         <ul>
@@ -386,23 +386,40 @@
     }
 
     //Displays the time left in the period
-    function displayTimeLeft(minsLeft) {
-      if (curPeriodKey == null) {
-        remainingTime.textContent = "School begins at 7:35";
-        periodCountdown.textContent = "";
-      } else if (minsLeft < 0) {
-        checkCurPeriod();
-      } else {
-        var hours = Math.floor(minsLeft / 60);
-        var minutes = minsLeft % 60;
-        var seconds = curSec;
-        hours = hours == 0 ? "" : hours == 1 ? "1 hour " : hours + " hours ";
-        minutes = minutes == 0 && hours == "" ? "" : minutes == 1 ? "1 minute " : minutes + " minutes ";
-        seconds = seconds == 1 ? "1 second" : seconds + " seconds";
-        if (remainingTime.textContent != hours + minutes + seconds) {
-          remainingTime.textContent = hours + minutes + seconds;
+    function displayTimeLeft(minsLeft)
+    {
+      if (minsLeft == 1)
+      {
+        if (curSec == 1)
+        {
+          remainingTime.textContent = "" + minsLeft + " minute " + curSec + " second";
+        }
+        else
+        {
+          remainingTime.textContent = "" + minsLeft + " minute " + curSec + " seconds";
         }
         periodCountdown.textContent = "Period Countdown:";
+      }
+      else
+      {
+        if (curSec == 1)
+        {
+          remainingTime.textContent = "" + minsLeft + " minutes " + curSec + " second";
+        }
+        else
+        {
+          remainingTime.textContent = "" + minsLeft + " minutes " + curSec + " seconds";
+        }
+        periodCountdown.textContent = "Period Countdown:";
+      }
+      if (minsLeft < 0)
+      {
+        checkCurPeriod();
+      }
+      if (curPeriodKey == null)
+      {
+        remainingTime.textContent = "School begins at 7:35";
+        periodCountdown.textContent = "";
       }
       requestAnimationFrame(updateClock);
     }
