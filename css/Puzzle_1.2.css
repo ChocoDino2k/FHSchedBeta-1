@@ -44,8 +44,8 @@ p
   right: 0;
   bottom: 0;
   position: absolute;
-  color: RGB(0,50,150);
-  font-size: 100px;
+  color: black;
+  font-size: 150px;
   text-align: center;
   display: flex;
   align-items: center;

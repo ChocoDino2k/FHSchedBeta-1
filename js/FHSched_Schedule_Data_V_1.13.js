@@ -233,7 +233,11 @@ var data = [{
     "passingPeriodFive": {"SHours": 13, "SMin": 3, "EHours": 13, "EMin": 10},
     "periodSix": {"SHours": 13, "SMin": 10, "EHours": 13, "EMin": 49},
     "passingPeriodSix": {"SHours": 13, "SMin": 49, "EHours": 13, "EMin": 56},
-    "periodSeven": {"SHours": 13, "SMin": 56, "EHours": 14, "EMin": 35},
+    "periodSeven":
+    {
+      "SHours": 13, "SMin": 56, "EHours": 14, "EMin": 35,
+      "shuttleBus": {"SHours": 13, "SMin": 56, "EHours": 14, "EMin": 20}
+    },
     "passingPeriodSeven": {"SHours": 14, "SMin": 35, "EHours": 14, "EMin": 40},
     "PLC": {"SHours": 14, "SMin": 40, "EHours": 15, "EMin": 25}
   },

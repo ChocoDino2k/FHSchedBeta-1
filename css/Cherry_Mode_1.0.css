@@ -174,50 +174,6 @@ body.cherry footer
   transition: background-color 0.3s;
 }
 
-body.cherry .container1
-{
-  color: red;
-  background: #FFF;
-  transition: color 0.3s;
-}
-
-body.cherry .container2
-{
-  color: red;
-  background: #FFF;
-  transition: color 0.3s;
-}
-
-body.cherry .containerGreyRim{
-  background: #FFF;
-  transition: background-color 0.3s;
-}
-
-body.cherry .containerRim{
-  background: #FFF;
-  transition: background-color 0.3s;
-}
-
-body.cherry .featuredSportSplash
-{
-  color: red;
-  background: #FFF;
-  transition:color 0.3s;
-}
-
-body.cherry .dycalendar-month-container
-{
-  color: RGB(255,255,255);
-  transition: color 0.3s;
-}
-
-body.cherry .dycalendar-month-container .dycalendar-target-date,.dycalendar-month-container .dycalendar-today-date
-{
-  color: #FFF;
-  background:darkred;
-  transition: color 0.3s;
-}
-
 @font-face
 {
   font-family: "anton";
