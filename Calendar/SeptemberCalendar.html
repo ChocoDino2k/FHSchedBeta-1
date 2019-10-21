@@ -4,20 +4,25 @@
 <head>
     <title>FHSched Calendar</title>
 
+    <!-- twitter bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 
 
 
     <!-- dycalendarjs stylesheet -->
     <link href="css/dycalendar.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="../css/FHSched_V_1.15.css">
+    <link rel="stylesheet" href="../css/FHSched_V_1.15a.css">
     <link rel="stylesheet" href="../css/Dark_Mode_1.0.css">
-    <link rel = "stylesheet" href = "css/FHSchedCalendar_V_1.11.css">
-    <script type="text/javascript" src="../js/FHSched_Base_V_1.7.js"></script>
+    <link rel="stylesheet" href="../css/Cherry_Mode_1.0.css">
+    <link rel="stylesheet" href="../css/Aqua_Mode_1.0.css">
+    <link rel="stylesheet" href="../css/Template_Mode_1.0.css">
+
+
 
 
 </head>
-  <body onload="createThemes()" id="body" class = "dark">
+<body class="dark">
   <!--
   <img class="logo" src="images/weblogo.png" width="80" height="74">
 -->
@@ -32,19 +37,19 @@
     <a class = "close-sidebar" role="button" onclick="showSidebar()">
       <img src="../images/close-icon.png" class="close-icon">
     </a>
-    <ul id = "sidebar-list">
+    <ul>
       <li><a href="../">Home</a></li>
       <li><a href="../about/">About</a></li>
-
-      <li id="add-theme">
-        <a role="button" onclick="showAddTheme()" id="a-add-theme">+ Theme</a>
-        <a role="button" id="input-theme">
-          <input type="text" id="modeInput" name="modeInput" placeholder="Eg: Dark"><button id = "inputButton" type=button onclick="addTheme()">Add</button>
-        </a>
-      </li>
-      <li>
-        <a role="button" onclick="localStorage.setItem('mode', 'classic'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('classic')">Classic Theme</a>
-      </li>
+      <!--
+      <li><a href="../calendar/">Calendar</a></li>
+      -->
+      <li><a role="button" onclick="localStorage.setItem('mode', 'classic'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('classic')" title="Dark/light">Classic Mode</a></li>
+      <li><a role="button" onclick="localStorage.setItem('mode', 'dark'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('dark')" title="Dark/light">Dark Mode</a></li>
+      <li><a role="button" onclick="localStorage.setItem('mode', 'cherry'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('cherry')" title="Dark/light">Cherry Mode</a></li>
+      <li><a role="button" onclick="localStorage.setItem('mode', 'aqua'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('aqua')" title="Dark/light">Aqua Mode</a></li>
+      <!--
+      <li><a role="button" onclick="localStorage.setItem('mode', 'aqua'); document.querySelector('body').className = ''; document.querySelector('body').classList.add('aqua')" title="Dark/light">Aqua Mode</a></li>
+      -->
     </ul>
   </div>
 
@@ -66,32 +71,24 @@
   </div>
 
 
-   <p class="header">
+   <p class="header" style = "height: 100px">
          <a href="../"> FHSched Calendar </a>
     </p>
 
 
         <div class="parent">
 
+        <div class="move">
           <div class="dropdown" style="float:right;">
-            <button onclick="dropDown()" class="dropbtn">Major Events</button>
+            <button onclick="dropDown()" class="dropbtn">Change Month</button>
             <div id="myDropdown" class="dropdown-content">
-              <a href="index.html">October</a>
+              <a href="SeptemberCalendar.html">September</a>
+              <a href="OctoberCalendar.html">October</a>
               <a href="NovemberCalendar.html">November</a>
               <a href="DecemberCalendar.html">December</a>
            </div>
          </div>
-
-          <div class="dropdown2" style="float:right;">
-            <button onclick="dropDown2()" class="dropbtn2">Club Meetings</button>
-            <div id="myDropdown2" class="dropdown2-content">
-              <a href="ClubCurrentCalendar.html">October</a>
-              <a href="ClubNovemberCalendar.html">November</a>
-              <a href="ClubDecemberCalendar.html">December</a>
-           </div>
-         </div>
-
-
+        </div>
 
 
         <div class = "containerRim"></div>
@@ -99,7 +96,7 @@
         <div class="container1"  id="yearCountDown"></div>
         <div class="container2" id="breakCountDown"></div>
         <div class = "featuredSportSplash">
-          <p> If there are any events that you think should be added, contact us!</p>
+          <p> example text</p>
         </div>
 
 
@@ -110,7 +107,7 @@
                 <div id="dycalendar-month" class="dycalendar-container skin-gray"></div>
         </div>
 
-               <div class="picture">
+        <div class="picture">
         <img src="calendar-line-horizontal.png" alt="calendar" width="953" height="475">
         </div>
 
@@ -139,102 +136,96 @@
         </div>
 
         <div class="pictureSeven">
-        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="413">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="400">
         </div>
 
         <div class="pictureEight">
-        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="413">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="400">
         </div>
 
         <div class="pictureNine">
-        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="413">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="400">
         </div>
 
          <div class="pictureTen">
-        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="413">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="400">
         </div>
 
          <div class="pictureEleven">
-        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="413">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="400">
         </div>
 
         <div class="pictureTwelve">
-        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="413">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="400">
         </div>
 
         <div class="pictureThirteen">
-        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="413">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="400">
         </div>
 
         <div class="pictureFourteen">
-        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="413">
+        <img src="calendar-line-vertical.png" alt="calendar" width="475" height="400">
         </div>
 
         <div class="picture0">
-        <img src="calendar-line-horizontal.png" alt="calendar" width="1130" height="500">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="925" height="500">
         </div>
 
         <div class="picture1">
-        <img src="calendar-line-horizontal.png" alt="calendar" width="1130" height="500">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="925" height="500">
         </div>
 
         <div class="picture2">
-        <img src="calendar-line-horizontal.png" alt="calendar" width="1130" height="500">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="925" height="500">
         </div>
 
          <div class="picture3">
-        <img src="calendar-line-horizontal.png" alt="calendar" width="1130" height="500">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="925" height="500">
         </div>
 
         <div class="picture4">
-        <img src="calendar-line-horizontal.png" alt="calendar" width="1130" height="500">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="925" height="500">
         </div>
 
         <div class="picture5">
-        <img src="calendar-line-horizontal.png" alt="calendar" width="1130" height="500">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="925" height="500">
         </div>
 
         <div class="picture6">
-        <img src="calendar-line-horizontal.png" alt="calendar" width="1130" height="500">
+        <img src="calendar-line-horizontal.png" alt="calendar" width="925" height="500">
         </div>
 
         <div class="picture7">
-        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1495">
+        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1195">
         </div>
 
         <div class="picture8">
-        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1495">
+        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1195">
         </div>
 
         <div class="picture9">
-        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1495">
+        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1195">
         </div>
 
         <div class="picture10">
-        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1495">
+        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1195">
         </div>
 
         <div class="picture11">
-        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1495">
+        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1195">
         </div>
 
         <div class="picture12">
-        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1495">
+        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1195">
         </div>
 
         <div class="picture13">
-        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1495">
+        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1195">
         </div>
 
         <div class="picture14">
-        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1495">
+        <img src="calendar-line-vertical.png" alt="calendar" width="710" height="1195">
         </div>
-
-        <div class="eventContainerSixteen"> </div>
-        <div class="eventContainerSeventeen"> </div>
-        <div class="eventContainerEighteen"> </div>
-        <div class="eventContainerNineteen"> </div>
-        <div class="eventContainerTwenty"> </div>
 
 <div class="fontSize">
 <button onclick="document.getElementById('id01').style.display='block'" class="button button1">
@@ -249,7 +240,7 @@ h
       </header>
       <div class="w3-container">
         <font color="black">
-          <p>None</p>
+          <p>event</p>
         </font>
       </div>
     </div>
@@ -267,7 +258,7 @@ h
       </header>
       <div class="w3-container">
         <font color="black">
-          <p>None</p>
+          <p>Event2</p>
         </font>
       </div>
     </div>
@@ -286,8 +277,7 @@ h
       <div class="w3-container">
         <font color="black">
           <p> Leadership Retreat at Connor Prairie at 8:00am- 2:00pm </p>
-          <hr>
-          <p> Soccer: Boys JV Match at  Greenfield-Central High School at 6:00pm </p>
+          <p>  Soccer: Boys JV Match at  Greenfield-Central High School at 6:00pm </p>
           <p> Volleyball: Girls Freshman Match at Mount Vernon High School at 6:00pm </p>
           <p> Volleyball: Girls JV Match at Mount Vernon High School at 6:00pm </p>
           <p> Unified Football: Varsity Game at FHS FOOTBALL STADIUM at 6:30pm </p>
@@ -314,7 +304,6 @@ h
          <p> College Visit: Bellarmine University in CCA at 9:30 AM </p>
    <p> College Visit: St. Johns College in CCA at 12:00 PM </p>
    <p> College Visit: University of Southern Indiana in CCA at 1:00 PM </p>
-   <hr>
    <p> Tennis: Boys Varsity IHSAA Sectionals at HSE High School at 4:30pm </p>
    <p> Soccer: Girls JV Match at Guerin Catholic High School at 5:30pm </p>
    <p> Soccer: Girls Varsity Match at Guerin Catholic High School at 7:00pm </p>
@@ -340,7 +329,6 @@ h
    <p> College Visit: Indiana Wesleyan University in CCA at 12:00 PM </p>
    <p> College Visit: Amherst College in CCA at 1:00 PM </p>
    <p> College Visit: University of Iowa in CCA at 2:00 PM </p>
-   <hr>
   <p> Tennis: Boys Varsity IHSAA Sectionals at HSE High School at 4:30pm </p>
   <p> Unified Football: Varsity Game at HSE High School at 5:30pm </p>
   <p> Soccer: Boys Freshman Match at Franklin Central High School at 6:00pm </p>
@@ -364,7 +352,6 @@ h
           <p> 9 week exams/First Grading Period Ends </p>
           <p> College Visit: University of St. Francis in CCA at 8:30 AM </p>
   <p> College Visit: Purdue Polytechnic Institute, West Lafayette in CCA at 2:00 PM </p>
-  <hr>
   <p> Football: Varsity Game in Fishers High School at 7:00pm</p>
   <p> Football: Varsity Game at FHS FOOTBALL STADIUM at 7:00pm <font color= "red"> (Senior Night) </font> </p>
         </font>
@@ -408,7 +395,7 @@ h
       </header>
       <div class="w3-container">
         <font color="black">
-          <p> None </p>
+          <p> none </p>
         </font>
       </div>
     </div>
@@ -445,9 +432,6 @@ h
       </header>
       <div class="w3-container">
         <font color="black">
-          <p> College Visit: University of Toledo in the CCA at 8:30 AM </p>
-          <p> College Visit: University of Cincinnati in the CCA at 12:00 PM </p>
-          <hr>
           <p> Cheer Winter Call Out Metting in Cafe A at 3:00pm- 4:00pm </p>
           <p> Volleyball: Girls Freshman and JV Match at Yorktown High School at 6:00pm </p>
           <p> Soccer: Girls Varsity IHSAA Sectionals at HSE High School at 7:15pm </p>
@@ -469,11 +453,6 @@ h
       </header>
       <div class="w3-container">
         <font color="black">
-          <p> College Visit: Tufts University in the CCA at 8:30 AM </p>
-          <p> College Visit: John Hopkins University in the CCA at 12:00 PM </p>
-          <p> College Visit: Belmont University in the CCA at 1:00 PM </p>
-          <p> College Visit: Marian University in the CCA at 2:00 PM </p>
-          <hr>
           <p>Soccer: Boys Varsity IHSAA Sectionals at  White River Elementary at 5:30pm</p>
           <p> Lacrosse Girls Call Out Meeting at Cafe A at 6:00pm- 8:00pm</p>
           <p> Rugby Girls Call Out Meeting at LGI Room at 6:00pm- 7:30pm </p>
@@ -496,9 +475,6 @@ h
       </header>
       <div class="w3-container">
         <font color="black">
-          <p> College Visit: University of Alabama in the CCA at 12:00 PM </p>
-          <p> College Visit: Grace College in the CCA at 1:00 PM </p>
-          <hr>
           <p> Volleyball: Girls Freshman Match at FHS AUX COURT 1 at 5:30pm </p>
           <p> Volleyball: Girls JV Match at FHS GYM - VARSITY at 5:30pm </p>
           <p> Volleyball: Girls Varsity Match at FHS GYM - VARSITY at 7:00pm <font color= "red"> Senior Night </font> </p>
@@ -519,8 +495,6 @@ h
       </header>
       <div class="w3-container">
         <font color="black">
-          <p> College Visit: University of Saint Francis in the CCA at 9:30 AM </p>
-          <hr>
           <p>Football: Varsity Game at Westfield High School at 7:00pm</p>
         </font>
       </div>
@@ -543,7 +517,7 @@ h
           <p> Football: Freshman Game at Westfield High School at 10:00am </p>
           <p> Football: JV Game at FHS FOOTBALL STADIUM at 10:00am </p>
           <p> Volleyball: Girls JV Invitational HSE High School at 10:00am </p>
-          <p> Knight Football Games at FHS Football Stadium at 1:00pm- 4:00pm </p>
+          <p> SPORTS Knight Football Games at FHS Football Stadium at 1:00pm- 4:00pm </p>
           <p> Soccer: Girls Varsity IHSAA Sectionals at HSE High School at 2:00pm </p>
           <p> Soccer: Boys Varsity IHSAA Sectionals at White River Elementary at 7:00pm </p>
         </font>
@@ -600,7 +574,6 @@ h
       <div class="w3-container">
         <font color="black">
           <p><font color="orange"> Fall Break </font></p>
-          <hr>
           <p>Volleyball: Girls Varsity IHSAA Sectionals at Noblesville High School (time: TBD)</p>
         </font>
       </div>
@@ -638,7 +611,6 @@ h
       <div class="w3-container">
         <font color="black">
           <p><font color="orange"> Fall Break </font></p>
-          <hr>
           <p> Volleyball: Girls Varsity IHSAA Sectionals at Noblesville High School (time:TBD)</p>
         </font>
       </div>
@@ -658,7 +630,6 @@ h
       <div class="w3-container">
         <font color="black">
             <p><font color="orange"> Fall Break </font></p>
-            <hr>
             <p> Football: Varsity Game at FHS FOOTBALL STADIUM at 7:00pm </p>
         </font>
       </div>
@@ -736,8 +707,7 @@ h
       </header>
       <div class="w3-container">
         <font color="black">
-          <p> College Visit: University of Louisville in the CCA at 8:30 AM </p>
-          <p> College Visit: Spalding University in the CCA at 12:00 PM </p>
+          <p>None</p>
         </font>
       </div>
     </div>
@@ -755,10 +725,6 @@ h
       </header>
       <div class="w3-container">
         <font color="black">
-          <p> College Visit: Johnson & Wales University in the CCA at 8:30 AM </p>
-          <p> College Visit: Saint Mary's College in the CCA at 12:00 PM </p>
-          <p> College Visit: Muskingum University in the CCA at 2:00 PM </p>
-          <hr>
           <p>Rugby Boys Call Out Meeting in Cafe A at 6:00pm- 8:00pm</p>
           <p> IB Night in Cafe B, Cafe C - CCA Commons at 7:00pm- 9:00pm </p>
         </font>
@@ -778,10 +744,7 @@ h
       </header>
       <div class="w3-container">
         <font color="black">
-          <p> College Visit: Indiana Tech in the CCA at 8:30 AM </p>
-          <p> College Visit: Calvin University in the CCA at 9:30 AM </p>
-          <p> College Visit: University of Illinois at Chicago in the CCA at 12:00 PM </p>
-          <p> College Visit: Williams College in the CCA at 1:00 PM </p>
+          <p>None</p>
         </font>
       </div>
     </div>
@@ -799,8 +762,6 @@ h
       </header>
       <div class="w3-container">
         <font color="black">
-          <p> College Visit: Syracruse University in the CCA at 1:00 PM </p>
-          <hr>
           <p>Marching Band at Lucas Oil Stadium
 Bands of America Indy Super Regional Championship - PRELIMS (Time:TBD)</p>
         </font>
@@ -823,7 +784,6 @@ h
           <p>Cross Country: Varsity IHSAA Semi-State at New Haven High School (Time:TBD)</p>
           <p> Marching Band at Lucas Oil Stadium
 Bands of America Indy Super Regional Championship - FINALS (Time: TBD) </p>
-           <p> Picture Day at D Hallway at 10:00am- 5:00pm </p>
           <p> Knight Football Games at FHS Football Stadium at 1:00pm- 6:00pm </p>
         </font>
       </div>
@@ -879,7 +839,6 @@ h
       <div class="w3-container">
         <font color="black">
           <p>RJH Camp Tecumseh</p>
-          <p> College Visit: Saint Louis University in the CCA at 12:00 PM </p>
           <p>All Treats No Tricks in CCA Commons at CCA Commons </p>
         </font>
       </div>
@@ -900,8 +859,6 @@ h
         <font color="black">
           <p>RJH Camp Tecumseh</p>
           <p> PSAT </p>
-          <p> College Visit: Hope College in the CCA at 2:00 PM </p>
-          <hr>
           <p> Silver Shadows - Show Choir Season Tech Crew Callout Meeting at F132 at 3:30pm- 4:30pm </p>
           <p> Basketball: Girls Varsity Scrimmage at FHS GYM - VARSITY at 6:00pm </p>
         </font>
@@ -941,7 +898,7 @@ h
       </header>
       <div class="w3-container">
         <font color="black">
-          <p>None</p>
+          <p>Event34</p>
         </font>
       </div>
     </div>
@@ -959,7 +916,7 @@ h
       </header>
       <div class="w3-container">
         <font color="black">
-          <p>None</p>
+          <p>Event35</p>
         </font>
       </div>
     </div>
@@ -1010,28 +967,7 @@ Event
 
 </div>
 
-<script type="text/javascript">
-  //Used for cookie banner
-  if($('.cookie-banner').length)
-  {
-    $('.cookie-banner').slideDown(800);
-  }
-</script>
 
-<script type="text/javascript">     //Not FHSSched
-var isHomePage = '../';
-
-var inputEl = document.querySelector("#modeInput");
-var inputButton = document.querySelector("#inputButton");
-
-inputEl.addEventListener("keyup", function(event) {
-  if (event.keyCode === 13) {
-    event.preventDefault();
-    // Trigger the button element with a click
-    document.getElementById("inputButton").click();
-  }
-});
-</script>
 
 <!-- javascript -->
 <script >
@@ -1228,26 +1164,6 @@ window.onclick = function(event) {
     }
   }
 }
-
-
-function dropDown2() {
-  document.getElementById("myDropdown2").classList.toggle("show2");
-}
-
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn2')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content2");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show2')) {
-        openDropdown.classList.remove('show2');
-      }
-    }
-  }
-}
-
 
 // Get the modal
 var modal = document.getElementById('id01');

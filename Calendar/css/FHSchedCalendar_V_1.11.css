@@ -1,6 +1,6 @@
 body
 {
-  background-image: url("../images/background.png");
+  background-image: url("../../images/background.png");
   background-color: white;
   margin: 0;
 }
@@ -11,26 +11,6 @@ body.dark
   color: white;
 }
 
-footer
-{
-  position:fixed;
-  bottom:0px;
-  padding: 0px, 0px;
-  width: 100%;
-  background-color: lightgray;
-}
-@media screen and (orientation:landscape)
-{
-  footer
-  {
-    position:static;
-    margin: 0px;
-  }
-}
-body.dark footer
-{
-  background-color: rgb(30,34,39);
-}
 
 a:link {
   color: black;
@@ -111,21 +91,12 @@ body.dark .nav-bar
   left:10px;
 }
 
-.header
-{
-  background-color:red;
-  height:80px;
-  width: 100%;
-  font-family:verdana;
-  color:white;
-  font-size: 50px;
-  font-weight: bold;
-  text-align:center;
-  padding-top: 15px;
-  padding-bottom: 0px;
-  margin: auto;
-  border-bottom: 5px solid white;
+
+.header{
+margin-bottom: 10px;
+height:92px;
 }
+
 body.dark .header
 {
   background-color:firebrick;
@@ -170,34 +141,13 @@ body.dark .header a
   border-radius: 20px;
   background-color:lightgray;
 }
+
 body.dark .time-schedule
 {
   color: white;
   background-color:rgb(30,34,39);
 }
 
-.period-display
-{
-  font-size:30px;
-  margin-top: 50px;
-  margin-bottom: 0px;
-  padding: 10px 10px 0px;
-}
-
-.period-countdown
-{
-  letter-spacing: 5px;
-  font-family: "anton", verdana;
-  text-align:center;
-  font-size:40px;
-  margin-top: 40px;
-  margin-bottom: 0px;
-  padding: 10px;
-}
-body.dark .period-countdown
-{
-  color: white;
-}
 
 .remaining-time
 {
@@ -218,33 +168,8 @@ body.dark .period-countdown
   margin-bottom: 0px;
 }
 
-.dot
-{
-  outline: none;
-  border: none;
-  cursor: pointer;
-  height: 30px;
-  width: 30px;
-  background-color: white;
-  border-radius: 50%;
-  display: inline-block;
-  margin: 0px 10px;
-}
-.dot-cur
-{
-  background-color: red;
-}
-body.dark .dot-cur
-{
-  background-color:firebrick;
-}
-.dot:hover
-{
-  background-color: gray;
-}
-body.dark .dot:hover {
-  background-color: darkgray;
-}
+
+
 
 .splash
 {
@@ -325,97 +250,6 @@ body.dark .btn:hover {
   background-color:rgb(40,44,49);
 }
 
-.lunchBtnDiv
-{
-  display:block;
-  position: relative;
-  height: 270px;
-  letter-spacing: 5px;
-  font-family:"anton";
-  text-align:center;
-  margin:auto;
-}
-.lunchBtn
-{
-  font-family:"anton";
-  outline: none;
-  display: inline-block;
-  height:180px;
-  width: 180px;
-  border: none;
-  background-color: red;
-  padding: 10px;
-  font-size: 80px;
-  color: white;
-  cursor: pointer;
-  border-radius: 40px;
-  position: relative;
-  top: 0px;
-  margin: 0px 30px;
-}
-body.dark .lunchBtn
-{
-  color:gainsboro;
-  background-color:firebrick;
-}
-.lunchBtn:hover
-{
-  background:firebrick;
-  color: gainsboro;
-}
-body.dark .lunchBtn:hover
-{
-  color:white;
-  background-color:red;
-}
-.lunchBtn p
-{
-  font-size: 30px;
-  margin:0;
-}
-.wrongLunchDiv
-{
-  display:none;
-  position: relative;
-  height: 100px;
-  letter-spacing: 5px;
-  font-family:"anton";
-  text-align:center;
-  margin:auto;
-}
-.wrongLunchBtn
-{
-  font-family:"anton";
-  outline: none;
-  display: inline-block;
-  height: 100px;
-  width: 350px;
-  border: none;
-  background-color: red;
-  padding: 10px;
-  font-size: 40px;
-  color: white;
-  cursor: pointer;
-  border-radius: 20px;
-  position: relative;
-  top: 0px;
-  margin: 0px 30px;
-}
-body.dark .wrongLunchBtn
-{
-  background-color:firebrick;
-  color:gainsboro;
-}
-.wrongLunchBtn:hover
-{
-  background:firebrick;
-  color: gainsboro;
-}
-body.dark .wrongLunchBtn:hover
-{
-  background-color:red;
-  color:white;
-}
 .foot
 {
   font-family: sans-serif;
@@ -491,6 +325,9 @@ footer p
 {
   padding-bottom:520px;
 }
+.dycalendar-month-container .dycalendar-target-date, .dycalendar-today-date{
+  bottom:100px;
+}
 @media screen and (orientation:landscape)
 {
   .bottom-space
@@ -498,7 +335,12 @@ footer p
     padding-bottom:550px;
   }
 }
-
+@media screen and (orientation: portrait){
+  .header{
+    width:148vw;
+    height: 7.7vh;
+  }
+}
 @font-face
 {
   font-family: "anton";
