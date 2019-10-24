@@ -35,7 +35,7 @@ if(isset($_GET["accept-cookies"])) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <link rel="stylesheet" href="css/FHSched_V_1.16.css">
-    <link rel="stylesheet" href="css/Home_1.1.css">
+    <link rel="stylesheet" href="css/Home_1.2.css">
     <link rel="stylesheet" href="css/Dark_Mode_1.0.css">
   </head>
   <body onload="createThemes()" id="body" class = "dark">
@@ -110,15 +110,17 @@ if(isset($_GET["accept-cookies"])) {
 
     <div class="">
       <p class = "splash">
-        Welcome back! New <a role="button" onclick="showSidebar()" style = "text-decoration:none;">theme</a> as promised.
+        Stay updated for the next 2 days!
         <br>
-        Calendar coming very soon.
+        Each day solve for 2 scrambled letters.
         <br>
-        This time we mean it.
+        Collect all letters from Tuesday to Friday.
         <br>
-        Click to solve this week's puzzle: <a href="puzzle">Puzzle</a>
+        Unscramble for the <a role="button" onclick="showSidebar()" style = "text-decoration:none;">theme</a>, available Friday.
         <br>
-        Hint: "osaurus" = "anography"
+        Click to solve Part 3: <a href="puzzle">Puzzle</a>
+        <br>
+        Keep track of the letters!
       </p>
     </div>
 
@@ -136,7 +138,7 @@ if(isset($_GET["accept-cookies"])) {
         </ul>
         <ul>
           <li>2019 CodingForFishers</li>
-          <li>Version 1.5.0</li>
+          <li>Version 1.5.1</li>
         </ul>
         <ul>
           <li>
