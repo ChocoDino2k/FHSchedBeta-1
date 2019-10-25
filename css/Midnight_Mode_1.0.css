@@ -2,9 +2,19 @@
 
 body.midnight
 {
-  background-image: none;
+  /* background-image: none;
   background-color: darkorange;
   color: white;
+  transition: background-color 0.3s;
+  transition: background-image 0.3s; */
+  background: url("../images/fall_background.jpg") repeat-y center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height:100vh;
+  color: RGB(0,0,0);
+  background-color: RGB(250,200,40);
   transition: background-color 0.3s;
   transition: background-image 0.3s;
 }
