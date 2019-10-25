@@ -68,6 +68,7 @@ a:active {
   margin: 0px;
   padding: 15px;
   transition: all 0.3s;
+  overflow-y: scroll;
 }
 .slider.active
 {

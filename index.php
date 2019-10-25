@@ -29,12 +29,12 @@ if(isset($_GET["accept-cookies"])) {
 
     <script type="text/javascript" src="js/FHSched_Schedule_Data_V_1.13.js"> </script>
     <script type="text/javascript" src="js/FHSched_Calendar_Data_V_1.8.js"></script>
-    <script type="text/javascript" src="js/FHSched_Base_V_1.8.js"></script>
+    <script type="text/javascript" src="js/FHSched_Base_V_1.9.js"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="css/FHSched_V_1.16.css">
+    <link rel="stylesheet" href="css/FHSched_V_1.17.css">
     <link rel="stylesheet" href="css/Home_1.2.css">
     <link rel="stylesheet" href="css/Dark_Mode_1.0.css">
   </head>
@@ -138,7 +138,7 @@ if(isset($_GET["accept-cookies"])) {
         </ul>
         <ul>
           <li>2019 CodingForFishers</li>
-          <li>Version 1.5.1</li>
+          <li>Version 1.5.2</li>
         </ul>
         <ul>
           <li>
@@ -396,38 +396,28 @@ if(isset($_GET["accept-cookies"])) {
     //Displays the time left in the period
     function displayTimeLeft(minsLeft)
     {
-      if (minsLeft == 1)
-      {
-        if (curSec == 1)
-        {
-          remainingTime.textContent = "" + minsLeft + " minute " + curSec + " second";
-        }
-        else
-        {
-          remainingTime.textContent = "" + minsLeft + " minute " + curSec + " seconds";
-        }
-        periodCountdown.textContent = "Period Countdown:";
-      }
-      else
-      {
-        if (curSec == 1)
-        {
-          remainingTime.textContent = "" + minsLeft + " minutes " + curSec + " second";
-        }
-        else
-        {
-          remainingTime.textContent = "" + minsLeft + " minutes " + curSec + " seconds";
-        }
-        periodCountdown.textContent = "Period Countdown:";
-      }
-      if (minsLeft < 0)
-      {
-        checkCurPeriod();
-      }
       if (curPeriodKey == null)
       {
         remainingTime.textContent = "School begins at 7:35";
         periodCountdown.textContent = "";
+      }
+      else if (minsLeft < 0)
+      {
+        checkCurPeriod();
+      }
+      else
+      {
+        var hours = Math.floor(minsLeft / 60);
+        var minutes = minsLeft % 60;
+        var seconds = curSec;
+        hours = hours == 0 ? "" : hours == 1 ? "1 hour " : hours + " hours ";
+        minutes = minutes == 0 && hours == "" ? "" : minutes == 1 ? "1 minute " : minutes + " minutes ";
+        seconds = seconds == 1 ? "1 second" : seconds + " seconds";
+        if (remainingTime.textContent != hours + minutes + seconds)
+        {
+          remainingTime.textContent = hours + minutes + seconds;
+        }
+        periodCountdown.textContent = "Period Countdown:";
       }
       requestAnimationFrame(updateClock);
     }

@@ -131,3 +131,13 @@ function shuttleBus()
   checkCurPeriod();
   updateClock();
 }
+
+document.addEventListener('click', function(event)
+{
+  var isClickInside = document.querySelector("#sidebar").contains(event.target) || document.querySelector("#ham-a").contains(event.target);
+
+  if (!isClickInside && document.querySelector("#sidebar").classList.contains('active'))
+  {
+    showSidebar();
+  }
+});
